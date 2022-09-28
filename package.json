@@ -1,0 +1,36 @@
+{
+  "name": "osc-website",
+  "version": "0.0.0",
+  "description": "UF OSC website",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js",
+    "test": "standard && echo \"Error: no test specified\" && exit 1",
+    "lint": "standard",
+    "fix": "standard --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ufosc/Club_Website_2.git"
+  },
+  "keywords": [
+    "OSC",
+    "webdev",
+    "nodejs",
+    "javascript",
+    "express"
+  ],
+  "author": "ufosc",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/ufosc/Club_Website_2/issues"
+  },
+  "homepage": "https://github.com/ufosc/Club_Website_2#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.20",
+    "standard": "^17.0.0"
+  },
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}
