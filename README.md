@@ -47,5 +47,5 @@ npm run test
 ## Contributing
 All contributions are welcome and appreciated, so long as they adhere to the [license](#license). Contributors are urged to familiarize themselves with the [contribution guidelines](CONTRIBUTING.md).
 ## License
-[GPL-3.0-or-later](LICENSE.md) <br/>
+[AGPL-3.0-or-later](LICENSE.md) <br/>
 Copyright (C) 2007 Free Software Foundation, Inc.

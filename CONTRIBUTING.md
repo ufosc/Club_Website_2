@@ -1,5 +1,5 @@
 # Contributing
-The OSC website is free and open source software, all contributions are welcome and appreciated so long as they comply with GPL-3.0 licensing. To expedite the submission and review process, we urge all contributors to familiarize themselves with the following contribution guidelines.
+The OSC website is free and open source software, all contributions are welcome and appreciated so long as they comply with AGPL-3.0-or-later licensing. To expedite the submission and review process, we urge all contributors to familiarize themselves with the following contribution guidelines.
 ## Table of contents
 1. [Contribution Workflow](#contribution-workflow)
 2. [Commit Messages](#commit-messages)
