@@ -55,6 +55,8 @@ That said, avoid commiting large changes all at once: messages like `updated app
 ### Message prefixes
 We recommend adding the following prefixes to your commit messages. These aren't necessary, but they keep the commit history clean-looking:
 - `feat: ...`: For new features.
+- `docs: ...`: For adding or changing documentation
+- `ci: ...`: For modifying CI, jobs or workflows
 - `fix: ...`: For when you've fixed something.
 - `lint: ...`: For when you've fixed/changed code syntax.
 - `refactor: ...`: For when you've rewritten or reorganized something. Use this if you've moved files or created folders. This is different from `lint` because it doesn't necessarily describe syntactical changes, it describes organizational changes.
