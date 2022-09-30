@@ -4,8 +4,11 @@ const config = {
   development: {
     port: process.env.SERVER_PORT || 3000
   },
+  staging: {
+    port: process.env.SERVER_PORT || 3001
+  },
   production: {
-    port: process.env.SERVER_PORT || 3000
+    port: process.env.SERVER_PORT || 3002
   }
 }
 
