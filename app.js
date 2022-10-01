@@ -1,10 +1,12 @@
 require('dotenv').config()
 const config = require('./config')
 const express = require('express')
+const rateLimit = require('express-rate-limit')
 
 const app = express()
 const http = require('http').createServer(app)
 
+app.use(rateLimit(config.limiter))
 app.set('view engine', 'ejs')
 app.use(express.static('public'))
 
