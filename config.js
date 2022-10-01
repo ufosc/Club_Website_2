@@ -28,9 +28,6 @@ const config = {
       max: process.env.RATE_LIMIT_MAX || 100
     }
   },
-  staging: {
-    port: process.env.SERVER_PORT || 3001
-  },
   production: {
     port: process.env.SERVER_PORT || 3002,
     admin_route: process.env.ADMIN_ROUTE || 'admin',
