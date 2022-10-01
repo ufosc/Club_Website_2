@@ -12,6 +12,7 @@ const limiterTemplate = {
 const config = {
   development: {
     port: process.env.SERVER_PORT || 3000,
+    admin_route: process.env.ADMIN_ROUTE || 'admin',
     limiter: {
       ...limiterTemplate,
       windowMs: process.env.RATE_LIMIT_TIMEOUT * 60 * 1000 || 0,
@@ -20,6 +21,7 @@ const config = {
   },
   staging: {
     port: process.env.SERVER_PORT || 3001,
+    admin_route: process.env.ADMIN_ROUTE || 'admin',
     limiter: {
       ...limiterTemplate,
       windowMs: process.env.RATE_LIMIT_TIMEOUT * 60 * 1000 || 300000,
@@ -28,6 +30,7 @@ const config = {
   },
   production: {
     port: process.env.SERVER_PORT || 3002,
+    admin_route: process.env.ADMIN_ROUTE || 'admin',
     limiter: {
       ...limiterTemplate,
       windowMs: process.env.RATE_LIMIT_TIMEOUT * 60 * 1000 || 300000,
