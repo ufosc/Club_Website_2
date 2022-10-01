@@ -1,0 +1,25 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+:root {
+    --bg-600:#97918F;
+    --bg-200:#F1F1F1;  /*background color saturation 200*/
+    --bg-100:#FBFBFB;  /*background color saturation 100*/
+}
+
+/*........... utility classes.......... */
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.full-display {
+    height: 100vh;
+    width: 100vw;
+}
