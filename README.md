@@ -1,4 +1,7 @@
-# UF OSC Website
+# MY CHANGE
+
+THIS IS NEW TEXT
+
 [![standard-readme compliant](https://img.shields.io/badge/readme%20style-standard-brightgreen.svg?style=flat-square)](https://github.com/RichardLitt/standard-readme) ![GitHub issues](https://img.shields.io/github/issues-raw/ufosc/Club_Website_2) ![GitHub](https://img.shields.io/github/license/ufosc/Club_Website_2) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com) ![GitHub Workflow Status](https://img.shields.io/github/workflow/status/ufosc/Club_Website_2/Node.js%20CI)
 <br/>
 Website for the UF Open Source Club.
