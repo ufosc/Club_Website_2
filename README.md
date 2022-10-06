@@ -40,7 +40,7 @@ npm run fix
 Keep in mind that some syntax issues cannot be automatically resolved, in which case you'll need to run `npm run lint` again and resolve them manually.
 
 
-<b>Running tests:</b>
+<b>Running test:</b>
 ```
 npm run test
 ```
