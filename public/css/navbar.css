@@ -1,3 +1,13 @@
+@font-face {
+  font-family: 'Outrun';
+  src: url(../fonts/outrun.otf);
+}
+
+@font-face {
+  font-family: 'Overpass';
+  src: url(../fonts/overpass.ttf);
+}
+
 body {
   margin: 0;
 }
@@ -15,6 +25,7 @@ body {
   gap: 25px;
   background-color: black;
   color: white;
+  font-family: 'Overpass';
 }
 
 #navigation-bar > li > a {
@@ -23,6 +34,7 @@ body {
 }
 
 #navbar-title {
+  font-family: 'Outrun';
   margin-right: auto;
   margin-left: 25px;
 }
