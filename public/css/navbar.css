@@ -22,23 +22,46 @@ body {
   align-items: center;
   justify-content: flex-end;
   flex-direction: row;
-  gap: 25px;
+  gap: 30px;
   background-color: black;
-  color: white;
   font-family: 'Overpass';
+  font-weight: bold;
+  color: white;
 }
 
 #navigation-bar > li > a {
-  color: white;
   text-decoration: none;
 }
 
 #navbar-title {
-  font-family: 'Outrun';
   margin-right: auto;
-  margin-left: 25px;
+  margin-left: 30px;
+  font-family: 'Outrun';
+  font-size: 1.75rem;
+  font-weight: bold;
 }
 
 #navbar-member-item {
-  margin-right: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  margin-right: 30px;
+  background-color: #76f936;
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+#navbar-member-item > a,
+#navbar-member-item > a:visited,
+#navbar-member-item > a:link {
+  text-align: center;
+  padding: 0 20px 0 20px;
+  color: black;
+}
+
+.navbar-item > a,
+.navbar-item > a:visited,
+.navbar-item > a:link {
+  color: white;
 }
