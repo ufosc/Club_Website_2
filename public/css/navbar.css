@@ -1,13 +1,32 @@
+body {
+  margin: 0;
+}
+
 #navigation-bar {
-  position: absolute;
-  top: 0;
+  margin: 0;
+  padding: 0;
   width: 100vw;
-  height: 100px;
+  height: 70px;
+  list-style: none;
   display: flex;
-  align-items: flex-end;
-  justify-content: center;
+  align-items: center;
+  justify-content: flex-end;
+  flex-direction: row;
+  gap: 25px;
+  background-color: black;
+  color: white;
+}
+
+#navigation-bar > li > a {
+  color: white;
+  text-decoration: none;
 }
 
 #navbar-title {
-  flex: flex-start;
+  margin-right: auto;
+  margin-left: 25px;
+}
+
+#navbar-member-item {
+  margin-right: 25px;
 }
