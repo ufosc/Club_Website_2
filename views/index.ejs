@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title><%= page %></title>
-    </head>
-    <body>
-        <h1>Title: <%= page %></h1>
-        <p>This is a placeholder for my website.</p>
-    </body>
+  <head>
+    <title><%= page %></title>
+    <link rel="stylesheet" href="../public/css/navbar.css" />
+  </head>
+  <body>
+    <%- include('./partials/navbar.ejs') %>
+    <h1>Title: <%= page %></h1>
+    <p>This is a placeholder for my website.</p>
+  </body>
 </html>
