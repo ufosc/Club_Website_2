@@ -48,37 +48,37 @@ npm run test
 ## How to Use Labels
 Here is a guide on understanding the labels used.
 
-<b>Bug/Error</b>
+<b>Bug/Error:</b>
 A bug/error needs to be resolved.
 
-<b>Difficulty</b>
+<b>Difficulty:</b>
 Ranking by how difficult it is to work on: easy, medium, or hard.
 
-<b>Discussion</b>
+<b>Discussion:</b>
 Should be discussed before moving forward.
 
-<b>Documentation</b>
+<b>Documentation:</b>
 Has to do with the documentation.
 
-<b>Duplicate</b>
+<b>Duplicate:</b>
 It already exists.
 
-<b>Good First Issue</b>
+<b>Good First Issue:</b>
 Friendly for beginners to work on.
 
-<b>Help Wanted</b>
+<b>Help Wanted:</b>
 No one is working on it.
 
-<b>Priority</b>
+<b>Priority:</b>
 Ranking by how important it is to be worked on: low, medium, or high priority
 
-<b>Proposal</b>
+<b>Proposal:</b>
 Brings up a new idea to be considered
 
-<b>Question</b>
+<b>Question:</b>
 Asks for more information
 
-<b>Won't Fix</b>
+<b>Won't Fix:</b>
 Will no longer be worked on.
 
 ## Contributing
