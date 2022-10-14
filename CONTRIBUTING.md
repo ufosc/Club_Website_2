@@ -13,7 +13,8 @@ The OSC website is free and open source software, all contributions are welcome 
     - [Fixing Issues & Implementing Proposals](#fixing-issues-and-implementing-proposals)
 5. [Standard README](#standard-readme)
 6. [Standard JS](#standard-js)
-7. [Maintainers](#maintainers)
+7. [Labels](#labels)
+8. [Maintainers](#maintainers)
 
 ## Contribution workflow
 Always discuss big changes by speaking with your group, by contacting a maintainer or by opening a discussion issue (see [opening issues](#opening-issues)).
@@ -92,6 +93,20 @@ Maintainers are responsible for enforcement.
 This repository adheres to Javascript Standard syntax described [here](https://standardjs.com/). Contributors can run `npm run lint` to list syntax issues that need to be fixed for adherence, or `npm run fix` to (try to) automatically fix some of them.
 
 Maintainers are responsible for enforcement.
+## Labels
+Refer to this guideline on what labels to use and look for when deciding on what to contribute to.
+- `bug/error`: Something isn't working properly.
+- `difficulty`: How hard the issue is to resolve (easy, medium, hard).
+- `discussion`: Should be discussed before moving forward.
+- `documentation`: Related to the documentation.
+- `duplicate`: It already exists.
+- `good first issue`: Friendly for beginners to work on.
+- `help wanted`: Someone is needed to work on it.
+- `priority`: How important it needs to be worked on (low, medium, high).
+- `proposal`: Brings up a new idea.
+- `question`: Requesting more information.
+- `wontfix`: Won't be worked on anymore.
+
 ## Maintainers
 1. Review all PRs before merging.
 2. When upgarding the release version:
