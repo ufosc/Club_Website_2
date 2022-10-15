@@ -19,6 +19,9 @@
     --bg-600:#97918F;
     --bg-200:#F1F1F1;  /*background color saturation 200*/
     --bg-100:#FBFBFB;  /*background color saturation 100*/
+    --light-gray: #DBDBDB;
+    --light-black: #161B22;
+    --gray: #979797;
 }
 
 /*........... utility classes.......... */
@@ -33,6 +36,7 @@
     width: 100vw;
 }
 
+/*........... base components.......... */
 h1 {
     font-family: 'Outrun';
     font-size: 1.75rem;
