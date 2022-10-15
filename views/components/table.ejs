@@ -1,4 +1,4 @@
-<div style="overflow-x:auto">
+<div style="overflow-x:auto; padding: 10px;">
     <table>
         <thead>
             <th scope="col" class="tcheckbox"><input type="checkbox" /></th>
@@ -10,6 +10,15 @@
             <th scope="col">Edit</th>
         </thead>
 		    <tbody>
+            <% data.forEach((entry) => { %>
+                <%- include('./data-row.ejs', {
+                    title: entry.title,
+                    content: entry.content,
+                    date: entry.date,
+                    status: entry.status,
+                    author: entry.author
+                }) %>
+            <% }) %>
 		    </tbody>
 		    <tfoot>
 				    <tr>
