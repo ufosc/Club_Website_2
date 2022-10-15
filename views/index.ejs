@@ -2,11 +2,14 @@
 <html lang="en">
   <head>
     <title><%= page %></title>
-    <%- include('./partials/head.ejs') %>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/common.css" />
     <link rel="stylesheet" href="css/navbar.css" />
   </head>
   <body>
-    <%- include('./partials/navbar.ejs') %>
+    <%- include('./components/navbar.ejs') %>
     <h1>Title: <%= page %></h1>
     <p>This is a placeholder for my website.</p>
   </body>

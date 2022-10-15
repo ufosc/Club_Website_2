@@ -1,67 +1,61 @@
-@font-face {
-  font-family: 'Outrun';
-  src: url(../fonts/outrun.otf);
-}
-
-@font-face {
-  font-family: 'Overpass';
-  src: url(../fonts/overpass.ttf);
-}
-
-body {
-  margin: 0;
+#navigation-bar-parent {
+    background: black;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
 
 #navigation-bar {
-  margin: 0;
-  padding: 0;
-  width: 100vw;
-  height: 70px;
-  list-style: none;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  flex-direction: row;
-  gap: 30px;
-  background-color: black;
-  font-family: 'Overpass';
-  font-weight: bold;
-  color: white;
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    max-width: 1400px;
+    height: 70px;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-direction: row;
+    gap: 30px;
+    background-color: black;
+    font-family: 'Overpass';
+    font-weight: bold;
+    color: white;
 }
 
 #navigation-bar > li > a {
-  text-decoration: none;
+    text-decoration: none;
 }
 
 #navbar-title {
-  margin-right: auto;
-  margin-left: 30px;
-  font-family: 'Outrun';
-  font-size: 1.75rem;
-  font-weight: bold;
+    margin-right: auto;
+    margin-left: 30px;
+    font-family: 'Outrun';
+    font-size: 1.75rem;
+    font-weight: bold;
 }
 
 #navbar-member-item {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  margin-right: 30px;
-  background-color: #76f936;
-  font-weight: 600;
-  font-size: 0.85rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    margin-right: 30px;
+    background-color: #76f936;
+    font-weight: 600;
+    font-size: 0.85rem;
 }
 
 #navbar-member-item > a,
 #navbar-member-item > a:visited,
 #navbar-member-item > a:link {
-  text-align: center;
-  padding: 0 20px 0 20px;
-  color: black;
+    text-align: center;
+    padding: 0 20px 0 20px;
+    color: black;
 }
 
 .navbar-item > a,
 .navbar-item > a:visited,
 .navbar-item > a:link {
-  color: white;
+    color: white;
 }
