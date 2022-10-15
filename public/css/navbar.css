@@ -83,6 +83,14 @@
 .menu-btn img{
     height: inherit;
 }
+
+/*- fixes an error where the navbar doesnt reappear after width change-*/
+@media only screen and (min-width: 661px) {
+    #navbar-member-item br {
+        display: block;
+    }
+}
+
 /* ---- for devices under 660 px (tablet view) -------*/
 @media only screen and (max-width: 660px) {
   #navbar-title {
