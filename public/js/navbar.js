@@ -5,8 +5,8 @@ let count = 1
 
 menuBtn.onclick = () => {
   (count % 2 !== 0)
-    ? menu.style = 'opacity:1;'
-    : menu.style = 'opacity:0;'
+    ? menu.style = 'display:flex;'
+    : menu.style = 'display:none;'
 
   count++
 }
