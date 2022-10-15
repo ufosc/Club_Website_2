@@ -41,6 +41,13 @@ h1 {
 
 h2 {
     font-family: 'Overpass';
-    font-weight: bold;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+h3 {
+    font-family: 'Overpass';
+    font-size: 0.85rem;
+    font-weight: 400;
 }
 
