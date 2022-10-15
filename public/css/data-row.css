@@ -8,15 +8,6 @@
     background-color: var(--light-gray);
     border: 1px solid var(--gray);
 
-    /* content align */
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    vertical-align: middle;
-    justify-content: space-between;
-    gap: 10px;
-    padding: 5px;
-
     /* content style */
     font-family: 'Overpass', sans-serif;
     font-weight: 500;
@@ -25,7 +16,7 @@
 
 .data-row input {
     /* self align */
-    margin-left: 5px;
+    margin-left: 10px;
 }
 
 .data-row button {
