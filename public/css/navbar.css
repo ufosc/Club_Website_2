@@ -19,7 +19,8 @@
     gap: 30px;
     background-color: black;
     font-family: 'Overpass';
-    font-weight: bold;
+    font-weight: 600;
+    font-size: 0.85rem;
     color: white;
 }
 
@@ -42,7 +43,7 @@
     height: 100%;
     margin-right: 30px;
     background-color: #76f936;
-    font-weight: 600;
+    font-weight: 400;
     font-size: 0.85rem;
 }
 
