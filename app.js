@@ -14,6 +14,10 @@ app.get('/', (req, res) => {
   res.render('index', { page: 'index' })
 })
 
+app.get('/preview', (req, res) => {
+  res.render('temporary')
+})
+
 app.get(`/${config.admin_route}`, (req, res) => {
   res.render('login')
 })

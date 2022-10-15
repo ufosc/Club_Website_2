@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Temporary Test</title>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="css/common.css" />
+        <link rel="stylesheet" href="css/navbar.css" />
+        <link rel="stylesheet" href="css/table.css" />
+        <link rel="stylesheet" href="css/data-row.css" />
+        <style>
+         #temp-container {
+             display: flex;
+             flex-direction: row;
+             justify-content: center;
+         }
+        </style>
+    </head>
+    <body>
+        <%- include('./components/navbar.ejs') %>
+        <div id="temp-container">
+            <div style="width: 100%; max-width: 1400px; padding: 50px;">
+                <%- include('./components/table.ejs', { data: [
+                    {
+                        title: "My first article",
+                        content: "Hello world, this is my first article...",
+                        date: "15/10/2020",
+                        status: "draft",
+                        author: "John Doe"
+                    },
+                    {
+                        title: "My second article",
+                        content: "Hello world, this is my second article...",
+                        date: "16/10/2020",
+                        status: "published",
+                        author: "Jane Doe"
+                    },
+                    {
+                        title: "My third article",
+                        content: "Hello world, this is my third article...",
+                        date: "17/10/2020",
+                        status: "published",
+                        author: "John Doe"
+                    },
+                    {
+                        title: "Lorem Ipsum dolor",
+                        content: "Lorem ipsum dolor...",
+                        date: "15/10/2020",
+                        status: "draft",
+                        author: "jane Doe"
+                    },
+                    {
+                        title: "Why lorem ipsum?",
+                        content: "Lorem Ipsum is simply dummy text of the...",
+                        date: "15/10/2020",
+                        status: "published",
+                        author: "John Doe"
+                    }
+                ]}) %>
+            </div>
+        </div>
+    </body>
+</html>
