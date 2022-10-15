@@ -1,9 +1,18 @@
+@font-face {
+    font-family: 'Outrun';
+    src: url(../fonts/outrun.otf);
+}
+
+@font-face {
+    font-family: 'Overpass';
+    src: url(../fonts/overpass.ttf);
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     text-decoration: none;
-    font-family: Arial, Helvetica, sans-serif;
 }
 
 :root {
@@ -23,3 +32,15 @@
     height: 100vh;
     width: 100vw;
 }
+
+h1 {
+    font-family: 'Outrun';
+    font-size: 1.75rem;
+    font-weight: bold;
+}
+
+h2 {
+    font-family: 'Overpass';
+    font-weight: bold;
+}
+
