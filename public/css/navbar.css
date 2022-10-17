@@ -19,7 +19,7 @@
   flex-direction: row;
   gap: 30px;
   background-color: black;
-  font-family: "Overpass";
+  font-family: 'Overpass';
   font-weight: 600;
   font-size: 0.85rem;
   color: white;
@@ -32,7 +32,7 @@
 #navbar-title {
   margin-right: auto;
   margin-left: 30px;
-  font-family: "Outrun";
+  font-family: 'Outrun';
   font-size: 1.75rem;
   font-weight: bold;
 }
@@ -47,6 +47,14 @@
   font-weight: 400;
   font-size: 0.85rem;
 }
+
+.menu > .navbar-item {
+  position: relative;
+}
+
+/* .menu > .navbar-item:hover {
+  border-bottom: #76f936 solid;
+} */
 
 #navbar-member-item > a,
 #navbar-member-item > a:visited,
@@ -68,9 +76,9 @@
   gap: 30px;
   z-index: 1000;
 }
-.menu hr{
-    display: none;
-    color: white;
+.menu hr {
+  display: none;
+  color: white;
 }
 .menu-btn {
   margin-right: 30px;
@@ -80,21 +88,34 @@
   border: none;
   outline: none;
 }
-.menu-btn img{
-    height: inherit;
+.menu-btn img {
+  height: inherit;
 }
 
 /*- fixes an error where the navbar doesnt reappear after width change-*/
 @media only screen and (min-width: 661px) {
-    #navbar-member-item br {
-        display: block;
-    }
+  #navbar-member-item br {
+    display: block;
+  }
 }
 
 /* ---- for devices under 660 px (tablet view) -------*/
 @media only screen and (max-width: 660px) {
   #navbar-title {
     font-size: 1rem;
+  }
+}
+
+/* only enables highlighting on larger screens */
+@media only screen and (min-width: 601px) {
+  .menu > .navbar-item:hover::after {
+    position: absolute;
+    border-bottom: 2px solid #76f936;
+    width: 120%;
+    height: 1px;
+    top: 41px;
+    left: -10%;
+    content: '';
   }
 }
 
@@ -115,7 +136,7 @@
     display: none;
     transition: 0.3s ease-in-out;
   }
-  .menu hr{
+  .menu hr {
     display: block;
     margin-top: -10px;
     width: 100%;
