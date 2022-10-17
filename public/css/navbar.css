@@ -19,7 +19,7 @@
   flex-direction: row;
   gap: 30px;
   background-color: black;
-  font-family: 'Overpass';
+  font-family: "Overpass";
   font-weight: 600;
   font-size: 0.85rem;
   color: white;
@@ -32,7 +32,7 @@
 #navbar-title {
   margin-right: auto;
   margin-left: 30px;
-  font-family: 'Outrun';
+  font-family: "Outrun";
   font-size: 1.75rem;
   font-weight: bold;
 }
@@ -51,10 +51,6 @@
 .menu > .navbar-item {
   position: relative;
 }
-
-/* .menu > .navbar-item:hover {
-  border-bottom: #76f936 solid;
-} */
 
 #navbar-member-item > a,
 #navbar-member-item > a:visited,
@@ -115,7 +111,7 @@
     height: 1px;
     top: 41px;
     left: -10%;
-    content: '';
+    content: "";
   }
 }
 
