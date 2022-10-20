@@ -1,23 +1,29 @@
-/* global blogTableSelections */
-
 // adds individual row to selections array
-function checkboxClickHandler (id) { // eslint-disable-line
-  const idIndex = blogTableSelections.indexOf(id)
+function checkboxClickHandler (id, tableId, selectionsArray) { // eslint-disable-line
+  const headerCheckboxInputElement = document.getElementById(tableId).getElementsByTagName('thead')[0].getElementsByTagName('input')[0]
+  const rowsArray = document.getElementById(tableId).getElementsByTagName('tbody')[0].getElementsByClassName('data-row')
+  const idIndex = selectionsArray.indexOf(id)
   if (idIndex !== -1) {
-    blogTableSelections.splice(idIndex, 1)
+    // if all rows are selected set header checkbox to unchecked
+    headerCheckboxInputElement.checked = false
+    // remove id from selections array
+    selectionsArray.splice(idIndex, 1)
   } else {
-    blogTableSelections.push(id)
+    // add id to selections array
+    selectionsArray.push(id)
+    // if all rows are selected set header checkbox to checked
+    if (rowsArray.length === selectionsArray.length) { headerCheckboxInputElement.checked = true }
   }
 }
 
 // adds all table rows to selections array / removes all
-function selectAllCheckboxClickHandler (tableBodyId) { // eslint-disable-line
+function selectAllCheckboxClickHandler (tableBodyId, selectionsArray) { // eslint-disable-line
   const tbodyElement = document.getElementById(tableBodyId)
   const rowsArray = tbodyElement.querySelectorAll('.data-row')
 
   // if all are selected: remove all
-  if (blogTableSelections.length === rowsArray.length) {
-    blogTableSelections.splice(0, blogTableSelections.length)
+  if (selectionsArray.length === rowsArray.length) {
+    selectionsArray.splice(0, selectionsArray.length)
     // set checkboxes to unchecked
     for (let i = 0; i < rowsArray.length; i++) {
       rowsArray[i].getElementsByTagName('input')[0].checked = false
@@ -28,12 +34,10 @@ function selectAllCheckboxClickHandler (tableBodyId) { // eslint-disable-line
   // add all rows that aren't selected
   for (let i = 0; i < rowsArray.length; i++) {
     const rowId = rowsArray[i].id
-
     // don't add row if it's already selected
-    if (blogTableSelections.indexOf(rowId) !== -1) continue
+    if (selectionsArray.indexOf(rowId) !== -1) continue
 
-    blogTableSelections.push(rowId)
-
+    selectionsArray.push(rowId)
     // set checkbox to checked
     rowsArray[i].getElementsByTagName('input')[0].checked = true
   }
