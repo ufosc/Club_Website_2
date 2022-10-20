@@ -16,6 +16,8 @@
              justify-content: center;
          }
         </style>
+        <script>var blogTableSelections = [] </script>
+        <script defer src="js/dashboard.js"></script>
     </head>
     <body>
         <%- include('./components/navbar.ejs') %>
@@ -23,6 +25,7 @@
             <div style="width: 100%; max-width: 1400px; padding: 50px;">
                 <%- include('./components/table.ejs', { data: [
                     {
+                        id: "1",
                         title: "My first article",
                         content: "Hello world, this is my first article...",
                         date: "15/10/2020",
@@ -30,6 +33,7 @@
                         author: "John Doe"
                     },
                     {
+                        id: "2",
                         title: "My second article",
                         content: "Hello world, this is my second article...",
                         date: "16/10/2020",
@@ -37,6 +41,7 @@
                         author: "Jane Doe"
                     },
                     {
+                        id: "3",
                         title: "My third article",
                         content: "Hello world, this is my third article...",
                         date: "17/10/2020",
@@ -44,6 +49,7 @@
                         author: "John Doe"
                     },
                     {
+                        id: "4",
                         title: "Lorem Ipsum dolor",
                         content: "Lorem ipsum dolor...",
                         date: "15/10/2020",
@@ -51,6 +57,7 @@
                         author: "jane Doe"
                     },
                     {
+                        id: "5",
                         title: "Why lorem ipsum?",
                         content: "Lorem Ipsum is simply dummy text of the...",
                         date: "15/10/2020",
