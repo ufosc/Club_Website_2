@@ -1,3 +1,14 @@
+/* global blogTableSelections */
+
+// uncheck all checkboxes on load and remove all data from selectionsArray(s)
+document.addEventListener('DOMContentLoaded', () => {
+  const checkboxes = document.querySelectorAll('input[type="checkbox"]')
+  for (let i = 0; i < checkboxes.length; i++) {
+    checkboxes[i].checked = false
+  }
+  blogTableSelections.splice(0, blogTableSelections.length)
+})
+
 // adds individual row to selections array
 function checkboxClickHandler (id, tableId, selectionsArray) { // eslint-disable-line
   const headerCheckboxInputElement = document.getElementById(tableId).getElementsByTagName('thead')[0].getElementsByTagName('input')[0]
