@@ -1,0 +1,33 @@
+.data-row {
+    /* self align */
+    max-width: 1200px;
+    min-width: 600px;
+    height: 35px;
+
+    /* self style */
+    background-color: var(--light-gray);
+    border: 1px solid var(--gray);
+
+    /* content style */
+    font-family: 'Overpass', sans-serif;
+    font-weight: 500;
+    font-size: 13px;
+}
+
+.data-row input {
+    /* self align */
+    margin-left: 10px;
+}
+
+.data-row button {
+    /* self style */
+    background-color: var(--light-black);
+    color: var(--light-gray);
+    border: none;
+    border-radius: 3px;
+    font-weight: 600;
+
+    /* self align */
+    height: 25px;
+    width: 75px;
+}

@@ -17,7 +17,8 @@ const config = {
       ...limiterTemplate,
       windowMs: process.env.RATE_LIMIT_TIMEOUT * 60 * 1000 || 0,
       max: process.env.RATE_LIMIT_MAX || 1500
-    }
+    },
+    cache_interval: process.env.CACHE_INTERVAL * 60 * 1000 || 10 * 1000
   },
   staging: {
     port: process.env.SERVER_PORT || 3001,
@@ -26,7 +27,8 @@ const config = {
       ...limiterTemplate,
       windowMs: process.env.RATE_LIMIT_TIMEOUT * 60 * 1000 || 300000,
       max: process.env.RATE_LIMIT_MAX || 100
-    }
+    },
+    cache_interval: process.env.CACHE_INTERVAL * 60 * 1000 || 15 * 60 * 1000
   },
   production: {
     port: process.env.SERVER_PORT || 3002,
@@ -35,7 +37,8 @@ const config = {
       ...limiterTemplate,
       windowMs: process.env.RATE_LIMIT_TIMEOUT * 60 * 1000 || 300000,
       max: process.env.RATE_LIMIT_MAX || 100
-    }
+    },
+    cache_interval: process.env.CACHE_INTERVAL * 60 * 1000 || 15 * 60 * 1000
   }
 }
 
