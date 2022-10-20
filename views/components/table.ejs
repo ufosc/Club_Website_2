@@ -1,7 +1,7 @@
 <div style="overflow-x:auto; padding: 10px;">
-    <table>
+    <table id="blog-table">
         <thead>
-            <th scope="col" class="tcheckbox"><input type="checkbox" onclick="selectAllCheckboxClickHandler('blog-table-body')"/></th>
+            <th scope="col" class="tcheckbox"><input type="checkbox" onclick="selectAllCheckboxClickHandler('blog-table-body', blogTableSelections)"/></th>
             <th scope="col" class="title-header">Title</th>
             <th scope="col">Content</th>
             <th scope="col">Date Published</th>
@@ -9,28 +9,29 @@
             <th scope="col">Author</th>
             <th scope="col">Edit</th>
         </thead>
-		    <tbody id="blog-table-body">
-            <% data.forEach((entry) => { %>
-                <%- include('./data-row.ejs', {
-                    id: entry.id,
-                    title: entry.title,
-                    content: entry.content,
-                    date: entry.date,
-                    status: entry.status,
-                    author: entry.author
-                }) %>
-            <% }) %>
-		    </tbody>
-		    <tfoot>
-				    <tr>
-						    <td></td>
-						    <td></td>
-						    <td></td>
-						    <td></td>
-						    <td></td>
-						    <td></td>
-						    <td></td>
-				    </tr>
-		    </tfoot>
+        <tbody id="blog-table-body">
+        <% data.forEach((entry) => { %>
+            <%- include('./data-row.ejs', {
+                tableId: entry.tableId,
+                id: entry.id,
+                title: entry.title,
+                content: entry.content,
+                date: entry.date,
+                status: entry.status,
+                author: entry.author
+            }) %>
+        <% }) %>
+        </tbody>
+        <tfoot>
+                <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                </tr>
+        </tfoot>
     </table>
 </div>
