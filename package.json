@@ -27,6 +27,8 @@
   },
   "homepage": "https://github.com/ufosc/Club_Website_2#readme",
   "devDependencies": {
+    "chai": "^4.3.6",
+    "mocha": "^10.1.0",
     "nodemon": "^2.0.20",
     "standard": "^17.0.0"
   },
