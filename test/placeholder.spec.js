@@ -1,7 +1,7 @@
 // Sample Testing File
 /*
 const expect = chai.expect;
- 
+
 describe('template', function() {
     describe('clearCompletedButton', function() {
         it('should return "Clear completed" when more than 0 items are completed', function() {
