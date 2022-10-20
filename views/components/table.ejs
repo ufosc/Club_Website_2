@@ -12,6 +12,7 @@
 		    <tbody>
             <% data.forEach((entry) => { %>
                 <%- include('./data-row.ejs', {
+                    id: entry.id,
                     title: entry.title,
                     content: entry.content,
                     date: entry.date,
