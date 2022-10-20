@@ -1,5 +1,5 @@
-<tr class="data-row" id="<%= id %>" onclick="checkboxClickHandler('<%= id %>', '<%= tableId %>', blogTableSelections)">
-    <td><input type="checkbox" name="row-selected" /></td>
+<tr class="data-row" id="<%= id %>">
+    <td><input type="checkbox" name="row-selected" onclick="checkboxClickHandler('<%= id %>', '<%= tableId %>', blogTableSelections)"/></td>
     <td><%= title %></td>
     <td><%= content %></td>
     <td><%= date %></td>
