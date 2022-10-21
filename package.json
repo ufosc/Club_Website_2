@@ -5,9 +5,9 @@
   "main": "app.js",
   "scripts": {
     "start": "nodemon app.js",
-    "test": "standard",
-    "lint": "standard",
-    "fix": "standard --fix"
+    "test": "standard && ejslint views/*.ejs && ejslint views/components/*.ejs",
+    "lint": "standard && ejslint views/*.ejs && ejslint views/components/*.ejs",
+    "fix": "standard --fix && ejslint views/*.ejs && ejslint views/components/*.ejs"
   },
   "repository": {
     "type": "git",
