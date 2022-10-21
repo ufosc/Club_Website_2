@@ -55,3 +55,224 @@ h3 {
     font-weight: 400;
 }
 
+h4 {
+    font-family: 'Overpass';
+    font-size:  13px;
+    font-weight:300;
+    color: black;
+}
+
+
+/*........... navbar .......... */
+#navigation-bar-parent {
+    background: black;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    position: relative;
+}
+
+#navigation-bar {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    max-width: 1400px;
+    height: 70px;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-direction: row;
+    gap: 30px;
+    background-color: black;
+    font-family: "Overpass";
+    font-weight: 600;
+    font-size: 0.85rem;
+    color: white;
+}
+
+#navigation-bar > li > a {
+    text-decoration: none;
+}
+
+#navbar-title {
+    margin-right: auto;
+    margin-left: 30px;
+    font-family: "Outrun";
+    font-size: 1.75rem;
+    font-weight: bold;
+}
+
+#navbar-member-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    margin-right: 30px;
+    background-color: #76f936;
+    font-weight: 400;
+    font-size: 0.85rem;
+}
+
+.menu > .navbar-item {
+    position: relative;
+}
+
+#navbar-member-item > a,
+#navbar-member-item > a:visited,
+#navbar-member-item > a:link {
+    text-align: center;
+    padding: 0 20px 0 20px;
+    color: black;
+}
+
+.navbar-item > a,
+.navbar-item > a:visited,
+.navbar-item > a:link {
+    color: white;
+}
+.menu {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    gap: 30px;
+    z-index: 1000;
+}
+.menu hr {
+    display: none;
+    color: white;
+}
+.menu-btn {
+    margin-right: 30px;
+    display: none;
+    height: 1rem;
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+.menu-btn img {
+    height: inherit;
+}
+
+/*- fixes an error where the navbar doesnt reappear after width change-*/
+@media only screen and (min-width: 661px) {
+    #navbar-member-item br {
+        display: block;
+    }
+}
+
+/* ---- for devices under 660 px (tablet view) -------*/
+@media only screen and (max-width: 660px) {
+    #navbar-title {
+        font-size: 1rem;
+    }
+}
+
+/* only enables highlighting on larger screens */
+@media only screen and (min-width: 601px) {
+    .menu > .navbar-item:hover::after {
+        position: absolute;
+        border-bottom: 2px solid #76f936;
+        width: 120%;
+        height: 1px;
+        top: 41px;
+        left: -10%;
+        content: "";
+    }
+}
+
+/* ----- for devices under (mobile view)-------*/
+@media only screen and (max-width: 600px) {
+    #navigation-bar {
+        justify-content: flex-start;
+        gap: 0;
+    }
+    .menu {
+        position: absolute;
+        flex-direction: column;
+        top: 70px;
+        background-color: black;
+        height: fit-content;
+        width: 100%;
+        padding: 10px;
+        display: none;
+        transition: 0.3s ease-in-out;
+    }
+    .menu hr {
+        display: block;
+        margin-top: -10px;
+        width: 100%;
+    }
+    #navbar-member-item br {
+        display: none;
+    }
+    #navbar-member-item {
+        background-color: transparent;
+        margin-right: 0;
+        width: 100%;
+    }
+    #navbar-member-item > a,
+    #navbar-member-item > a:visited,
+    #navbar-member-item > a:link {
+        color: white;
+        font-weight: 600;
+    }
+    .menu-btn {
+        display: block;
+    }
+}
+
+/* ----- footer -------*/
+.footer-upper {
+    width: 100vw;
+    height: 65px;
+    vertical-align: baseline;
+    text-align: left;
+    background-color: black;
+    color: white;
+    font-size: 30px;
+    font-family: 'Outrun';
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1400px;
+}
+
+.social-buttons {
+    margin-right: 40px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer-lower {
+    background-color: white;
+    padding-right: 30px;
+    padding-left: 20px;
+    padding-top: 10px;
+    width: 100%;
+    max-width: 1400px;
+}
+
+.footer-lower a {
+    font-family: 'Overpass';
+    font-size:  13px;
+    font-weight:300;
+    color: black;
+}
+
+.footer-content-container {
+    background-color: black;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+
+footer {
+    position: absolute;
+    bottom: 0px;
+}
