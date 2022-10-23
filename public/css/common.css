@@ -22,6 +22,8 @@
     --light-gray: #DBDBDB;
     --light-black: #161B22;
     --gray: #979797;
+    --blue-accent: #374BFE;
+    --turquoise-accent: #2AB6BC;
 }
 
 /*........... utility classes.......... */
@@ -168,17 +170,42 @@ h4 {
     }
 }
 
-/* only enables highlighting on larger screens */
+/* only enables highlighting and animation on larger screens */
 @media only screen and (min-width: 601px) {
+    /* highlighting */
     .menu > .navbar-item:hover::after {
         position: absolute;
-        border-bottom: 2px solid #76f936;
+        border-bottom: 2px solid var(--turquoise-accent);
         width: 120%;
         height: 1px;
         top: 41px;
         left: -10%;
         content: "";
     }
+
+    /* member button animation */
+    #navbar-member-item {
+        background-size: 200% 200%;
+        background-image: linear-gradient(to top, var(--blue-accent) 50%, var(--turquoise-accent) 0);
+        background-position: top;
+        transition: background-position 0.5s ease;
+      }
+    
+      #navbar-member-item:hover {
+        background-position: 0 99%;
+      }
+    
+      #navbar-member-item > a,
+      #navbar-member-item > a:visited,
+      #navbar-member-item > a:link {
+        transition: color 0.5s ease;
+      }
+    
+      #navbar-member-item:hover > a,
+      #navbar-member-item:hover > a:visited,
+      #navbar-member-item:hover > a:link {
+        color: white;
+      }
 }
 
 /* ----- for devices under (mobile view)-------*/
