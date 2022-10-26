@@ -10,3 +10,14 @@ menuBtn.onclick = () => {
 
   count++
 }
+
+let previousWidth = document.body.clientWidth
+
+document.defaultView.addEventListener('resize', e => {
+  if (document.body.clientWidth >= 601) {
+    menu.style = 'display:flex;'
+  } else if (previousWidth >= 601) {
+    menu.style = 'display:none;'
+  }
+  previousWidth = document.body.clientWidth
+})
