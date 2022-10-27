@@ -11,15 +11,15 @@
         </thead>
         <tbody id="blog-table-body">
         <% data.forEach((entry) => { %>
-            <%- include('./data-row.ejs', {
-                tableId: entry.tableId,
-                id: entry.id,
-                title: entry.title,
-                content: entry.content,
-                date: entry.date,
-                status: entry.status,
-                author: entry.author
-            }) %>
+            <tr class="data-row" id="<%= entry.tableId %>">
+                <td><input type="checkbox" name="row-selected" onclick="checkboxClickHandler('<%= entry.id %>', '<%= entry.tableId %>', blogTableSelections)"/></td>
+                <td><%= entry.title %></td>
+                <td><%= entry.content %></td>
+                <td><%= entry.date %></td>
+                <td><%= entry.status %></td>
+                <td><%= entry.author %></td>
+                <td><button type="button">EDIT</button></td>
+            </tr>       
         <% }) %>
         </tbody>
         <tfoot>
