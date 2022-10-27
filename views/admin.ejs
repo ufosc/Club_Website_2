@@ -1,0 +1,96 @@
+  <!DOCTYPE html>
+  <html lang="en">
+    <head>
+      <title>Admin</title>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="stylesheet" href="css/common.css" />
+      <link rel="stylesheet" href="css/navbar.css" />
+      <link rel="stylesheet" href="css/table.css" />
+      <link rel="stylesheet" href="css/data-row.css" />
+      <style>
+       #temp-container {
+           display: flex;
+           flex-direction: column;
+           justify-content: center;
+       }
+      </style>
+      <script>var blogTableSelections = [] </script>
+      <script defer src="js/dashboard.js"></script>
+      <script src="./js/navbar.js" defer async></script>
+    </head>
+    <body>
+      <%- include('./components/navbar.ejs') %>
+      <section id="temp-container">
+        <h1 style = "width: 100%; max-width: 1400px; font-family: overpass;">Blog</h1>
+        <hr style="width: 100%; max-width: 1400px;"/>
+        <div>
+          <div style="width: 100%; max-width: 1400px; padding: 30px;">
+              <%- include('./components/table.ejs', { data: [
+                  {
+                      tableId: "blog-table",
+                      id: "1",
+                      title: "My first article",
+                      content: "Hello world, this is my first article...",
+                      date: "15/10/2020",
+                      status: "draft",
+                      author: "John Doe"
+                  },
+                  {
+                      tableId: "blog-table",
+                      id: "2",
+                      title: "My second article",
+                      content: "Hello world, this is my second article...",
+                      date: "16/10/2020",
+                      status: "published",
+                      author: "Jane Doe"
+                  },
+                  {
+                      tableId: "blog-table",
+                      id: "3",
+                      title: "My third article",
+                      content: "Hello world, this is my third article...",
+                      date: "17/10/2020",
+                      status: "published",
+                      author: "John Doe"
+                  },
+                  {
+                      tableId: "blog-table",
+                      id: "4",
+                      title: "Lorem Ipsum dolor",
+                      content: "Lorem ipsum dolor...",
+                      date: "15/10/2020",
+                      status: "draft",
+                      author: "jane Doe"
+                  },
+                  {
+                      tableId: "blog-table",
+                      id: "5",
+                      title: "Why lorem ipsum?",
+                      content: "Lorem Ipsum is simply dummy text of the...",
+                      date: "15/10/2020",
+                      status: "published",
+                      author: "John Doe"
+                  }
+              ]}) %>
+          </div>
+      </div>
+      <div>
+          <div style="width: 100%; max-width: 1400px; padding: 30px;">
+              <%- include('./components/user-table.ejs', { data: [
+                  {
+                      tableId: "user-table",
+                      id: "1",
+                      username: "Username",
+                      fullname: "Full name",
+                      role: "Tech Lead",
+                      isAdmin: true
+                  },
+
+              ]}) %>
+          </div>
+      </div>
+      </section>
+    </body>
+  </html>
