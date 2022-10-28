@@ -1,0 +1,39 @@
+.about {
+  /* self align */
+  height: 200px;
+
+  /* self style */
+  background: black;
+
+  /* content align */
+  padding-top: 50px 0;
+}
+
+.about__get-started {
+  /* self align */
+  margin: 0 50px;
+
+  /* self style */
+  background: #29B5BB;
+
+  /* content align */
+  display: flex;
+  flex-direction: row;
+  padding: 20px 30px;
+}
+
+.about__get-started-left {
+  /* self align */
+  width: 50%;
+
+  /* self style */
+  /* background: lime; */
+}
+
+.about__get-started-right {
+  /* self align */
+  width: 50%;
+
+  /* self style */
+  /* background: red; */
+}
