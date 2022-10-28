@@ -1,0 +1,16 @@
+#dashboard-wrapper > h1 {
+  width: 100%;
+  max-width: 1400px;
+  font-family: overpass;
+}
+
+#dashboard-wrapper > hr {
+  width: 100%;
+  max-width: 1400px;
+}
+
+.table-wrapper {
+  width: 100%;
+  max-width: 1400px;
+  padding: 30px;
+}
