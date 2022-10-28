@@ -60,7 +60,7 @@ app.get(`/${config.admin_route}`, (req, res) => {
   })(req, res)
 })
 
-app.get(`/test`, (req, res) => {
+app.get('/test', (req, res) => {
   res.render('admin')
 })
 
