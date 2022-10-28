@@ -19,9 +19,11 @@
   border-radius: 30px;
 
   /* content align */
+  position: relative;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+
   padding: 20px 50px;
 }
 
@@ -62,4 +64,19 @@
   /* self style */
   text-align: right;
   font-size: 19px;
+}
+
+.about__get-started::after {
+  content: '';
+  /* self align */
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%);
+  width: calc(100% - 50px);
+  height: 30px;
+  box-sizing: border-box;
+  /* self style */
+  background-image: linear-gradient(#29B5BB -30%, transparent);
+  clip-path: polygon(0 0, 100% 0, 95% 30px, 5% 30px);
 }
