@@ -9,6 +9,7 @@
       <link rel="stylesheet" href="css/navbar.css" />
       <link rel="stylesheet" href="css/table.css" />
       <link rel="stylesheet" href="css/data-row.css" />
+      <link rel="stylesheet" href="css/admin.css" />
       <style>
        #temp-container {
            display: flex;
@@ -23,11 +24,11 @@
     </head>
     <body>
       <%- include('./components/navbar.ejs') %>
-      <section id="temp-container">
-        <h1 style = "width: 100%; max-width: 1400px; font-family: overpass;">Blog</h1>
-        <hr style="width: 100%; max-width: 1400px;"/>
+      <section id="dashboard-wrapper">
+        <h1>Blog</h1>
+        <hr/>
         <div>
-          <div style="width: 100%; max-width: 1400px; padding: 30px;">
+          <div class="table-wrapper">
               <%- include('./components/blog-table.ejs', { data: [
                   {
                       tableId: "blog-table",
@@ -77,10 +78,10 @@
               ]}) %>
           </div>
       </div>
-      <h1 style = "width: 100%; max-width: 1400px; font-family: overpass;">Users</h1>
-      <hr style="width: 100%; max-width: 1400px;"/>
+      <h1>Users</h1>
+      <hr/>
       <div>
-          <div style="width: 100%; max-width: 1400px; padding: 30px;">
+          <div class="table-wrapper">
               <%- include('./components/users-table.ejs', { data: [
                   {
                       tableId: "users-table",
