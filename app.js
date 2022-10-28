@@ -57,7 +57,7 @@ app.get(`/${config.admin_route}`, (req, res) => {
   })(req, res)
 })
 
-app.get('/:page', passport.authenticate('loggedIn', { session: false }), (req, res) => {
+app.get('/:page', (req, res) => {
   res.render('index', { page: req.params.page })
 })
 
