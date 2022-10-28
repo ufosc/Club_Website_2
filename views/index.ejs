@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/common.css" />
+    <link rel="stylesheet" href="css/index.css" />
     <script src="./js/navbar.js" defer async></script>
   </head>
   <body>
@@ -13,5 +14,19 @@
     <h1>Title: <%= page %></h1>
     <p>This is a placeholder for my website.</p>
     <%- include('./components/footer.ejs') %>
+    <section class="about">
+      <div class="about__get-started">
+        <div class="about__get-started-left">
+          <h2>Open Source Club</h2>
+          <button>Get Started</button>
+        </div>
+        <div class="about__get-started-right">
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolores
+          tempore recusandae qui exercitationem blanditiis doloremque, iusto ab
+          sint sapiente ea! Voluptates amet odio quibusdam magnam veritatis
+          molestias reprehenderit facere accusamus?
+        </div>
+      </div>
+    </section>
   </body>
 </html>
