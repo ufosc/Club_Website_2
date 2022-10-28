@@ -1,5 +1,5 @@
 /* global blogTableSelections */
-/* global usersTableSelection */
+/* global usersTableSelections */
 
 // uncheck all checkboxes on load and remove all data from selectionsArray(s)
 document.addEventListener('DOMContentLoaded', () => {
@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     checkboxes[i].checked = false
   }
   blogTableSelections.splice(0, blogTableSelections.length)
+  usersTableSelections.splice(0, usersTableSelections.length)
 })
 
 // adds individual row to selections array
@@ -35,8 +36,6 @@ function checkboxClickHandler (id, tableId, selectionsArray) { // eslint-disable
 // adds all table rows to selections array / removes all
 function selectAllCheckboxClickHandler (tableId, selectionsArray) { // eslint-disable-line
   const rowsArray = document.querySelector(`#${tableId} tbody`).getElementsByClassName('data-row')
-  for (const row of rowsArray)
-  {console.log(row.id)}
 
   // if all are selected: remove and uncheck all
   if (selectionsArray.length === rowsArray.length) {
