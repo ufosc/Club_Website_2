@@ -1,16 +1,16 @@
 <div style="overflow-x:auto; padding: 10px;">
-  <table id="user-table">
+  <table id="users-table">
       <thead>
-          <th scope="col" class="tcheckbox"><input type="checkbox" onclick="selectAllCheckboxClickHandler('user-table-body', blogTableSelections)"/></th>
+          <th scope="col" class="tcheckbox"><input type="checkbox" onclick="selectAllCheckboxClickHandler('users-table', usersTableSelections)"/></th>
           <th scope="col" class="title-header">Username</th>
           <th scope="col">Full Name</th>
           <th scope="col">Role</th>
           <th scope="col">isAdmin</th>
       </thead>
-      <tbody id="blog-table-body">
+      <tbody>
       <% data.forEach((entry) => { %>
-          <tr class="data-row" id="<%= entry.tableId %>">
-              <td><input type="checkbox" name="row-selected" onclick="checkboxClickHandler('<%= entry.id %>', '<%= entry.tableId %>', blogTableSelections)"/></td>
+          <tr class="data-row" id="<%= entry.id %>">
+              <td><input type="checkbox" name="row-selected" onclick="checkboxClickHandler('<%= entry.id %>', '<%= entry.tableId %>', usersTableSelections)"/></td>
               <td><%= entry.username %></td>
               <td><%= entry.fullname %></td>
               <td><%= entry.role %></td>

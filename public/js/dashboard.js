@@ -1,4 +1,5 @@
 /* global blogTableSelections */
+/* global usersTableSelection */
 
 // uncheck all checkboxes on load and remove all data from selectionsArray(s)
 document.addEventListener('DOMContentLoaded', () => {
@@ -11,13 +12,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // adds individual row to selections array
 function checkboxClickHandler (id, tableId, selectionsArray) { // eslint-disable-line
-  const headerCheckboxInputElement = document.getElementById(tableId)
-    .getElementsByTagName('thead')[0]
-    .getElementsByTagName('input')[0]
+  const headerCheckboxInputElement = document.querySelector(`#${tableId} thead tr input`)
 
-  const rowsArray = document.getElementById(tableId)
-    .getElementsByTagName('tbody')[0]
-    .getElementsByClassName('data-row')
+  const rowsArray = document.querySelectorAll(`#${tableId} tbody .data-row`)
 
   const idIndex = selectionsArray.indexOf(id)
 
@@ -36,15 +33,16 @@ function checkboxClickHandler (id, tableId, selectionsArray) { // eslint-disable
 }
 
 // adds all table rows to selections array / removes all
-function selectAllCheckboxClickHandler (tableBodyId, selectionsArray) { // eslint-disable-line
-  const tbodyElement = document.getElementById(tableBodyId)
-  const rowsArray = tbodyElement.querySelectorAll('.data-row')
+function selectAllCheckboxClickHandler (tableId, selectionsArray) { // eslint-disable-line
+  const rowsArray = document.querySelector(`#${tableId} tbody`).getElementsByClassName('data-row')
+  for (const row of rowsArray)
+  {console.log(row.id)}
 
   // if all are selected: remove and uncheck all
   if (selectionsArray.length === rowsArray.length) {
     selectionsArray.splice(0, selectionsArray.length)
     for (let i = 0; i < rowsArray.length; i++) {
-      rowsArray[i].getElementsByTagName('input')[0].checked = false
+      rowsArray[i].querySelector('input').checked = false
     }
     return
   }
@@ -59,6 +57,6 @@ function selectAllCheckboxClickHandler (tableBodyId, selectionsArray) { // eslin
     selectionsArray.push(rowId)
 
     // set checkbox to checked
-    rowsArray[i].getElementsByTagName('input')[0].checked = true
+    rowsArray[i].querySelector('input').checked = true
   }
 }

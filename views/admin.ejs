@@ -17,6 +17,7 @@
        }
       </style>
       <script>var blogTableSelections = [] </script>
+      <script>var usersTableSelections = [] </script>
       <script defer src="js/dashboard.js"></script>
       <script src="./js/navbar.js" defer async></script>
     </head>
@@ -82,7 +83,7 @@
           <div style="width: 100%; max-width: 1400px; padding: 30px;">
               <%- include('./components/user-table.ejs', { data: [
                   {
-                      tableId: "user-table",
+                      tableId: "users-table",
                       id: "1",
                       username: "Username",
                       fullname: "Full name",
