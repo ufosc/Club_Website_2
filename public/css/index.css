@@ -11,29 +11,55 @@
 
 .about__get-started {
   /* self align */
-  margin: 0 50px;
+  margin: 0 80px;
 
   /* self style */
   background: #29B5BB;
+  font-family: 'Overpass', sans-serif;
+  border-radius: 30px;
 
   /* content align */
   display: flex;
   flex-direction: row;
-  padding: 20px 30px;
+  justify-content: space-between;
+  padding: 20px 50px;
 }
 
 .about__get-started-left {
   /* self align */
-  width: 50%;
+  width: 40%;
 
   /* self style */
-  /* background: lime; */
+  text-transform: uppercase;
+}
+
+.about__get-started-left h2 {
+  /* self style */
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.about__get-started-left button {
+  /* self align */
+  margin-top: 20px;
+  width: 160px;
+  /* self style */
+  background: black;
+  color: white;
+  font-family: 'Overpass', sans-serif;
+  text-transform: uppercase;
+  font-size: 15px;
+  font-weight: 400;
+  border-radius: 20px;
+  /* content align */
+  padding: 8px 12px;
 }
 
 .about__get-started-right {
   /* self align */
-  width: 50%;
+  width: 70%;
 
   /* self style */
-  /* background: red; */
+  text-align: right;
+  font-size: 19px;
 }
