@@ -24,21 +24,20 @@
     </head>
     <body>
       <%- include('./components/navbar.ejs') %>
-      <section id="dashboard-wrapper">
-        <h1>Blog</h1>
-        <hr/>
-        <div>
-          <div class="table-wrapper">
-              <%- include('./components/blog-table.ejs', { data: [
-                  {
-                      tableId: "blog-table",
-                      id: "1",
-                      title: "My first article",
-                      content: "Hello world, this is my first article...",
-                      date: "15/10/2020",
-                      status: "draft",
-                      author: "John Doe"
-                  },
+      <section id="dashboard-section">
+        <section class="dashboard-subsection">
+            <h1>Blog</h1>
+            <hr/>
+                <%- include('./components/blog-table.ejs', { data: [
+                    {
+                        tableId: "blog-table",
+                        id: "1",
+                        title: "My first article",
+                        content: "Hello world, this is my first article...",
+                        date: "15/10/2020",
+                        status: "draft",
+                        author: "John Doe"
+                    },
                   {
                       tableId: "blog-table",
                       id: "2",
@@ -47,54 +46,52 @@
                       date: "16/10/2020",
                       status: "published",
                       author: "Jane Doe"
-                  },
-                  {
-                      tableId: "blog-table",
-                      id: "3",
-                      title: "My third article",
-                      content: "Hello world, this is my third article...",
-                      date: "17/10/2020",
-                      status: "published",
-                      author: "John Doe"
-                  },
-                  {
-                      tableId: "blog-table",
-                      id: "4",
-                      title: "Lorem Ipsum dolor",
-                      content: "Lorem ipsum dolor...",
-                      date: "15/10/2020",
-                      status: "draft",
-                      author: "jane Doe"
-                  },
-                  {
-                      tableId: "blog-table",
-                      id: "5",
-                      title: "Why lorem ipsum?",
-                      content: "Lorem Ipsum is simply dummy text of the...",
-                      date: "15/10/2020",
-                      status: "published",
-                      author: "John Doe"
-                  }
-              ]}) %>
-          </div>
-      </div>
-      <h1>Users</h1>
-      <hr/>
-      <div>
-          <div class="table-wrapper">
-              <%- include('./components/users-table.ejs', { data: [
-                  {
-                      tableId: "users-table",
-                      id: "1",
-                      username: "Username",
-                      fullname: "Full name",
-                      role: "Tech Lead",
-                      isAdmin: true
-                  },
-
-              ]}) %>
-          </div>
-      </div>
+                    },
+                    {
+                        tableId: "blog-table",
+                        id: "3",
+                        title: "My third article",
+                        content: "Hello world, this is my third article...",
+                        date: "17/10/2020",
+                        status: "published",
+                        author: "John Doe"
+                    },
+                    {
+                        tableId: "blog-table",
+                        id: "4",
+                        title: "Lorem Ipsum dolor",
+                        content: "Lorem ipsum dolor...",
+                        date: "15/10/2020",
+                        status: "draft",
+                        author: "jane Doe"
+                    },
+                    {
+                        tableId: "blog-table",
+                        id: "5",
+                        title: "Why lorem ipsum?",
+                        content: "Lorem Ipsum is simply dummy text of the...",
+                        date: "15/10/2020",
+                        status: "published",
+                        author: "John Doe"
+                    }
+                ]}) %>
+        </section>
+        <section class="dashboard-subsection">
+            <h1>Users</h1>
+            <hr/>
+            <div class="table-wrapper">
+                <%- include('./components/users-table.ejs', { data: [
+                    {
+                        tableId: "users-table",
+                        id: "1",
+                        username: "Username",
+                        fullname: "Full name",
+                        role: "Tech Lead",
+                        isAdmin: true
+                    },
+                ]}) %>
+            </div>
+        </section>
       </section>
     </body>
   </html>

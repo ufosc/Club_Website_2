@@ -1,16 +1,22 @@
-#dashboard-wrapper > h1 {
+#dashboard-section {
   width: 100%;
-  max-width: 1400px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 30px;
+}
+
+.dashboard-subsection {
+  width: min(1000px, 100%);
+  margin-bottom: 30px;
+}
+.dashboard-subsection > h1 {
   font-family: overpass;
 }
 
-#dashboard-wrapper > hr {
-  width: 100%;
-  max-width: 1400px;
-}
-
-.table-wrapper {
-  width: 100%;
-  max-width: 1400px;
-  padding: 30px;
+.dashboard-subsection > hr {
+  height: 2px;
+  background-color: black;
+  border: none;
+  margin-bottom: 15px;
 }
