@@ -1,36 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title><%= page %></title>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="css/common.css" />
-    <link rel="stylesheet" href="css/index.css" />
-    <script src="./js/navbar.js" defer async></script>
-  </head>
-  <body>
-    <%- include('./components/navbar.ejs') %>
-    <h1>Title: <%= page %></h1>
-    <p>This is a placeholder for my website.</p>
-    <%- include('./components/footer.ejs') %>
-    <section class="about">
-      <div class="about__heading">
-        <h2>About</h2>
-        <div>Open Source Club</div>
-      </div>
-      <div class="about__get-started">
-        <div class="about__get-started-left">
-          <h2>Open Source Club</h2>
-          <button>Get Started</button>
-        </div>
-        <div class="about__get-started-right">
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolores
-          tempore recusandae qui exercitationem blanditiis doloremque, iusto ab
-          sint sapiente ea! Voluptates amet odio quibusdam magnam veritatis
-          molestias reprehenderit facere accusamus?
-        </div>
-      </div>
-    </section>
-  </body>
+    <head>
+        <title><%= page %></title>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="css/common.css" />
+        <link rel="stylesheet" href="css/index.css" />
+        <script src="./js/navbar.js" defer async></script>
+    </head>
+    <body>
+        <%- include('./components/navbar.ejs') %>
+        <section class="about">
+            <div class="section_heading">
+                <h2>About</h2>
+                <div>Open Source Club</div>
+            </div>
+            <div class="about__get-started">
+                <div class="about__get-started__content">
+                    <div class="about__get-started__content-left">
+                        <h2>Open Source Club</h2>
+                        <button>Get Started</button>
+                    </div>
+                    <div class="about__get-started__content-right">
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolores
+                        tempore recusandae qui exercitationem blanditiis doloremque, iusto ab
+                        sint sapiente ea! Voluptates amet odio quibusdam magnam veritatis
+                        molestias reprehenderit facere accusamus?
+                    </div>
+                </div>
+            </div>
+        </section>
+        <%- include('./components/footer.ejs') %>
+    </body>
 </html>
