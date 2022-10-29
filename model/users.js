@@ -16,7 +16,4 @@ const userSchema = new mongoose.Schema({
 })
 
 const userModel = mongoose.model('user', userSchema)
-
-module.exports = {
-  userSchema, userModel
-}
+module.exports = { userSchema, userModel }
