@@ -16,6 +16,9 @@
                 <h2>About</h2>
                 <div>Open Source Club</div>
             </div>
+            <div class="about__animation">
+                <canvas class="scene scene--full" id="scene"></canvas>
+            </div>
             <div class="about__get-started">
                 <div class="about__get-started__content">
                     <div class="about__get-started__content-left">
@@ -32,5 +35,8 @@
             </div>
         </section>
         <%- include('./components/footer.ejs') %>
+        <script src="./js/three.min.js"></script>
+        <script src="./js/perlin.js"></script>
+        <script src="./js/orb.js"></script>
     </body>
 </html>
