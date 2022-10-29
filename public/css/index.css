@@ -1,17 +1,43 @@
 .about {
   /* self align */
-  height: 200px;
+  height: 400px;
 
   /* self style */
   background: black;
+}
 
+.about__heading {
+  /* self align */
+  padding: 40px 50px 0;
+  /* self style */
+  color: white;
+  text-transform: uppercase;
+  font-family: 'Overpass', sans-serif;
   /* content align */
-  padding-top: 50px 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 15px;
+}
+
+.about__heading h2 {
+  /* self style */
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.about__heading div {
+  /* self align */
+  line-height: 30px;
+  width: 100%;
+  /* self style */
+  color: #74F535;
+  border-top: 1px solid #74F535;
 }
 
 .about__get-started {
   /* self align */
-  margin: 0 80px;
+  margin: 20px 80px 0;
 
   /* self style */
   background: #29B5BB;
