@@ -9,6 +9,13 @@
     "lint": "standard && ejslint views/*.ejs && ejslint views/components/*.ejs",
     "fix": "standard --fix"
   },
+  "standard": {
+    "ignore": [
+      "public/js/three.min.js",
+      "public/js/orb.js",
+      "public/js/perlin.js"
+    ]
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ufosc/Club_Website_2.git"
