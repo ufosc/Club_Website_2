@@ -8,6 +8,11 @@
     src: url(../fonts/overpass.ttf);
 }
 
+@font-face {
+    font-family: 'Overpass-Bold';
+    src: url(../fonts/overpass-bold.ttf)
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -46,9 +51,9 @@ h1 {
 }
 
 h2 {
-    font-family: 'Overpass';
-    font-size: 0.85rem;
-    font-weight: 600;
+    font-family: 'Overpass-Bold';
+    font-size:   2rem;
+    font-weight: bold;
 }
 
 h3 {
@@ -64,6 +69,35 @@ h4 {
     color: black;
 }
 
+.section_heading {
+    /* self align */
+    padding: 25px;
+    padding-top: 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+    /* self style */
+    color: white;
+    text-transform: uppercase;
+    font-family: 'Overpass', sans-serif;
+    /* content align */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 15px;
+}
+
+.section_heading div {
+    /* self align */
+    line-height: 30px;
+    width: 100%;
+    /* self style */
+    color: #74F535;
+    border-top: 1px solid #74F535;
+}
+
+section {
+    background: black;
+}
 
 /*........... navbar .......... */
 #navigation-bar-parent {
@@ -190,17 +224,17 @@ h4 {
         background-position: top;
         transition: background-position 0.5s ease;
       }
-    
+
       #navbar-member-item:hover {
         background-position: 0 99%;
       }
-    
+
       #navbar-member-item > a,
       #navbar-member-item > a:visited,
       #navbar-member-item > a:link {
         transition: color 0.5s ease;
       }
-    
+
       #navbar-member-item:hover > a,
       #navbar-member-item:hover > a:visited,
       #navbar-member-item:hover > a:link {
