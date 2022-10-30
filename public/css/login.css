@@ -63,6 +63,7 @@ body {
     padding-left: 12px;
     padding-right: 12px;
     margin: 20px;
+    margin-top: 5px;
     color: white;
     background-color: rgb(27, 134, 255);
     border: 2px solid rgb(0, 111, 237);
@@ -75,4 +76,9 @@ body {
 #login:hover {
     opacity: 1;
     scale: 1.05;
+}
+
+.loginError {
+    color: red;
+    text-align: center;
 }
