@@ -1,7 +1,12 @@
+body{
+    overflow-x: hidden;
+}
+
 /*........... ABOUT SECTION.......... */
 .about {
   /* self align */
   height: 800px;
+  padding-bottom: 30px;
 }
 
 .about__get-started {
@@ -163,4 +168,60 @@
   border-radius: 20px;
   /* content align */
   padding: 8px 12px;
+}
+
+/*--------- PORTFOLIO SECTION ------*/
+.portfolio{
+    max-width: 1400px;
+    font-family: Overpass, sans-serif;
+    padding-top: 30px;
+    position: relative;
+}
+.portfolio .horizontal_scroll{
+    overflow-x: scroll;
+    overflow-y: hidden;
+    display: flex;
+    gap: 20px;
+    padding: 30px;
+    width: 100vw;
+}
+.portfolio .horizontal_scroll .gradient{
+    width: 30px;
+    height: 350px;
+    background: linear-gradient(90deg, rgba(255,255,255,0) , rgba(0,0,0,1));
+    position: absolute;
+    z-index: 1;
+    right: 0;
+}
+.portfolio .horizontal_scroll .card{
+    padding: 20px;
+    border-radius: 20px;
+    min-width: 300px;
+}
+.portfolio .horizontal_scroll #card1{
+    background-color: #fe754a;
+}
+.portfolio .horizontal_scroll #card2{
+    background-color: #eb54bc;
+}
+.portfolio .horizontal_scroll #card3{
+    background-color: #29b5bb;
+}
+.portfolio .horizontal_scroll .card > h2 , p {
+    margin-bottom: 20px;
+}
+.portfolio .horizontal_scroll .card button{
+    background-color: black;
+    color: white;
+    padding: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+    border-radius: 20px;
+    border: none;
+}
+.portfolio .content p{
+    color:white;
+    padding: 30px;
+    position: relative;
+    z-index: 10;
 }
