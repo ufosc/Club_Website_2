@@ -38,7 +38,8 @@ app.get('/preview', (req, res) => {
 app.post('/auth/login', (req, res) => {
   passport.authenticate('login', { session: false }, (error, user, info) => {
     if (error || !user) {
-      return res.status(400).json({ error: info.message })
+      app.set('loginError', info.message)
+      return res.redirect(`/${config.admin_route}`)
     }
 
     req.login(user, { session: false }, (loginError) => {
@@ -51,7 +52,9 @@ app.post('/auth/login', (req, res) => {
 app.get(`/${config.admin_route}`, (req, res) => {
   passport.authenticate('loggedIn', { session: false }, (error, user, info) => {
     if (error || !user) {
-      return res.render('login')
+      res.render('login', { loginError: app.get('loginError') })
+      app.set('loginError', null)
+      return
     }
     return res.render('temporary')
   })(req, res)
