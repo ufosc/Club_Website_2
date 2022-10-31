@@ -20,6 +20,10 @@
     text-decoration: none;
 }
 
+body {
+    width: 100vw;
+}
+
 :root {
     --bg-600:#97918F;
     --bg-200:#F1F1F1;  /*background color saturation 200*/
