@@ -20,11 +20,6 @@
     text-decoration: none;
 }
 
-body {
-    width: 100vw;
-    overflow-x: hidden;
-}
-
 :root {
     --bg-600:#97918F;
     --bg-200:#F1F1F1;  /*background color saturation 200*/
@@ -333,7 +328,6 @@ section {
 
 .footer-content-container {
     background-color: black;
-    width: 100vw;
     display: flex;
     justify-content: center;
     flex-direction: row;
