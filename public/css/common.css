@@ -22,6 +22,7 @@
 
 body {
     width: 100vw;
+    overflow-x: hidden;
 }
 
 :root {
@@ -317,7 +318,8 @@ section {
     background-color: white;
     padding-right: 30px;
     padding-left: 20px;
-    padding-top: 10px;
+    padding-top: 6px;
+    padding-bottom: 5px;
     width: 100%;
     max-width: 1400px;
 }
