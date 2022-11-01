@@ -2,6 +2,7 @@
 // CREDIT: https://github.com/Mamboleoo/DecorativeBackgrounds
 
 const canvas = document.querySelector('#scene')
+
 let width = canvas.offsetWidth
 let height = canvas.offsetHeight
 
