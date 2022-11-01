@@ -1,7 +1,7 @@
 /*........... ABOUT SECTION.......... */
 .about {
   /* self align */
-  height: 730px;
+  height: 800px;
 }
 
 .about__get-started {
@@ -78,9 +78,10 @@
 }
 
 .about__animation {
-    margin: 0px;
+    margin: 38px;
     height: 400px;
     display: flex;
     flex-direction: row;
     justify-content: center;
+    overflow-x: hidden;
 }
