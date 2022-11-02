@@ -184,19 +184,13 @@ body{
     gap: 20px;
     padding: 30px;
     width: 100vw;
-}
-.portfolio .horizontal_scroll .gradient{
-    width: 30px;
-    height: 350px;
-    background: linear-gradient(90deg, rgba(255,255,255,0) , rgba(0,0,0,1));
-    position: absolute;
-    z-index: 1;
-    right: 0;
+    scroll-behavior: smooth;
 }
 .portfolio .horizontal_scroll .card{
     padding: 20px;
     border-radius: 20px;
     min-width: 300px;
+    max-width: 300px;
 }
 .portfolio .horizontal_scroll #card1{
     background-color: #fe754a;
@@ -206,6 +200,12 @@ body{
 }
 .portfolio .horizontal_scroll #card3{
     background-color: #29b5bb;
+}
+.portfolio .horizontal_scroll #card4{
+    background-color: #fe754a;
+}
+.portfolio .horizontal_scroll #card5{
+    background-color: #eb54bc;
 }
 .portfolio .horizontal_scroll .card > h2 , p {
     margin-bottom: 20px;
@@ -218,6 +218,30 @@ body{
     padding-right: 30px;
     border-radius: 20px;
     border: none;
+}
+.portfolio .horizontal_scroll .btn-left , .btn-right{
+    position: absolute;
+    z-index: 10;
+    padding: 10px;
+    height: 300px;
+    width: 10%;
+    border: none;
+}
+.portfolio .horizontal_scroll .btn-left{
+    display: none;
+    left: 0px;
+    background: linear-gradient(270deg, rgba(255,255,255,0) , rgba(0,0,0,1));
+}
+.portfolio .horizontal_scroll .btn-right{
+    right: 0px;
+    background: linear-gradient(90deg, rgba(255,255,255,0) , rgba(0,0,0,1));
+}
+.portfolio .horizontal_scroll .btn-right img{
+    transform: rotateZ(180deg);
+}
+.portfolio .horizontal_scroll .btn-left img , .btn-right img{
+    height: 30%;
+    width: 70%;
 }
 .portfolio .content p{
     color:white;
