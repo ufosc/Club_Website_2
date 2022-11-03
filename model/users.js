@@ -9,6 +9,14 @@ const userSchema = new mongoose.Schema({
     hash: String,
     salt: String
   },
+  role: {
+    type: String,
+    required: true
+  },
+  isAdmin: {
+    type: Boolean,
+    required: true
+  },
   date: {
     type: Date,
     default: Date.now
