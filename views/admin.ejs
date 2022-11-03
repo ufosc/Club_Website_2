@@ -17,8 +17,11 @@
              justify-content: center;
          }
         </style>
-        <script>var blogTableSelections = [] </script>
-        <script>var usersTableSelections = [] </script>
+        <script>
+            var blogTableSelections = [] 
+            var usersTableSelections = [] 
+            var imagesTableSelections = []
+        </script>
         <script defer src="js/dashboard.js"></script>
         <script src="./js/navbar.js" defer async></script>
     </head>
@@ -96,6 +99,30 @@
                             fullname: "CEO of sanitation",
                             role: "janitor",
                             isAdmin: false
+                        },
+                    ]}) %>
+                </div>
+            </section>
+            <section class="dashboard-subsection">
+                <h1>Images</h1>
+                <hr/>
+                <div class="table-wrapper">
+                    <%- include('./components/images-table.ejs', { data: [
+                        {
+                            tableId: "images-table",
+                            id: "1",
+                            name: "uf-osc-logo",
+                            path: "./folder/subfolder/image1",
+                            description: "The UF OSC Logo",
+                            dateAdded: "11/3/2022"
+                        },
+                        {
+                            tableId: "images-table",
+                            id: "2",
+                            name: "club-website-img",
+                            path: "./folder/subfolder/image2",
+                            description: "A screenshot of the club website",
+                            dateAdded: "11/3/2022"
                         },
                     ]}) %>
                 </div>

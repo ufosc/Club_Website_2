@@ -1,0 +1,42 @@
+<div style="overflow-x: auto">
+  <table id="images-table">
+    <thead>
+      <th scope="col" class="tcheckbox">
+        <input
+          type="checkbox"
+          onclick="selectAllCheckboxClickHandler('images-table', imagesTableSelections)"
+        />
+      </th>
+      <th scope="col" class="title-header">Name</th>
+      <th scope="col">Path</th>
+      <th scope="col">Description</th>
+      <th scope="col">Date Added</th>
+    </thead>
+    <tbody>
+      <% data.forEach((entry) => { %>
+        <tr class="data-row" id="<%= entry.id %>">
+          <td>
+            <input
+              type="checkbox"
+              name="row-selected"
+              onclick="checkboxClickHandler('<%= entry.id %>', '<%= entry.tableId %>', imagesTableSelections)"
+            />
+          </td>
+          <td><%= entry.name %></td>
+          <td><%= entry.path %></td>
+          <td><%= entry.description %></td>
+          <td><%= entry.dateAdded %></td>
+        </tr>
+      <% }) %>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </tfoot>
+  </table>
+</div>
