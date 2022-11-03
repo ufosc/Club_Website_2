@@ -18,14 +18,15 @@
          }
         </style>
         <script>
-            var blogTableSelections = [] 
-            var usersTableSelections = [] 
+            var blogTableSelections = []
+            var usersTableSelections = []
             var imagesTableSelections = []
         </script>
         <script defer src="js/dashboard.js"></script>
         <script src="./js/navbar.js" defer async></script>
     </head>
     <body>
+        <%- include('./components/alert.ejs') %>
         <%- include('./components/navbar.ejs') %>
         <section id="dashboard-section">
             <section class="dashboard-subsection">

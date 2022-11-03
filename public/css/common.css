@@ -99,6 +99,14 @@ section {
     background: black;
 }
 
+#alert-message {
+    font-family: 'Overpass', sans-serif;
+    background: #e74c3c;
+    color: white;
+    text-align: center;
+    padding: 8px 0px;
+}
+
 /*........... navbar .......... */
 #navigation-bar-parent {
     background: black;
