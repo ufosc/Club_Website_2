@@ -1,0 +1,37 @@
+<div style="overflow-x:auto;">
+    <table id="blog-table">
+        <thead>
+            <th scope="col" class="tcheckbox"><input type="checkbox" onclick="selectAllCheckboxClickHandler('blog-table', blogTableSelections)"/></th>
+            <th scope="col" class="title-header">Title</th>
+            <th scope="col">Content</th>
+            <th scope="col">Date Published</th>
+            <th scope="col">Status</th>
+            <th scope="col">Author</th>
+            <th scope="col">Edit</th>
+        </thead>
+        <tbody>
+        <% data.forEach((entry) => { %>
+            <tr class="data-row" id="<%= entry.id %>">
+                <td><input type="checkbox" name="row-selected" onclick="checkboxClickHandler('<%= entry.id %>', '<%= entry.tableId %>', blogTableSelections)"/></td>
+                <td><%= entry.title %></td>
+                <td><%= entry.content %></td>
+                <td><%= entry.date %></td>
+                <td><%= entry.status %></td>
+                <td><%= entry.author %></td>
+                <td><button type="button">EDIT</button></td>
+            </tr>       
+        <% }) %>
+        </tbody>
+        <tfoot>
+                <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                </tr>
+        </tfoot>
+    </table>
+</div>

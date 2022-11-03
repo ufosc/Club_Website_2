@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Temporary Test</title>
+        <title>Admin</title>
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -9,22 +9,28 @@
         <link rel="stylesheet" href="css/navbar.css" />
         <link rel="stylesheet" href="css/table.css" />
         <link rel="stylesheet" href="css/data-row.css" />
+        <link rel="stylesheet" href="css/admin.css" />
         <style>
          #temp-container {
              display: flex;
-             flex-direction: row;
+             flex-direction: column;
              justify-content: center;
          }
         </style>
         <script>var blogTableSelections = [] </script>
+        <script>var usersTableSelections = [] </script>
         <script defer src="js/dashboard.js"></script>
+        <script src="./js/navbar.js" defer async></script>
     </head>
     <body>
         <%- include('./components/navbar.ejs') %>
-        <div id="temp-container">
-            <div style="width: 100%; max-width: 1400px; padding: 50px;">
-                <%- include('./components/table.ejs', { data: [
+        <section id="dashboard-section">
+            <section class="dashboard-subsection">
+                <h1>Blog</h1>
+                <hr/>
+                <%- include('./components/blog-table.ejs', { data: [
                     {
+                        tableId: "blog-table",
                         id: "1",
                         title: "My first article",
                         content: "Hello world, this is my first article...",
@@ -33,6 +39,7 @@
                         author: "John Doe"
                     },
                     {
+                        tableId: "blog-table",
                         id: "2",
                         title: "My second article",
                         content: "Hello world, this is my second article...",
@@ -41,6 +48,7 @@
                         author: "Jane Doe"
                     },
                     {
+                        tableId: "blog-table",
                         id: "3",
                         title: "My third article",
                         content: "Hello world, this is my third article...",
@@ -49,6 +57,7 @@
                         author: "John Doe"
                     },
                     {
+                        tableId: "blog-table",
                         id: "4",
                         title: "Lorem Ipsum dolor",
                         content: "Lorem ipsum dolor...",
@@ -57,6 +66,7 @@
                         author: "jane Doe"
                     },
                     {
+                        tableId: "blog-table",
                         id: "5",
                         title: "Why lorem ipsum?",
                         content: "Lorem Ipsum is simply dummy text of the...",
@@ -65,7 +75,32 @@
                         author: "John Doe"
                     }
                 ]}) %>
-            </div>
-        </div>
+            </section>
+            <section class="dashboard-subsection">
+                <h1>Users</h1>
+                <hr/>
+                <div class="table-wrapper">
+                    <%- include('./components/users-table.ejs', { data: [
+                        {
+                            tableId: "users-table",
+                            id: "1",
+                            username: "Username",
+                            fullname: "Full name",
+                            role: "Tech Lead",
+                            isAdmin: true
+                        },
+                        {
+                            tableId: "users-table",
+                            id: "2",
+                            username: "jannie123",
+                            fullname: "CEO of sanitation",
+                            role: "janitor",
+                            isAdmin: false
+                        },
+                    ]}) %>
+                </div>
+            </section>
+        </section>
+        <%- include('./components/footer.ejs') %>
     </body>
 </html>

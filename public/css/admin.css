@@ -1,0 +1,27 @@
+#dashboard-section {
+  min-height: calc(100vh - 70px - 92.5px);
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 30px;
+}
+
+.dashboard-subsection {
+  width: min(1000px, 100%);
+  margin-bottom: 30px;
+}
+.dashboard-subsection > h1 {
+  font-family: overpass;
+}
+
+.dashboard-subsection > hr {
+  height: 2px;
+  background-color: black;
+  border: none;
+  margin-bottom: 15px;
+}
+
+section {
+    background: white;
+}
