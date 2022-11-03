@@ -87,64 +87,64 @@
 }
 
 /*........... BLOG SECTION.......... */
-#post-container {
+.blog__posts {
   padding: 0 25px;
   max-width: 1400px;
   margin: 0 auto;
 
   display: grid;
   grid-template-rows: repeat(auto-fill, 1fr);
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: 20px 20px;
 }
 
-.odd-row.large-post {
+.odd-row.blog__posts-large {
   grid-column: 1 / span 2;
 }
 
-.even-row.large-post {
+.even-row.blog__posts-large {
   grid-column: 2 / span 2;
 }
 
-#post-container div {
+.blog__posts div {
   height : 400px;
   font-family: 'Overpass', sans-serif;
 }
 
-.large-post img {
+.blog__posts-large img {
   width: 100%;
   height: 75%;
   object-fit: cover;
   margin-bottom: 10px;
 }
 
-.small-post img {
+.blog__posts-small img {
   width: 100%;
   height: 65%;
   object-fit: cover;
   margin-bottom: 10px;
 }
 
-.small-post {
+.blog__posts-small {
   background: #74F535;
   padding: 15px;
 }
 
-.large-post {
+.blog__posts-large {
   background: white;
 }
 
-.subtitle {
+.blog__posts__subtitle {
   font-family: 'Overpass-Bold';
   font-size: 1.25rem;
   font-weight: bold;
 }
 
-.large-post h2, .large-post .subtitle{
+.blog__posts-large h2, .blog__posts-large .blog__posts__subtitle{
   padding-left: 15px;
 }
 
-.see-all {
+.blog__see_all {
   padding: 0 25px;
   max-width: 1400px;
   margin: 0 auto;
