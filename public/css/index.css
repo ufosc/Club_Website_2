@@ -175,7 +175,6 @@ body{
     max-width: 1400px;
     font-family: Overpass, sans-serif;
     padding-top: 30px;
-    position: relative;
 }
 .portfolio .horizontal_scroll{
     overflow-x: scroll;
@@ -185,6 +184,11 @@ body{
     padding: 30px;
     width: 100vw;
     scroll-behavior: smooth;
+}
+.portfolio .buttons-holder{
+    position: relative;
+    width: 100vw;
+    overflow: hidden;
 }
 .portfolio .horizontal_scroll .card{
     padding: 20px;
@@ -236,12 +240,11 @@ body{
     right: 0px;
     background: linear-gradient(90deg, rgba(255,255,255,0) , rgba(0,0,0,1));
 }
+.portfolio .horizontal_scroll .btn-right img , .btn-left img{
+    width: 60%;
+}
 .portfolio .horizontal_scroll .btn-right img{
     transform: rotateZ(180deg);
-}
-.portfolio .horizontal_scroll .btn-left img , .btn-right img{
-    height: 30%;
-    width: 70%;
 }
 .portfolio .content p{
     color:white;
