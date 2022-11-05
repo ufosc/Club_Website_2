@@ -172,49 +172,49 @@ body{
 
 /*--------- PORTFOLIO SECTION ------*/
 .portfolio{
-    max-width: 1400px;
     font-family: Overpass, sans-serif;
     padding-top: 30px;
 }
-.portfolio .horizontal_scroll{
-    overflow-x: scroll;
+.portfolio__cards__scroll {
+    overflow-x: hidden;
     overflow-y: hidden;
     display: flex;
     gap: 20px;
     padding: 30px;
-    width: 100vw;
     scroll-behavior: smooth;
+    max-width: 1400px;
+    margin: 0 auto;
 }
-.portfolio .buttons-holder{
+.portfolio .portfolio__cards {
     position: relative;
     width: 100vw;
     overflow: hidden;
 }
-.portfolio .horizontal_scroll .card{
+.portfolio .portfolio__cards__scroll .card {
     padding: 20px;
     border-radius: 20px;
     min-width: 300px;
     max-width: 300px;
 }
-.portfolio .horizontal_scroll #card1{
+.portfolio .portfolio__cards__scroll #card1 {
     background-color: #fe754a;
 }
-.portfolio .horizontal_scroll #card2{
+.portfolio .portfolio__cards__scroll #card2 {
     background-color: #eb54bc;
 }
-.portfolio .horizontal_scroll #card3{
+.portfolio .portfolio__cards__scroll #card3 {
     background-color: #29b5bb;
 }
-.portfolio .horizontal_scroll #card4{
+.portfolio .portfolio__cards__scroll #card4 {
     background-color: #fe754a;
 }
-.portfolio .horizontal_scroll #card5{
+.portfolio .portfolio__cards__scroll #card5 {
     background-color: #eb54bc;
 }
-.portfolio .horizontal_scroll .card > h2 , p {
+.portfolio .portfolio__cards__scroll .card > h2 , p {
     margin-bottom: 20px;
 }
-.portfolio .horizontal_scroll .card button{
+.portfolio .portfolio__cards__scroll .card button{
     background-color: black;
     color: white;
     padding: 10px;
@@ -223,7 +223,7 @@ body{
     border-radius: 20px;
     border: none;
 }
-.portfolio .horizontal_scroll .btn-left , .btn-right{
+.portfolio .portfolio__cards__scroll .portfolio__cards__scroll__btn-left , .portfolio__cards__scroll__btn-right{
     position: absolute;
     z-index: 10;
     padding: 10px;
@@ -231,24 +231,26 @@ body{
     width: 10%;
     border: none;
 }
-.portfolio .horizontal_scroll .btn-left{
+.portfolio .portfolio__cards__scroll .portfolio__cards__scroll__btn-left{
     display: none;
     left: 0px;
     background: linear-gradient(270deg, rgba(255,255,255,0) , rgba(0,0,0,1));
 }
-.portfolio .horizontal_scroll .btn-right{
+.portfolio .portfolio__cards__scroll .portfolio__cards__scroll__btn-right{
     right: 0px;
     background: linear-gradient(90deg, rgba(255,255,255,0) , rgba(0,0,0,1));
 }
-.portfolio .horizontal_scroll .btn-right img , .btn-left img{
+.portfolio .portfolio__cards__scroll .portfolio__cards__scroll__btn-right img , .portfolio__cards__scroll__btn-left img{
     width: 60%;
 }
-.portfolio .horizontal_scroll .btn-right img{
+.portfolio .portfolio__cards__scroll .portfolio__cards__scroll__btn-right img{
     transform: rotateZ(180deg);
 }
-.portfolio .content p{
+.portfolio .portfolio__content p{
     color:white;
     padding: 30px;
     position: relative;
-    z-index: 10;
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
 }
