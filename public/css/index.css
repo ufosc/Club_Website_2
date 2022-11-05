@@ -103,12 +103,8 @@ body{
   gap: 20px 20px;
 }
 
-.odd-row.blog__posts-large {
+.blog__posts-large {
   grid-column: 1 / span 2;
-}
-
-.even-row.blog__posts-large {
-  grid-column: 2 / span 2;
 }
 
 .blog__posts div {
