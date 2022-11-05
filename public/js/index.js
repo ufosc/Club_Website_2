@@ -1,22 +1,20 @@
-const horizontalScrollContainer = document.querySelector('.horizontal_scroll')
-function Swipe () {
-  this.swipeLeft = function () {
-    horizontalScrollContainer.scrollLeft -= 300
-  }
-  this.swipeRight = function () {
-    horizontalScrollContainer.scrollLeft += 300
-  }
-};
-
-const btnLeft = document.querySelector('.btn-left')
-const btnRight = document.querySelector('.btn-right')
-const swipe = new Swipe()
+const horizontalScrollContainer = document.querySelector('.portfolio__cards__scroll')
+const btnLeft = document.querySelector('.portfolio__cards__scroll__btn-left')
+const btnRight = document.querySelector('.portfolio__cards__scroll__btn-right')
 const scrollableWidth = horizontalScrollContainer.scrollWidth
 const elementWidth = horizontalScrollContainer.clientWidth
 const totalScrollableWidth = (scrollableWidth - elementWidth)
 
 let leftScroll = totalScrollableWidth
 let rightScroll = totalScrollableWidth
+
+const swipeLeft = () => {
+  horizontalScrollContainer.scrollLeft -= 300
+}
+
+const swipeRight = () => {
+  horizontalScrollContainer.scrollLeft += 300
+}
 
 btnLeft.onclick = () => {
   rightScroll -= 300
@@ -25,7 +23,7 @@ btnLeft.onclick = () => {
   } else {
     btnLeft.style.display = 'block'
   }
-  swipe.swipeLeft()
+  swipeLeft()
   leftScroll += 300
   if (leftScroll < totalScrollableWidth) {
     btnRight.style.display = 'none'
@@ -33,6 +31,7 @@ btnLeft.onclick = () => {
     btnRight.style.display = 'block'
   }
 }
+
 btnRight.onclick = () => {
   btnLeft.style.display = 'block'
   leftScroll -= 300
@@ -41,7 +40,7 @@ btnRight.onclick = () => {
   } else {
     btnRight.style.display = 'block'
   }
-  swipe.swipeRight()
+  swipeRight()
   rightScroll += 300
   if (rightScroll < totalScrollableWidth) {
     btnLeft.style.display = 'none'
