@@ -174,13 +174,20 @@ body{
 .portfolio{
     font-family: Overpass, sans-serif;
     padding-top: 30px;
+    /* display:flex; */
+    /* justify-content: center; */
+    /* align-items: center; */
+    /* flex-direction:column; */
+}
+.portfolio > h2{
+  width: 100%;
+  max-width: 1400px;
 }
 .portfolio__cards__scroll {
     overflow-x: hidden;
     overflow-y: hidden;
     display: flex;
     gap: 20px;
-    padding: 30px;
     scroll-behavior: smooth;
     max-width: 1400px;
     margin: 0 auto;
@@ -188,7 +195,9 @@ body{
 .portfolio .portfolio__cards {
     position: relative;
     width: 100vw;
+    max-width: 1400px;
     overflow: hidden;
+    padding: 30px;
 }
 .portfolio .portfolio__cards__scroll .card {
     padding: 20px;

@@ -15,9 +15,14 @@ const swipeLeft = () => {
 const swipeRight = () => {
   horizontalScrollContainer.scrollLeft += 300
 }
-
+let first = true
 btnLeft.onclick = () => {
-  rightScroll -= 300
+  if (first) {
+    rightScroll -= 600
+    first = false
+  } else {
+    rightScroll -= 300
+  }
   if (rightScroll < totalScrollableWidth) {
     btnLeft.style.display = 'none'
   } else {
@@ -34,12 +39,12 @@ btnLeft.onclick = () => {
 
 btnRight.onclick = () => {
   btnLeft.style.display = 'block'
-  leftScroll -= 300
   if (leftScroll < totalScrollableWidth) {
     btnRight.style.display = 'none'
   } else {
     btnRight.style.display = 'block'
   }
+  leftScroll -= 300
   swipeRight()
   rightScroll += 300
   if (rightScroll < totalScrollableWidth) {
