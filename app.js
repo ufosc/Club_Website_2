@@ -13,6 +13,7 @@ const cookieParser = require('cookie-parser')
 
 const app = express()
 const http = require('http').createServer(app)
+const apiRoute = require('./routes/api')
 
 const cache = new CacheModule()
 cache.start(config.cache_interval)
@@ -26,6 +27,8 @@ app.use(express.json())
 app.use(session({ secret: config.secret }))
 app.use(passport.initialize())
 app.use(passport.session())
+
+app.use('/api', apiRoute)
 
 app.get('/', (req, res) => {
   res.render('index', { page: 'UF OSC | Home ' })
