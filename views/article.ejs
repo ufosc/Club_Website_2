@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title><%= title %></title>
+        <link rel="icon" type="image/x-icon" href="../assets/favicon.png" />
+        <link rel="stylesheet" href="../css/common.css" />
+        <link rel="stylesheet" href="../css/article.css" />
+        <script src="../js/navbar.js" defer async></script>
+    </head>
+    <body>
+        <%- include('./components/navbar.ejs') %>
+        <section id="article-section">
+            <% if (locals.previewImage) { %>
+                <div id="banner"><img src="<%= previewImage %>" alt="<%= title %>"></div>
+            <% } %>
+            <div id="article-content">
+                <h1 id="article-title"><%= title %></h1>
+                <div id="date-author">
+                    <h3>Date: <%= date %></h3>
+                    <% if (locals.author) { %>
+                        <h3>Author: <% for(var i=0; i < author.length; i++) { %>
+                            <%= author[i] %>
+                        <% } %>
+                        </h3>
+                    <% } %>
+                </div>
+                <% if (locals.subtitle) { %>
+                    <h2 id="article-subheading">
+                        <%- subtitle %>
+                    </h2>
+                <% } %>
+                <% if (locals.content) { %>
+                    <p id="article-body">
+                        <%- content %>
+                    </p>
+                <% } %>
+            </div>
+        </section>
+        <%- include('./components/footer.ejs') %>
+    </body>
+</html>
