@@ -18,8 +18,7 @@ router.get('/', (req, res, next) => {
 
     return res.status(200).send(newDocs)
   })
-}
-)
+})
 
 // get user and send user back
 router.get('/:id', (req, res, next) => {
@@ -35,8 +34,7 @@ router.get('/:id', (req, res, next) => {
     doc.password = undefined
     return res.status(200).send(doc)
   })
-}
-)
+})
 
 // creates new user
 router.post('/', async (req, res, next) => {
@@ -62,8 +60,7 @@ router.post('/', async (req, res, next) => {
     if (err) return res.status(400).send({ error: err })
     return res.status(200).send({ success: `User "${req.body.username}" created` })
   })
-}
-)
+})
 
 // delete user and send user back
 router.delete('/:id', async (req, res, next) => {
@@ -87,8 +84,7 @@ router.delete('/:id', async (req, res, next) => {
     doc.password = undefined
     return res.status(200).send(doc)
   })
-}
-)
+})
 
 // edit user and send updated user back
 router.put('/:id', async (req, res, next) => {
@@ -122,8 +118,10 @@ router.put('/:id', async (req, res, next) => {
     }
   }
 
-  if (userExists.username === 'admin' &&
-        (req.body.username || typeof req.body.isAdmin !== 'undefined' || req.body.role)) {
+  if (userExists.username === 'admin' && (
+    typeof req.body.username !== 'undefined' ||
+      typeof req.body.isAdmin !== 'undefined' ||
+      typeof req.body.role !== 'undefined')) {
     return res.status(401).send({ error: 'Modifying admin username or role is prohibited' })
   }
 
@@ -138,7 +136,6 @@ router.put('/:id', async (req, res, next) => {
 
     return res.status(200).send(user)
   })
-}
-)
+})
 
 module.exports = router
