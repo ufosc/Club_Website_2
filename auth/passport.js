@@ -1,7 +1,7 @@
 const passport = require('passport')
 const LocalStrategy = require('passport-local').Strategy
 const passportJWT = require('passport-jwt')
-const userModel = require('../model/users').userModel
+const UserModel = require('../model/users').UserModel
 const jwtSecret = require('../config').secret
 const auth = require('./auth')
 
@@ -19,7 +19,7 @@ passport.use('login', new LocalStrategy({
   usernameField: 'username',
   passwordField: 'password'
 }, async (username, passwordAttempt, done) => {
-  const user = await userModel.findOne({ username })
+  const user = await UserModel.findOne({ username })
   if (!user) {
     return done(null, false, { message: 'Incorrect username or password' })
   }
@@ -37,7 +37,7 @@ passport.use('loggedIn', new JWTStrategy({
   passReqToCallback: true
 }, async (req, jwtPayload, done) => {
   req.userID = jwtPayload.id
-  const user = await userModel.findById(jwtPayload.id)
+  const user = await UserModel.findById(jwtPayload.id)
   if (!user) return done(null, false, { message: 'invalid token' })
   return done(null, 'authentication successful')
 }))
