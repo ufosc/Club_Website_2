@@ -17,6 +17,10 @@ const BlogSchema = new mongoose.Schema({
     type: String,
     required: false
   },
+  subtitle: {
+    type: String,
+    required: false
+  },
   author: {
     type: [String],
     required: false
