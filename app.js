@@ -10,6 +10,7 @@ const passport = require('passport')
 const auth = require('./auth/auth')
 const session = require('express-session')
 const cookieParser = require('cookie-parser')
+const { UserModel } = require('./model/users')
 
 const app = express()
 const http = require('http').createServer(app)
@@ -49,13 +50,17 @@ app.post('/auth/login', (req, res) => {
 })
 
 app.get(`/${config.admin_route}`, (req, res) => {
-  passport.authenticate('loggedIn', { session: false }, (error, user, info) => {
+  passport.authenticate('loggedIn', { session: false }, async (error, user, info) => {
     if (error || !user) {
       res.render('login', { loginError: app.get('loginError') })
       app.set('loginError', null)
       return
     }
-    return res.render('admin')
+
+    const users = await UserModel.find({}).sort({ isAdmin: -1 }).exec()
+    return res.render('admin', {
+      users: (users) || []
+    })
   })(req, res)
 })
 
