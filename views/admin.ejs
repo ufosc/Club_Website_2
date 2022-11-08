@@ -84,24 +84,7 @@
                 <h1>Users</h1>
                 <hr/>
                 <div class="table-wrapper">
-                    <%- include('./components/users-table.ejs', { data: [
-                        {
-                            tableId: "users-table",
-                            id: "1",
-                            username: "Username",
-                            fullname: "Full name",
-                            role: "Tech Lead",
-                            isAdmin: true
-                        },
-                        {
-                            tableId: "users-table",
-                            id: "2",
-                            username: "jannie123",
-                            fullname: "CEO of sanitation",
-                            role: "janitor",
-                            isAdmin: false
-                        },
-                    ]}) %>
+                    <%- include('./components/users-table.ejs', { data: users }) %>
                 </div>
             </section>
             <section class="dashboard-subsection">
