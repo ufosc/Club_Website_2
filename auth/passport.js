@@ -1,3 +1,4 @@
+const mongoose = require('mongoose')
 const passport = require('passport')
 const LocalStrategy = require('passport-local').Strategy
 const passportJWT = require('passport-jwt')
@@ -37,7 +38,18 @@ passport.use('loggedIn', new JWTStrategy({
   passReqToCallback: true
 }, async (req, jwtPayload, done) => {
   req.userID = jwtPayload.id
+  if (!mongoose.Types.ObjectId.isValid(req.userID)) {
+    return done(null, false, { message: 'invalid token' })
+  }
+
   const user = await UserModel.findById(jwtPayload.id)
-  if (!user) return done(null, false, { message: 'invalid token' })
+  if (!user) {
+    return done(null, false, { message: 'invalid token' })
+  }
+
+  if (user.password.hash !== jwtPayload.hash) {
+    return done(null, false, { message: 'Password changed. Please try logging in again.' })
+  }
+
   return done(null, 'authentication successful')
 }))

@@ -5,7 +5,11 @@ const pbkdf2 = require('pbkdf2')
 const config = require('../config')
 const PBKDF2_ITERATIONS = 10000
 
-exports.tokenizeUser = (user) => jwt.sign({ id: user.id }, config.secret)
+exports.tokenizeUser = (user) => jwt.sign({
+  id: user.id,
+  hash: user.password.hash,
+  isAdmin: user.isAdmin
+}, config.secret)
 
 const generateHash = (password, salt) => {
   return pbkdf2.pbkdf2Sync(password, salt, PBKDF2_ITERATIONS, 128).toString()
