@@ -11,12 +11,14 @@ const auth = require('./auth/auth')
 const session = require('express-session')
 const cookieParser = require('cookie-parser')
 const { UserModel } = require('./model/users')
+const { callbacks } = require('./callbacks')
 
 const app = express()
 const http = require('http').createServer(app)
 const apiRoute = require('./routes/api')
 
 const cache = new CacheModule()
+cache.register(...callbacks)
 cache.start(config.cache_interval)
 
 app.set('view engine', 'ejs')
@@ -32,7 +34,7 @@ app.use(passport.session())
 app.use('/api', apiRoute)
 
 app.get('/', (req, res) => {
-  res.render('index', { page: 'UF OSC | Home ' })
+  res.send(cache.cache().indexPage)
 })
 
 app.post('/auth/login', (req, res) => {
