@@ -3,6 +3,7 @@ class Cache {
     this.sync = true
     this.state = {}
     this.callbacks = []
+    this.process = null
   }
 
   register (...callbacks) {
@@ -32,7 +33,7 @@ class Cache {
     if (typeof (interval) !== 'number') { return new Error('Expected interval to be of type number') }
 
     // Run AT MOST once every 'interval' milliseconds
-    setInterval(() => {
+    this.process = setInterval(() => {
       if (this.sync) {
         this.run()
         this.sync = false
@@ -40,10 +41,14 @@ class Cache {
     }, interval)
   }
 
-  Cache () {
+  cache () {
     // Start syncing again
     this.sync = true
     return this.state
+  }
+
+  stop () {
+    clearInterval(this.process)
   }
 }
 
