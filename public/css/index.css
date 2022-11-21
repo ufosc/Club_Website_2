@@ -133,7 +133,7 @@ body {
 
 .blog__posts__subtitle {
     font-family: 'Overpass-Bold';
-    font-size: 1.25rem;
+    font-size: 1.5rem;
     font-weight: bold;
 }
 
@@ -277,7 +277,68 @@ p {
     text-align: center;
 }
 
+@media only screen and (min-width: 811px) {
+    .blog__posts h2 {
+        font-size: 1.5rem;
+    }
+
+    .blog__posts__subtitle {
+        font-size: 1.5rem;
+    }
+}
+
+/* ----- for devices under 810px (tablet view)-------*/
+@media only screen and (max-width: 810px) {
+    .blog__posts {
+        grid-template-rows: repeat(auto-fill, 1fr);
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .blog__posts-large {
+        grid-column: 1 / span 2;
+    }
+
+    .blog__posts-small {
+        grid-column: span 1;
+    }
+
+    .blog__posts h2 {
+        font-size: 1.7rem;
+    }
+
+    .blog__posts__subtitle {
+        font-size: 1.7rem;
+    }
+}
+
+/* ----- for devices under 600px (mobile view)-------*/
 @media only screen and (max-width: 600px) {
+
+    .blog__posts {
+        grid-template-rows: repeat(auto-fill, 1fr);
+        grid-template-columns: 1fr;
+    }
+
+    .blog__posts-large {
+        grid-column: 1 / span 1;
+        padding: 15px;
+    }
+
+    .blog__posts-large img {
+        height: 65%;
+    }
+
+    .blog__posts-large h2, .blog__posts-large .blog__posts__subtitle {
+        padding: 0;
+    }
+
+    #first-post {
+        background: #74F535;
+    }
+
+    #second-post {
+        background: white;
+    }
 
     .about__get-started {
         margin: 0 25px;
