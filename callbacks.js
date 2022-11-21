@@ -1,7 +1,8 @@
 const ejs = require('ejs')
+const config = require('./config')
 
 const cacheIndexPage = () => {
-  const data = { page: 'UF OSC | Home' }
+  const data = { page: 'UF OSC | Home', version: config.VERSION }
   const indexPageData = { indexPage: '' }
   ejs.renderFile('./views/index.ejs', data, { async: false }, (err, str) => {
     if (err) {

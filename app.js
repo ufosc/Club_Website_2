@@ -54,20 +54,22 @@ app.post('/auth/login', (req, res) => {
 app.get(`/${config.admin_route}`, (req, res) => {
   passport.authenticate('loggedIn', { session: false }, async (error, user, info) => {
     if (error || !user) {
-      res.render('login', { loginError: app.get('loginError') })
+      res.render('login', { loginError: app.get('loginError'), version: config.VERSION })
       app.set('loginError', null)
       return
     }
 
     const users = await UserModel.find({}).sort({ isAdmin: -1 }).exec()
     return res.render('admin', {
-      users: (users) || []
+      users: (users) || [],
+      version: config.VERSION
     })
   })(req, res)
 })
 
 app.get('/blog/:article', (req, res) => {
   res.render('article', {
+    version: config.VERSION,
     title: req.params.article,
     content: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Recusandae doloremque obcaecati libero nemo voluptates, quas quis officia praesentium repellendus. Perspiciatis dicta distinctio debitis saepe dolor vitae minima nulla maiores . Laborum doloremque iusto consequuntur, facere omnis voluptatum rerum cum minima libero rem temporibus, at dolore perspiciatis cupiditate voluptatem maxime. Soluta ipsam quis in quae, distinctio dolorem. Quis harum excepturi ipsa, blanditiis, soluta maxime suscipit voluptas quisquam, possimus itaque esse voluptatem unde beatae quod temporibus tempore voluptatibus rem nulla eum?<br><br> Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi illum vel eligendi excepturi quam, expedita quasi pariatur accusantium. Sapiente iste, necessitatibus cupiditate earum quasi iusto quo tempore saepe cumque repudiandae. Ratione odio consequuntur aut error obcaecati, quidem pariatur ut tenetur? Sunt eos animi accusamus, doloribus pariatur repellat necessitatibus aspernatur aliquam natus magnam officia nam sint veritatis tenetur neque voluptatum maiores? Commodi odit totam fuga sed nemo veritatis, ducimus quidem natus provident saepe illum doloribus, dolorum dolore similique, repudiandae voluptate consequatur repellendus? Optio exercitationem totam, sapiente at consequatur tempora sint cupiditate.<br><br>',
     subtitle: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi, odio officia atque adipisci inventore praesentium veniam id beatae omnis quisquam nihil excepturi alias aliquid ullam debitis eveniet qui nobis. Exercitationem?',
@@ -78,7 +80,7 @@ app.get('/blog/:article', (req, res) => {
 })
 
 app.get('/:page', (req, res) => {
-  res.render('index', { page: req.params.page })
+  res.render('index', { page: req.params.page, version: config.VERSION })
 })
 
 db.connect()
