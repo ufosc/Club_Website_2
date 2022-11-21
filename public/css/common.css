@@ -69,10 +69,17 @@ h4 {
     color: black;
 }
 
+h5 {
+    color: #A4A1B6;
+    font-size: 13px;
+    font-family: 'Overpass';
+}
+
 .section_heading {
     /* self align */
     padding: 25px;
-    padding-top: 20px;
+    padding-top: 40px;
+    padding-bottom: 30px;
     max-width: 1400px;
     margin: 0 auto;
     /* self style */
