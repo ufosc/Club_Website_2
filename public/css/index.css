@@ -277,6 +277,67 @@ p {
     text-align: center;
 }
 
+/*........... JOIN SECTION.......... */
+.join .join__perks-perk {
+    max-width: 500px;
+    display: grid;
+    grid-template-columns: 1fr 4.5fr;
+    color: white;
+}
+
+.join .join__perks-perk h3 {
+    font-size: 19px;
+}
+
+.join .join__perks {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-gap: 25px;
+    max-width: 1200px;
+}
+
+.join .join__content__perks {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 0 25px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+.join button {
+    width: 170px;
+    border: 0px;
+
+    background: #74F535;
+    font-family: 'Overpass', sans-serif;
+    text-transform: uppercase;
+    font-size: 15px;
+    font-weight: 400;
+    border-radius: 20px;
+    /* content align */
+    padding: 8px 12px;
+}
+
+.join .join__sign_up {
+    padding: 0 25px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.join .join__text {
+    padding: 0 35px;
+    font-family: 'Overpass';
+    color: white;
+    position: relative;
+    max-width: 1400px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+/*........... for devices over 811px (desktop view).......... */
 @media only screen and (min-width: 811px) {
     .blog__posts h2 {
         font-size: 1.5rem;
@@ -289,6 +350,10 @@ p {
 
 /* ----- for devices under 810px (tablet view)-------*/
 @media only screen and (max-width: 810px) {
+    .join .join__perks-perk {
+        grid-template-columns: 1fr 4fr;
+    }
+
     .blog__posts {
         grid-template-rows: repeat(auto-fill, 1fr);
         grid-template-columns: 1fr 1fr;
@@ -311,8 +376,22 @@ p {
     }
 }
 
+@media only screen and (max-width: 730px) {
+    .join .join__perks-perk {
+        grid-template-columns: 1fr 3fr;
+    }
+}
+
 /* ----- for devices under 600px (mobile view)-------*/
 @media only screen and (max-width: 600px) {
+    .join .join__perks-perk {
+        grid-template-columns: 1fr 4.5fr;
+    }
+
+    .join .join__perks {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+    }
 
     .blog__posts {
         grid-template-rows: repeat(auto-fill, 1fr);
@@ -367,5 +446,4 @@ p {
         /* self style */
         text-align: left;
     }
-
 }
