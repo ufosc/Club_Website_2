@@ -1,3 +1,4 @@
+const VERSION = 'V0.0.0'
 const NODE_ENV = process.env.NODE_ENV || 'development'
 const MONGO_URI = process.env.MONGO_URI || 'mongodb+srv://dev:Vm0p67n9M0Z9j0jx@cluster0.cfrfrnu.mongodb.net/?retryWrites=true&w=majority'
 
@@ -49,3 +50,4 @@ const config = {
 module.exports = config[NODE_ENV]
 module.exports.ENV = NODE_ENV
 module.exports.MONGO_URI = MONGO_URI
+module.exports.VERSION = VERSION
