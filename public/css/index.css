@@ -262,6 +262,7 @@ p {
 .portfolio .portfolio__cards__scroll .portfolio__cards__scroll__btn-right img,
 .portfolio__cards__scroll__btn-left img {
     width: 60%;
+    cursor: pointer;
 }
 
 .portfolio .portfolio__cards__scroll .portfolio__cards__scroll__btn-right img {
