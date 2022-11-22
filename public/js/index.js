@@ -1,12 +1,25 @@
+/* global ResizeObserver */
 const horizontalScrollContainer = document.querySelector('.portfolio__cards__scroll')
 const btnLeft = document.querySelector('.portfolio__cards__scroll__btn-left')
 const btnRight = document.querySelector('.portfolio__cards__scroll__btn-right')
 const scrollableWidth = horizontalScrollContainer.scrollWidth
 const elementWidth = horizontalScrollContainer.clientWidth
-const totalScrollableWidth = (scrollableWidth - elementWidth)
+let totalScrollableWidth = (scrollableWidth - elementWidth)
 
-let leftScroll = totalScrollableWidth
-let rightScroll = totalScrollableWidth
+let ourScroll = 0
+
+new ResizeObserver(function (entries) {
+  const horizontalScrollContainer = document.querySelector('.portfolio__cards__scroll')
+  totalScrollableWidth = (horizontalScrollContainer.scrollWidth - horizontalScrollContainer.clientWidth)
+
+  if (ourScroll < totalScrollableWidth) {
+    btnRight.style.display = 'block'
+    return
+  }
+
+  btnRight.style.display = 'none'
+  ourScroll = totalScrollableWidth
+}).observe(document.querySelector('.portfolio__cards__scroll'))
 
 const swipeLeft = () => {
   horizontalScrollContainer.scrollLeft -= 300
@@ -15,41 +28,32 @@ const swipeLeft = () => {
 const swipeRight = () => {
   horizontalScrollContainer.scrollLeft += 300
 }
-let first = true
+
 btnLeft.onclick = () => {
-  if (first) {
-    rightScroll -= 600
-    first = false
-  } else {
-    rightScroll -= 300
-  }
-  if (rightScroll < totalScrollableWidth) {
-    btnLeft.style.display = 'none'
-  } else {
+  swipeLeft()
+  ourScroll = (ourScroll - 300 >= 0 ? ourScroll - 300 : 0)
+  btnLeft.style.display = 'none'
+
+  if (ourScroll > 0) {
     btnLeft.style.display = 'block'
   }
-  swipeLeft()
-  leftScroll += 300
-  if (leftScroll < totalScrollableWidth) {
-    btnRight.style.display = 'none'
-  } else {
+
+  if (ourScroll < totalScrollableWidth) {
     btnRight.style.display = 'block'
   }
 }
 
 btnRight.onclick = () => {
-  btnLeft.style.display = 'block'
-  if (leftScroll < totalScrollableWidth) {
-    btnRight.style.display = 'none'
-  } else {
-    btnRight.style.display = 'block'
-  }
-  leftScroll -= 300
   swipeRight()
-  rightScroll += 300
-  if (rightScroll < totalScrollableWidth) {
-    btnLeft.style.display = 'none'
-  } else {
+  ourScroll += 300
+  btnLeft.style.display = 'block'
+  btnRight.style.display = 'block'
+
+  if (ourScroll >= totalScrollableWidth) {
+    btnRight.style.display = 'none'
+  }
+
+  if (ourScroll !== 0) {
     btnLeft.style.display = 'block'
   }
 }
