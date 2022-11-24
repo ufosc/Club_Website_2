@@ -1,6 +1,7 @@
 const express = require('express')
 const router = express.Router()
 const passport = require('passport')
+const config = require('../config')
 const mongoose = require('mongoose')
 const { BlogModel } = require('../model/blog')
 
@@ -21,7 +22,8 @@ router.get('/:id', (req, res) => {
       return res.status(404).send({ error: 'article not found' })
     }
 
-    return res.status(200).send(blog)
+    blog.version = config.VERSION
+    return res.render('article', blog)
   })(req, res)
 })
 
