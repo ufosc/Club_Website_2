@@ -90,7 +90,7 @@ body {
 /*........... BLOG SECTION.......... */
 .blog__posts {
     padding: 0 25px;
-    max-width: 1400px;
+    max-width: 1200px;
     margin: 0 auto;
 
     display: grid;
@@ -144,7 +144,7 @@ body {
 
 .blog__see_all {
     padding: 0 25px;
-    max-width: 1400px;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
@@ -175,7 +175,7 @@ body {
 
 .portfolio>h2 {
     width: 100%;
-    max-width: 1400px;
+    max-width: 1200px;
 }
 
 .portfolio__cards__scroll {
@@ -184,14 +184,14 @@ body {
     display: flex;
     gap: 20px;
     scroll-behavior: smooth;
-    max-width: 1400px;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
 .portfolio .portfolio__cards {
     position: relative;
     width: 100vw;
-    max-width: 1400px;
+    max-width: 1200px;
     overflow: hidden;
     padding: 30px;
 }
@@ -324,7 +324,7 @@ p {
 
 .join .join__sign_up {
     padding: 0 25px;
-    max-width: 1400px;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
@@ -333,9 +333,75 @@ p {
     font-family: 'Overpass';
     color: white;
     position: relative;
-    max-width: 1400px;
+    max-width: 1200px;
     margin: 0 auto;
     text-align: left;
+}
+
+/*........... CONTACT SECTION.......... */
+.contact__content {
+    display: grid;
+    padding: 20px;
+    width: 100%;
+    max-width: 1200px;
+    grid-template-columns: 1fr 1fr;
+}
+
+label {
+    color: white;
+    font-family: 'Overpass';
+}
+
+.contact__content__form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-gap: 10px;
+    max-height: 400px;
+}
+
+.contact__content__form input {
+    height: 40px;
+    margin: 10px;
+    margin-left: 0px;
+    width: 100%;
+    border-radius: 6px;
+}
+
+textarea {
+    margin: 10px;
+    margin-left: 0px;
+    width: 100%;
+    border-radius: 6px;
+}
+
+.contact__content__form-email,
+.contact__content__form-message {
+    grid-column: 1 / 3;
+}
+
+.contact__content__form-sumbit {
+    width: 100px !important;
+    border: 0px;
+
+    background: #74F535;
+    font-family: 'Overpass', sans-serif;
+    text-transform: uppercase;
+    font-size: 15px;
+    font-weight: 400;
+    border-radius: 20px;
+    /* content align */
+    padding: 8px 12px;
+}
+
+.contact__content__text {
+    padding: 0 35px;
+    font-family: 'Overpass';
+    color: white;
+    position: relative;
+    max-width: 1400px;
+    margin: 0 auto;
+    text-align: right;
 }
 
 /*........... for devices over 811px (desktop view).......... */
