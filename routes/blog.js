@@ -7,19 +7,19 @@ const { BlogModel } = require('../model/blog')
 
 router.get('/:id', (req, res) => {
   if (!mongoose.Types.ObjectId.isValid(req.params.id)) {
-    return res.status(400).send({ error: 'Invalid ID' })
+    return res.redirect('/blog')
   }
 
   passport.authenticate('loggedIn', { session: false }, async (error, user, info) => {
     const blog = await BlogModel.findById(req.params.id)
 
     if (!blog) {
-      return res.status(404).send({ error: 'article not found' })
+      return res.redirect('/blog')
     }
 
     // Not logged in: private article not found
     if ((error || !user) && blog.status !== 'published') {
-      return res.status(404).send({ error: 'article not found' })
+      return res.redirect('/blog')
     }
 
     blog.version = config.VERSION
