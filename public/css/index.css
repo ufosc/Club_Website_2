@@ -513,4 +513,12 @@ textarea {
         /* self style */
         text-align: left;
     }
+    .contact__content {
+        grid-template-columns: 1fr;
+        grid-template-rows: 2fr 3fr;
+    }
+    .contact__content__text {
+        grid-row: 1;
+        text-align: center;
+    }
 }
