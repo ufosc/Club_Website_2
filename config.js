@@ -21,7 +21,9 @@ const config = {
       max: process.env.RATE_LIMIT_MAX || 1500
     },
     cache_interval: process.env.CACHE_INTERVAL * 60 * 1000 || 10 * 1000,
-    secret: 'jLJhDQMYtXjCwQmu'
+    secret: 'jLJhDQMYtXjCwQmu',
+    smtp: null,
+    admin_email: process.env.ADMIN_EMAIL
   },
   staging: {
     port: process.env.SERVER_PORT || 3001,
@@ -32,7 +34,17 @@ const config = {
       max: process.env.RATE_LIMIT_MAX || 100
     },
     cache_interval: process.env.CACHE_INTERVAL * 60 * 1000 || 15 * 60 * 1000,
-    secret: process.env.SECRET
+    secret: process.env.SECRET,
+    smtp: {
+      host: process.env.SMTP_HOST || 'smtp-relay.sendinblue.com',
+      port: process.env.SMTP_PORT || 587,
+      secure: false,
+      auth: {
+        user: process.env.SMTP_USER,
+        pass: process.env.SMTP_PASS
+      }
+    },
+    admin_email: process.env.ADMIN_EMAIL
   },
   production: {
     port: process.env.SERVER_PORT || 3002,
@@ -43,7 +55,17 @@ const config = {
       max: process.env.RATE_LIMIT_MAX || 100
     },
     cache_interval: process.env.CACHE_INTERVAL * 60 * 1000 || 15 * 60 * 1000,
-    secret: process.env.SECRET
+    secret: process.env.SECRET,
+    smtp: {
+      host: process.env.SMPT_HOST || 'smtp-relay.sendinblue.com',
+      port: process.env.SMPT_PORT || 587,
+      secure: false,
+      auth: {
+        user: process.env.SMTP_USER,
+        pass: process.env.SMPT_PASS
+      }
+    },
+    admin_email: process.env.ADMIN_EMAIL
   }
 }
 
