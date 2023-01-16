@@ -21,10 +21,6 @@ const validateAddress = (req, res, next) => {
     return res.status(400).send({ error: 'Malformed Email Address.' })
   }
 
-  // Sanitize HTML
-  req.body.Email = req.body.Email.replace(/</g, '&lt;').replace(/>/g, '&gt;')
-    .replace('"', '&quot;').replace("'", '&apos;')
-
   next()
 }
 
@@ -58,18 +54,11 @@ const validateContactForm = (req, res, next) => {
     return res.status(400).send({ error: 'Expected Message field to be of length greater than 1.' })
   }
 
-  // Sanitize HTML
-  req.body.FirstName = req.body.FirstName.replace(/</g, '&lt;').replace(/>/g, '&gt;')
-    .replace('"', '&quot;').replace("'", '&apos;')
-
-  req.body.LastName = req.body.LastName.replace(/</g, '&lt;').replace(/>/g, '&gt;')
-    .replace('"', '&quot;').replace("'", '&apos;')
-
-  req.body.Email = req.body.Email.replace(/</g, '&lt;').replace(/>/g, '&gt;')
-    .replace('"', '&quot;').replace("'", '&apos;')
-
-  req.body.Message = req.body.Message.replace(/</g, '&lt;').replace(/>/g, '&gt;')
-    .replace('"', '&quot;').replace("'", '&apos;')
+  // Sanitise HTML
+  req.body.FirstName = encodeURI(req.body.FirstName)
+  req.body.LastName = encodeURI(req.body.LastName)
+  req.body.Email = encodeURI(req.body.Email)
+  req.body.Message = encodeURI(req.body.Message)
 
   next()
 }
