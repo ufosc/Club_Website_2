@@ -1,4 +1,4 @@
-/* global ResizeObserver */
+/* global ResizeObserver, XMLHttpRequest, alert */
 const horizontalScrollContainer = document.querySelector('.portfolio__cards__scroll')
 const btnLeft = document.querySelector('.portfolio__cards__scroll__btn-left')
 const btnRight = document.querySelector('.portfolio__cards__scroll__btn-right')
@@ -56,4 +56,31 @@ btnRight.onclick = () => {
   if (ourScroll !== 0) {
     btnLeft.style.display = 'block'
   }
+}
+
+// eslint-disable-next-line
+const sendEmail = (event) => {
+  event.preventDefault()
+  const XHR = new XMLHttpRequest()
+
+  // Success
+  XHR.onreadystatechange = () => {
+    if (XHR.readyState === 4) {
+      if (XHR.status !== 200) {
+        alert(JSON.parse(XHR.responseText).error)
+        return
+      }
+
+      alert('Message sent succesfully. Check your email (& spam folder) for confirmation of receipt.')
+    }
+  }
+
+  XHR.open('POST', './api/contact')
+  XHR.setRequestHeader('Content-Type', 'application/json')
+  XHR.send(JSON.stringify({
+    FirstName: document.getElementById('FirstName').value,
+    LastName: document.getElementById('LastName').value,
+    Email: document.getElementById('Email').value,
+    Message: document.getElementById('Message').value
+  }))
 }
