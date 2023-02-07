@@ -1,9 +1,9 @@
 require('dotenv').config()
 const config = require('./config')
 const mongoose = require('mongoose')
-const { hashPassword } = require('./auth/auth')
-const { UserModel } = require('./model/users')
-const { BlogModel } = require('./model/blog')
+const { hashPassword } = require('../auth/auth')
+const { UserModel } = require('../model/users')
+const { BlogModel } = require('../model/blog')
 
 const seed = () => {
   if (config.ENV !== 'development') {

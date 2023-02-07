@@ -1,7 +1,7 @@
 const express = require('express')
 const router = express.Router()
 const passport = require('passport')
-const config = require('../config')
+const config = require('../utils/config')
 const mongoose = require('mongoose')
 const { BlogModel } = require('../model/blog')
 
