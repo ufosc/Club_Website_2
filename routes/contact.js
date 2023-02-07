@@ -1,7 +1,7 @@
 const express = require('express')
 const router = express.Router()
 const nodemailer = require('nodemailer')
-const config = require('../config')
+const config = require('../utils/config')
 
 const transport = (config.smtp == null) ? null : nodemailer.createTransport(config.smtp)
 

@@ -1,7 +1,7 @@
 /* global describe, it */
 
 const chai = require('chai')
-const CacheModule = require('../cache')
+const CacheModule = require('../utils/cache')
 const expect = chai.expect
 
 describe('Cache Module', () => {
