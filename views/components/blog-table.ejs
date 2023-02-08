@@ -1,7 +1,7 @@
 <div style="overflow-x:auto;">
     <table id="blog-table">
         <thead>
-            <th scope="col" class="tcheckbox"><input type="checkbox" onclick="selectAllCheckboxClickHandler('blog-table', blogTableSelections)"/></th>
+            <th scope="col" class="tcheckbox"><input type="checkbox" onclick="selectAllCheckboxClickHandler('blog-table', blogTableSelections);deleteButtonVisibility ('blog-table','delete-button-blog');"/></th>
             <th scope="col" class="title-header">Title</th>
             <th scope="col">Content</th>
             <th scope="col">Date Published</th>
@@ -12,7 +12,7 @@
         <tbody>
         <% data.forEach((entry) => { %>
             <tr class="data-row" id="<%= entry.id %>">
-                <td><input type="checkbox" name="row-selected" onclick="checkboxClickHandler('<%= entry.id %>', '<%= entry.tableId %>', blogTableSelections)"/></td>
+                <td><input type="checkbox" name="row-selected" onclick="checkboxClickHandler('<%= entry.id %>', '<%= entry.tableId %>', blogTableSelections);deleteButtonVisibility ('blog-table','delete-button-blog');"/></td>
                 <td><%= entry.title %></td>
                 <td><%= entry.content %></td>
                 <td><%= entry.date %></td>

@@ -1,12 +1,14 @@
 /* global blogTableSelections */
 /* global usersTableSelections */
 
-// uncheck all checkboxes on load and remove all data from selectionsArray(s)
+// uncheck all checkboxes on load and remove all data from selectionsArray(s) and hide Delete-Buttons
 document.addEventListener('DOMContentLoaded', () => {
   const checkboxes = document.querySelectorAll('input[type="checkbox"]')
   for (let i = 0; i < checkboxes.length; i++) {
     checkboxes[i].checked = false
   }
+  // hiding the Delete Buttons
+  disableAllDeleteButtons()
   blogTableSelections.splice(0, blogTableSelections.length)
   usersTableSelections.splice(0, usersTableSelections.length)
 })
@@ -58,4 +60,35 @@ function selectAllCheckboxClickHandler (tableId, selectionsArray) { // eslint-di
     // set checkbox to checked
     rowsArray[i].querySelector('input').checked = true
   }
+}
+
+// Function to check if any of the item is selected
+function checkSelection (tableId) {
+  const rowsArray = document.querySelector(`#${tableId} tbody`).getElementsByClassName('data-row')
+
+  // if all are selected: remove and uncheck all
+  for (let i = 0; i < rowsArray.length; i++) {
+    if (rowsArray[i].querySelector('input').checked === true) { return true }
+  }
+  return false
+}
+
+// function to determine the visiblity of delete button
+function deleteButtonVisibility (tableId, buttonId) {
+  const deleteButton = document.querySelector('#' + buttonId)
+  // if no item is selected the delete button is hidden
+  if (!checkSelection(tableId)) {
+    deleteButton.style.visibility = 'hidden'
+  }
+  // if any of the item is selected the delete button is made visible
+  if (checkSelection(tableId)) {
+    deleteButton.style.visibility = 'visible'
+  }
+}
+
+// function to disable or hide all the delete buttons
+function disableAllDeleteButtons () {
+  deleteButtonVisibility('blog-table', 'delete-button-blog')
+  deleteButtonVisibility('blog-table', 'delete-button-users')
+  deleteButtonVisibility('images-table', 'delete-button-images')
 }
