@@ -30,6 +30,7 @@
         <%- include('./components/navbar.ejs') %>
         <section id="dashboard-section">
             <section class="dashboard-subsection">
+                <button id="delete-button-blog" type="button">DELETE</button>
                 <h1>Blog</h1>
                 <hr/>
                 <%- include('./components/blog-table.ejs', { data: [
@@ -81,6 +82,7 @@
                 ]}) %>
             </section>
             <section class="dashboard-subsection">
+                <button id="delete-button-users" type="button">DELETE</button>
                 <h1>Users</h1>
                 <hr/>
                 <div class="table-wrapper">
@@ -88,6 +90,7 @@
                 </div>
             </section>
             <section class="dashboard-subsection">
+                <button id="delete-button-images" type="button">DELETE</button>
                 <h1>Images</h1>
                 <hr/>
                 <div class="table-wrapper">

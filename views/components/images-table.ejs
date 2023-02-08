@@ -4,7 +4,7 @@
       <th scope="col" class="tcheckbox">
         <input
           type="checkbox"
-          onclick="selectAllCheckboxClickHandler('images-table', imagesTableSelections)"
+          onclick="selectAllCheckboxClickHandler('images-table', imagesTableSelections);deleteButtonVisibility('images-table','delete-button-images');"
         />
       </th>
       <th scope="col" class="title-header">Name</th>
@@ -19,7 +19,7 @@
             <input
               type="checkbox"
               name="row-selected"
-              onclick="checkboxClickHandler('<%= entry.id %>', '<%= entry.tableId %>', imagesTableSelections)"
+              onclick="checkboxClickHandler('<%= entry.id %>', '<%= entry.tableId %>', imagesTableSelections);deleteButtonVisibility('images-table','delete-button-images');"
             />
           </td>
           <td><%= entry.name %></td>
