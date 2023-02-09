@@ -11,9 +11,8 @@
   },
   "standard": {
     "ignore": [
-      "public/js/three.min.js",
-      "public/js/orb.js",
-      "public/js/perlin.js"
+      "public/js/three.module.js",
+      "public/js/BufferGeometryUtils.js"
     ]
   },
   "repository": {
