@@ -1,22 +1,52 @@
-# UF OSC Website
+# UF Open Source Club Website
 [![standard-readme compliant](https://img.shields.io/badge/readme%20style-standard-brightgreen.svg?style=flat-square)](https://github.com/RichardLitt/standard-readme) ![GitHub issues](https://img.shields.io/github/issues-raw/ufosc/Club_Website_2) ![GitHub](https://img.shields.io/github/license/ufosc/Club_Website_2) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com) ![GitHub Workflow Status](https://img.shields.io/github/workflow/status/ufosc/Club_Website_2/Node.js%20CI) ![GitHub package.json version](https://img.shields.io/github/package-json/v/ufosc/Club_Website_2)
 <br/>
-Website for the UF Open Source Club.
+The official website of the UF Open Source Club. 
 
 ## Table of Contents
+- [Background](#background)
 - [Install](#install)
 - [Usage](#usage)
 - [Configuring](#configuring)
+- [Maintainers](#maintainers)
 - [Contributing](#contributing)
 - [License](#license)
 
+## Background
+Started in the Fall semester 2022, this website is built and maintained by club members to serve as a hub of information for the club.
+
+### Pages
+-  **About**
+   - Illustrates the purpose of the club as well as information about the current officers, team leads, and members.
+
+- **Portfolio**
+   - Chronicles past projects for posterity.
+
+- **Blog**
+   - Area for updates on current projects, casual coding meetings, and events.
+
+-  **Contact**
+   - Information for how to get in touch with club leadership.
+
+- **Become a Member**
+   - Links to the official UF OSC discord server.
+   - Contains regular meeting times for casual coding sessions.
+   - Provides information new members can use to get started.
+
 ## Install
-This project requires [NodeJS](https://nodejs.org/en/) and [Git](https://git-scm.com). Also, make sure you have `build-essential` (Linux) or `xcode-select` (MacOS).
+This project requires [NodeJS](https://nodejs.org/en/) and [Git](https://git-scm.com).
+
+### Linux
+Linux systems require `build-essential`
 ```
 sudo apt install build-essential
-// or...
+```
+### MacOS
+MacOS systems require `xcode-select`
+```
 xcode-select --install
 ```
+<br/>
 
 Next, begin by cloning the repository:
 ```
@@ -37,7 +67,7 @@ You can access the website by visiting http://localhost:3000 on your browser.
 
 <b>Linting & fixing:</b>
 <br/>
-This project adheres to the Javascript Standard syntax style, running the following will show you a list of syntax errors that you'll need to correct.
+This project adheres to the Javascript Standard syntax style, use linting to show you a list of syntax errors that you'll need to correct.
 ```
 npm run lint
 ```
@@ -45,7 +75,7 @@ To automatically fix these, you can run:
 ```
 npm run fix
 ```
-Keep in mind that some syntax issues cannot be automatically resolved, in which case you'll need to run `npm run lint` again and resolve them manually.
+Keep in mind that some syntax issues cannot be automatically resolved, in which case you'll need to run the linter again and resolve them manually.
 
 
 <b>Running tests:</b>
@@ -119,7 +149,8 @@ The email address to send contact form confirmation emails from. Can be set to a
 ```
 ADMIN_EMAIL = "no-reply@ufosc.com"
 ```
-
+## Maintainers
+Maintained by the UF Open Source Club, can be contacted via [Discord](https://discord.gg/j9g5dqSVD8).
 ## Contributing
 All contributions are welcome and appreciated, so long as they adhere to the [license](#license). Contributors are urged to familiarize themselves with the [contribution guidelines](CONTRIBUTING.md).
 ## License
