@@ -2,89 +2,60 @@ body {
     overflow-x: hidden;
 }
 
-/*........... ABOUT SECTION.......... */
-
-.about__get-started {
+/*........... TITLE ANIMATION.......... */
+.title__animation {
+    width: 100%;
+    height: 75vh;
+    overflow: hidden;
     display: grid;
     flex-direction: row;
     justify-content: center;
-    padding-top: 20px;
-    max-width: 800px;
     margin: 0 auto;
 }
 
-.about__get-started__content {
-    /* self style */
-    background: #29B5BB;
-    font-family: 'Overpass', sans-serif;
-    border-radius: 30px;
-
-    /* content align */
-    position: relative;
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    column-gap: 10px;
-
-    padding: 20px 50px;
-}
-
-.about__get-started h2 {
-    /* self style */
-    text-transform: uppercase;
-}
-
-.about__get-started button {
-    /* self align */
-    margin-top: 20px;
-    height: 40px;
-    width: 160px;
-    border: 0px;
-    grid-row: 2;
-    grid-column: 1;
-    /* self style */
-    background: black;
+.title__content {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -60%);
+    transform: translate(-50%, -50%);
+    z-index: 100;
     color: white;
+    text-align: center;
+    max-width: 650px;
+}
+
+.title__content__text {
+    text-align: center;
+    margin-top: 30px;
+    font-family: 'Overpass', sans-serif;
+}
+
+.title-animation button {
+    margin-top: 30px;
+    width: 130px;
+    border: 0px;
+
+    background: #74F535;
     font-family: 'Overpass', sans-serif;
     text-transform: uppercase;
     font-size: 15px;
     font-weight: 400;
     border-radius: 20px;
+
     /* content align */
     padding: 8px 12px;
 }
 
-.about__get-started-text {
-    /* self align */
-    grid-row: 1 / 3;
-    grid-column: 2;
-
-    /* self style */
-    text-align: right;
-    font-size: 18px;
+.title__content__button-right {
+    margin-left: 10px;
+    background: none !important;
+    border: solid 1px #74F535 !important;
+    color: #74F535 !important;
 }
 
-.about__get-started__content::after {
-    content: '';
-    /* self align */
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    transform: translate(-50%);
-    width: calc(100% - 50px);
-    height: 30px;
-    box-sizing: border-box;
-    /* self style */
-    background-image: linear-gradient(#29B5BB -30%, transparent);
-    clip-path: polygon(0 0, 100% 0, 95% 30px, 5% 30px);
-}
-
-.about__animation {
-    margin: 38px;
-    height: 400px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    overflow-x: hidden;
+#scene0 {
+    opacity: 0.8;
 }
 
 /*........... BLOG SECTION.......... */
