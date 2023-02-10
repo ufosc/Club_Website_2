@@ -11,6 +11,7 @@ const auth = require('./auth/auth')
 const session = require('express-session')
 const cookieParser = require('cookie-parser')
 const { UserModel } = require('./model/users')
+const { BlogModel } = require('./model/blog')
 const { callbacks } = require('./utils/callbacks')
 
 const app = express()
@@ -60,8 +61,10 @@ app.get(`/${config.admin_route}`, (req, res) => {
     }
 
     const users = await UserModel.find({}).sort({ isAdmin: -1 }).exec()
+    const blog = await BlogModel.find({})
     return res.render('admin', {
       users: (users) || [],
+      blog: (blog) || [],
       version: config.VERSION
     })
   })(req, res)
