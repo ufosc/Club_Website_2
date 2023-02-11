@@ -39,31 +39,34 @@ const init = () => {
   geometry.setAttribute('customColor', new THREE.Float32BufferAttribute(colors, 3))
   geometry.setAttribute('size', new THREE.Float32BufferAttribute(sizes, 1))
 
-  const material = new THREE.ShaderMaterial({
+  const textureLoader = new THREE.TextureLoader()
+  textureLoader.load('./assets/disc.png', (texture) => {
+    const material = new THREE.ShaderMaterial({
+      uniforms: {
+        color: { value: new THREE.Color(0xffffff) },
+        pointTexture: { value: texture },
+        alphaTest: { value: 0.9 }
+      },
+      vertexShader: document.getElementById('vertexshader').textContent,
+      fragmentShader: document.getElementById('fragmentshader').textContent
+    })
 
-    uniforms: {
-      color: { value: new THREE.Color(0xffffff) },
-      pointTexture: { value: new THREE.TextureLoader().load('./assets/disc.png') },
-      alphaTest: { value: 0.9 }
-    },
-    vertexShader: document.getElementById('vertexshader').textContent,
-    fragmentShader: document.getElementById('fragmentshader').textContent
+    particles = new THREE.Points(geometry, material)
+    scene2.add(particles)
 
+    renderer2 = new THREE.WebGLRenderer()
+    renderer2.setPixelRatio(window.devicePixelRatio)
+    renderer2.setSize(window.innerWidth, window.innerHeight)
+    container.appendChild(renderer2.domElement)
+
+    raycaster = new THREE.Raycaster()
+    pointer = new THREE.Vector2()
+
+    window.addEventListener('resize', onWindowResize)
+    document.addEventListener('pointermove', onPointerMove)
+
+    animate()
   })
-
-  particles = new THREE.Points(geometry, material)
-  scene2.add(particles)
-
-  renderer2 = new THREE.WebGLRenderer()
-  renderer2.setPixelRatio(window.devicePixelRatio)
-  renderer2.setSize(window.innerWidth, window.innerHeight)
-  container.appendChild(renderer2.domElement)
-
-  raycaster = new THREE.Raycaster()
-  pointer = new THREE.Vector2()
-
-  window.addEventListener('resize', onWindowResize)
-  document.addEventListener('pointermove', onPointerMove)
 }
 
 const onPointerMove = (event) => {
@@ -111,5 +114,6 @@ const dotrender = () => {
   renderer2.render(scene2, camera2)
 }
 
-init()
-animate()
+document.addEventListener('DOMContentLoaded', () => {
+  init()
+})
