@@ -67,6 +67,12 @@ app.get(`/${config.admin_route}`, (req, res) => {
   })(req, res)
 })
 
+app.get('/blog', (req, res) => {
+  res.render('blog', {
+    version: config.VERSION
+  })
+})
+
 app.get('/blog/:article', (req, res) => {
   res.render('article', {
     version: config.VERSION,
