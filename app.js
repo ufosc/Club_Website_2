@@ -1,17 +1,18 @@
 require('dotenv').config()
 require('./auth/passport')
 const bodyParser = require('body-parser')
-const config = require('./config')
+const config = require('./utils/config')
 const express = require('express')
-const db = require('./database')
+const db = require('./utils/database')
 const rateLimit = require('express-rate-limit')
-const CacheModule = require('./cache')
+const CacheModule = require('./utils/cache')
 const passport = require('passport')
 const auth = require('./auth/auth')
 const session = require('express-session')
 const cookieParser = require('cookie-parser')
 const { UserModel } = require('./model/users')
-const { callbacks } = require('./callbacks')
+const { BlogModel } = require('./model/blog')
+const { callbacks } = require('./utils/callbacks')
 
 const app = express()
 const http = require('http').createServer(app)
@@ -60,8 +61,10 @@ app.get(`/${config.admin_route}`, (req, res) => {
     }
 
     const users = await UserModel.find({}).sort({ isAdmin: -1 }).exec()
+    const blog = await BlogModel.find({})
     return res.render('admin', {
       users: (users) || [],
+      blog: (blog) || [],
       version: config.VERSION
     })
   })(req, res)

@@ -2,7 +2,7 @@ const jwt = require('jsonwebtoken')
 const crypto = require('crypto')
 const pbkdf2 = require('pbkdf2')
 
-const config = require('../config')
+const config = require('../utils/config')
 const PBKDF2_ITERATIONS = 10000
 
 exports.tokenizeUser = (user) => jwt.sign({
