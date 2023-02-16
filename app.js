@@ -70,8 +70,11 @@ app.get(`/${config.admin_route}`, (req, res) => {
   })(req, res)
 })
 
-app.get('/blog', (req, res) => {
+app.get('/blog', async (req, res) => {
+  const blog = await BlogModel.find({}).exec()
+  console.log(blog)
   res.render('blog', {
+    blog: (blog)|| [],
     version: config.VERSION
   })
 })
