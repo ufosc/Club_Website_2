@@ -86,7 +86,12 @@ app.get('/:page', (req, res) => {
   res.render('index', { page: req.params.page, version: config.VERSION })
 })
 
-module.exports = app
-
 db.connect()
 http.listen(config.port, () => console.log(`Server running on port ${config.port}`))
+
+const stop = () => {
+  server.close();
+  database.disconnect();
+}
+
+module.exports = {app, stop}
