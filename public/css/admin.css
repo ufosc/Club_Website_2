@@ -23,12 +23,12 @@
 }
 
 section {
-    background: white;
+  background: white;
 }
 
 /* ----------CSS for Delete Buttons starts here----------------- */
 
-#delete-button-blog{
+#delete-button-blog {
   /* self style */
   background-color: red;
   color: var(--light-gray);
@@ -42,7 +42,7 @@ section {
   float: right;
 }
 
-#delete-button-users{
+#delete-button-users {
   /* self style */
   background-color: red;
   color: var(--light-gray);
@@ -56,7 +56,7 @@ section {
   float: right;
 }
 
-#delete-button-images{
+#delete-button-images {
   /* self style */
   background-color: red;
   color: var(--light-gray);

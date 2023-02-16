@@ -1,355 +1,359 @@
 @font-face {
-    font-family: 'Outrun';
-    src: url(../fonts/outrun.otf);
+  font-family: 'Outrun';
+  src: url(../fonts/outrun.otf);
 }
 
 @font-face {
-    font-family: 'Overpass';
-    src: url(../fonts/overpass.ttf);
+  font-family: 'Overpass';
+  src: url(../fonts/overpass.ttf);
 }
 
 @font-face {
-    font-family: 'Overpass-Bold';
-    src: url(../fonts/overpass-bold.ttf)
+  font-family: 'Overpass-Bold';
+  src: url(../fonts/overpass-bold.ttf);
 }
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    text-decoration: none;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
 }
 
 :root {
-    --bg-600:#97918F;
-    --bg-200:#F1F1F1;  /*background color saturation 200*/
-    --bg-100:#FBFBFB;  /*background color saturation 100*/
-    --light-gray: #DBDBDB;
-    --light-black: #161B22;
-    --gray: #979797;
-    --blue-accent: #374BFE;
-    --turquoise-accent: #2AB6BC;
+  --bg-600: #97918f;
+  --bg-200: #f1f1f1; /*background color saturation 200*/
+  --bg-100: #fbfbfb; /*background color saturation 100*/
+  --light-gray: #dbdbdb;
+  --light-black: #161b22;
+  --gray: #979797;
+  --blue-accent: #374bfe;
+  --turquoise-accent: #2ab6bc;
 }
 
 /*........... utility classes.......... */
 .flex-center {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .full-display {
-    height: 100vh;
-    width: 100vw;
+  height: 100vh;
+  width: 100vw;
 }
 
 /*........... base components.......... */
 h1 {
-    font-family: 'Outrun';
-    font-size: 1.75rem;
-    font-weight: bold;
+  font-family: 'Outrun';
+  font-size: 1.75rem;
+  font-weight: bold;
 }
 
 h2 {
-    font-family: 'Overpass-Bold';
-    font-size:   2rem;
-    font-weight: bold;
+  font-family: 'Overpass-Bold';
+  font-size: 2rem;
+  font-weight: bold;
 }
 
 h3 {
-    font-family: 'Overpass';
-    font-size: 0.85rem;
-    font-weight: 400;
+  font-family: 'Overpass';
+  font-size: 0.85rem;
+  font-weight: 400;
 }
 
 h4 {
-    font-family: 'Overpass';
-    font-size:  13px;
-    font-weight:300;
-    color: black;
+  font-family: 'Overpass';
+  font-size: 13px;
+  font-weight: 300;
+  color: black;
 }
 
 h5 {
-    color: #A4A1B6;
-    font-size: 13px;
-    font-family: 'Overpass';
+  color: #a4a1b6;
+  font-size: 13px;
+  font-family: 'Overpass';
 }
 
 .section_heading {
-    /* self align */
-    padding: 25px;
-    padding-top: 40px;
-    padding-bottom: 30px;
-    max-width: 1200px;
-    margin: 0 auto;
-    /* self style */
-    color: white;
-    text-transform: uppercase;
-    font-family: 'Overpass', sans-serif;
-    /* content align */
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 15px;
+  /* self align */
+  padding: 25px;
+  padding-top: 40px;
+  padding-bottom: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+  /* self style */
+  color: white;
+  text-transform: uppercase;
+  font-family: 'Overpass', sans-serif;
+  /* content align */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 15px;
 }
 
 .section_heading div {
-    /* self align */
-    line-height: 30px;
-    width: 100%;
-    /* self style */
-    color: #74F535;
-    border-top: 1px solid #74F535;
+  /* self align */
+  line-height: 30px;
+  width: 100%;
+  /* self style */
+  color: #74f535;
+  border-top: 1px solid #74f535;
 }
 
 section {
-    background: black;
-    padding: 20px;
+  background: black;
+  padding: 20px;
 }
 
 #alert-message {
-    font-family: 'Overpass', sans-serif;
-    background: #e74c3c;
-    color: white;
-    text-align: center;
-    padding: 8px 0px;
+  font-family: 'Overpass', sans-serif;
+  background: #e74c3c;
+  color: white;
+  text-align: center;
+  padding: 8px 0px;
 }
 
 /*........... navbar .......... */
 #navigation-bar-parent {
-    background: black;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    position: relative;
+  background: black;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  position: relative;
 }
 
 #navigation-bar {
-    margin: 0;
-    padding: 0;
-    width: 100vw;
-    max-width: 1200px;
-    height: 70px;
-    list-style: none;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    flex-direction: row;
-    gap: 30px;
-    background-color: black;
-    font-family: "Overpass";
-    font-weight: 600;
-    font-size: 0.85rem;
-    color: white;
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  max-width: 1200px;
+  height: 70px;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-direction: row;
+  gap: 30px;
+  background-color: black;
+  font-family: 'Overpass';
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: white;
 }
 
 #navigation-bar > li > a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 #navbar-title {
-    margin-right: auto;
-    margin-left: 30px;
-    font-family: "Outrun";
-    font-size: 1.75rem;
-    font-weight: bold;
+  margin-right: auto;
+  margin-left: 30px;
+  font-family: 'Outrun';
+  font-size: 1.75rem;
+  font-weight: bold;
 }
 
 #navbar-member-item {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    margin-right: 30px;
-    background-color: #76f936;
-    font-weight: 400;
-    font-size: 0.85rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  margin-right: 30px;
+  background-color: #76f936;
+  font-weight: 400;
+  font-size: 0.85rem;
 }
 
 .menu > .navbar-item {
-    position: relative;
+  position: relative;
 }
 
 #navbar-member-item > a,
 #navbar-member-item > a:visited,
 #navbar-member-item > a:link {
-    text-align: center;
-    padding: 0 20px 0 20px;
-    color: black;
+  text-align: center;
+  padding: 0 20px 0 20px;
+  color: black;
 }
 
 .navbar-item > a,
 .navbar-item > a:visited,
 .navbar-item > a:link {
-    color: white;
+  color: white;
 }
 .menu {
-    display: flex;
-    height: 100%;
-    align-items: center;
-    gap: 30px;
-    z-index: 1000;
+  display: flex;
+  height: 100%;
+  align-items: center;
+  gap: 30px;
+  z-index: 1000;
 }
 .menu hr {
-    display: none;
-    color: white;
+  display: none;
+  color: white;
 }
 .menu-btn {
-    margin-right: 30px;
-    display: none;
-    height: 1rem;
-    background-color: transparent;
-    border: none;
-    outline: none;
+  margin-right: 30px;
+  display: none;
+  height: 1rem;
+  background-color: transparent;
+  border: none;
+  outline: none;
 }
 .menu-btn img {
-    height: inherit;
+  height: inherit;
 }
 
 /*- fixes an error where the navbar doesnt reappear after width change-*/
 @media only screen and (min-width: 661px) {
-    #navbar-member-item br {
-        display: block;
-    }
+  #navbar-member-item br {
+    display: block;
+  }
 }
 
 /* ---- for devices under 660 px (tablet view) -------*/
 @media only screen and (max-width: 660px) {
-    #navbar-title {
-        font-size: 1rem;
-    }
+  #navbar-title {
+    font-size: 1rem;
+  }
 }
 
 /* only enables highlighting and animation on larger screens */
 @media only screen and (min-width: 601px) {
-    /* highlighting */
-    .menu > .navbar-item:hover::after {
-        position: absolute;
-        border-bottom: 2px solid var(--turquoise-accent);
-        width: 120%;
-        height: 1px;
-        top: 41px;
-        left: -10%;
-        content: "";
-    }
+  /* highlighting */
+  .menu > .navbar-item:hover::after {
+    position: absolute;
+    border-bottom: 2px solid var(--turquoise-accent);
+    width: 120%;
+    height: 1px;
+    top: 41px;
+    left: -10%;
+    content: '';
+  }
 
-    /* member button animation */
-    #navbar-member-item {
-        background-size: 200% 200%;
-        background-image: linear-gradient(to top, var(--blue-accent) 50%, var(--turquoise-accent) 0);
-        background-position: top;
-        transition: background-position 0.5s ease;
-      }
+  /* member button animation */
+  #navbar-member-item {
+    background-size: 200% 200%;
+    background-image: linear-gradient(
+      to top,
+      var(--blue-accent) 50%,
+      var(--turquoise-accent) 0
+    );
+    background-position: top;
+    transition: background-position 0.5s ease;
+  }
 
-      #navbar-member-item:hover {
-        background-position: 0 99%;
-      }
+  #navbar-member-item:hover {
+    background-position: 0 99%;
+  }
 
-      #navbar-member-item > a,
-      #navbar-member-item > a:visited,
-      #navbar-member-item > a:link {
-        transition: color 0.5s ease;
-      }
+  #navbar-member-item > a,
+  #navbar-member-item > a:visited,
+  #navbar-member-item > a:link {
+    transition: color 0.5s ease;
+  }
 
-      #navbar-member-item:hover > a,
-      #navbar-member-item:hover > a:visited,
-      #navbar-member-item:hover > a:link {
-        color: white;
-      }
+  #navbar-member-item:hover > a,
+  #navbar-member-item:hover > a:visited,
+  #navbar-member-item:hover > a:link {
+    color: white;
+  }
 }
 
 /* ----- for devices under (mobile view)-------*/
 @media only screen and (max-width: 600px) {
-    #navigation-bar {
-        justify-content: flex-start;
-        gap: 0;
-    }
-    .menu {
-        position: absolute;
-        flex-direction: column;
-        top: 70px;
-        background-color: black;
-        height: fit-content;
-        width: 100%;
-        padding: 10px;
-        display: none;
-        transition: 0.3s ease-in-out;
-    }
-    .menu hr {
-        display: block;
-        margin-top: -10px;
-        width: 100%;
-    }
-    #navbar-member-item br {
-        display: none;
-    }
-    #navbar-member-item {
-        background-color: transparent;
-        margin-right: 0;
-        width: 100%;
-    }
-    #navbar-member-item > a,
-    #navbar-member-item > a:visited,
-    #navbar-member-item > a:link {
-        color: white;
-        font-weight: 600;
-    }
-    .menu-btn {
-        display: block;
-    }
+  #navigation-bar {
+    justify-content: flex-start;
+    gap: 0;
+  }
+  .menu {
+    position: absolute;
+    flex-direction: column;
+    top: 70px;
+    background-color: black;
+    height: fit-content;
+    width: 100%;
+    padding: 10px;
+    display: none;
+    transition: 0.3s ease-in-out;
+  }
+  .menu hr {
+    display: block;
+    margin-top: -10px;
+    width: 100%;
+  }
+  #navbar-member-item br {
+    display: none;
+  }
+  #navbar-member-item {
+    background-color: transparent;
+    margin-right: 0;
+    width: 100%;
+  }
+  #navbar-member-item > a,
+  #navbar-member-item > a:visited,
+  #navbar-member-item > a:link {
+    color: white;
+    font-weight: 600;
+  }
+  .menu-btn {
+    display: block;
+  }
 }
 
 /* ----- footer -------*/
 .footer-upper {
-    width: 100vw;
-    height: 65px;
-    vertical-align: baseline;
-    text-align: left;
-    background-color: black;
-    color: white;
-    font-size: 30px;
-    font-family: 'Outrun';
+  width: 100vw;
+  height: 65px;
+  vertical-align: baseline;
+  text-align: left;
+  background-color: black;
+  color: white;
+  font-size: 30px;
+  font-family: 'Outrun';
 
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
 }
 
 .social-buttons {
-    margin-right: 40px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 10px;
+  margin-right: 40px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
 }
 
 .footer-lower {
-    background-color: white;
-    padding-right: 30px;
-    padding-left: 20px;
-    padding-top: 6px;
-    padding-bottom: 5px;
-    width: 100%;
-    max-width: 1200px;
+  background-color: white;
+  padding-right: 30px;
+  padding-left: 20px;
+  padding-top: 6px;
+  padding-bottom: 5px;
+  width: 100%;
+  max-width: 1200px;
 }
 
 .footer-lower a {
-    font-family: 'Overpass';
-    font-size:  13px;
-    font-weight:300;
-    color: black;
+  font-family: 'Overpass';
+  font-size: 13px;
+  font-weight: 300;
+  color: black;
 }
 
 .footer-content-container {
-    background-color: black;
-    display: flex;
-    justify-content: center;
-    flex-direction: row;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
 }
 
 footer {
-    position: static;
-    bottom: 0px;
+  position: static;
+  bottom: 0px;
 }

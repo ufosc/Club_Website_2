@@ -36,9 +36,9 @@
 
 #article-subheading {
   font-size: 1.2rem;
-  color: #6A6A6A;
+  color: #6a6a6a;
   font-weight: light;
-  width: min(600px, 90%)
+  width: min(600px, 90%);
 }
 
 #date-author > h3 {

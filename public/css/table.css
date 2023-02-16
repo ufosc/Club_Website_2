@@ -1,49 +1,49 @@
 table {
-    background-color: #dbdbdb;
-    border-collapse: collapse;
-    width: 100%;
-    max-width: 1200px;
-    min-width: 640px;
+  background-color: #dbdbdb;
+  border-collapse: collapse;
+  width: 100%;
+  max-width: 1200px;
+  min-width: 640px;
 }
 
 thead {
-    margin: 0px;
-    border-spacing: 0px;
-    color: #C9D1D9;
-    background-color: #161b22;
-    border: 1px solid #161b22;
+  margin: 0px;
+  border-spacing: 0px;
+  color: #c9d1d9;
+  background-color: #161b22;
+  border: 1px solid #161b22;
 }
 
 th {
-    font-family: "Overpass", sans-serif;
-    font-weight: bold;
-    font-size: 16px;
-    font-weight: 400;
+  font-family: 'Overpass', sans-serif;
+  font-weight: bold;
+  font-size: 16px;
+  font-weight: 400;
 }
 
 thead > tr > th {
-    text-align: left;
-    border-spacing: 0px;
-    border-collapse: collapse;
-    padding-top: 8px;
-    padding-bottom: 8px;
+  text-align: left;
+  border-spacing: 0px;
+  border-collapse: collapse;
+  padding-top: 8px;
+  padding-bottom: 8px;
 }
 
 thead > tr > .title-header {
-    text-align: left;
+  text-align: left;
 }
 
 .tcheckbox {
-    padding-left: 10px;
+  padding-left: 10px;
 }
 
 .title-header {
-    text-align: left;
+  text-align: left;
 }
 
 tfoot {
-    background-color: #161b22;
-    height: 20px;
-    padding: 0px;
-    border: 1px solid #161b22;
+  background-color: #161b22;
+  height: 20px;
+  padding: 0px;
+  border: 1px solid #161b22;
 }

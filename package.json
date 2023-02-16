@@ -6,8 +6,8 @@
   "scripts": {
     "start": "nodemon app.js",
     "test": "mocha",
-    "lint": "standard && ejslint views/*.ejs && ejslint views/components/*.ejs",
-    "fix": "standard --fix"
+    "lint": "standard && ejslint views/*.ejs && ejslint views/components/*.ejs && prettier --check .",
+    "fix": "standard --fix && prettier --write ."
   },
   "standard": {
     "ignore": [
@@ -36,6 +36,7 @@
     "chai": "^4.3.6",
     "mocha": "^10.1.0",
     "nodemon": "^2.0.20",
+    "prettier": "2.8.4",
     "standard": "^17.0.0"
   },
   "dependencies": {
