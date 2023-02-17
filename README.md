@@ -1,5 +1,6 @@
 # UF OSC Website
 
+Started in the Fall semester 2022, this website is built and maintained by club members to serve as a hub of information for the club.
 [![standard-readme compliant](https://img.shields.io/badge/readme%20style-standard-brightgreen.svg?style=flat-square)](https://github.com/RichardLitt/standard-readme) ![GitHub issues](https://img.shields.io/github/issues-raw/ufosc/Club_Website_2) ![GitHub](https://img.shields.io/github/license/ufosc/Club_Website_2) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com) ![GitHub Workflow Status](https://img.shields.io/github/workflow/status/ufosc/Club_Website_2/Node.js%20CI) ![GitHub package.json version](https://img.shields.io/github/package-json/v/ufosc/Club_Website_2)
 <br/>
 Website for the UF Open Source Club.
@@ -47,7 +48,7 @@ You can access the website by visiting http://localhost:3000 on your browser.
 
 <b>Linting & fixing:</b>
 <br/>
-This project adheres to the Javascript Standard syntax style, running the following will show you a list of syntax errors that you'll need to correct.
+This project adheres to the Javascript Standard syntax style, use linting to show you a list of syntax errors that you'll need to correct.
 
 ```
 npm run lint
