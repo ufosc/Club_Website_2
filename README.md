@@ -1,8 +1,7 @@
 # UF OSC Website
-Started in the Fall semester 2022, this website is built and maintained by club members to serve as a hub of information for the club.
-[![standard-readme compliant](https://img.shields.io/badge/readme%20style-standard-brightgreen.svg?style=flat-square)](https://github.com/RichardLitt/standard-readme) ![GitHub issues](https://img.shields.io/github/issues-raw/ufosc/Club_Website_2) ![GitHub](https://img.shields.io/github/license/ufosc/Club_Website_2) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com) ![GitHub Workflow Status](https://img.shields.io/github/workflow/status/ufosc/Club_Website_2/Node.js%20CI) ![GitHub package.json version](https://img.shields.io/github/package-json/v/ufosc/Club_Website_2)
+[![standard-readme compliant](https://img.shields.io/badge/readme%20style-standard-brightgreen.svg?style=flat-square)](https://github.com/RichardLitt/standard-readme) ![GitHub issues](https://img.shields.io/github/issues-raw/ufosc/Club_Website_2) ![GitHub](https://img.shields.io/github/license/ufosc/Club_Website_2) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com) ![GitHub Workflow Status (with branch)](https://img.shields.io/github/actions/workflow/status/ufosc/Club_Website_2/node.js.yml) ![GitHub package.json version](https://img.shields.io/github/package-json/v/ufosc/Club_Website_2)
 <br/>
-Website for the UF Open Source Club.
+Website for the UF Open Source Club. Started in the Fall semester 2022, this website is built and maintained by club members to serve as a hub of information for the club.
 
 ## Table of Contents
 - [Install](#install)
@@ -115,7 +114,7 @@ Configurations for the SMTP mailer. This is disabled in development environments
 3. `SMTP_USER`: the server username.
 4. `SMTP_PASS`: the server password.
 
-<b>ADMIN_EMAIL<b><br>
+<b>ADMIN_EMAIL</b><br>
 The email address to send contact form confirmation emails from. Can be set to anything so long as its a valid email address. Modified as follows:
 ```
 ADMIN_EMAIL = "no-reply@ufosc.com"
