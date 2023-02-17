@@ -146,6 +146,10 @@ The email address to send contact form confirmation emails from. Can be set to a
 ADMIN_EMAIL = "no-reply@ufosc.com"
 ```
 
+## Maintainers
+
+Maintained by the UF Open Source Club, can be contacted via [Discord](https://discord.gg/j9g5dqSVD8)
+
 ## Contributing
 
 All contributions are welcome and appreciated, so long as they adhere to the [license](#license). Contributors are urged to familiarize themselves with the [contribution guidelines](CONTRIBUTING.md).
