@@ -17,6 +17,7 @@
 .blog__posts div {
   height: 400px;
   font-family: 'Overpass', sans-serif;
+  cursor: pointer;
 }
 
 .blog__posts-large img {
