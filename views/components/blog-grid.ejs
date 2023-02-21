@@ -1,6 +1,6 @@
 <div class="blog__posts">
   <% blog.forEach((elem, index) => { %> <% let styleName = "blog__posts-small";
-  %> <% if (index % 6 == 0 || index + 1 % 6 == 0) { styleName =
+  %> <% if (index % 6 == 0 || (index + 1) % 6 == 0) { styleName =
   "blog__posts-large" } %> <% if (!locals.maxItems || index < locals.maxItems) {
   %>
   <div

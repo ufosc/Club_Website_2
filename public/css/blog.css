@@ -20,6 +20,10 @@
   cursor: pointer;
 }
 
+.blog__posts div:hover {
+  border: 4px solid white;
+}
+
 .blog__posts-large img {
   width: 100%;
   height: 75%;
@@ -147,5 +151,9 @@
 
   #second-post {
     background: white;
+  }
+
+  .blog__posts div:hover {
+    border: 4px solid #74F535;
   }
 }
