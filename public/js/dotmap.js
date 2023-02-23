@@ -1,5 +1,5 @@
 /* global requestAnimationFrame */
-import * as THREE from 'three'
+import * as THREE from './three.module.js'
 import * as BufferGeometryUtils from './BufferGeometryUtils.js'
 
 const PARTICLE_SIZE = 20
