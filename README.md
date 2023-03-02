@@ -121,6 +121,8 @@ ADMIN_EMAIL = "no-reply@ufosc.com"
 ```
 ## Maintainers
 Maintained by the UF Open Source Club, can be contacted via [Discord](https://discord.gg/j9g5dqSVD8)
+
+Current Maintainers: Michail Zeipekki, Daniel Wildsmith
 ## Contributing
 All contributions are welcome and appreciated, so long as they adhere to the [license](#license). Contributors are urged to familiarize themselves with the [contribution guidelines](CONTRIBUTING.md).
 ## License
