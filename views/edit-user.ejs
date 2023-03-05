@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Edit User</title>
+        <link rel="icon" type="image/x-icon" href="/assets/favicon.png" />
+        <link rel="stylesheet" href="/css/common.css" />
+        <link rel="stylesheet" href="/css/edit.css" />
+        <script src="/js/navbar.js" defer async></script>
+        <script src="/js/editDb.js" defer async></script>
+        <script>
+         const IS_NEW = <%= locals.isNew %>;
+         const OBJ_ID = <% if (locals.data) { %>
+             '<%= locals.data.id %>'
+         <%} else { %>
+             null
+         <% } %>;
+        </script>
+    </head>
+    <body>
+        <%- include('./components/navbar.ejs') %>
+        <div class="content">
+            <h2>EDIT USER</h2>
+            <form onsubmit="editUser(event);">
+                <label for="Username">
+                    Username
+                    <br />
+                </label>
+                <input required type="text" id="Username" name="Username"
+                       value="<% if (!locals.isNew) { %><%= locals.data.username %><% } %>"
+                />
+                <label for="Password">
+                    Password (overwrites existing)
+                    <br />
+                </label>
+                <input type="password" id="Password" name="Password" value=""/>
+                <label for="FullName">
+                    Full Name
+                    <br />
+                </label>
+                <input required type="text" id="FullName" name="FullName"
+                       value="<% if (!locals.isNew) { %><%= locals.data.fullName %><% } %>"
+                />
+                <label for="Role">
+                    Role
+                    <br />
+                </label>
+                <input required type="text" id="Role" name="Role"
+                       value="<% if (!locals.isNew) { %><%= locals.data.role %><% } %>"
+                />
+                <label for="IsAdmin">
+                    Admin
+                    <br />
+                </label>
+                <select id="IsAdmin" name="IsAdmin">
+                    <option value="false">False</option>
+                    <option value="true"
+                        <% if (!locals.isNew) { %>
+                            <% if (locals.data.isAdmin) { %>
+                                <%= "selected" %>
+                            <% } %>
+                        <% } %>
+                        >True</option>
+                </select>
+                <br />
+                <input type="submit" name="submit" \>
+                <% if (!locals.isNew) { %>
+                    <input type="button" onclick="deleteUser()" name="delete" value="Delete" style="background-color: #FCADAD;" \>
+                <% } %>
+            </form>
+        </div>
+    </body>
+</html>
+
+
+
+
