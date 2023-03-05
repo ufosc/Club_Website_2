@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
   for (let i = 0; i < checkboxes.length; i++) {
     checkboxes[i].checked = false
   }
+
   // hiding the Delete Buttons
   disableAllDeleteButtons()
   blogTableSelections.splice(0, blogTableSelections.length)
@@ -14,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
 })
 
 // adds individual row to selections array
-function checkboxClickHandler (id, tableId, selectionsArray) { // eslint-disable-line
+const checkboxClickHandler = (id, tableId, selectionsArray) => { // eslint-disable-line
   const headerCheckboxInputElement = document.querySelector(`#${tableId} thead tr input`)
 
   const rowsArray = document.querySelectorAll(`#${tableId} tbody .data-row`)
@@ -36,7 +37,7 @@ function checkboxClickHandler (id, tableId, selectionsArray) { // eslint-disable
 }
 
 // adds all table rows to selections array / removes all
-function selectAllCheckboxClickHandler (tableId, selectionsArray) { // eslint-disable-line
+const selectAllCheckboxClickHandler = (tableId, selectionsArray) => { // eslint-disable-line
   const rowsArray = document.querySelector(`#${tableId} tbody`).getElementsByClassName('data-row')
 
   // if all are selected: remove and uncheck all
@@ -63,7 +64,7 @@ function selectAllCheckboxClickHandler (tableId, selectionsArray) { // eslint-di
 }
 
 // Function to check if any of the item is selected
-function checkSelection (tableId) {
+const checkSelection = (tableId) => {
   const rowsArray = document.querySelector(`#${tableId} tbody`).getElementsByClassName('data-row')
 
   // if all are selected: remove and uncheck all
@@ -74,7 +75,7 @@ function checkSelection (tableId) {
 }
 
 // function to determine the visiblity of delete button
-function deleteButtonVisibility (tableId, buttonId) {
+const deleteButtonVisibility = (tableId, buttonId) => {
   const deleteButton = document.querySelector('#' + buttonId)
   // if no item is selected the delete button is hidden
   if (!checkSelection(tableId)) {
@@ -87,7 +88,7 @@ function deleteButtonVisibility (tableId, buttonId) {
 }
 
 // function to disable or hide all the delete buttons
-function disableAllDeleteButtons () {
+const disableAllDeleteButtons = () => {
   deleteButtonVisibility('blog-table', 'delete-button-blog')
   deleteButtonVisibility('blog-table', 'delete-button-users')
   deleteButtonVisibility('images-table', 'delete-button-images')
