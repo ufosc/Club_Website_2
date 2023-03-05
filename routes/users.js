@@ -7,9 +7,7 @@ const { UserModel } = require('../model/users')
 // gets and sends back first 20 users in db, starting with admins
 router.get('/', (req, res, next) => {
   UserModel.find({}, null, { limit: 20 }).sort({ isAdmin: -1 }).exec((err, docs) => {
-    if (err) {
-      return res.status(500).send({ error: 'Database failed to respond' })
-    }
+    if (err) return res.status(500).send({ error: 'Database failed to respond' })
 
     const newDocs = docs.map(doc => {
       doc.password = undefined
@@ -27,9 +25,7 @@ router.get('/:id', (req, res, next) => {
   }
 
   UserModel.findById(req.params.id, (err, doc) => {
-    if (err || !doc) {
-      return res.status(404).send({ error: 'User not found' })
-    }
+    if (err) return res.status(404).send({ error: 'User not found' })
 
     doc.password = undefined
     return res.status(200).send(doc)
@@ -58,7 +54,7 @@ router.post('/', async (req, res, next) => {
   const newUser = new UserModel({ ...req.body })
   newUser.save((err) => {
     if (err) return res.status(400).send({ error: err })
-    return res.status(200).send({ success: `User "${req.body.username}" created` })
+    return res.status(200).send(newUser)
   })
 })
 
@@ -78,9 +74,8 @@ router.delete('/:id', async (req, res, next) => {
   }
 
   UserModel.findByIdAndDelete(req.params.id, (err, doc) => {
-    if (err || !doc) {
-      return res.status(500).send({ error: 'Database failed to respond' })
-    }
+    if (err) return res.status(500).send({ error: 'Database failed to respond' })
+
     doc.password = undefined
     return res.status(200).send(doc)
   })
@@ -127,9 +122,7 @@ router.put('/:id', async (req, res, next) => {
 
   const updatedUser = new UserModel({ ...userExists._doc, ...req.body })
   UserModel.updateOne({ _id: req.params.id }, updatedUser._doc, async (err, doc) => {
-    if (err || doc.modifiedCount <= 0 || !doc) {
-      return res.status(400).send({ error: err })
-    }
+    if (err) return res.status(400).send({ error: err })
 
     const user = await UserModel.findById(req.params.id)
     user.password = undefined
