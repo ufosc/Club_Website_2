@@ -30,12 +30,22 @@
         <%- include('./components/navbar.ejs') %>
         <section id="dashboard-section">
             <section class="dashboard-subsection">
+                <button
+                    class="new-button"
+                    type="button"
+                    onclick="window.open('/api/edit/blog')"
+                >NEW</button>
                 <button id="delete-button-blog" type="button">DELETE</button>
                 <h1>Blog</h1>
                 <hr/>
                 <%- include('./components/blog-table.ejs', { data: blog}) %>
             </section>
             <section class="dashboard-subsection">
+                <button
+                    class="new-button"
+                    type="button"
+                    onclick="window.open('/api/edit/user')"
+                >NEW</button>
                 <button id="delete-button-users" type="button">DELETE</button>
                 <h1>Users</h1>
                 <hr/>
@@ -44,6 +54,7 @@
                 </div>
             </section>
             <section class="dashboard-subsection">
+                <button id="new-button-images" class="new-button" type="button">NEW</button>
                 <button id="delete-button-images" type="button">DELETE</button>
                 <h1>Images</h1>
                 <hr/>
