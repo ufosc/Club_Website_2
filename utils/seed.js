@@ -46,14 +46,18 @@ const seed = () => {
     const blogA = new BlogModel({
       title: 'lorem ipsum dolor',
       status: 'published',
-      content: 'lorem ipsum dolor sit amet',
+      previewImg: '/assets/temp-blog-post.png',
+      content: 'lorem ipsum dolor sit amet <h1>asd</h1>',
+      subtitle: 'lorem ipsum dolor',
       author: ['admin']
     })
 
     const blogB = new BlogModel({
       title: 'my second article',
       status: 'draft',
+      previewimg: '/assets/temp-blog-post.png',
       content: 'hello world hello world hello world',
+      subtitle: 'hello world',
       author: ['admin2']
     })
 
