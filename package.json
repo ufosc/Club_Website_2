@@ -1,6 +1,6 @@
 {
   "name": "osc-website",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "UF OSC website",
   "main": "app.js",
   "scripts": {
