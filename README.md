@@ -7,6 +7,7 @@ Website for the UF Open Source Club. Started in the Fall semester 2022, this web
 - [Install](#install)
 - [Usage](#usage)
 - [Configuring](#configuring)
+- [Maintainers](#maintainers)
 - [Contributing](#contributing)
 - [License](#license)
 
@@ -122,7 +123,10 @@ ADMIN_EMAIL = "no-reply@ufosc.com"
 ## Maintainers
 Maintained by the UF Open Source Club, can be contacted via [Discord](https://discord.gg/j9g5dqSVD8)
 
-Current Maintainers: Michail Zeipekki, Daniel Wildsmith
+Current Maintainers: 
+- Michail Zeipekki @zeim839
+- Daniel Wildsmith @danielwildsmith
+
 ## Contributing
 All contributions are welcome and appreciated, so long as they adhere to the [license](#license). Contributors are urged to familiarize themselves with the [contribution guidelines](CONTRIBUTING.md).
 ## License
