@@ -53,11 +53,11 @@ body {
 
 .title-animation button:hover {
     border: 1px solid;
-    box-shadow: inset 0 0 20px rgba(116,245,53, .5), 0 0 20px rgba(116,245,53, .2);
-    outline-color: rgba(116,245,53, 0);
+    box-shadow: inset 0 0 20px rgba(116, 245, 53, .5), 0 0 20px rgba(116, 245, 53, .2);
+    outline-color: rgba(116, 245, 53, 0);
     outline-offset: 15px;
-    text-shadow: 1px 1px 2px #427388; 
-  }
+    text-shadow: 1px 1px 2px #427388;
+}
 
 .title__content__button-right {
     margin-left: 10px;
@@ -68,11 +68,11 @@ body {
 
 .title__content__button-right:hover {
     border: 1px solid;
-    box-shadow: inset 0 0 20px rgba(116,245,53, .5), 0 0 20px rgba(116,245,53, .2);
-    outline-color: rgba(116,245,53, 0);
+    box-shadow: inset 0 0 20px rgba(116, 245, 53, .5), 0 0 20px rgba(116, 245, 53, .2);
+    outline-color: rgba(116, 245, 53, 0);
     outline-offset: 15px;
-    text-shadow: 1px 1px 2px #427388; 
-  }
+    text-shadow: 1px 1px 2px #427388;
+}
 
 #scene0 {
     opacity: 0.8;
@@ -154,14 +154,14 @@ body {
     padding: 8px 12px;
 }
 
-  .blog button:hover{
+.blog button:hover {
     background-color: 74F535;
-    box-shadow: inset 0 0 20px rgba(116,245,53, .5), 0 0 20px rgba(116,245,53, .2);
-    outline-color: rgba(116,245,53, 0);
+    box-shadow: inset 0 0 20px rgba(116, 245, 53, .5), 0 0 20px rgba(116, 245, 53, .2);
+    outline-color: rgba(116, 245, 53, 0);
     outline-offset: 15px;
-    text-shadow: 1px 1px 2px #427388; 
-  }
-  
+    text-shadow: 1px 1px 2px #427388;
+}
+
 /*--------- PORTFOLIO SECTION ------*/
 .portfolio {
     font-family: Overpass, sans-serif;
@@ -346,13 +346,13 @@ p {
     padding: 8px 12px;
 }
 
-.join button:hover{
+.join button:hover {
     background-color: 74F535;
-    box-shadow: inset 0 0 20px rgba(116,245,53, .5), 0 0 20px rgba(116,245,53, .2);
-    outline-color: rgba(116,245,53, 0);
+    box-shadow: inset 0 0 20px rgba(116, 245, 53, .5), 0 0 20px rgba(116, 245, 53, .2);
+    outline-color: rgba(116, 245, 53, 0);
     outline-offset: 15px;
-    text-shadow: 1px 1px 2px #427388; 
-  }
+    text-shadow: 1px 1px 2px #427388;
+}
 
 .join .join__sign_up {
     padding: 0 25px;
@@ -426,13 +426,13 @@ textarea {
     padding: 8px 12px;
 }
 
-.contact__content__form-sumbit:hover{
+.contact__content__form-sumbit:hover {
     background-color: 74F535;
-    box-shadow: inset 0 0 20px rgba(116,245,53, .5), 0 0 20px rgba(116,245,53, .2);
-    outline-color: rgba(116,245,53, 0);
+    box-shadow: inset 0 0 20px rgba(116, 245, 53, .5), 0 0 20px rgba(116, 245, 53, .2);
+    outline-color: rgba(116, 245, 53, 0);
     outline-offset: 15px;
-    text-shadow: 1px 1px 2px #427388; 
-  }
+    text-shadow: 1px 1px 2px #427388;
+}
 
 .contact__content__text {
     padding: 0 35px;
@@ -514,7 +514,8 @@ textarea {
         height: 65%;
     }
 
-    .blog__posts-large h2, .blog__posts-large .blog__posts__subtitle {
+    .blog__posts-large h2,
+    .blog__posts-large .blog__posts__subtitle {
         padding: 0;
     }
 
@@ -553,12 +554,23 @@ textarea {
         /* self style */
         text-align: left;
     }
+
     .contact__content {
         grid-template-columns: 1fr;
         grid-template-rows: 2fr 3fr;
     }
+
     .contact__content__text {
         grid-row: 1;
         text-align: center;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+
+    .section_heading {
+        align-items: start;
+        flex-direction: column;
+        word-wrap: break-word;
     }
 }
