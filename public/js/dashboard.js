@@ -1,5 +1,4 @@
-/* global blogTableSelections */
-/* global usersTableSelections */
+/* global blogTableSelections, usersTableSelections, alert, XMLHttpRequest */
 
 // uncheck all checkboxes on load and remove all data from selectionsArray(s) and hide Delete-Buttons
 document.addEventListener('DOMContentLoaded', () => {
@@ -92,4 +91,75 @@ const disableAllDeleteButtons = () => {
   deleteButtonVisibility('blog-table', 'delete-button-blog')
   deleteButtonVisibility('blog-table', 'delete-button-users')
   deleteButtonVisibility('images-table', 'delete-button-images')
+}
+
+const deleteHandler = async (route) => { // eslint-disable-line
+  let selections
+  let itemDesc
+  switch (route) {
+    case 'users':
+      selections = usersTableSelections
+      itemDesc = 'user'
+      break
+    case 'blog':
+      selections = blogTableSelections
+      itemDesc = 'article'
+      break
+    case 'images':
+      alert('Images not implemented')
+      return
+    default:
+      console.log('deleteHandler: invalid selection')
+      return
+  }
+
+  const promise = new Promise((resolve, reject) => {
+    let resolved = 0
+    let failed = 0
+    for (let i = 0; i < selections.length; i++) {
+      const XHR = new XMLHttpRequest()
+
+      XHR.onreadystatechange = () => {
+        if (XHR.readyState === 4) {
+          if (XHR.status !== 200) {
+            alert(`Failed to delete a(n) ${itemDesc}. ERROR: ${JSON.parse(XHR.responseText).error}`)
+            failed++
+          }
+          resolved++
+        }
+      }
+
+      XHR.open('delete', `/api/${route}/${selections[i]}`)
+      XHR.withCredentials = true
+      XHR.setRequestHeader('Content-Type', 'application/json')
+      XHR.send()
+    }
+
+    let attempts = 0
+    const intrvl = setInterval(() => {
+      if (resolved === selections.length) {
+        clearInterval(intrvl)
+        resolve(failed)
+      }
+
+      if (attempts === 5) {
+        clearInterval(intrvl)
+        reject(new Error('Operation Timed Out'))
+      }
+
+      attempts++
+    }, 300)
+  })
+
+  promise.then((failed) => {
+    const deleted = selections.length - failed
+    alert(`Succesfully deleted ${deleted} ${itemDesc}s.`)
+    window.location.reload()
+  }, () => {
+    alert('Operation timed out. Please try again. ')
+    window.location.reload()
+  }).catch(error => {
+    alert(error)
+    window.location.reload()
+  })
 }
