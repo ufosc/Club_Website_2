@@ -8,25 +8,20 @@ body {
 
 /*........... TITLE ANIMATION.......... */
 .title__animation {
-    width: 100%;
-    height: 75vh;
-    overflow: hidden;
-    display: grid;
-    flex-direction: row;
-    justify-content: center;
-    margin: 0 auto;
+    position: absolute;
 }
 
 .title__content {
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    -webkit-transform: translate(-50%, -60%);
-    transform: translate(-50%, -50%);
-    z-index: 100;
+    position: relative;
+    margin: auto;
+    height: 90vh;
     color: white;
     text-align: center;
     max-width: 650px;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .title__content__text {
