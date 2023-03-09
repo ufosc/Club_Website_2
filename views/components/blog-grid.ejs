@@ -8,7 +8,7 @@
     class="<%= styleName %>"
     id="second-post"
   >
-    <img src="/assets/temp-blog-post.png" />
+    <img src="<%= elem.previewImg %>" />
     <h2><%= elem.title %>: <%= elem.subtitle %></h2>
     <p class="blog__posts__subtitle">
       <%= elem.date.toLocaleDateString('en-us', { month: "long", day: "numeric",
