@@ -6,12 +6,12 @@ class Cache {
     this.process = null
   }
 
-  register (...callbacks) {
+  async register (...callbacks) {
     for (let i = 0; i < callbacks.length; i++) {
       this.callbacks.push(callbacks[i])
       // Call callback immediately so that Cache()
       // outputs are defined.
-      const response = callbacks[i]()
+      const response = await callbacks[i]()
       this.state = { ...this.state, ...response }
     }
   }
