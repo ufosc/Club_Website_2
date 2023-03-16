@@ -1,0 +1,24 @@
+<div class="blog__posts">
+    <% blog.forEach((elem, index) => { %> <% let styleName = "blog__posts-small";
+                                          %> <% if (index % 6 == 0 || (index + 1) % 6 == 0) { styleName =
+                                                 "blog__posts-large" } %> <% if (!locals.maxItems || index < locals.maxItems) {
+                                                                          %>
+        <div
+            onClick="goNavigateToPost('<%=elem._id.toString()%>')"
+            class="<%= styleName %>"
+            id="second-post"
+        >
+            <img src="<%= elem.previewImg %>" />
+            <h2><%= elem.title %>: <%= elem.subtitle %></h2>
+            <p class="blog__posts__subtitle">
+                <%= elem.date.toLocaleDateString('en-us', { month: "long", day: "numeric",
+                    year: "numeric" }) %>
+            </p>
+        </div>
+                                                 <% } %> <% }) %>
+                                                 <script>
+                                                  function goNavigateToPost(id) {
+                                                      window.location.href = `/blog/${id}`;
+                                                  }
+                                                 </script>
+</div>
