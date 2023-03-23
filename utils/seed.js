@@ -5,14 +5,14 @@ const { hashPassword } = require('../auth/auth')
 const { UserModel } = require('../model/users')
 const { BlogModel } = require('../model/blog')
 
-const seed = () => {
+const seed = async () => {
   if (config.ENV !== 'development') {
     console.log('Unsafe to seed on non-dev environments')
     return
   }
 
   console.log(config.MONGO_URI)
-  mongoose.connect(config.MONGO_URI, {
+  await mongoose.connect(config.MONGO_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true
   }).then(async con => {
@@ -23,7 +23,7 @@ const seed = () => {
       await BlogModel.collection.drop()
       console.log('Reset database succesfully')
     } catch (error) {
-      console.log('ERROR while resetting database: ', error)
+      return
     }
 
     const { salt, hash } = hashPassword('123456')
@@ -63,7 +63,6 @@ const seed = () => {
     await blogB.save()
 
     console.log('Finished seeding')
-    mongoose.connection.close()
   })
 }
 
