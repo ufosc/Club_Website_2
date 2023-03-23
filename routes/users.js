@@ -107,7 +107,7 @@ router.put('/:id', async (req, res, next) => {
 
   const userExists = await UserModel.findById(req.params.id)
   if (!userExists) {
-    return res.status(400).send({ error: 'user not found' })
+    return res.status(404).send({ error: 'user not found' })
   }
 
   if (req.body.username !== userExists.username) {
@@ -127,7 +127,7 @@ router.put('/:id', async (req, res, next) => {
 
   const updatedUser = new UserModel({ ...userExists._doc, ...req.body })
   UserModel.updateOne({ _id: req.params.id }, updatedUser._doc, async (err, doc) => {
-    if (err || doc.modifiedCount <= 0 || !doc) {
+    if (err || !doc) {
       return res.status(400).send({ error: err })
     }
 
