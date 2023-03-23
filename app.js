@@ -90,8 +90,8 @@ db.connect()
 http.listen(config.port, () => console.log(`Server running on port ${config.port}`))
 
 const stop = () => {
-  server.close();
-  database.disconnect();
+  http.close()
+  db.disconnect()
 }
 
-module.exports = {app, stop}
+module.exports = { app, stop }
