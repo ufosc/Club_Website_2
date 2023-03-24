@@ -70,6 +70,10 @@ app.get(`/${config.admin_route}`, (req, res) => {
   })(req, res)
 })
 
+app.get('/blog', (req, res) => {
+  res.send(cache.cache().blogPage)
+})
+
 app.get('/blog/:article', (req, res) => {
   res.render('article', {
     version: config.VERSION,

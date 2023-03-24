@@ -56,9 +56,7 @@ router.put('/:id', passport.authenticate('loggedIn', { session: false }), async 
 
   const updatedBlog = new BlogModel({ ...blogExists._doc, ...req.body })
   BlogModel.updateOne({ _id: req.params.id }, updatedBlog._doc, async (err, doc) => {
-    if (err || !doc || doc.modifiedCount <= 0) {
-      return res.status(400).send({ error: err })
-    }
+    if (err) return res.status(400).send({ error: err })
 
     const blog = await BlogModel.findById(req.params.id)
     return res.status(200).send(blog)
@@ -77,7 +75,7 @@ router.post('/', passport.authenticate('loggedIn', { session: false }), (req, re
   const blog = new BlogModel(req.body)
   blog.save((err) => {
     if (err) return res.status(400).send({ error: err })
-    return res.status(200).send({ success: `Blog "${req.body.title}" created` })
+    return res.status(200).send(blog)
   })
 })
 

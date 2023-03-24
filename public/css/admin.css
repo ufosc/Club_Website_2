@@ -28,6 +28,20 @@ section {
 
 /* ----------CSS for Delete Buttons starts here----------------- */
 
+.new-button {
+    background-color: var(--light-black);
+    color: var(--light-gray);
+    border: none;
+    border-radius: 3px;
+    font-weight: 600;
+
+    /* self align */
+    height: 25px;
+    width: 75px;
+    float: right;
+    margin-left: 5px;
+}
+
 #delete-button-blog{
   /* self style */
   background-color: red;

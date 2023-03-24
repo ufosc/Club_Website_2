@@ -1,5 +1,4 @@
-/* global blogTableSelections */
-/* global usersTableSelections */
+/* global blogTableSelections, usersTableSelections, alert, XMLHttpRequest */
 
 // uncheck all checkboxes on load and remove all data from selectionsArray(s) and hide Delete-Buttons
 document.addEventListener('DOMContentLoaded', () => {
@@ -7,6 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
   for (let i = 0; i < checkboxes.length; i++) {
     checkboxes[i].checked = false
   }
+
   // hiding the Delete Buttons
   disableAllDeleteButtons()
   blogTableSelections.splice(0, blogTableSelections.length)
@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
 })
 
 // adds individual row to selections array
-function checkboxClickHandler (id, tableId, selectionsArray) { // eslint-disable-line
+const checkboxClickHandler = (id, tableId, selectionsArray) => { // eslint-disable-line
   const headerCheckboxInputElement = document.querySelector(`#${tableId} thead tr input`)
 
   const rowsArray = document.querySelectorAll(`#${tableId} tbody .data-row`)
@@ -36,7 +36,7 @@ function checkboxClickHandler (id, tableId, selectionsArray) { // eslint-disable
 }
 
 // adds all table rows to selections array / removes all
-function selectAllCheckboxClickHandler (tableId, selectionsArray) { // eslint-disable-line
+const selectAllCheckboxClickHandler = (tableId, selectionsArray) => { // eslint-disable-line
   const rowsArray = document.querySelector(`#${tableId} tbody`).getElementsByClassName('data-row')
 
   // if all are selected: remove and uncheck all
@@ -63,7 +63,7 @@ function selectAllCheckboxClickHandler (tableId, selectionsArray) { // eslint-di
 }
 
 // Function to check if any of the item is selected
-function checkSelection (tableId) {
+const checkSelection = (tableId) => {
   const rowsArray = document.querySelector(`#${tableId} tbody`).getElementsByClassName('data-row')
 
   // if all are selected: remove and uncheck all
@@ -74,7 +74,7 @@ function checkSelection (tableId) {
 }
 
 // function to determine the visiblity of delete button
-function deleteButtonVisibility (tableId, buttonId) {
+const deleteButtonVisibility = (tableId, buttonId) => {
   const deleteButton = document.querySelector('#' + buttonId)
   // if no item is selected the delete button is hidden
   if (!checkSelection(tableId)) {
@@ -87,8 +87,79 @@ function deleteButtonVisibility (tableId, buttonId) {
 }
 
 // function to disable or hide all the delete buttons
-function disableAllDeleteButtons () {
+const disableAllDeleteButtons = () => {
   deleteButtonVisibility('blog-table', 'delete-button-blog')
   deleteButtonVisibility('blog-table', 'delete-button-users')
   deleteButtonVisibility('images-table', 'delete-button-images')
+}
+
+const deleteHandler = async (route) => { // eslint-disable-line
+  let selections
+  let itemDesc
+  switch (route) {
+    case 'users':
+      selections = usersTableSelections
+      itemDesc = 'user'
+      break
+    case 'blog':
+      selections = blogTableSelections
+      itemDesc = 'article'
+      break
+    case 'images':
+      alert('Images not implemented')
+      return
+    default:
+      console.log('deleteHandler: invalid selection')
+      return
+  }
+
+  const promise = new Promise((resolve, reject) => {
+    let resolved = 0
+    let failed = 0
+    for (let i = 0; i < selections.length; i++) {
+      const XHR = new XMLHttpRequest()
+
+      XHR.onreadystatechange = () => {
+        if (XHR.readyState === 4) {
+          if (XHR.status !== 200) {
+            alert(`Failed to delete a(n) ${itemDesc}. ERROR: ${JSON.parse(XHR.responseText).error}`)
+            failed++
+          }
+          resolved++
+        }
+      }
+
+      XHR.open('delete', `/api/${route}/${selections[i]}`)
+      XHR.withCredentials = true
+      XHR.setRequestHeader('Content-Type', 'application/json')
+      XHR.send()
+    }
+
+    let attempts = 0
+    const intrvl = setInterval(() => {
+      if (resolved === selections.length) {
+        clearInterval(intrvl)
+        resolve(failed)
+      }
+
+      if (attempts === 5) {
+        clearInterval(intrvl)
+        reject(new Error('Operation Timed Out'))
+      }
+
+      attempts++
+    }, 300)
+  })
+
+  promise.then((failed) => {
+    const deleted = selections.length - failed
+    alert(`Succesfully deleted ${deleted} ${itemDesc}s.`)
+    window.location.reload()
+  }, () => {
+    alert('Operation timed out. Please try again. ')
+    window.location.reload()
+  }).catch(error => {
+    alert(error)
+    window.location.reload()
+  })
 }

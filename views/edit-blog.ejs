@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Edit Blog</title>
+        <link rel="icon" type="image/x-icon" href="/assets/favicon.png" />
+        <link rel="stylesheet" href="/css/common.css" />
+        <link rel="stylesheet" href="/css/edit.css" />
+        <script src="/js/navbar.js" defer async></script>
+        <script src="/js/editDb.js" defer async></script>
+        <script>
+         const IS_NEW = <%= locals.isNew %>;
+         const OBJ_ID = <% if (locals.data) { %>
+             '<%= locals.data.id %>'
+         <%} else { %>
+             null
+         <% } %>;
+        </script>
+    </head>
+    <body>
+        <%- include('./components/navbar.ejs') %>
+        <div class="content" id="content-blog">
+            <h2>EDIT BLOG</h2>
+            <form onsubmit="editBlog(event);">
+                <label for="Title">
+                    Title
+                    <br />
+                </label>
+                <input required type="text" id="Title" name="Title"
+                       value="<% if (!locals.isNew) { %><%= locals.data.title %><% } %>"
+                />
+                <label for="Author">
+                    Author
+                    <br />
+                </label>
+                <input required type="text" id="Author" name="Author"
+                       value="<% if (!locals.isNew) { %><%= locals.data.author %><% } %>"
+                />
+                <label for="Subtitle">
+                    Subtitle
+                    <br />
+                </label>
+                <input required type="text" id="Subtitle" name="Subtitle"
+                       value="<% if (!locals.isNew) { %><%= locals.data.subtitle %><% } %>"
+                />
+                <label for="Image">
+                    Cover Image URL
+                    <br />
+                </label>
+                <input required type="text" id="Image" name="Image"
+                       value="<% if (!locals.isNew) { %><%= locals.data.previewImg %><% } %>"
+                />
+                <label for="Content">
+                    Content
+                    <br />
+                </label>
+                <textarea required id="Content" name="Content" rows="8" cols="65"><% if (!locals.isNew) { %><%= locals.data.content %><% } %></textarea>
+                <br />
+                <label for="Status">
+                    Status
+                    <br />
+                </label>
+                <select id="Status" name="Status">
+                    <option value="draft">Draft</option>
+                    <option value="published"
+                        <% if (!locals.isNew) { %>
+                            <% if (locals.data.status == 'published') { %>
+                                <%= "selected" %>
+                            <% } %>
+                        <% } %>
+                    >Published</option>
+                </select>
+                <br />
+                <input type="submit" name="submit" \>
+                <% if (!locals.isNew) { %>
+                    <input type="button" onclick="deleteBlog()" name="delete" value="Delete" style="background-color: #FCADAD;" \>
+                <% } %>
+            </form>
+        </div>
+    </body>
+</html>
