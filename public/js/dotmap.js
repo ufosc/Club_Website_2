@@ -11,9 +11,8 @@ let pointer, INTERSECTED
 
 const init = () => {
   const container = document.getElementById('scene0')
-  const titleContent = document.getElementById('title__content');
   scene2 = new THREE.Scene()
-  camera2 = new THREE.PerspectiveCamera(40, titleContent.innerWidth / titleContent.innerHeight, 1, 10000)
+  camera2 = new THREE.PerspectiveCamera(40, window.innerWidth / window.innerHeight, 1, 10000)
   camera2.position.z = 220
 
   let boxGeometry = new THREE.BoxGeometry(200, 200, 200, 16, 16, 16)
@@ -76,11 +75,10 @@ const onPointerMove = (event) => {
 }
 
 const onWindowResize = () => {
-  const titleContent = document.getElementById('title__content');
-  camera2.aspect = titleContent.innerWidth / titleContent.innerHeight
+  camera2.aspect = window.innerWidth / window.innerHeight
   camera2.updateProjectionMatrix()
 
-  renderer2.setSize(titleContent.innerWidth, titleContent.innerHeight)
+  renderer2.setSize(window.innerWidth, window.innerHeight)
 }
 
 const animate = () => {
