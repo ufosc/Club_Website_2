@@ -92,3 +92,10 @@ app.get('/:page', (req, res) => {
 
 db.connect()
 http.listen(config.port, () => console.log(`Server running on port ${config.port}`))
+
+const stop = () => {
+  http.close()
+  db.disconnect()
+}
+
+module.exports = { app, stop }
