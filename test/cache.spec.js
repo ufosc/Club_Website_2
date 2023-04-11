@@ -5,14 +5,14 @@ const CacheModule = require('../utils/cache')
 const expect = chai.expect
 
 describe('Cache Module', () => {
-  it('Calls registered callbacks immediately', () => {
+  it('Calls registered callbacks immediately', async () => {
     const cache = new CacheModule()
 
     const testCallback = () => {
       return { test: true }
     }
 
-    cache.register(testCallback)
+    await cache.register(testCallback)
     cache.start(100000000)
 
     expect(cache.cache()).to.have.property('test')
