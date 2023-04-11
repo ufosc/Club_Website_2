@@ -127,23 +127,7 @@
                 <h2>Blog</h2>
                 <div>Recent Posts</div>
             </div>
-            <div class="blog__posts">
-                <div class="blog__posts-large">
-                    <img src="/assets/temp-blog-post.png" id="first-post">
-                    <h2>LOREM IPSUM DOLOR ></h2>
-                    <p class="blog__posts__subtitle">November 1, 2022</p>
-                </div>
-                <div class="blog__posts-small" id="second-post">
-                    <img src="/assets/temp-blog-post.png">
-                    <h2>TITLE TEXT 2: SUBTITLE</h2>
-                    <p class="blog__posts__subtitle">November 1, 2022</p>
-                </div>
-                <div class="blog__posts-small" id="third-post">
-                    <img src="/assets/temp-blog-post.png">
-                    <h2>TITLE TEXT 2: SUBTITLE</h2>
-                    <p class="blog__posts__subtitle">November 1, 2022</p>
-                </div>
-            </div>
+            <%- include('./components/blog-grid.ejs', { blog: blog }) %>
             <div class="blog__see_all">
                 <button onclick="location.href = './blog';">SEE ALL</button>
             </div>
