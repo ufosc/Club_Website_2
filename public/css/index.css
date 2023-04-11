@@ -83,12 +83,12 @@ body {
     padding: 0 25px;
     max-width: 1200px;
     margin: 0 auto;
-
+  
     display: grid;
     grid-template-rows: repeat(auto-fill, 1fr);
     grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: 20px 20px;
-}
+  }
 
 .blog__posts-large {
     grid-column: 1 / span 2;

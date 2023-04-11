@@ -2,8 +2,9 @@ const ejs = require('ejs')
 const config = require('./config')
 const { BlogModel } = require('../model/blog')
 
-const cacheIndexPage = () => {
-  const data = { page: 'UF OSC | Home', version: config.VERSION }
+const cacheIndexPage = async () => {
+  const blog = await BlogModel.find({ status: 'published', id: -1 }, null, { limit: 3 }).sort({ date: -1 })
+  const data = { page: 'UF OSC | Home', version: config.VERSION, blog }
   const indexPageData = { indexPage: '' }
   ejs.renderFile('./views/index.ejs', data, { async: false }, (err, str) => {
     if (err) {
@@ -17,7 +18,7 @@ const cacheIndexPage = () => {
 }
 
 const cacheBlogPage = async () => {
-  const blog = await BlogModel.find({ status: 'published' }).exec()
+  const blog = await BlogModel.find({ status: 'published' }).sort({ date: -1 }).exec()
   const blogPageData = { blogPage: '' }
   const data = { blog: (blog) || [], version: config.VERSION }
 
