@@ -25,7 +25,7 @@ router.get('/:id', (req, res, next) => {
   }
 
   UserModel.findById(req.params.id, (err, doc) => {
-    if (err) return res.status(404).send({ error: 'User not found' })
+    if (err || !doc) return res.status(404).send({ error: 'User not found' })
 
     doc.password = undefined
     return res.status(200).send(doc)
@@ -54,6 +54,8 @@ router.post('/', async (req, res, next) => {
   const newUser = new UserModel({ ...req.body })
   newUser.save((err) => {
     if (err) return res.status(400).send({ error: err })
+
+    newUser.password = undefined
     return res.status(200).send(newUser)
   })
 })
@@ -102,7 +104,7 @@ router.put('/:id', async (req, res, next) => {
 
   const userExists = await UserModel.findById(req.params.id)
   if (!userExists) {
-    return res.status(400).send({ error: 'user not found' })
+    return res.status(404).send({ error: 'user not found' })
   }
 
   if (req.body.username !== userExists.username) {
