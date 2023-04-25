@@ -9,16 +9,27 @@
             id="second-post"
         >
             <img src="<%= elem.previewImg %>" />
-            <h2><%= elem.title %>: <%= elem.subtitle %></h2>
+            <h2>
+                <% if ( styleName == "blog__posts-small" && elem.title.toString().length > 20) { %>
+                    <%= elem.title.toString().substring(0, 17) + "..." %>
+                <% } else if ( styleName !== "blog__posts-small" && elem.title.toString().length > 38) { %>
+                        <%= elem.title.toString().substring(0, 35) + "..." %>
+                <% } else { %>
+                    <%= elem.title.toString() %>
+                <% } %>
+            </h2>
+
+            
+                
             <p class="blog__posts__subtitle">
                 <%= elem.date.toLocaleDateString('en-us', { month: "long", day: "numeric",
                     year: "numeric" }) %>
             </p>
         </div>
-                                                 <% } %> <% }) %>
-                                                 <script>
-                                                  function goNavigateToPost(id) {
-                                                      window.location.href = `/blog/${id}`;
-                                                  }
-                                                 </script>
+    <% } %> <% }) %>
+    <script>
+        function goNavigateToPost(id) {
+            window.location.href = `/blog/${id}`;
+        }
+       </script>
 </div>
