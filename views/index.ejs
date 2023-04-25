@@ -114,7 +114,7 @@
                 <h2>Blog</h2>
                 <div>Recent Posts</div>
             </div>
-            <%- include('./components/blog-grid.ejs', { blog: blog }) %>
+            <%- include('./components/blog-grid.ejs', { blog: locals.blog }) %>
             <div class="blog__see_all">
                 <button onclick="location.href = './blog';">SEE ALL</button>
             </div>
