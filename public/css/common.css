@@ -10,7 +10,7 @@
 
 @font-face {
     font-family: 'Overpass-Bold';
-    src: url(../fonts/Overpass-Bold.ttf)
+    src: url(../fonts/Overpass-Bold.ttf) 
 }
 
 * {
@@ -22,8 +22,10 @@
 
 :root {
     --bg-600:#97918F;
-    --bg-200:#F1F1F1;  /*background color saturation 200*/
-    --bg-100:#FBFBFB;  /*background color saturation 100*/
+    --bg-200:#F1F1F1;
+   /*background color saturation 200*/
+    --bg-100:#FBFBFB;
+   /*background color saturation 100*/
     --light-gray: #DBDBDB;
     --light-black: #161B22;
     --gray: #979797;
@@ -52,7 +54,7 @@ h1 {
 
 h2 {
     font-family: 'Overpass-Bold';
-    font-size:   2rem;
+    font-size: 2rem;
     font-weight: bold;
 }
 
@@ -64,7 +66,7 @@ h3 {
 
 h4 {
     font-family: 'Overpass';
-    font-size:  13px;
+    font-size: 13px;
     font-weight:300;
     color: black;
 }
@@ -76,17 +78,17 @@ h5 {
 }
 
 .section_heading {
-    /* self align */
+   /* self align */
     padding: 25px;
     padding-top: 40px;
     padding-bottom: 30px;
     max-width: 1200px;
     margin: 0 auto;
-    /* self style */
+   /* self style */
     color: white;
     text-transform: uppercase;
     font-family: 'Overpass', sans-serif;
-    /* content align */
+   /* content align */
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -94,10 +96,10 @@ h5 {
 }
 
 .section_heading div {
-    /* self align */
+   /* self align */
     line-height: 30px;
     width: 100%;
-    /* self style */
+   /* self style */
     color: #74F535;
     border-top: 1px solid #74F535;
 }
@@ -170,19 +172,16 @@ section {
     position: relative;
 }
 
-#navbar-member-item > a,
-#navbar-member-item > a:visited,
-#navbar-member-item > a:link {
+#navbar-member-item > a, #navbar-member-item > a:visited, #navbar-member-item > a:link {
     text-align: center;
     padding: 0 20px 0 20px;
     color: black;
 }
 
-.navbar-item > a,
-.navbar-item > a:visited,
-.navbar-item > a:link {
+.navbar-item > a, .navbar-item > a:visited, .navbar-item > a:link {
     color: white;
 }
+
 .menu {
     display: flex;
     height: 100%;
@@ -190,10 +189,12 @@ section {
     gap: 30px;
     z-index: 1000;
 }
+
 .menu hr {
     display: none;
     color: white;
 }
+
 .menu-btn {
     margin-right: 30px;
     display: none;
@@ -202,6 +203,7 @@ section {
     border: none;
     outline: none;
 }
+
 .menu-btn img {
     height: inherit;
 }
@@ -210,19 +212,19 @@ section {
 @media only screen and (min-width: 661px) {
     #navbar-member-item br {
         display: block;
-    }
+   }
 }
 
 /* ---- for devices under 660 px (tablet view) -------*/
 @media only screen and (max-width: 660px) {
     #navbar-title {
         font-size: 1rem;
-    }
+   }
 }
 
 /* only enables highlighting and animation on larger screens */
 @media only screen and (min-width: 601px) {
-    /* highlighting */
+   /* highlighting */
     .menu > .navbar-item:hover::after {
         position: absolute;
         border-bottom: 2px solid var(--turquoise-accent);
@@ -231,31 +233,27 @@ section {
         top: 41px;
         left: -10%;
         content: "";
-    }
+   }
 
-    /* member button animation */
+   /* member button animation */
     #navbar-member-item {
         background-size: 200% 200%;
         background-image: linear-gradient(to top, var(--blue-accent) 50%, var(--turquoise-accent) 0);
         background-position: top;
         transition: background-position 0.5s ease;
-      }
+   }
 
-      #navbar-member-item:hover {
+    #navbar-member-item:hover {
         background-position: 0 99%;
-      }
+   }
 
-      #navbar-member-item > a,
-      #navbar-member-item > a:visited,
-      #navbar-member-item > a:link {
+    #navbar-member-item > a, #navbar-member-item > a:visited, #navbar-member-item > a:link {
         transition: color 0.5s ease;
-      }
+   }
 
-      #navbar-member-item:hover > a,
-      #navbar-member-item:hover > a:visited,
-      #navbar-member-item:hover > a:link {
+    #navbar-member-item:hover > a, #navbar-member-item:hover > a:visited, #navbar-member-item:hover > a:link {
         color: white;
-      }
+   }
 }
 
 /* ----- for devices under (mobile view)-------*/
@@ -263,7 +261,8 @@ section {
     #navigation-bar {
         justify-content: flex-start;
         gap: 0;
-    }
+   }
+
     .menu {
         position: absolute;
         flex-direction: column;
@@ -274,29 +273,32 @@ section {
         padding: 10px;
         display: none;
         transition: 0.3s ease-in-out;
-    }
+   }
+
     .menu hr {
         display: block;
         margin-top: -10px;
         width: 100%;
-    }
+   }
+
     #navbar-member-item br {
         display: none;
-    }
+   }
+
     #navbar-member-item {
         background-color: transparent;
         margin-right: 0;
         width: 100%;
-    }
-    #navbar-member-item > a,
-    #navbar-member-item > a:visited,
-    #navbar-member-item > a:link {
+   }
+
+    #navbar-member-item > a, #navbar-member-item > a:visited, #navbar-member-item > a:link {
         color: white;
         font-weight: 600;
-    }
+   }
+
     .menu-btn {
         display: block;
-    }
+   }
 }
 
 /* ----- footer -------*/
@@ -309,7 +311,6 @@ section {
     color: white;
     font-size: 30px;
     font-family: 'Outrun';
-
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -337,7 +338,7 @@ section {
 
 .footer-lower a {
     font-family: 'Overpass';
-    font-size:  13px;
+    font-size: 13px;
     font-weight:300;
     color: black;
 }
@@ -352,4 +353,164 @@ section {
 footer {
     position: static;
     bottom: 0px;
+}
+
+.blog__posts {
+    padding: 0 25px;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-rows: repeat(auto-fill, 1fr);
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 20px 20px;
+}
+
+.blog__posts-large {
+    grid-column-end: span 2;
+}
+
+.blog__posts div {
+    height: 400px;
+    font-family: 'Overpass', sans-serif;
+    cursor: pointer;
+}
+
+.blog__posts div:hover {
+    border: 2px solid white;
+}
+
+.blog__posts-large img {
+    width: 100%;
+    height: 75%;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.blog__posts-small img {
+    width: 100%;
+    height: 65%;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.blog__posts-small {
+    background: #74F535;
+    padding: 15px;
+}
+
+.blog__posts-large {
+    background: white;
+}
+
+.blog__posts__subtitle {
+    font-family: 'Overpass-Bold';
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.blog__posts-large h2, .blog__posts-large .blog__posts__subtitle {
+    padding-left: 15px;
+}
+
+.blog__see_all {
+    padding: 0 25px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.blog button {
+    margin-top: 20px;
+    width: 130px;
+    border: 0px;
+    background: #74F535;
+    font-family: 'Overpass', sans-serif;
+    text-transform: uppercase;
+    font-size: 15px;
+    font-weight: 400;
+    border-radius: 20px;
+   /* content align */
+    padding: 8px 12px;
+}
+
+.blog button:hover {
+    background-color: 74F535;
+    box-shadow: inset 0 0 20px rgba(116, 245, 53, .5), 0 0 20px rgba(116, 245, 53, .2);
+    outline-color: rgba(116, 245, 53, 0);
+    outline-offset: 15px;
+    text-shadow: 1px 1px 2px #427388;
+}
+
+/*........... for devices over 811px (desktop view).......... */
+@media only screen and (min-width: 941px) {
+    .blog__posts h2 {
+        font-size: 1.5rem;
+   }
+    .blog__posts__subtitle {
+        font-size: 1.5rem;
+   }
+}
+
+@media only screen and (max-width: 940px) {
+    .blog__posts h2 {
+        font-size: 1.4rem;
+   }
+    .blog__posts__subtitle {
+        font-size: 1.4rem;
+   }
+}
+
+/* ----- for devices under 810px (tablet view)-------*/
+@media only screen and (max-width: 810px) {
+    .blog__posts {
+        grid-template-rows: repeat(auto-fill, 1fr);
+        grid-template-columns: 1fr 1fr;
+   }
+    .blog__posts-large {
+        grid-column: 1 / span 2;
+   }
+    .blog__posts-small {
+        grid-column: span 1;
+   }
+    .blog__posts h2 {
+        font-size: 1.7rem;
+   }
+    .blog__posts__subtitle {
+        font-size: 1.7rem;
+   }
+}
+
+/* ----- for devices under 600px (mobile view)-------*/
+@media only screen and (max-width: 600px) {
+    .blog__posts {
+        grid-template-rows: repeat(auto-fill, 1fr);
+        grid-template-columns: 1fr;
+   }
+    .blog__posts-large {
+        grid-column: 1 / span 1;
+        padding: 15px;
+   }
+    .blog__posts-large img {
+        height: 65%;
+   }
+    .blog__posts-large h2, .blog__posts-large .blog__posts__subtitle {
+        padding: 0;
+   }
+    #first-post {
+        background: #74F535;
+   }
+    #second-post {
+        background: white;
+   }
+    .blog__posts div:hover {
+        border: 2px solid #74F535;
+   }
+}
+
+@media only screen and (max-width: 363px) {
+    .blog__posts h2 {
+        font-size: 1.3rem;
+   }
+    .blog__posts__subtitle {
+        font-size: 1.3rem;
+   }
 }
