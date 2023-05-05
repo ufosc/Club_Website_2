@@ -7,22 +7,20 @@ body {
 }
 
 /*........... TITLE ANIMATION.......... */
+.title-animation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: min(75vh, 500px);
+}
+
 .title__animation {
     width: 100%;
-    height: 75vh;
+    height: 100%;
     overflow: hidden;
-    display: grid;
-    flex-direction: row;
-    justify-content: center;
-    margin: 0 auto;
 }
 
 .title__content {
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    -webkit-transform: translate(-50%, -60%);
-    transform: translate(-50%, -50%);
     z-index: 100;
     color: white;
     text-align: center;
@@ -75,6 +73,7 @@ body {
 }
 
 #scene0 {
+    position: absolute;
     opacity: 0.8;
 }
 
@@ -82,10 +81,6 @@ body {
 .portfolio {
     font-family: Overpass, sans-serif;
     padding-top: 30px;
-    /* display:flex; */
-    /* justify-content: center; */
-    /* align-items: center; */
-    /* flex-direction:column; */
 }
 
 .portfolio>h2 {
@@ -183,7 +178,7 @@ p {
     position: absolute;
     z-index: 10;
     padding: 10px;
-    height: 300px;
+    height: 330px;
     width: 10%;
     border: none;
 }
@@ -376,6 +371,7 @@ textarea {
 /* ----- for devices under 600px (mobile view)-------*/
 @media only screen and (max-width: 600px) {
     .join .join__perks-perk {
+        gap: 10px;
         grid-template-columns: 1fr 4.5fr;
     }
 
@@ -414,11 +410,22 @@ textarea {
 
     .contact__content {
         grid-template-columns: 1fr;
-        grid-template-rows: 2fr 3fr;
+        grid-template-rows: 1fr 1fr;
     }
 
     .contact__content__text {
         grid-row: 1;
         text-align: center;
+    }
+
+    .portfolio .portfolio__cards__scroll .portfolio__cards__scroll__btn-left,
+    .portfolio__cards__scroll__btn-right {
+        width: 15%;
+    }
+}
+
+@media only screen and (max-width: 450px) {
+    .contact__content__text {
+        margin-bottom: 55px;
     }
 }
