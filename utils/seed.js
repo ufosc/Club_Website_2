@@ -68,7 +68,8 @@ const seed = async () => {
     await blogB.save()
 
     console.log('Finished seeding')
+    mongoose.connection.close()
   })
 }
 
-module.exports = seed
+seed()
