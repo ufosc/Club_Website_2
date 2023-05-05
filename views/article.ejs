@@ -4,7 +4,7 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title><%= title %></title>
+        <title>UF OSC | <%= locals.title %></title>
         <link rel="icon" type="image/x-icon" href="/assets/favicon.png" />
         <link rel="stylesheet" href="/css/common.css" />
         <link rel="stylesheet" href="/css/article.css" />
@@ -13,8 +13,8 @@
     <body>
         <%- include('./components/navbar.ejs') %>
         <section id="article-section">
-            <% if (locals.previewImage) { %>
-                <div id="banner"><img src="<%= previewImage %>" alt="<%= title %>"></div>
+            <% if (locals.previewImg) { %>
+                <div id="banner"><img src="<%= previewImg %>" alt="<%= title %>"></div>
             <% } %>
             <div id="article-content">
                 <h1 id="article-title"><%= title %></h1>

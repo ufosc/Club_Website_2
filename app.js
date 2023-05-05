@@ -10,6 +10,7 @@ const passport = require('passport')
 const auth = require('./auth/auth')
 const session = require('express-session')
 const cookieParser = require('cookie-parser')
+
 const { UserModel } = require('./model/users')
 const { BlogModel } = require('./model/blog')
 const { callbacks } = require('./utils/callbacks')
@@ -72,22 +73,6 @@ app.get(`/${config.admin_route}`, (req, res) => {
 
 app.get('/blog', (req, res) => {
   res.send(cache.cache().blogPage)
-})
-
-app.get('/blog/:article', (req, res) => {
-  res.render('article', {
-    version: config.VERSION,
-    title: req.params.article,
-    content: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Recusandae doloremque obcaecati libero nemo voluptates, quas quis officia praesentium repellendus. Perspiciatis dicta distinctio debitis saepe dolor vitae minima nulla maiores . Laborum doloremque iusto consequuntur, facere omnis voluptatum rerum cum minima libero rem temporibus, at dolore perspiciatis cupiditate voluptatem maxime. Soluta ipsam quis in quae, distinctio dolorem. Quis harum excepturi ipsa, blanditiis, soluta maxime suscipit voluptas quisquam, possimus itaque esse voluptatem unde beatae quod temporibus tempore voluptatibus rem nulla eum?<br><br> Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi illum vel eligendi excepturi quam, expedita quasi pariatur accusantium. Sapiente iste, necessitatibus cupiditate earum quasi iusto quo tempore saepe cumque repudiandae. Ratione odio consequuntur aut error obcaecati, quidem pariatur ut tenetur? Sunt eos animi accusamus, doloribus pariatur repellat necessitatibus aspernatur aliquam natus magnam officia nam sint veritatis tenetur neque voluptatum maiores? Commodi odit totam fuga sed nemo veritatis, ducimus quidem natus provident saepe illum doloribus, dolorum dolore similique, repudiandae voluptate consequatur repellendus? Optio exercitationem totam, sapiente at consequatur tempora sint cupiditate.<br><br>',
-    subtitle: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi, odio officia atque adipisci inventore praesentium veniam id beatae omnis quisquam nihil excepturi alias aliquid ullam debitis eveniet qui nobis. Exercitationem?',
-    date: '11/5/2022',
-    author: ['John Doe', 'Jane Doe'],
-    previewImage: '../assets/temp-blog-post.png'
-  })
-})
-
-app.get('/:page', (req, res) => {
-  res.render('index', { page: req.params.page, version: config.VERSION })
 })
 
 db.connect()
