@@ -6,20 +6,26 @@ const mongoose = require('mongoose')
 const { BlogModel } = require('../model/blog')
 
 router.get('/:id', (req, res) => {
+  // Loads 'article not found' page
+  const articleNA = (res) => {
+    return res.status(400).render('article', {
+      version: config.VERSION,
+      title: 'Article Not Found',
+      content: '',
+      subtitle: '',
+      date: 'N/A'
+    })
+  }
+
   if (!mongoose.Types.ObjectId.isValid(req.params.id)) {
-    return res.redirect('/blog')
+    return articleNA(res)
   }
 
   passport.authenticate('loggedIn', { session: false }, async (error, user, info) => {
+    // Article doesnt exist or insufficient permissions
     const blog = await BlogModel.findById(req.params.id)
-
-    if (!blog) {
-      return res.redirect('/blog')
-    }
-
-    // Not logged in: private article not found
-    if ((error || !user) && blog.status !== 'published') {
-      return res.redirect('/blog')
+    if (!blog || ((error || !user) && blog.status !== 'published')) {
+      return articleNA(res)
     }
 
     blog.version = config.VERSION
