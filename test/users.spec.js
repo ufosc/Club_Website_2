@@ -1,34 +1,24 @@
-/* global describe, it, before, beforeEach, after */
+/* global describe, it, before, after */
 
 const chai = require('chai')
 const { app, stop } = require('../app')
 const chaiHttp = require('chai-http')
 const TestHelper = require('./test-helper')
-const seed = require('../utils/seed')
 const expect = chai.expect
 const UserModel = require('../model/users').UserModel
 const auth = require('../auth/auth')
-const mongoose = require('mongoose')
 
 chai.use(chaiHttp)
 let helper = null
 
 describe('Users Route', () => {
   before(async function () {
-    await seed()
     const user = await UserModel.findOne({ username: 'admin' })
     helper = new TestHelper(chai, app, auth.tokenizeUser(user))
   })
 
   after(function () {
-    mongoose.connection.close()
     stop()
-  })
-
-  // Github workflows were timing out.
-  beforeEach(function (done) {
-    this.timeout(3000)
-    setTimeout(done, 2500)
   })
 
   // USERS-GET TESTS
