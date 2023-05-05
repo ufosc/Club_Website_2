@@ -18,6 +18,9 @@
     padding: 0;
     box-sizing: border-box;
     text-decoration: none;
+    font-size: 100%;
+	  font: inherit;
+	  vertical-align: baseline;
 }
 
 :root {
@@ -506,11 +509,25 @@ footer {
    }
 }
 
-@media only screen and (max-width: 363px) {
+/* ----- for devices under 450px (mobile view)-------*/
+@media only screen and (max-width: 450px) {
     .blog__posts h2 {
         font-size: 1.3rem;
-   }
+    }
     .blog__posts__subtitle {
         font-size: 1.3rem;
-   }
+    }
+
+    .section_heading {
+        flex-direction: column;
+    }
+
+    .section_heading div {
+        text-align: center;
+    }
+
+    .footer-lower {
+        display: flex;
+        align-items: center;
+    }
 }

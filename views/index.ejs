@@ -36,10 +36,7 @@
 				     if ( gl_FragColor.a < alphaTest ) discard;
 			   }
 		    </script>
-        <section class="title-animation">
-            <div class="title__animation">
-                <div id="scene0" class="scene scene--full"></div>
-            </div>
+        <section class="title-animation" id="scene-root">
             <div class="title__content">
                 <h2 id="about">OPEN SOURCE CLUB</h2>
                 <div class="title__content__text">
@@ -220,6 +217,7 @@
                 </div>
             </div>
         </section>
+        <div id="scene0" class="scene scene--full"></div>
         <%- include('./components/footer.ejs') %>
         <script type="module" src="./js/dotmap.js"></script>
     </body>

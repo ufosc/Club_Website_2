@@ -9,13 +9,23 @@ let particles
 let raycaster, intersects
 let pointer, INTERSECTED
 
+const positionScene = () => {
+  const parent = document.getElementById('scene-root')
+  const container = document.getElementById('scene0')
+  container.style.top = parent.offsetTop.toString() + 'px'
+  container.style.left = parent.offsetLeft.toString() + 'px'
+}
+
 const init = () => {
+  positionScene()
+
+  const parent = document.getElementById('scene-root')
   const container = document.getElementById('scene0')
   scene2 = new THREE.Scene()
-  camera2 = new THREE.PerspectiveCamera(40, window.innerWidth / window.innerHeight, 1, 10000)
+  camera2 = new THREE.PerspectiveCamera(40, parent.offsetWidth / parent.offsetHeight, 1, 10000)
   camera2.position.z = 220
 
-  let boxGeometry = new THREE.BoxGeometry(200, 200, 200, 16, 16, 16)
+  let boxGeometry = new THREE.BoxGeometry(400, 200, 200, 16, 16, 16)
 
   boxGeometry.deleteAttribute('normal')
   boxGeometry.deleteAttribute('uv')
@@ -56,7 +66,7 @@ const init = () => {
 
     renderer2 = new THREE.WebGLRenderer()
     renderer2.setPixelRatio(window.devicePixelRatio)
-    renderer2.setSize(window.innerWidth, window.innerHeight)
+    renderer2.setSize(window.innerWidth, parent.offsetHeight)
     container.appendChild(renderer2.domElement)
 
     raycaster = new THREE.Raycaster()
@@ -75,10 +85,11 @@ const onPointerMove = (event) => {
 }
 
 const onWindowResize = () => {
-  camera2.aspect = window.innerWidth / window.innerHeight
+  const parent = document.getElementById('scene-root')
+  camera2.aspect = parent.offsetWidth / parent.offsetHeight
   camera2.updateProjectionMatrix()
-
-  renderer2.setSize(window.innerWidth, window.innerHeight)
+  renderer2.setSize(parent.offsetWidth, parent.offsetHeight)
+  positionScene()
 }
 
 const animate = () => {
