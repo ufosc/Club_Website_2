@@ -19,7 +19,7 @@
             <div id="article-content">
                 <h1 id="article-title"><%= title %></h1>
                 <div id="date-author">
-                    <h3>Date: <%= date %></h3>
+                    <h3>Date: <%= date.toLocaleDateString('en-us', { month: "long", day: "numeric", year: "numeric" }) %></h3>
                     <% if (locals.author) { %>
                         <h3>Author: <% for(var i=0; i < author.length; i++) { %>
                             <%= author[i] %>
