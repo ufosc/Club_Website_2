@@ -81,6 +81,7 @@ body {
 .portfolio {
     font-family: Overpass, sans-serif;
     padding-top: 30px;
+
 }
 
 .portfolio>h2 {
@@ -111,6 +112,9 @@ body {
     border-radius: 20px;
     min-width: 300px;
     max-width: 300px;
+    display: flex;
+    flex-direction: column;
+
 }
 
 .portfolio .portfolio__cards__scroll #card1 {
@@ -146,7 +150,10 @@ p {
     padding-right: 30px;
     border-radius: 20px;
     border: none;
+    display: inline-block;
+    margin-top: auto;
 }
+
 
 .portfolio .portfolio__cards__scroll #card1 button:hover {
     box-shadow: 0px 0px 0px 2.5px #fe754a inset, 0px 0px 0px 5px #000;
@@ -210,7 +217,6 @@ p {
     position: relative;
     max-width: 900px;
     margin: 0 auto;
-    text-align: center;
 }
 
 /*........... JOIN SECTION.......... */
@@ -220,6 +226,8 @@ p {
     grid-template-columns: 1fr 4.5fr;
     color: white;
 }
+
+
 
 .join .join__perks-perk h3 {
     font-size: 19px;
