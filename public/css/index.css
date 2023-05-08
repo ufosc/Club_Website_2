@@ -81,6 +81,7 @@ body {
 .portfolio {
     font-family: Overpass, sans-serif;
     padding-top: 30px;
+
 }
 
 .portfolio>h2 {
@@ -146,6 +147,27 @@ p {
     padding-right: 30px;
     border-radius: 20px;
     border: none;
+}
+
+/*.card button {*/
+/*    position: relative;*/
+/*    bottom: 0;*/
+/*}*/
+
+#card1text{
+    margin-bottom: 50px;
+}
+#card2text{
+    margin-bottom: 25px;
+}
+#card3text{
+     margin-bottom: 50px;
+}
+#card4text{
+      margin-bottom: 50px;
+}
+#card5text{
+       margin-bottom: 177px;
 }
 
 .portfolio .portfolio__cards__scroll #card1 button:hover {
@@ -220,6 +242,8 @@ p {
     grid-template-columns: 1fr 4.5fr;
     color: white;
 }
+
+
 
 .join .join__perks-perk h3 {
     font-size: 19px;
