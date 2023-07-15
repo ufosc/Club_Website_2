@@ -13,7 +13,7 @@ router.get('/:id', (req, res) => {
       title: 'Article Not Found',
       content: '',
       subtitle: '',
-      date: 'N/A'
+      date: new Date()
     })
   }
 
@@ -24,7 +24,7 @@ router.get('/:id', (req, res) => {
   passport.authenticate('loggedIn', { session: false }, async (error, user, info) => {
     // Article doesnt exist or insufficient permissions
     const blog = await BlogModel.findById(req.params.id)
-    if (!blog || ((error || !user) && blog.status !== 'published')) {
+    if (error || !blog || (!user && blog.status !== 'published')) {
       return articleNA(res)
     }
 
