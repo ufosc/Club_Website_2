@@ -1,4 +1,4 @@
-/* global blogTableSelections, usersTableSelections, alert, XMLHttpRequest */
+/* global blogTableSelections, usersTableSelections, imagesTableSelections, alert, XMLHttpRequest */
 
 // uncheck all checkboxes on load and remove all data from selectionsArray(s) and hide Delete-Buttons
 document.addEventListener('DOMContentLoaded', () => {
@@ -105,9 +105,10 @@ const deleteHandler = async (route) => { // eslint-disable-line
       selections = blogTableSelections
       itemDesc = 'article'
       break
-    case 'images':
-      alert('Images not implemented')
-      return
+    case 'image':
+      selections = imagesTableSelections
+      itemDesc = 'image'
+      break
     default:
       console.log('deleteHandler: invalid selection')
       return
@@ -153,7 +154,7 @@ const deleteHandler = async (route) => { // eslint-disable-line
 
   promise.then((failed) => {
     const deleted = selections.length - failed
-    alert(`Succesfully deleted ${deleted} ${itemDesc}s.`)
+    alert(`Succesfully deleted ${deleted} ${itemDesc}(s).`)
     window.location.reload()
   }, () => {
     alert('Operation timed out. Please try again. ')
