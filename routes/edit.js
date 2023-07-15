@@ -42,4 +42,9 @@ router.get('/user/:id', async (req, res, next) => {
   return res.render('edit-user', { data: userExists, isNew: false })
 })
 
+// Create new image
+router.get('/image', (req, res, next) => {
+  return res.render('edit-image', { data: null, isNew: true })
+})
+
 module.exports = router
