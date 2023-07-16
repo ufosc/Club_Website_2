@@ -10,6 +10,10 @@ const router = express.Router()
 
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
+    // Create directory if it doesnt exist.
+    if (!fs.existsSync('uploads/')) {
+      fs.mkdirSync('uploads/', { recursive: true })
+    }
     cb(null, 'uploads/')
   },
   filename: (req, file, cb) => {
@@ -20,10 +24,11 @@ const storage = multer.diskStorage({
   }
 })
 
-const upload = multer({ storage, limits: { fileSize: 200000 } })
+// Max size: 25MB
+const upload = multer({ storage, limits: { fileSize: 26214400 } })
 
 // Return all images.
-router.get('/', async (req, res) => {
+router.get('/', passport.authenticate('loggedIn', { session: false }), async (req, res) => {
   const images = await ImageModel.find().sort({ date: -1 })
   if (!images) return res.status(404).send({ error: 'No posts found' })
   res.status(200).send(images)

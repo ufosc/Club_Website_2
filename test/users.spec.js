@@ -12,14 +12,12 @@ chai.use(chaiHttp)
 let helper = null
 
 describe('Users Route', () => {
-  before(async function () {
+  before(async () => {
     const user = await UserModel.findOne({ username: 'admin' })
     helper = new TestHelper(chai, app, auth.tokenizeUser(user))
   })
 
-  after(function () {
-    stop()
-  })
+  after(stop)
 
   // USERS-GET TESTS
   describe('Users: GET ROUTE', () => {
