@@ -12,7 +12,12 @@
   width: min(100%, 1000px);
 }
 
-#banner > img {
+#banner img {
+  width: 100%;
+  object-fit: cover;
+}
+
+#article-content img {
   width: 100%;
   object-fit: cover;
 }
