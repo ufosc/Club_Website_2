@@ -85,6 +85,7 @@ const seed = async () => {
     await userAdmin.save()
     await userB.save()
     await blogA.save()
+    await blogA.save()
     await blogB.save()
     await imageA.save()
     await imageB.save()

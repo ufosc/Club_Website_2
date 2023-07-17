@@ -1,10 +1,15 @@
-/* global describe, it */
+/* global describe, it, before */
 
 const chai = require('chai')
 const CacheModule = require('../utils/cache')
 const expect = chai.expect
+const ENV = require('../utils/config').ENV
 
 describe('Cache Module', () => {
+  before(() => {
+    expect(ENV === 'development').to.equal(true)
+  })
+
   it('Calls registered callbacks immediately', async () => {
     const cache = new CacheModule()
 
