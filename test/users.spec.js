@@ -7,12 +7,14 @@ const TestHelper = require('./test-helper')
 const expect = chai.expect
 const UserModel = require('../model/users').UserModel
 const auth = require('../auth/auth')
+const ENV = require('../utils/config').ENV
 
 chai.use(chaiHttp)
 let helper = null
 
 describe('Users Route', () => {
   before(async () => {
+    expect(ENV === 'development').to.equal(true)
     const user = await UserModel.findOne({ username: 'admin' })
     helper = new TestHelper(chai, app, auth.tokenizeUser(user))
   })

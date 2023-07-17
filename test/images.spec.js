@@ -10,6 +10,7 @@ const expect = chai.expect
 const UserModel = require('../model/users').UserModel
 const ImageModel = require('../model/images').ImageModel
 const auth = require('../auth/auth')
+const ENV = require('../utils/config').ENV
 
 chai.use(chaiHttp)
 let authenticatedAgent = null
@@ -17,6 +18,7 @@ let agent = null
 
 describe('Images Route', () => {
   before(async () => {
+    expect(ENV === 'development').to.equal(true)
     const user = await UserModel.findOne()
     authenticatedAgent = new TestHelper(chai, app, auth.tokenizeUser(user))
     agent = new TestHelper(chai, app)
