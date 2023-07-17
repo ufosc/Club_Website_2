@@ -57,7 +57,7 @@ router.put('/:id', passport.authenticate('loggedIn', { session: false }), async 
 
   const blogExists = await BlogModel.findById(req.params.id)
   if (!blogExists) {
-    return res.status(400).send({ error: 'ID does not exist' })
+    return res.status(404).send({ error: 'ID does not exist' })
   }
 
   const updatedBlog = new BlogModel({ ...blogExists._doc, ...req.body })
