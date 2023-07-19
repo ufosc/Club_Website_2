@@ -12,7 +12,7 @@ const BlogSchema = new mongoose.Schema({
   previewImg: {
     type: String,
     required: false,
-    default:'/assets/blog_default_img.jpeg'
+    default: '/assets/blog_default_img.jpeg'
   },
   content: {
     type: String,
