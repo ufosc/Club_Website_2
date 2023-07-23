@@ -58,6 +58,8 @@ describe('Blog Route', () => {
       expect(resp.text.search(articleNotFound)).to.not.equal(-1)
     })
 
+    // For some reason, Github Workflow shits the bed when it sees
+    // this. Set timeout to 60 seconds.
     it('Should return any post when user is authenticated', async () => {
       const published = await BlogModel.findOne({ status: 'published' })
       const draft = await BlogModel.findOne({ status: 'draft' })

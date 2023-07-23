@@ -29,6 +29,7 @@ router.get('/:id', (req, res) => {
     }
 
     blog.version = config.VERSION
+    blog.content = blog.content.replaceAll(/\n/g, '<br />')
     return res.render('article', blog)
   })(req, res)
 })
@@ -58,6 +59,15 @@ router.put('/:id', passport.authenticate('loggedIn', { session: false }), async 
   const blogExists = await BlogModel.findById(req.params.id)
   if (!blogExists) {
     return res.status(404).send({ error: 'ID does not exist' })
+  }
+
+  if (req.body.previewImg === '') {
+    req.body.previewImg = '/assets/blog_default_img.jpeg'
+  }
+
+  // Drafts that get published will assume the date of their publication.
+  if (req.body.status === 'published' && blogExists.status === 'draft') {
+    blogExists._doc.date = new Date()
   }
 
   const updatedBlog = new BlogModel({ ...blogExists._doc, ...req.body })
