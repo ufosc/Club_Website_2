@@ -24,8 +24,24 @@ const storage = multer.diskStorage({
   }
 })
 
+const fileFilter = (req, file, cb) => {
+  if (file.fieldname !== 'File' || file.encoding !== '7bit') {
+    req.uploadFileError = 'Bad File Encoding'
+    cb(null, false)
+    return
+  }
+
+  if (file.mimetype !== 'image/png' && file.mimetype !== 'image/jpeg') {
+    req.uploadFileError = 'bad file type: use .png or .jpeg instead'
+    cb(null, false)
+    return
+  }
+
+  cb(null, true)
+}
+
 // Max size: 25MB
-const upload = multer({ storage, limits: { fileSize: 26214400 } })
+const upload = multer({ storage, fileFilter, limits: { fileSize: 26214400 } })
 
 // Return all images.
 router.get('/', passport.authenticate('loggedIn', { session: false }), async (req, res) => {
@@ -56,13 +72,12 @@ router.get('/:id', async (req, res) => {
 
 // Create a new image.
 router.post('/', passport.authenticate('loggedIn', { session: false }), upload.single('File'), (req, res) => {
-  if (!req.file || !req.body || !req.body.Description) {
-    return res.status(500).send({ error: 'expected image and description' })
+  if (typeof req.uploadFileError === 'string') {
+    return res.status(500).send({ error: req.uploadFileError })
   }
 
-  // Validates file type.
-  if (req.file.mimetype !== 'image/png' && req.file.mimetype !== 'image/jpeg') {
-    return res.status(500).send({ error: 'unnaceptable file type: use .png or .jpeg instead' })
+  if (!req.file || !req.body || !req.body.Description) {
+    return res.status(500).send({ error: 'expected image and description' })
   }
 
   const image = new ImageModel({
