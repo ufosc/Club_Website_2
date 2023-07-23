@@ -42,14 +42,14 @@
                     Subtitle
                     <br />
                 </label>
-                <input required type="text" id="Subtitle" name="Subtitle"
+                <input type="text" id="Subtitle" name="Subtitle"
                        value="<% if (!locals.isNew) { %><%= locals.data.subtitle %><% } %>"
                 />
                 <label for="Image">
                     Cover Image URL
                     <br />
                 </label>
-                <input required type="text" id="Image" name="Image"
+                <input type="text" id="Image" name="Image"
                        value="<% if (!locals.isNew) { %><%= locals.data.previewImg %><% } %>"
                 />
                 <label for="Content">
