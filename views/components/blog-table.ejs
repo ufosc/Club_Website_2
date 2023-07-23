@@ -11,6 +11,7 @@
             <th scope="col">Status</th>
             <th scope="col">Author</th>
             <th scope="col">Edit</th>
+	    <th scope="col">Preview</th>
         </thead>
         <tbody>
         <% data.forEach((entry) => { %>
@@ -28,6 +29,11 @@
                 <td>
                     <button type="button" onclick="window.open('/api/edit/blog/<%= entry.id %>')">
                         EDIT
+                    </button>
+                </td>
+		<td>
+                    <button type="button" onclick="window.open('/api/blog/<%= entry.id %>')">
+                        PREVIEW
                     </button>
                 </td>
             </tr>
