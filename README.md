@@ -131,4 +131,4 @@ Current Maintainers:
 All contributions are welcome and appreciated, so long as they adhere to the [license](#license). Contributors are urged to familiarize themselves with the [contribution guidelines](CONTRIBUTING.md).
 ## License
 [AGPL-3.0-or-later](LICENSE.md) <br/>
-Copyright (C) 2007 Free Software Foundation, Inc.
+Copyright (C) 2023 Open Source Club
