@@ -61,14 +61,12 @@ describe('Blog Route', () => {
     it('Should return any post when user is authenticated', async () => {
       const published = await BlogModel.findOne({ status: 'published' })
       const draft = await BlogModel.findOne({ status: 'draft' })
-      console.log(published)
-      console.log(draft)
 
-      // const req = await authenticatedAgent.get(`/api/blog/${draft.id}`)
-      // const req1 = await authenticatedAgent.get(`/api/blog/${published.id}`)
+      const req = await authenticatedAgent.get(`/api/blog/${draft.id}`)
+      const req1 = await authenticatedAgent.get(`/api/blog/${published.id}`)
 
-      // expect(req.text.search(articleNotFound)).to.equal(-1)
-      // expect(req1.text.search(articleNotFound)).to.equal(-1)
+      expect(req.text.search(articleNotFound)).to.equal(-1)
+      expect(req1.text.search(articleNotFound)).to.equal(-1)
     })
   })
 
