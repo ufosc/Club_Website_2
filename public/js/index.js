@@ -1,4 +1,4 @@
-/* global ResizeObserver, XMLHttpRequest, alert */
+/* global ResizeObserver, XMLHttpRequest, alert, turnstile */
 const horizontalScrollContainer = document.querySelector('.portfolio__cards__scroll')
 const btnLeft = document.querySelector('.portfolio__cards__scroll__btn-left')
 const btnRight = document.querySelector('.portfolio__cards__scroll__btn-right')
@@ -81,6 +81,7 @@ const sendEmail = (event) => {
     FirstName: document.getElementById('FirstName').value,
     LastName: document.getElementById('LastName').value,
     Email: document.getElementById('Email').value,
-    Message: document.getElementById('Message').value
+    Message: document.getElementById('Message').value,
+    Token: turnstile.getResponse(document.getElementById('ts-captcha'))
   }))
 }

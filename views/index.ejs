@@ -8,6 +8,7 @@
         <link rel="icon" type="image/x-icon" href="/assets/favicon.png">
         <link rel="stylesheet" href="css/common.css" />
         <link rel="stylesheet" href="css/index.css" />
+	<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
         <script src="./js/navbar.js" defer async></script>
         <script src="./js/index.js" defer async></script>
     </head>
@@ -40,7 +41,7 @@
             <div class="title__content">
                 <h2 id="about">OPEN SOURCE CLUB</h2>
                 <div class="title__content__text">
-                    OSC is the Open Source Club at the University of Florida. We are a community of makers, 
+                    OSC is the Open Source Club at the University of Florida. We are a community of makers,
                     who want to solve problems and improve our world using open source projects.
                 </div>
                 <div>
@@ -137,7 +138,7 @@
                         <img src="/assets/casualCommit.png">
                         <div>
                             <h3>Casual commitment</h3>
-                            <h5>Enjoy the flexibility to come and go as you please, participate in our meetings, casual codings, and 
+                            <h5>Enjoy the flexibility to come and go as you please, participate in our meetings, casual codings, and
                                 socials on your own schedule.
                             </h5>
                         </div>
@@ -204,15 +205,16 @@
                                     <br />
                                 </label>
                                 <textarea required id="Message" name="Message" rows="8" cols="51"></textarea>
-                                <br />
+				<div class="cf-turnstile" id="ts-captcha" data-sitekey="0x4AAAAAAAH-SzxPEdUlPxzY" data-theme="dark"></div>
+				<br />
                                 <input type="submit" name="sumbit" class="contact__content__form-sumbit" style="background-color: #38F521;">
                             </div>
                         </form>
                     </div>
                     <div class="contact__content__text">
                         We're here to help! If you have any questions, suggestions, or comments about the Open Source Club, please feel free
-                        to reach out to us using the contact form to the left. Our team is dedicated to provided the best experience for our members, 
-                        and we value your feedback. Whether you're interested in joining our club, have questions about our activities, or just want to get 
+                        to reach out to us using the contact form to the left. Our team is dedicated to provided the best experience for our members,
+                        and we value your feedback. Whether you're interested in joining our club, have questions about our activities, or just want to get
                         in touch, we'll do our best to respond promptly. Thank you for your interest in the Open Source Club, and we look forward to hearing from you!
                     </div>
                 </div>
