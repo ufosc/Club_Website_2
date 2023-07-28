@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>UF OSC | 404 Page Not Found </title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="/assets/favicon.png">
+    <link rel="stylesheet" href="css/common.css" />
+    <link rel="stylesheet" href="css/404.css" />
+    <script src="./js/navbar.js" defer async></script>
+  </head>
+  <body>
+    <%- include('./components/navbar.ejs') %>
+    <div id="placeholder">
+      <a href="https://www.gnu.org/graphics/meditate.en.html">
+	<img width=200 src="https://i.imgur.com/XGcs9ig.jpg" />
+      </a>
+      <br />
+      <h2>404: Page not found</h2>
+      <p>
+	The requested resource does not exist or has permanently moved. If you believe this is an error, please <a href="/#contact">contact us</a>
+	or file an issue on <a href="https://github.com/ufosc/Club_Website_2/issues">GitHub</a></p>.
+    </div>
+    <%- include('./components/footer.ejs') %>
+  </body>
+</html>
