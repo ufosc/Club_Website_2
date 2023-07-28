@@ -23,7 +23,8 @@ const config = {
     cache_interval: process.env.CACHE_INTERVAL * 60 * 1000 || 10 * 1000,
     secret: 'jLJhDQMYtXjCwQmu',
     smtp: null,
-    admin_email: process.env.ADMIN_EMAIL
+    admin_email: process.env.ADMIN_EMAIL,
+    captcha_secret: '1x0000000000000000000000000000000AA'
   },
   staging: {
     port: process.env.SERVER_PORT || 3001,
@@ -44,7 +45,8 @@ const config = {
         pass: process.env.SMTP_PASS
       }
     },
-    admin_email: process.env.ADMIN_EMAIL
+    admin_email: process.env.ADMIN_EMAIL,
+    captcha_secret: process.env.CAPTCHA_SECRET
   },
   production: {
     port: process.env.SERVER_PORT || 3002,
@@ -65,7 +67,8 @@ const config = {
         pass: process.env.SMPT_PASS
       }
     },
-    admin_email: process.env.ADMIN_EMAIL
+    admin_email: process.env.ADMIN_EMAIL,
+    captcha_secret: process.env.CAPTCHA_SECRET
   }
 }
 
