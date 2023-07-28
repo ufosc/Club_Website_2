@@ -78,6 +78,10 @@ app.get('/blog', (req, res) => {
   res.send(cache.cache().blogPage)
 })
 
+app.get('/*', (req, res) => {
+  res.render('404', { version: config.VERSION })
+})
+
 db.connect()
 http.listen(config.port, () => console.log(`Server running on port ${config.port}`))
 
