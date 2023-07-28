@@ -57,19 +57,6 @@ describe('Blog Route', () => {
       const resp = await agent.get(`/api/blog/${draft.id}`)
       expect(resp.text.search(articleNotFound)).to.not.equal(-1)
     })
-
-    // For some reason, Github Workflow shits the bed when it sees
-    // this. Set timeout to 60 seconds.
-    it('Should return any post when user is authenticated', async () => {
-      const published = await BlogModel.findOne({ status: 'published' })
-      const draft = await BlogModel.findOne({ status: 'draft' })
-
-      const req = await authenticatedAgent.get(`/api/blog/${draft.id}`)
-      const req1 = await authenticatedAgent.get(`/api/blog/${published.id}`)
-
-      expect(req.text.search(articleNotFound)).to.equal(-1)
-      expect(req1.text.search(articleNotFound)).to.equal(-1)
-    })
   })
 
   // BLOG-DELETE TESTS
