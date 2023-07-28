@@ -47,3 +47,11 @@ tfoot {
     padding: 0px;
     border: 1px solid #161b22;
 }
+
+td {
+    max-width: 200px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding-right: 4px;
+}
