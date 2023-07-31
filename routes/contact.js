@@ -1,8 +1,9 @@
-/* global FormData */
 const express = require('express')
 const router = express.Router()
 const nodemailer = require('nodemailer')
 const config = require('../utils/config')
+const FormData = require('form-data')
+const fetch = (...args) => import('node-fetch').then(({ default: fetch }) => fetch(...args))
 
 const transport = (config.smtp == null) ? null : nodemailer.createTransport(config.smtp)
 
@@ -63,7 +64,6 @@ const validateContactForm = async (req, res, next) => {
   req.body.FirstName = encodeURI(req.body.FirstName)
   req.body.LastName = encodeURI(req.body.LastName)
   req.body.Email = encodeURI(req.body.Email)
-  req.body.Message = encodeURI(req.body.Message)
 
   next()
 }
