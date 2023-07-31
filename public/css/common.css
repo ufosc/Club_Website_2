@@ -10,7 +10,7 @@
 
 @font-face {
     font-family: 'Overpass-Bold';
-    src: url(../fonts/Overpass-Bold.ttf) 
+    src: url(../fonts/Overpass-Bold.ttf)
 }
 
 * {
@@ -19,16 +19,16 @@
     box-sizing: border-box;
     text-decoration: none;
     font-size: 100%;
-	  font: inherit;
-	  vertical-align: baseline;
+    font: inherit;
+    vertical-align: baseline;
 }
 
 :root {
     --bg-600:#97918F;
     --bg-200:#F1F1F1;
-   /*background color saturation 200*/
+    /*background color saturation 200*/
     --bg-100:#FBFBFB;
-   /*background color saturation 100*/
+    /*background color saturation 100*/
     --light-gray: #DBDBDB;
     --light-black: #161B22;
     --gray: #979797;
@@ -81,17 +81,17 @@ h5 {
 }
 
 .section_heading {
-   /* self align */
+    /* self align */
     padding: 25px;
     padding-top: 40px;
     padding-bottom: 30px;
     max-width: 1200px;
     margin: 0 auto;
-   /* self style */
+    /* self style */
     color: white;
     text-transform: uppercase;
     font-family: 'Overpass', sans-serif;
-   /* content align */
+    /* content align */
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -99,10 +99,10 @@ h5 {
 }
 
 .section_heading div {
-   /* self align */
+    /* self align */
     line-height: 30px;
     width: 100%;
-   /* self style */
+    /* self style */
     color: #74F535;
     border-top: 1px solid #74F535;
 }
@@ -216,19 +216,28 @@ section {
 @media only screen and (min-width: 661px) {
     #navbar-member-item br {
         display: block;
-   }
+    }
 }
 
-/* ---- for devices under 660 px (tablet view) -------*/
-@media only screen and (max-width: 660px) {
+/* ---- for devices under 730 px (tablet view) -------*/
+@media only screen and (min-width: 600px) and (max-width: 730px) {
     #navbar-title {
         font-size: 1rem;
-   }
+    }
+
+    .navbar-item {
+	font-size: 0.7rem;
+	margin-left: 15px;
+    }
+
+    .menu {
+	gap: 10px;
+    }
 }
 
 /* only enables highlighting and animation on larger screens */
 @media only screen and (min-width: 601px) {
-   /* highlighting */
+    /* highlighting */
     .menu > .navbar-item:hover::after {
         position: absolute;
         border-bottom: 2px solid var(--turquoise-accent);
@@ -237,27 +246,27 @@ section {
         top: 41px;
         left: -10%;
         content: "";
-   }
+    }
 
-   /* member button animation */
+    /* member button animation */
     #navbar-member-item {
         background-size: 200% 200%;
         background-image: linear-gradient(to top, var(--blue-accent) 50%, var(--turquoise-accent) 0);
         background-position: top;
         transition: background-position 0.5s ease;
-   }
+    }
 
     #navbar-member-item:hover {
         background-position: 0 99%;
-   }
+    }
 
     #navbar-member-item > a, #navbar-member-item > a:visited, #navbar-member-item > a:link {
         transition: color 0.5s ease;
-   }
+    }
 
     #navbar-member-item:hover > a, #navbar-member-item:hover > a:visited, #navbar-member-item:hover > a:link {
         color: white;
-   }
+    }
 }
 
 /* ----- for devices under (mobile view)-------*/
@@ -265,7 +274,7 @@ section {
     #navigation-bar {
         justify-content: flex-start;
         gap: 0;
-   }
+    }
 
     .menu {
         position: absolute;
@@ -277,32 +286,32 @@ section {
         padding: 10px;
         display: none;
         transition: 0.3s ease-in-out;
-   }
+    }
 
     .menu hr {
         display: block;
         margin-top: -10px;
         width: 100%;
-   }
+    }
 
     #navbar-member-item br {
         display: none;
-   }
+    }
 
     #navbar-member-item {
         background-color: transparent;
         margin-right: 0;
         width: 100%;
-   }
+    }
 
     #navbar-member-item > a, #navbar-member-item > a:visited, #navbar-member-item > a:link {
         color: white;
         font-weight: 600;
-   }
+    }
 
     .menu-btn {
         display: block;
-   }
+    }
 }
 
 /* ----- footer -------*/
@@ -432,7 +441,7 @@ footer {
     font-size: 15px;
     font-weight: 400;
     border-radius: 20px;
-   /* content align */
+    /* content align */
     padding: 8px 12px;
 }
 
@@ -448,19 +457,19 @@ footer {
 @media only screen and (min-width: 941px) {
     .blog__posts h2 {
         font-size: 1.5rem;
-   }
+    }
     .blog__posts__subtitle {
         font-size: 1.5rem;
-   }
+    }
 }
 
 @media only screen and (max-width: 940px) {
     .blog__posts h2 {
         font-size: 1.4rem;
-   }
+    }
     .blog__posts__subtitle {
         font-size: 1.4rem;
-   }
+    }
 }
 
 /* ----- for devices under 810px (tablet view)-------*/
@@ -468,19 +477,19 @@ footer {
     .blog__posts {
         grid-template-rows: repeat(auto-fill, 1fr);
         grid-template-columns: 1fr 1fr;
-   }
+    }
     .blog__posts-large {
         grid-column: 1 / span 2;
-   }
+    }
     .blog__posts-small {
         grid-column: span 1;
-   }
+    }
     .blog__posts h2 {
         font-size: 1.7rem;
-   }
+    }
     .blog__posts__subtitle {
         font-size: 1.7rem;
-   }
+    }
 }
 
 /* ----- for devices under 600px (mobile view)-------*/
@@ -488,26 +497,26 @@ footer {
     .blog__posts {
         grid-template-rows: repeat(auto-fill, 1fr);
         grid-template-columns: 1fr;
-   }
+    }
     .blog__posts-large {
         grid-column: 1 / span 1;
         padding: 15px;
-   }
+    }
     .blog__posts-large img {
         height: 65%;
-   }
+    }
     .blog__posts-large h2, .blog__posts-large .blog__posts__subtitle {
         padding: 0;
-   }
+    }
     #first-post {
         background: #74F535;
-   }
+    }
     #second-post {
         background: white;
-   }
+    }
     .blog__posts div:hover {
         border: 2px solid #74F535;
-   }
+    }
 }
 
 /* ----- for devices under 450px (mobile view)-------*/
