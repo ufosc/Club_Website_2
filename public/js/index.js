@@ -38,7 +38,7 @@ btnLeft.onclick = () => {
     btnLeft.style.display = 'block'
   }
 
-  if (ourScroll < totalScrollableWidth) {
+  if (ourScroll < totalScrollableWidth + 300) {
     btnRight.style.display = 'block'
   }
 }
@@ -49,7 +49,7 @@ btnRight.onclick = () => {
   btnLeft.style.display = 'block'
   btnRight.style.display = 'block'
 
-  if (ourScroll >= totalScrollableWidth) {
+  if (ourScroll >= totalScrollableWidth + 300) {
     btnRight.style.display = 'none'
   }
 
