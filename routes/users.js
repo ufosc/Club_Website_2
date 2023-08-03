@@ -34,7 +34,8 @@ router.get('/:id', (req, res, next) => {
 
 // creates new user
 router.post('/', async (req, res, next) => {
-  if (!req.body.password || !req.body.username || typeof req.body.password !== 'string') {
+  if (typeof req.body.password !== 'string' || typeof req.body.username !== 'string' ||
+      typeof req.body.role !== 'string' || typeof req.body.isAdmin !== 'boolean') {
     return res.status(400).send({ error: 'Missing field(s) in request body' })
   }
 
@@ -42,8 +43,11 @@ router.post('/', async (req, res, next) => {
     return res.status(401).send({ error: 'Setting custom user ID is prohibited' })
   }
 
-  const username = (typeof req.body.username === 'string') ? req.body.username : null
-  const usernameTaken = await UserModel.find({ username })
+  if (req.body.password.length < 5 || req.body.username.length < 5) {
+    return res.status(400).send({ error: 'Username/Password must each be greater than 5 characters' })
+  }
+
+  const usernameTaken = await UserModel.find({ username: req.body.username })
   if (usernameTaken.length !== 0) {
     return res.status(400).send({ error: 'username already exists' })
   }

@@ -157,7 +157,7 @@ describe('Users Route', () => {
 
     it('Returns correct information after inserting new users with random data', async () => {
       const newUser = {
-        username: 'test',
+        username: 'testing',
         password: 'password',
         isAdmin: true,
         role: 'test'
