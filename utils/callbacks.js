@@ -4,7 +4,7 @@ const { BlogModel } = require('../model/blog')
 
 const cacheIndexPage = async () => {
   const blog = await BlogModel.find({ status: 'published', id: -1 }, null, { limit: 3 }).sort({ date: -1 })
-  const data = { page: 'UF OSC | Home', version: config.VERSION, blog }
+  const data = { version: config.VERSION, blog }
   const indexPageData = { indexPage: '' }
   ejs.renderFile('./views/index.ejs', data, { async: false }, (err, str) => {
     if (err) {
