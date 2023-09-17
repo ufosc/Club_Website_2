@@ -119,10 +119,10 @@ router.put('/:id', async (req, res, next) => {
     }
   }
 
-  if (userExists.username === 'admin' && (
-    typeof req.body.username !== 'undefined' ||
-      typeof req.body.isAdmin !== 'undefined' ||
-      typeof req.body.role !== 'undefined')) {
+  if (userExists.username === 'admin' &&
+      ((typeof req.body.username !== 'undefined' && req.body.username !== 'admin') ||
+      (typeof req.body.isAdmin !== 'undefined' && req.body.isAdmin !== true) ||
+      (typeof req.body.role !== 'undefined' && req.body.role !== 'admin'))) {
     return res.status(401).send({ error: 'Modifying admin username or role is prohibited' })
   }
 
