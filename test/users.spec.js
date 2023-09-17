@@ -258,12 +258,9 @@ describe('Users Route', () => {
     })
 
     it('Returns an error if user tries to change username to admin', async () => {
-      let users = await helper.get('/api/users/')
-      users = JSON.parse(users.text)
-      const userID = users[0]._id
-
-      const resp = await helper.put(`/api/users/${userID}`, { username: 'admin' })
-      expect(resp.status).to.equal(401)
+      const user = await UserModel.findOne({ username: { $ne: 'admin' } })
+      const resp = await helper.put(`/api/users/${user.id}`, { username: 'admin' })
+      expect(resp.status).to.equal(400)
     })
 
     it('Returns an error if user tries to claim an existing username', async () => {
