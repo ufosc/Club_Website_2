@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /auth
+
+Sitemap: https://ufosc.org/sitemap.xml
