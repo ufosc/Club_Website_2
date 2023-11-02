@@ -355,7 +355,7 @@ textarea {
     grid-column: 1 / 3;
 }
 
-.contact__content__form-sumbit {
+.contact__content__form-submit {
     width: 100px !important;
     border: 0px;
 
@@ -369,7 +369,7 @@ textarea {
     padding: 8px 12px;
 }
 
-.contact__content__form-sumbit:hover {
+.contact__content__form-submit:hover {
     background-color: 74F535;
     box-shadow: inset 0 0 20px rgba(116, 245, 53, .5), 0 0 20px rgba(116, 245, 53, .2);
     outline-color: rgba(116, 245, 53, 0);
