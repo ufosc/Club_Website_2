@@ -1,243 +1,269 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>UF Open Source Club | Home</title>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="icon" type="image/x-icon" href="/assets/favicon.png">
-        <link rel="stylesheet" href="css/common.css" />
-        <link rel="stylesheet" href="css/index.css" />
-	<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
-        <script src="./js/navbar.js" defer async></script>
-        <script src="./js/index.js" defer async></script>
-    </head>
-    <body>
-        <%- include('./components/alert.ejs') %>
-        <%- include('./components/navbar.ejs') %>
-        <script type="x-shader/x-vertex" id="vertexshader">
-			   attribute float size;
-			   attribute vec3 customColor;
-			   varying vec3 vColor;
-			   void main() {
-				     vColor = customColor;
-				     vec4 mvPosition = modelViewMatrix * vec4( position, 1.0 );
-				     gl_PointSize = size * ( 300.0 / -mvPosition.z );
-				     gl_Position = projectionMatrix * mvPosition;
-			   }
-		    </script>
-        <script type="x-shader/x-fragment" id="fragmentshader">
-			   uniform vec3 color;
-			   uniform sampler2D pointTexture;
-			   uniform float alphaTest;
-			   varying vec3 vColor;
-			   void main() {
-				     gl_FragColor = vec4( color * vColor, 1.0 );
-				     gl_FragColor = gl_FragColor * texture2D( pointTexture, gl_PointCoord );
-				     if ( gl_FragColor.a < alphaTest ) discard;
-			   }
-		    </script>
-        <section class="title-animation" id="scene-root">
-            <div class="title__content">
-                <h2 id="about">OPEN SOURCE CLUB</h2>
-                <div class="title__content__text">
-                    OSC is the Open Source Club at the University of Florida. We are a community of makers,
-                    who want to solve problems and improve our world using open source projects.
-                </div>
-                <div>
-                    <button  onclick="location.href = 'https://discord.gg/Gsxej6u';">JOIN DISCORD</button>
-                    <button class="title__content__button-right" onclick="location.href = '/#contact';">CONTACT</button>
-                </div>
+  <head>
+    <title>UF Open Source Club | Home</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+          content="The Open Source Club at the University of
+                   Florida is a community of makers, who want to
+                   solve problems and improve our world using open
+                   source projects."
+          >
+    <meta name="keywords"
+          content="University of Florida, UF, OSC, Open Source,
+                   Computer Science, Data Science, Programming"
+          >
+    <link rel="icon" type="image/x-icon" href="/assets/favicon.png">
+    <link rel="stylesheet" href="css/common.css" />
+    <link rel="stylesheet" href="css/index.css" />
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+    <script src="./js/navbar.js" defer async></script>
+    <script src="./js/index.js" defer async></script>
+  </head>
+  <body>
+    <%- include('./components/alert.ejs') %>
+    <%- include('./components/navbar.ejs') %>
+    <script type="x-shader/x-vertex" id="vertexshader">
+      attribute float size;
+      attribute vec3 customColor;
+      varying vec3 vColor;
+      void main() {
+	vColor = customColor;
+	vec4 mvPosition = modelViewMatrix * vec4( position, 1.0 );
+	gl_PointSize = size * ( 300.0 / -mvPosition.z );
+	gl_Position = projectionMatrix * mvPosition;
+      }
+    </script>
+    <script type="x-shader/x-fragment" id="fragmentshader">
+      uniform vec3 color;
+      uniform sampler2D pointTexture;
+      uniform float alphaTest;
+      varying vec3 vColor;
+      void main() {
+	gl_FragColor = vec4( color * vColor, 1.0 );
+	gl_FragColor = gl_FragColor * texture2D( pointTexture, gl_PointCoord );
+	if ( gl_FragColor.a < alphaTest ) discard;
+      }
+    </script>
+    <section class="title-animation" id="scene-root">
+      <div class="title__content">
+        <h2 id="about">OPEN SOURCE CLUB</h2>
+        <div class="title__content__text">
+          OSC is the Open Source Club at the University of Florida. We are a community of makers,
+          who want to solve problems and improve our world using open source projects.
+        </div>
+        <div>
+          <button  onclick="location.href = 'https://discord.gg/Gsxej6u';">JOIN DISCORD</button>
+          <button class="title__content__button-right" onclick="location.href = '/#contact';">CONTACT</button>
+        </div>
+      </div>
+    </section>
+    <section class="portfolio">
+      <div class="section_heading">
+        <h2 id="portfolio">Portfolio</h2>
+        <div>Most recent Projects</div>
+      </div>
+      <div class="flex-center">
+        <div class="portfolio__cards">
+          <div class="portfolio__cards__scroll">
+            <div id="card1" class="card">
+              <h2>Bytes of Love</h2>
+              <p>A visual novel dating simulator where you can play as a
+                college student trying to rizz up anime girl-ified versions
+                of your favorite programming languages! Built in Python with
+                tool: Ren'py.
+              </p>
+              <button onclick="location.href = 'https://github.com/ufosc/VisualNovel';">SOURCE</button>
             </div>
-        </section>
-        <section class="portfolio">
-            <div class="section_heading">
-                <h2 id="portfolio">Portfolio</h2>
-                <div>Most recent Projects</div>
+            <div id="card2" class="card">
+              <h2>JukeBox</h2>
+              <p>A web application that allows group members to queue up songs
+                to their group’s playlist, and enables members to collect points
+                for future use. Built in React and Typescript with frameworks:
+                MongoDB, Express.js, React.js, and Node.js.
+              </p>
+              <button onclick="location.href = 'https://github.com/ufosc/Jukebox-Frontend';">SOURCE</button>
             </div>
-            <div class="flex-center">
-                <div class="portfolio__cards">
-                    <div class="portfolio__cards__scroll">
-                        <div id="card1" class="card">
-                            <h2>Bytes of Love</h2>
-                            <p>A visual novel dating simulator where you can play as a college student trying to rizz up anime girl-ified versions of your favorite programming languages!
-                                Built in Python with tool: Ren'py.
-                            </p>
-                            <button onclick="location.href = 'https://github.com/ufosc/VisualNovel';">SOURCE</button>
-                        </div>
-                        <div id="card2" class="card">
-                            <h2>JukeBox</h2>
-                            <p>A web application that allows group members to queue up songs to their group’s playlist, and enables members to collect points for future use.
-                                Built in React and Typescript with frameworks: MongoDB, Express.js, React.js, and Node.js.
-                            </p>
-                            <button onclick="location.href = 'https://github.com/ufosc/Jukebox-Frontend';">SOURCE</button>
-                        </div>
-                        <div id="card3" class="card">
-                            <h2>Proximity Chat</h2>
-                            <p>An application that allow users to chat with people that they are physically around, say in the same building!
-                                Built with TypeScript with frameworks/tools: React Native, Firebase, Node.js, Express.js, Expo.
-                            </p>
-                            <button onclick="location.href = 'https://github.com/ufosc/OSC-Proximity-Chat-App';">SOURCE</button>
-                        </div>
-                        <div id="card4" class="card">
-                            <h2>OSC Website</h2>
-                            <p>A website to serve as a landing page for new members as a hub of information about the club, with a dynamic blog and content management system.
-                                Built in Javascript, HTML, CSS, with the frameworks/tools: Node.js, Express.js, EJS.
-                            </p>
-                            <button onclick="location.href = 'https://github.com/ufosc/Club_Website_2';">SOURCE</button>
-                        </div>
-                        <div id="card5" class="card">
-                            <h2>Schedule Helper</h2>
-                            <p> A website to assist students in creating schedules that work for them by using UF's Schedule of Courses along with
-                                RateMyProfessor and GatorEval scores. Built in Typescript and Python, with the frameworks/tools: React, Tailwind.
-                            </p>
-                            <button onclick="location.href = 'https://github.com/ufosc/Schedule_Helper';">SOURCE</button>
-                        </div>
-                        
-                        <div id="card6" class="card">
-                            <h2>Manim</h2>
-                            <p>Inspired by 3Blue1Brown, creating a plug-in that adds to the Manim project which would allow for programmatic animation of computer science concepts.
-                                Built in Python, with the frameworks/tools: Poetry, Manim.
-                            </p>
-                            <button onclick="location.href = 'https://github.com/ufosc/manim-data-structures';">SOURCE</button>
-                        </div>
-                        <div id="card7" class="card">
-                            <h2>API Group</h2>
-                            <p>Working on several small projects that involve APIs to gain knowledge about building and using them. Built in Python,
-                                with FastAPI.
-                            </p>
-                            <button onclick="location.href = 'https://github.com/ufosc/UF-API-GROUP';">SOURCE</button>
-                        </div>
-                        
-                        
-                        <button class="portfolio__cards__scroll__btn-left"><img src="./assets/left-swipe-arrow.png" alt="left arrow"></button>
-                        <button class="portfolio__cards__scroll__btn-right"><img src="./assets/left-swipe-arrow.png" alt="right arrow"></button>
-                    </div>
-                </div>
+            <div id="card3" class="card">
+              <h2>Proximity Chat</h2>
+              <p>An application that allow users to chat with people that they are
+                physically around, say in the same building! Built with
+                TypeScript with frameworks/tools: React Native, Firebase,
+                Node.js, Express.js, Expo.
+              </p>
+              <button onclick="location.href = 'https://github.com/ufosc/OSC-Proximity-Chat-App';">SOURCE</button>
+            </div>
+            <div id="card4" class="card">
+              <h2>OSC Website</h2>
+              <p>A website to serve as a landing page for new members as a hub
+                of information about the club, with a dynamic blog and content
+                management system. Built in Javascript, HTML, CSS, with the
+                frameworks/tools: Node.js, Express.js, EJS.
+              </p>
+              <button onclick="location.href = 'https://github.com/ufosc/Club_Website_2';">SOURCE</button>
+            </div>
+            <div id="card5" class="card">
+              <h2>Schedule Helper</h2>
+              <p>A website to assist students in creating schedules that work
+                for them by using UF's Schedule of Courses along with
+                RateMyProfessor and GatorEval scores. Built in Typescript
+                and Python, with the frameworks/tools: React, Tailwind.
+              </p>
+              <button onclick="location.href = 'https://github.com/ufosc/Schedule_Helper';">SOURCE</button>
             </div>
 
-            <div class="portfolio__content">
-                <p>
-                    Active projects are official club projects that have an assigned technical lead, are given club resources,
-                    and are the first projects mentioned to new members. New projects are proposed and voted on at the beginning of each semester.
-                    All projects utilize Git, GitHub, and open source development principles.
-                </p>
+            <div id="card6" class="card">
+              <h2>Manim</h2>
+              <p>Inspired by 3Blue1Brown, creating a plug-in that adds to the
+                Manim project which would allow for programmatic animation of
+                computer science concepts. Built in Python, with the
+                frameworks/tools: Poetry, Manim.
+              </p>
+              <button onclick="location.href = 'https://github.com/ufosc/manim-data-structures';">SOURCE</button>
             </div>
-        </section>
-        <section class="blog">
-            <div class="section_heading">
-                <h2>Blog</h2>
-                <div>Recent Posts</div>
+            <div id="card7" class="card">
+              <h2>API Group</h2>
+              <p>Working on several small projects that involve APIs to gain
+                knowledge about building and using them. Built in Python,
+                with FastAPI.
+              </p>
+              <button onclick="location.href = 'https://github.com/ufosc/UF-API-GROUP';">SOURCE</button>
             </div>
-            <%- include('./components/blog-grid.ejs', { blog: locals.blog }) %>
-            <div class="blog__see_all">
-                <button onclick="location.href = './blog';">SEE ALL</button>
+            <button class="portfolio__cards__scroll__btn-left">
+              <img src="./assets/left-swipe-arrow.png" alt="left arrow" width="45" height="45">
+            </button>
+            <button class="portfolio__cards__scroll__btn-right">
+              <img src="./assets/left-swipe-arrow.png" alt="right arrow" width="45" height="45">
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="portfolio__content">
+        <p>
+          Active projects are official club projects that have an assigned
+          technical lead, are given club resources, and are the first projects
+          mentioned to new members. New projects are proposed and voted on at
+          the beginning of each semester. All projects utilize Git, GitHub,
+          and open source development principles.
+        </p>
+      </div>
+    </section>
+    <section class="blog">
+      <div class="section_heading">
+        <h2>Blog</h2>
+        <div>Recent Posts</div>
+      </div>
+      <%- include('./components/blog-grid.ejs', { blog: locals.blog }) %>
+      <div class="blog__see_all">
+        <button onclick="location.href = './blog';">SEE ALL</button>
+      </div>
+    </section>
+    <section class="join" id="join">
+      <div class="section_heading">
+        <h2 style="white-space: nowrap;">BECOME A MEMBER</h2>
+        <div>JOIN THE OSC</div>
+      </div>
+      <div class="join__content__perks">
+        <div class="join__perks">
+          <div class="join__perks-perk">
+            <img src="/assets/freeForever.png" width="57" height="57" alt="free forever">
+            <div>
+              <h3>Free forever</h3>
+              <h5>Join our club for free and enjoy a membership without any fees because we
+                believe in inclusivity and accessibility for all.
+              </h5>
             </div>
-        </section>
-        <section class="join" id="join">
-            <div class="section_heading">
-                <h2 style="white-space: nowrap;">BECOME A MEMBER</h2>
-                <div>JOIN THE OSC</div>
+          </div>
+          <div class="join__perks-perk">
+            <img src="/assets/casualCommit.png" width="57" height="57" alt="casual commitment">
+            <div>
+              <h3>Casual commitment</h3>
+              <h5>Enjoy the flexibility to come and go as you please, participate in our meetings, casual codings, and
+                socials on your own schedule.
+              </h5>
             </div>
-            <div class="join__content__perks">
-                <div class="join__perks">
-                    <div class="join__perks-perk">
-                        <img src="/assets/freeForever.png">
-                        <div>
-                            <h3>Free forever</h3>
-                            <h5>Join our club for free and enjoy a membership without any fees because we
-                                believe in inclusivity and accessibility for all.
-                            </h5>
-                        </div>
-                    </div>
-                    <div class="join__perks-perk">
-                        <img src="/assets/casualCommit.png">
-                        <div>
-                            <h3>Casual commitment</h3>
-                            <h5>Enjoy the flexibility to come and go as you please, participate in our meetings, casual codings, and
-                                socials on your own schedule.
-                            </h5>
-                        </div>
-                    </div>
-                    <div class="join__perks-perk">
-                        <img src="/assets/noXp.png">
-                        <div>
-                            <h3>No experience necessary</h3>
-                            <h5>Members of all skill and experience levels are welcome. All that is needed is a willingness to learn. </h5>
-                        </div>
-                    </div>
-                    <div class="join__perks-perk">
-                        <img src="/assets/leaveAnytime.png">
-                        <div>
-                            <h3>Join/leave anytime</h3>
-                            <h5>We welcome you to be a part of our community on your own terms, regardless of busy schedules and changing commitments.
-                            </h5>
-                        </div>
-                    </div>
-                </div>
+          </div>
+          <div class="join__perks-perk">
+            <img src="/assets/noXp.png" width="57" height="57" alt="club perks">
+            <div>
+              <h3>No experience necessary</h3>
+              <h5>Members of all skill and experience levels are welcome. All that is needed is a willingness to learn. </h5>
             </div>
-            <div class="join__text">
-                <p>
-                    The best way to become involved with Open Source Club is to join our Discord linked below to stay up to date with club events.
-                </p>
+          </div>
+          <div class="join__perks-perk">
+            <img src="/assets/leaveAnytime.png" width="57" height="57" alt="leave the club at any time">
+            <div>
+              <h3>Join/leave anytime</h3>
+              <h5>We welcome you to be a part of our community on your own terms, regardless of busy schedules and changing commitments.
+              </h5>
             </div>
-            <div class="join__sign_up">
-                <button onclick="location.href = 'https://discord.gg/Gsxej6u';">JOIN DISCORD</button>
-            </div>
-        </section>
-        <section id="contact" class="contact">
-            <div class="section_heading">
-                <h2 style="white-space: nowrap;">CONTACT</h2>
-                <div>GET IN TOUCH</div>
-            </div>
-            <div style="display: flex; flex-direction: row; justify-content: center;">
-                <div class="contact__content">
-                    <div >
-                        <form id="submit-email-form" class="contact__content__form" onsubmit="sendEmail(event);">
-                            <div>
-                                <label for="FirstName">
-                                    First Name
-                                    <br />
-                                </label>
-                                <input required type="text" id="FirstName" name="FirstName" />
-                            </div>
-                            <div>
-                                <label for="LastName">
-                                    Last Name
-                                    <br />
-                                </label>
-                                <input type="text" id="LastName" name="LastName" />
-                            </div>
-                            <div class="contact__content__form-email">
-                                <label for="Email" style="width: 100%">
-                                    Email
-                                    <br / >
-                                </label>
-                                <input required type="email" id="Email" name="Email"/>
-                            </div>
-                            <div class="contact__content__form-message">
-                                <label for="message">
-                                    Message
-                                    <br />
-                                </label>
-                                <textarea required id="Message" name="Message" rows="8" cols="51"></textarea>
-				<div class="cf-turnstile" id="ts-captcha" data-sitekey="0x4AAAAAAAH-SzxPEdUlPxzY" data-theme="dark"></div>
-				<br />
-                                <input type="submit" name="submit" value="SUBMIT" class="contact__content__form-submit" style="background-color: #38F521;">
-                            </div>
-                        </form>
-                    </div>
-                    <div class="contact__content__text">
-                        We're here to help! If you have any questions, suggestions, or comments about the Open Source Club, please feel free
-                        to reach out to us using the contact form to the left. Our team is dedicated to provided the best experience for our members,
-                        and we value your feedback. Whether you're interested in joining our club, have questions about our activities, or just want to get
-                        in touch, we'll do our best to respond promptly. Thank you for your interest in the Open Source Club, and we look forward to hearing from you!
-                    </div>
-                </div>
-            </div>
-        </section>
-        <div id="scene0" class="scene scene--full"></div>
-        <%- include('./components/footer.ejs') %>
-        <script type="module" src="./js/dotmap.js"></script>
-    </body>
+          </div>
+        </div>
+      </div>
+      <div class="join__text">
+        <p>
+          The best way to become involved with Open Source Club is to join our Discord linked below to stay up to date with club events.
+        </p>
+      </div>
+      <div class="join__sign_up">
+        <button onclick="location.href = 'https://discord.gg/Gsxej6u';">JOIN DISCORD</button>
+      </div>
+    </section>
+    <section id="contact" class="contact">
+      <div class="section_heading">
+        <h2 style="white-space: nowrap;">CONTACT</h2>
+        <div>GET IN TOUCH</div>
+      </div>
+      <div style="display: flex; flex-direction: row; justify-content: center;">
+        <div class="contact__content">
+          <div >
+            <form id="submit-email-form" class="contact__content__form" onsubmit="sendEmail(event);">
+              <div>
+                <label for="FirstName">
+                  First Name
+                  <br />
+                </label>
+                <input required type="text" id="FirstName" name="FirstName" />
+              </div>
+              <div>
+                <label for="LastName">
+                  Last Name
+                  <br />
+                </label>
+                <input type="text" id="LastName" name="LastName" />
+              </div>
+              <div class="contact__content__form-email">
+                <label for="Email" style="width: 100%">
+                  Email
+                  <br / >
+                </label>
+                <input required type="email" id="Email" name="Email"/>
+              </div>
+              <div class="contact__content__form-message">
+                <label for="message">
+                  Message
+                  <br />
+                </label>
+                <textarea required id="Message" name="Message" rows="8" cols="51"></textarea>
+		<div class="cf-turnstile" id="ts-captcha" data-sitekey="0x4AAAAAAAH-SzxPEdUlPxzY" data-theme="dark"></div>
+		<br />
+                <input type="submit" name="submit" value="SUBMIT" class="contact__content__form-submit" style="background-color: #38F521;">
+              </div>
+            </form>
+          </div>
+          <div class="contact__content__text">
+            We're here to help! If you have any questions, suggestions, or comments about the Open Source Club, please feel free
+            to reach out to us using the contact form to the left. Our team is dedicated to provided the best experience for our members,
+            and we value your feedback. Whether you're interested in joining our club, have questions about our activities, or just want to get
+            in touch, we'll do our best to respond promptly. Thank you for your interest in the Open Source Club, and we look forward to hearing from you!
+          </div>
+        </div>
+      </div>
+    </section>
+    <div id="scene0" class="scene scene--full"></div>
+    <%- include('./components/footer.ejs') %>
+    <script type="module" src="./js/dotmap.js"></script>
+  </body>
 </html>
