@@ -5,7 +5,7 @@
         <input
           type="checkbox"
           onclick="selectAllCheckboxClickHandler('images-table', imagesTableSelections);deleteButtonVisibility('images-table','delete-button-images');"
-        />
+          />
       </th>
       <th scope="col" class="title-header">Path</th>
       <th scope="col">Description</th>
@@ -13,22 +13,22 @@
     </thead>
     <tbody>
       <% data.forEach((entry) => { %>
-        <tr class="data-row" id="<%= entry.id %>">
-          <td>
-            <input
-              type="checkbox"
-              name="row-selected"
-              onclick="checkboxClickHandler('<%= entry.id %>', 'images-table', imagesTableSelections);deleteButtonVisibility('images-table','delete-button-images');"
+      <tr class="data-row" id="<%= entry.id %>">
+        <td>
+          <input
+            type="checkbox"
+            name="row-selected"
+            onclick="checkboxClickHandler('<%= entry.id %>', 'images-table', imagesTableSelections);deleteButtonVisibility('images-table','delete-button-images');"
             />
-          </td>
-          <td><%= `/api/image/${entry.id}` %></td>
-          <td><%= entry.description %></td>
-	  <td>
-	    <button type="button" onclick="window.open('api/image/<%= entry.id %>')">
+        </td>
+        <td><%= `/api/image/${entry.id}` %></td>
+        <td><%= entry.description %></td>
+	<td>
+	  <button type="button" onclick="window.open('api/image/<%= entry.id %>')">
 	    PREVIEW
 	  </button>
-	  </td>
-        </tr>
+	</td>
+      </tr>
       <% }) %>
     </tbody>
     <tfoot>
