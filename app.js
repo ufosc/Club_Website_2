@@ -10,6 +10,7 @@ const passport = require('passport')
 const auth = require('./auth/auth')
 const session = require('express-session')
 const cookieParser = require('cookie-parser')
+const compression = require('compression')
 
 const { UserModel } = require('./model/users')
 const { BlogModel } = require('./model/blog')
@@ -33,6 +34,7 @@ app.use(express.json())
 app.use(session({ secret: config.secret }))
 app.use(passport.initialize())
 app.use(passport.session())
+app.use(compression())
 
 app.use('/api', apiRoute)
 

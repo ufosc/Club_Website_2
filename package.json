@@ -41,6 +41,7 @@
   "dependencies": {
     "body-passer": "^1.0.0",
     "chai-http": "^4.3.0",
+    "compression": "^1.7.4",
     "cookie-parser": "^1.4.6",
     "dotenv": "^16.0.2",
     "ejs": "^3.1.8",
