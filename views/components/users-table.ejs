@@ -1,48 +1,48 @@
 <div style="overflow-x:auto;">
-    <table id="users-table">
-        <thead>
-            <th scope="col" class="tcheckbox">
-                <input
-                    type="checkbox"
-                    onclick="selectAllCheckboxClickHandler('users-table', usersTableSelections);deleteButtonVisibility('users-table','delete-button-users');"
-                />
-            </th>
-            <th scope="col" class="title-header">Username</th>
-            <th scope="col">Full Name</th>
-            <th scope="col">Role</th>
-            <th scope="col">isAdmin</th>
-            <th scope="col">Edit</th>
-        </thead>
-        <tbody>
-            <% data.forEach((entry) => { %>
-                <tr class="data-row" id="<%= entry.id %>">
-                    <td>
-                        <input
-                            type="checkbox"
-                            name="row-selected"
-                            onclick="checkboxClickHandler('<%= entry.id %>', 'users-table', usersTableSelections);deleteButtonVisibility('users-table','delete-button-users');"
-                        /></td>
-                    <td><%= entry.username %></td>
-                    <td><%= entry.fullName %></td>
-                    <td><%= entry.role %></td>
-                    <td><%= entry.isAdmin %></td>
-                    <td>
-                        <button type="button" onclick="window.open('api/edit/user/<%= entry.id %>')">
-                            EDIT
-                        </button>
-                    </td>
-                </tr>
-            <% }) %>
-        </tbody>
-        <tfoot>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-        </tfoot>
-    </table>
+  <table id="users-table">
+    <thead>
+      <th scope="col" class="tcheckbox">
+        <input
+          type="checkbox"
+          onclick="selectAllCheckboxClickHandler('users-table', usersTableSelections);deleteButtonVisibility('users-table','delete-button-users');"
+          />
+      </th>
+      <th scope="col" class="title-header">Username</th>
+      <th scope="col">Full Name</th>
+      <th scope="col">Role</th>
+      <th scope="col">isAdmin</th>
+      <th scope="col">Edit</th>
+    </thead>
+    <tbody>
+      <% data.forEach((entry) => { %>
+      <tr class="data-row" id="<%= entry.id %>">
+        <td>
+          <input
+            type="checkbox"
+            name="row-selected"
+            onclick="checkboxClickHandler('<%= entry.id %>', 'users-table', usersTableSelections);deleteButtonVisibility('users-table','delete-button-users');"
+            /></td>
+        <td><%= entry.username %></td>
+        <td><%= entry.fullName %></td>
+        <td><%= entry.role %></td>
+        <td><%= entry.isAdmin %></td>
+        <td>
+          <button type="button" onclick="window.open('api/edit/user/<%= entry.id %>')">
+            EDIT
+          </button>
+        </td>
+      </tr>
+      <% }) %>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </tfoot>
+  </table>
 </div>
