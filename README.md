@@ -112,7 +112,7 @@ SECRET = "any string"
 For SMTP, the website integrates with [OpenWebServices](https://github.com/ufosc/OpenWebServices) websmtp. The variable is configured as follows:
 ```
 SMTP_HOST = "http://localhost:8080/mail/send"
-``
+```
 
 <b>ADMIN_EMAIL</b><br>
 The email address to send contact form confirmation emails from. Can be set to anything so long as its a valid email address. Modified as follows:
