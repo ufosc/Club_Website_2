@@ -1,11 +1,8 @@
 const express = require('express')
 const router = express.Router()
-const nodemailer = require('nodemailer')
 const config = require('../utils/config')
 const FormData = require('form-data')
-const fetch = (...args) => import('node-fetch').then(({ default: fetch }) => fetch(...args))
-
-const transport = (config.smtp == null) ? null : nodemailer.createTransport(config.smtp)
+const axios = require('axios').default
 
 // Regex to validate an email address
 const validateAddress = (req, res, next) => {
@@ -57,7 +54,7 @@ const validateContactForm = async (req, res, next) => {
   }
 
   if (typeof req.body.Token !== 'string') {
-    return res.status(400).send({ error: 'Expected captcha token.' })
+    return res.status(400).send({ error: 'Bad captcha token. Please refresh the page and try again.' })
   }
 
   // Sanitise HTML
@@ -81,77 +78,81 @@ const validateTurnstile = async (req, res, next) => {
   formData.append('response', token)
   formData.append('remoteip', ip)
 
-  const ftc = await fetch(
-    'https://challenges.cloudflare.com/turnstile/v0/siteverify',
-    {
-      method: 'POST',
-      body: formData
-    }
-  )
+  try {
+    const response = await axios.post(
+      'https://challenges.cloudflare.com/turnstile/v0/siteverify',
+      formData)
 
-  // Compare to true in case response is undefined.
-  const valid = await ftc.json()
-  if (!valid.success) {
+    if (response.status === 200 && typeof response.data !== 'undefined' && response.data.success) {
+      next()
+    } else {
+      return res.status(401).send({ error: 'Bad CAPTCHA Response' })
+    }
+  } catch (error) {
     return res.status(401).send({ error: 'Bad CAPTCHA Response' })
   }
-
-  next()
 }
 
 // Contact form message submission route
 router.post('/', validateContactForm, validateTurnstile,
   validateAddress, async (req, res) => {
-    if (transport == null) {
-      return res.status(400).send({ error: 'SMTP has not been configured' })
-    }
-
     const message = {
-      FirstName: req.body.FirstName,
-      LastName: req.body.LastName,
-      Email: req.body.Email,
-      Message: req.body.Message
+      firstName: req.body.FirstName,
+      lastName: req.body.LastName,
+      email: req.body.Email,
+      message: req.body.Message
     }
 
-    // Send confirmation receipt to sender
-    let info = await transport.sendMail({
-      subject: 'Your message was received',
-      text: `Dear ${message.FirstName} ${message.LastName},
+    try {
+    // Send message receipt to sender.
+      const toSender = await axios.post(config.smtp_host, {
+        from: 'no-reply.notifications@ufosc.org',
+        to: [message.email],
+        subject: '[UF OSC] Your message has been received',
+        body: `Thank you for contacting the UF OSC team, your message has been received.<br />
+A representative will reach out within 24-48 hours.<br />
+<br />
+Sincerely,<br />
+UF Open Source Club Team`
+      })
 
-Thank you for contacting the UF Open Source Club, this is an automated email confirming receipt of your message.
-A club representative will be in touch soon.
+      if (toSender.status !== 200) {
+        return res.status(400).send({
+          error: 'Your message could not be sent. Please try again later.'
+        })
+      }
 
-Kindly,
-UF OSC`,
-      from: 'no-reply@ufosc.com',
-      to: req.body.Email
-    })
+      // Send copy of message to admin.
+      const toAdmin = await axios.post(config.smtp_host, {
+        from: 'no-reply.notifications@ufosc.org',
+        to: [config.admin_email],
+        subject: '[UF OSC] New Message from Website',
+        body: `You've received a new message via the OSC website contact form.<br />
+<br />
+First Name: ${message.firstName}<br />
+Last Name: ${message.lastName}<br />
+Email Address: ${message.email}<br />
+<br />
+### BEGIN MESSAGE ###<br />
+${message.message}
+<br />### END MESSAGE ###<br />
+<br />
+Please respond by composing a new email to ${message.email}. Replies to this message will not be delivered.
+`
+      })
 
-    if (info.rejected.length !== 0) {
-      return req.status(400).send({ error: 'Message was rejected by server. Please try again later.' })
+      if (toAdmin.status !== 200) {
+        return res.status(400).send({
+          error: 'Your message could not be sent. Please try again later.'
+        })
+      }
+
+      return res.status(200).send('Success')
+    } catch (error) {
+      return res.status(400).send({
+        error: 'Your message could not be sent. Please try again later.'
+      })
     }
-
-    // Send message confirmation receipt to UF OSC admin
-    info = await transport.sendMail({
-      subject: 'New Message from Website',
-      text: `${message.FirstName} ${message.LastName} sent a message via your website's contact form.
-A copy of the message is attached below:
-
---- BEGIN MESSAGE ---
-${message.Message}
---- END MESSAGE ---
-
-You can reach this user via their email address: ${message.Email}
-or by replying to this email.
-`,
-      from: 'no-reply@ufosc.com',
-      to: config.admin_email
-    })
-
-    if (info.rejected.length !== 0) {
-      return req.status(400).send({ error: 'Message was rejected by server. Please try again later,' })
-    }
-
-    return res.status(200).send('Success')
   })
 
 module.exports = router

@@ -22,7 +22,7 @@ const config = {
     },
     cache_interval: process.env.CACHE_INTERVAL * 60 * 1000 || 10 * 1000,
     secret: 'jLJhDQMYtXjCwQmu',
-    smtp: null,
+    smtp_host: process.env.SMTP_HOST || 'http://localhost:30000/mail/send',
     admin_email: process.env.ADMIN_EMAIL,
     captcha_secret: '1x0000000000000000000000000000000AA'
   },
@@ -36,15 +36,7 @@ const config = {
     },
     cache_interval: process.env.CACHE_INTERVAL * 60 * 1000 || 15 * 60 * 1000,
     secret: process.env.SECRET,
-    smtp: {
-      host: process.env.SMTP_HOST || 'smtp-relay.sendinblue.com',
-      port: process.env.SMTP_PORT || 587,
-      secure: false,
-      auth: {
-        user: process.env.SMTP_USER,
-        pass: process.env.SMTP_PASS
-      }
-    },
+    smtp_host: process.env.SMTP_HOST || 'http://localhost:30000/mail/send',
     admin_email: process.env.ADMIN_EMAIL,
     captcha_secret: process.env.CAPTCHA_SECRET
   },
@@ -58,15 +50,7 @@ const config = {
     },
     cache_interval: process.env.CACHE_INTERVAL * 60 * 1000 || 15 * 60 * 1000,
     secret: process.env.SECRET,
-    smtp: {
-      host: process.env.SMPT_HOST || 'smtp-relay.sendinblue.com',
-      port: process.env.SMPT_PORT || 587,
-      secure: false,
-      auth: {
-        user: process.env.SMTP_USER,
-        pass: process.env.SMPT_PASS
-      }
-    },
+    smtp_host: process.env.SMTP_HOST,
     admin_email: process.env.ADMIN_EMAIL,
     captcha_secret: process.env.CAPTCHA_SECRET
   }
