@@ -108,12 +108,11 @@ The secret is a key for encrypting JWTs. It can be modified like so:
 SECRET = "any string"
 '''
 
-<b>SMTP:</b><br>
-Configurations for the SMTP mailer. This is disabled in development environments, but can be modified with the following options:
-1. `SMTP_HOST`: host address for the SMTP server.
-2. `SMTP_PORT`: port for the host (see above).
-3. `SMTP_USER`: the server username.
-4. `SMTP_PASS`: the server password.
+<b>SMTP_HOST:</b><br>
+For SMTP, the website integrates with [OpenWebServices](https://github.com/ufosc/OpenWebServices) websmtp. The variable is configured as follows:
+```
+SMTP_HOST = "http://localhost:8080/mail/send"
+``
 
 <b>ADMIN_EMAIL</b><br>
 The email address to send contact form confirmation emails from. Can be set to anything so long as its a valid email address. Modified as follows:
@@ -123,7 +122,7 @@ ADMIN_EMAIL = "no-reply@ufosc.com"
 ## Maintainers
 Maintained by the UF Open Source Club, can be contacted via [Discord](https://discord.gg/j9g5dqSVD8)
 
-Current Maintainers: 
+Current Maintainers:
 - Michail Zeipekki @zeim839
 - Daniel Wildsmith @danielwildsmith
 
