@@ -1,4 +1,4 @@
-const VERSION = 'V1.0.1'
+const VERSION = 'V1.0.2'
 const NODE_ENV = process.env.NODE_ENV || 'development'
 const MONGO_URI = process.env.MONGO_URI || 'mongodb+srv://dev:Vm0p67n9M0Z9j0jx@cluster0.cfrfrnu.mongodb.net/?retryWrites=true&w=majority'
 
