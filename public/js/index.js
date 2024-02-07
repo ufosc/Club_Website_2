@@ -1,5 +1,6 @@
 /* global XMLHttpRequest, alert, turnstile */
 const horizontalScrollContainer = document.querySelector('.portfolio__cards__scroll')
+const contactForm = document.getElementById('submit-email-form')
 const btnLeft = document.querySelector('.portfolio__cards__scroll__btn-left')
 const btnRight = document.querySelector('.portfolio__cards__scroll__btn-right')
 const scrollableWidth = horizontalScrollContainer.scrollWidth
@@ -48,6 +49,8 @@ const sendEmail = (event) => {
         alert(JSON.parse(XHR.responseText).error)
         return
       }
+
+      contactForm.reset()
 
       alert('Message sent succesfully. Check your email (& spam folder) for confirmation of receipt.')
     }
