@@ -1,4 +1,7 @@
 /* global XMLHttpRequest, alert, turnstile */
+const contactForm = document.getElementById('submit-email-form')
+const turnstileElement = document.getElementById('ts-captcha')
+
 const horizontalScrollContainer = document.querySelector('.portfolio__cards__scroll')
 const btnLeft = document.querySelector('.portfolio__cards__scroll__btn-left')
 const btnRight = document.querySelector('.portfolio__cards__scroll__btn-right')
@@ -49,6 +52,10 @@ const sendEmail = (event) => {
         return
       }
 
+      // Reset form fields and recaptcha token
+      contactForm.reset()
+      turnstile.reset(turnstileElement)
+
       alert('Message sent succesfully. Check your email (& spam folder) for confirmation of receipt.')
     }
   }
@@ -60,6 +67,6 @@ const sendEmail = (event) => {
     LastName: document.getElementById('LastName').value,
     Email: document.getElementById('Email').value,
     Message: document.getElementById('Message').value,
-    Token: turnstile.getResponse(document.getElementById('ts-captcha'))
+    Token: turnstile.getResponse(turnstileElement)
   }))
 }
