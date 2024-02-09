@@ -4,7 +4,6 @@ const mongoose = require('mongoose')
 const { hashPassword } = require('../auth/auth')
 const { UserModel } = require('../model/users')
 const { BlogModel } = require('../model/blog')
-const { ImageModel } = require('../model/images')
 
 const seed = async () => {
   if (config.ENV !== 'development') {
@@ -22,7 +21,6 @@ const seed = async () => {
     try {
       await UserModel.collection.drop()
       await BlogModel.collection.drop()
-      await ImageModel.collection.drop()
       console.log('Reset database succesfully')
     } catch (error) {
       console.log('ERROR while resetting database: ', error)
@@ -64,32 +62,11 @@ const seed = async () => {
       author: ['admin2']
     })
 
-    const imageA = new ImageModel({
-      filename: '1689501903131-459608087.png',
-      description: 'lorem ipsum dolor',
-      path: 'test/assets/1x1.png'
-    })
-
-    const imageB = new ImageModel({
-      filename: '1689502000136-727547610.png',
-      description: 'lorem ipsum dolor',
-      path: 'test/assets/1x1.png'
-    })
-
-    const imageC = new ImageModel({
-      filename: '1689502000136-727547610.png',
-      description: 'lorem ipsum dolor',
-      path: 'test/assets/doesnt-exist.jpeg'
-    })
-
     await userAdmin.save()
     await userB.save()
     await blogA.save()
     await blogA.save()
     await blogB.save()
-    await imageA.save()
-    await imageB.save()
-    await imageC.save()
 
     console.log('Finished seeding')
     mongoose.connection.close()

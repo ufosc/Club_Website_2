@@ -1,4 +1,4 @@
-/* global alert, XMLHttpRequest, FormData, IS_NEW, OBJ_ID */
+/* global alert, XMLHttpRequest, IS_NEW, OBJ_ID */
 
 const editUser = (event) => { // eslint-disable-line
   event.preventDefault()
@@ -136,28 +136,4 @@ const deleteBlog = () => { // eslint-disable-line
   XHR.setRequestHeader('Content-Type', 'application/json')
 
   XHR.send()
-}
-
-const editImage = (event) => { // eslint-disable-line
-  event.preventDefault()
-  const XHR = new XMLHttpRequest()
-
-  // Success
-  XHR.onreadystatechange = () => {
-    if (XHR.readyState === 4) {
-      if (XHR.status !== 200) {
-        alert(JSON.parse(XHR.responseText).error)
-        return
-      }
-
-      alert('Image saved succesfully')
-      window.location.reload()
-    }
-  }
-
-  XHR.open('POST', '/api/image')
-  XHR.withCredentials = true
-
-  const fd = new FormData(document.getElementById('edit-images-form'))
-  XHR.send(fd)
 }

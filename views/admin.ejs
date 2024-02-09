@@ -21,7 +21,6 @@
     <script>
       var blogTableSelections = []
       var usersTableSelections = []
-      var imagesTableSelections = []
     </script>
     <script defer src="js/dashboard.js"></script>
     <script src="./js/navbar.js" defer async></script>
@@ -52,21 +51,6 @@
         <hr/>
         <div class="table-wrapper">
           <%- include('./components/users-table.ejs', { data: users }) %>
-        </div>
-      </section>
-      <section class="dashboard-subsection">
-        <button
-	  id="new-button-images"
-	  class="new-button"
-	  type="button"
-	  onclick="window.open('/api/edit/image')"
-	  > NEW
-	</button>
-	<button id="delete-button-images" type="button" onclick="deleteHandler('image');">DELETE</button>
-        <h1>Images</h1>
-        <hr/>
-        <div class="table-wrapper">
-          <%- include('./components/images-table.ejs', { data: images }) %>
         </div>
       </section>
     </section>
