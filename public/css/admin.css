@@ -70,18 +70,4 @@ section {
   float: right;
 }
 
-#delete-button-images{
-  /* self style */
-  background-color: red;
-  color: var(--light-gray);
-  border: none;
-  border-radius: 3px;
-  font-weight: 600;
-
-  /* self align */
-  height: 25px;
-  width: 75px;
-  float: right;
-}
-
 /* ----------CSS for Delete Buttons ends here----------------- */

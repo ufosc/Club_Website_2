@@ -14,7 +14,6 @@ const compression = require('compression')
 
 const { UserModel } = require('./model/users')
 const { BlogModel } = require('./model/blog')
-const { ImageModel } = require('./model/images')
 const { callbacks } = require('./utils/callbacks')
 
 const app = express()
@@ -66,11 +65,9 @@ app.get(`/${config.admin_route}`, (req, res) => {
 
     const users = await UserModel.find().sort({ isAdmin: -1 }).exec()
     const blog = await BlogModel.find()
-    const images = await ImageModel.find().sort({ date: -1 })
     return res.render('admin', {
       users: (users) || [],
       blog: (blog) || [],
-      images: (images) || [],
       version: config.VERSION
     })
   })(req, res)

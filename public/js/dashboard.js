@@ -1,4 +1,4 @@
-/* global blogTableSelections, usersTableSelections, imagesTableSelections, alert, XMLHttpRequest */
+/* global blogTableSelections, usersTableSelections, alert, XMLHttpRequest */
 
 // uncheck all checkboxes on load and remove all data from selectionsArray(s) and hide Delete-Buttons
 document.addEventListener('DOMContentLoaded', () => {
@@ -90,7 +90,6 @@ const deleteButtonVisibility = (tableId, buttonId) => {
 const disableAllDeleteButtons = () => {
   deleteButtonVisibility('blog-table', 'delete-button-blog')
   deleteButtonVisibility('blog-table', 'delete-button-users')
-  deleteButtonVisibility('images-table', 'delete-button-images')
 }
 
 const deleteHandler = async (route) => { // eslint-disable-line
@@ -104,10 +103,6 @@ const deleteHandler = async (route) => { // eslint-disable-line
     case 'blog':
       selections = blogTableSelections
       itemDesc = 'article'
-      break
-    case 'image':
-      selections = imagesTableSelections
-      itemDesc = 'image'
       break
     default:
       console.log('deleteHandler: invalid selection')
