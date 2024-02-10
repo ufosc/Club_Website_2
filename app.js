@@ -25,6 +25,7 @@ cache.register(...callbacks)
 cache.start(config.cache_interval)
 
 app.set('view engine', 'ejs')
+app.use(compression())
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(cookieParser())
 app.use(rateLimit(config.limiter))
@@ -33,7 +34,6 @@ app.use(express.json())
 app.use(session({ secret: config.secret }))
 app.use(passport.initialize())
 app.use(passport.session())
-app.use(compression())
 
 app.use('/api', apiRoute)
 
