@@ -4,7 +4,7 @@
         "blog__posts-large" } %> <% if (!locals.maxItems || index < locals.maxItems) {
         %>
     <div onClick="goNavigateToPost('<%=elem._id.toString()%>')" class="<%= styleName %>" id="second-post">
-        <img src="<%= elem.previewImg %>" width="448" height="300" alt="blog preview image"/>
+        <img src="<%= elem.previewImg %>" width="448" height="300" alt="blog preview image" loading="lazy"/>
         <h2>
             <% if ( styleName == "blog__posts-small" && elem.title.toString().length > 20) { %>
                 <%= elem.title.toString().substring(0, 17) + "..." %>

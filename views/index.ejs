@@ -15,9 +15,9 @@
           content="University of Florida, UF, OSC, Open Source,
                    Computer Science, Data Science, Programming"
           >
+    <link rel="preconnect" href="https://challenges.cloudflare.com">
     <link rel="icon" type="image/x-icon" href="/assets/favicon.png">
-    <link rel="stylesheet" href="css/common.css" />
-    <link rel="stylesheet" href="css/index.css" />
+    <style><%- locals.styles %></style>
     <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
     <script src="./js/navbar.js" defer async></script>
     <script src="./js/index.js" defer async></script>
@@ -71,8 +71,8 @@
             <div id="card1" class="card">
               <h2>Alarm Clock</h2>
               <p>
-                A React-Native application that allows users to configure various 
-                punishments for not waking up and ways of detecting if a user is awake.  
+                A React-Native application that allows users to configure various
+                punishments for not waking up and ways of detecting if a user is awake.
                 Languages: JavaScript. Framework/tools: React-Native, Expo.
               </p>
               <button onclick="location.href = 'https://github.com/ufosc/Alarm-Clock';">ABOUT</button>
@@ -144,10 +144,10 @@
               <button onclick="location.href = 'https://github.com/ufosc/manim-data-structures';">ABOUT</button>
             </div>
             <button class="portfolio__cards__scroll__btn-left">
-              <img src="./assets/left-swipe-arrow.png" alt="left arrow" width="45" height="45">
+              <img src="./assets/left-swipe-arrow.png" alt="left arrow" width="45" height="45" loading="lazy">
             </button>
             <button class="portfolio__cards__scroll__btn-right">
-              <img src="./assets/left-swipe-arrow.png" alt="right arrow" width="45" height="45">
+              <img src="./assets/left-swipe-arrow.png" alt="right arrow" width="45" height="45" loading="lazy">
             </button>
           </div>
         </div>
@@ -180,7 +180,7 @@
       <div class="join__content__perks">
         <div class="join__perks">
           <div class="join__perks-perk">
-            <img src="/assets/freeForever.png" width="57" height="57" alt="free forever">
+            <img src="/assets/freeForever.png" width="57" height="57" alt="free forever" loading="lazy">
             <div>
               <h3>Free forever</h3>
               <h5>Join our club for free and enjoy a membership without any fees because we
@@ -189,7 +189,7 @@
             </div>
           </div>
           <div class="join__perks-perk">
-            <img src="/assets/casualCommit.png" width="57" height="57" alt="casual commitment">
+            <img src="/assets/casualCommit.png" width="57" height="57" alt="casual commitment" loading="lazy">
             <div>
               <h3>Casual commitment</h3>
               <h5>Enjoy the flexibility to come and go as you please, participate in our meetings, casual codings, and
@@ -198,14 +198,14 @@
             </div>
           </div>
           <div class="join__perks-perk">
-            <img src="/assets/noXp.png" width="57" height="57" alt="club perks">
+            <img src="/assets/noXp.png" width="57" height="57" alt="club perks" loading="lazy">
             <div>
               <h3>No experience necessary</h3>
               <h5>Members of all skill and experience levels are welcome. All that is needed is a willingness to learn. </h5>
             </div>
           </div>
           <div class="join__perks-perk">
-            <img src="/assets/leaveAnytime.png" width="57" height="57" alt="leave the club at any time">
+            <img src="/assets/leaveAnytime.png" width="57" height="57" alt="leave the club at any time" loading="lazy">
             <div>
               <h3>Join/leave anytime</h3>
               <h5>We welcome you to be a part of our community on your own terms, regardless of busy schedules and changing commitments.
@@ -276,6 +276,6 @@
     </section>
     <div id="scene0" class="scene scene--full"></div>
     <%- include('./components/footer.ejs') %>
-    <script type="module" src="./js/dotmap.js"></script>
+    <script type="module" src="./js/dotmap.js" defer></script>
   </body>
 </html>
