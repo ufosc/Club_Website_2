@@ -453,6 +453,19 @@ footer {
     text-shadow: 1px 1px 2px #427388;
 }
 
+.version-txt {
+    float: right;
+    text-align: left;
+    color: aliceblue;
+    font-family: Arial;
+    padding-left: 10px;
+    font-weight: normal;
+    font-size: 15px;
+    margin: 0px;
+    padding-top: 15px;
+    padding-left: 150x;
+}
+
 /*........... for devices over 811px (desktop view).......... */
 @media only screen and (min-width: 941px) {
     .blog__posts h2 {
