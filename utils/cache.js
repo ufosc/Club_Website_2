@@ -30,7 +30,9 @@ class Cache {
   }
 
   start (interval) {
-    if (typeof (interval) !== 'number') { return new Error('Expected interval to be of type number') }
+    if (typeof (interval) !== 'number') {
+      return new Error('Expected interval to be of type number')
+    }
 
     // Run AT MOST once every 'interval' milliseconds
     this.process = setInterval(() => {

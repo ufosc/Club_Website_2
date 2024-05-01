@@ -21,8 +21,6 @@ const http = require('http').createServer(app)
 const apiRoute = require('./routes/api')
 
 const cache = new CacheModule()
-cache.register(...callbacks)
-cache.start(config.cache_interval)
 
 app.set('view engine', 'ejs')
 app.use(compression())
@@ -81,8 +79,11 @@ app.get('/*', (req, res) => {
   res.render('404', { version: config.VERSION })
 })
 
-db.connect()
-http.listen(config.port, () => console.log(`Server running on port ${config.port}`))
+db.connect().then(async () => {
+  await cache.register(...callbacks)
+  cache.start(config.cache_interval)
+  http.listen(config.port, () => console.log(`Server running on port ${config.port}`))
+})
 
 const stop = () => {
   http.close()
