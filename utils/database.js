@@ -27,7 +27,7 @@ process.on('SIGINT', (error, data) => {
 })
 
 exports.connect = () => {
-  mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true })
+  return mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true })
 }
 
 exports.disconnect = () => {
