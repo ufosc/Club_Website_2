@@ -45,7 +45,7 @@
     "compression": "^1.7.4",
     "cookie-parser": "^1.4.6",
     "dotenv": "^16.0.2",
-    "ejs": "^3.1.8",
+    "ejs": "^3.1.10",
     "ejs-lint": "^2.0.0",
     "express": "^4.19.2",
     "express-rate-limit": "^6.6.0",
