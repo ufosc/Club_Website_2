@@ -1,0 +1,65 @@
+.footer-upper {
+    width: 100vw;
+    height: 65px;
+    vertical-align: baseline;
+    text-align: left;
+    background-color: black;
+    color: white;
+    font-size: 30px;
+    font-family: 'Outrun';
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+}
+
+.social-buttons {
+    margin-right: 40px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer-lower {
+    background-color: white;
+    padding-right: 30px;
+    padding-left: 20px;
+    padding-top: 6px;
+    padding-bottom: 5px;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.footer-lower a {
+    font-family: 'Overpass';
+    font-size: 13px;
+    font-weight:300;
+    color: black;
+}
+
+.footer-content-container {
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+
+footer {
+    position: static;
+    bottom: 0px;
+}
+
+.version-txt {
+    float: right;
+    text-align: left;
+    color: aliceblue;
+    font-family: Arial;
+    padding-left: 10px;
+    font-weight: normal;
+    font-size: 15px;
+    margin: 0px;
+    padding-top: 15px;
+    padding-left: 150x;
+}
