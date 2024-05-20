@@ -1,0 +1,55 @@
+@font-face {
+    font-family: 'Outrun';
+    src: url('./fonts/outrun.otf');
+}
+
+@font-face {
+    font-family: 'Overpass';
+    src: url('./fonts/overpass.ttf');
+}
+
+@font-face {
+    font-family: 'Overpass-Bold';
+    src: url('./fonts/Overpass-Bold.ttf');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+h1 {
+    font-family: 'Outrun';
+    font-size: 1.75rem;
+    font-weight: bold;
+}
+
+h2 {
+    font-family: 'Overpass-Bold';
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+h3 {
+    font-family: 'Overpass';
+    font-size: 0.85rem;
+    font-weight: 400;
+}
+
+h4 {
+    font-family: 'Overpass';
+    font-size: 13px;
+    font-weight:300;
+    color: black;
+}
+
+h5 {
+    color: #A4A1B6;
+    font-size: 13px;
+    font-family: 'Overpass';
+}

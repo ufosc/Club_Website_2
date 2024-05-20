@@ -1,62 +1,36 @@
 {
-  "name": "osc-website",
-  "version": "1.0.4",
-  "description": "UF OSC website",
-  "main": "app.js",
-  "scripts": {
-    "start": "nodemon app.js",
-    "test": "node utils/seed.js && mocha --timeout 10000",
-    "lint": "standard && ejslint views/*.ejs && ejslint views/components/*.ejs",
-    "fix": "standard --fix"
-  },
-  "standard": {
-    "ignore": [
-      "public/js/three.module.js",
-      "public/js/BufferGeometryUtils.js"
-    ]
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ufosc/Club_Website_2.git"
-  },
+  "name": "Club_Website_2",
+  "version": "2.0.0",
+  "private": true,
+  "description": "Club_Website_2",
+  "author": "zeim839",
   "keywords": [
-    "OSC",
-    "webdev",
-    "nodejs",
-    "javascript",
-    "express"
+    "gatsby"
   ],
-  "author": "ufosc",
-  "license": "GPL-3.0-or-later",
-  "bugs": {
-    "url": "https://github.com/ufosc/Club_Website_2/issues"
-  },
-  "homepage": "https://github.com/ufosc/Club_Website_2#readme",
-  "devDependencies": {
-    "chai": "^4.3.6",
-    "mocha": "^10.1.0",
-    "nodemon": "^2.0.20",
-    "standard": "^17.0.0"
+  "scripts": {
+    "develop": "gatsby develop",
+    "start": "gatsby develop",
+    "build": "gatsby build",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "axios": "^1.6.5",
-    "body-passer": "^1.0.0",
-    "chai-http": "^4.3.0",
-    "compression": "^1.7.4",
-    "cookie-parser": "^1.4.6",
-    "dotenv": "^16.0.2",
-    "ejs": "^3.1.10",
-    "ejs-lint": "^2.0.0",
-    "express": "^4.19.2",
-    "express-rate-limit": "^6.6.0",
-    "express-session": "^1.17.3",
-    "form-data": "^4.0.0",
-    "mongoose": "^6.12.0",
-    "multer": "^1.4.5-lts.1",
-    "node-fetch": "^3.3.2",
-    "passport": "^0.6.0",
-    "passport-jwt": "^4.0.1",
-    "passport-local": "^1.0.0",
-    "pbkdf2": "^3.1.2"
+    "@mdx-js/react": "^3.0.1",
+    "gatsby": "^5.13.5",
+    "gatsby-plugin-image": "^3.13.1",
+    "gatsby-plugin-mdx": "^5.13.1",
+    "gatsby-plugin-sharp": "^5.13.1",
+    "gatsby-plugin-sitemap": "^6.13.1",
+    "gatsby-source-filesystem": "^5.13.1",
+    "gatsby-transformer-sharp": "^5.13.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.19",
+    "@types/react": "^18.2.55",
+    "@types/react-dom": "^18.2.19",
+    "typescript": "^5.3.3"
   }
 }
