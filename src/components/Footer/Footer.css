@@ -33,7 +33,7 @@
 }
 
 .footer-lower a {
-    font-family: 'Overpass';
+    font-family: 'Diatype';
     font-size: 13px;
     font-weight:300;
     color: black;
@@ -56,10 +56,9 @@ footer {
     text-align: left;
     color: aliceblue;
     font-family: Arial;
-    padding-left: 10px;
+    padding-left: 30px;
     font-weight: normal;
     font-size: 15px;
     margin: 0px;
     padding-top: 15px;
-    padding-left: 150x;
 }
