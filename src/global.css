@@ -4,13 +4,39 @@
 }
 
 @font-face {
-    font-family: 'Overpass';
-    src: url('./fonts/overpass.ttf');
+    font-family: Diatype;
+    src: url('./fonts/ABCDiatype-Thin.woff2') format("woff2");
+    font-weight: 200;
+    font-style: normal;
+    font-stretch: normal;
+    font-display: swap
 }
 
 @font-face {
-    font-family: 'Overpass-Bold';
-    src: url('./fonts/Overpass-Bold.ttf');
+    font-family: Diatype;
+    src: url('./fonts/ABCDiatype-Light.woff2') format("woff2");
+    font-weight: 300;
+    font-style: normal;
+    font-stretch: normal;
+    font-display: swap
+}
+
+@font-face {
+    font-family: Diatype;
+    src: url('./fonts/ABCDiatype-Regular.woff2') format("woff2");
+    font-weight: 400;
+    font-style: normal;
+    font-stretch: normal;
+    font-display: swap
+}
+
+@font-face {
+    font-family: Diatype;
+    src: url('./fonts/ABCDiatype-Bold.woff2') format("woff2");
+    font-weight: 700;
+    font-style: normal;
+    font-stretch: normal;
+    font-display: swap
 }
 
 * {
@@ -30,19 +56,21 @@ h1 {
 }
 
 h2 {
-    font-family: 'Overpass-Bold';
-    font-size: 2rem;
+    font-family: 'Diatype';
+    color: white;
+    font-size: 4rem;
     font-weight: bold;
 }
 
 h3 {
-    font-family: 'Overpass';
-    font-size: 0.85rem;
+    font-family: 'Diatype';
+    font-size: 1.5rem;
     font-weight: 400;
+    color: #e8e8e8;
 }
 
 h4 {
-    font-family: 'Overpass';
+    font-family: 'Diatype';
     font-size: 13px;
     font-weight:300;
     color: black;
@@ -51,5 +79,53 @@ h4 {
 h5 {
     color: #A4A1B6;
     font-size: 13px;
-    font-family: 'Overpass';
+    font-family: 'Diatype';
+}
+
+mark {
+    background-color: #B8DE58;
+}
+
+button {
+    background: #BE2FDD;
+    border-radius: 36px;
+    border: none;
+    box-shadow: none;
+    padding: 15px;
+    font-family: 'Diatype';
+    color: white;
+    font-weight: 200;
+    min-height: 50px;
+    min-width: 150px;
+    margin: 10px;
+}
+
+button:hover {
+    background: #7CD6DF;
+    transition: 0.1s ease-in-out;
+}
+
+button:active {
+  transform: translateY(3px);
+}
+
+.secondary {
+    background: none;
+    border: 1px solid white;
+}
+
+.secondary:hover {
+    background: white;
+    color: black;
+    transition: 0.1s ease-in-out;
+}
+
+section {
+    display: flex;
+    background: black;
+}
+
+.section-heading {
+    text-align: left;
+    font-size: 1.8rem;
 }
