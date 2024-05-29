@@ -6,20 +6,26 @@ const config: GatsbyConfig = {
     siteUrl: `https://www.ufosc.org`
   },
   graphqlTypegen: true,
-  plugins: ["gatsby-plugin-image", "gatsby-plugin-sitemap", "gatsby-plugin-mdx", "gatsby-plugin-sharp", "gatsby-transformer-sharp", {
-    resolve: 'gatsby-source-filesystem',
-    options: {
+  plugins: [
+    "gatsby-plugin-image",
+    "gatsby-plugin-sitemap",
+    "gatsby-plugin-mdx",
+    "gatsby-plugin-sharp",
+    "gatsby-transformer-sharp",
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
       "name": "images",
-      "path": "./src/images/"
-    },
+        "path": "./src/images/"
+      },
     __key: "images"
-  }, {
+    }, {
     resolve: 'gatsby-source-filesystem',
-    options: {
-      "name": "pages",
-      "path": "./src/pages/"
-    },
-    __key: "pages"
+      options: {
+        "name": "pages",
+        "path": "./src/pages/"
+      },
+      __key: "pages"
   }]
 };
 
