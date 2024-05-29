@@ -41,7 +41,9 @@ export default function () {
         </div>
         <div className="footer-content-container" style={{background: "white"}}>
           <div className="footer-lower">
-            <h4 style={{float: "left"}}>Copyright (C) 2023 Open Source Club</h4>
+            <h4 style={{float: "left"}}>
+              Copyright (C) { new Date().getFullYear() } Open Source Club
+            </h4>
             <div style={{float: "right"}}>
               <a href="https://github.com/ufosc/Club_Website_2/blob/main/LICENSE.md"
                 target="_blank"
