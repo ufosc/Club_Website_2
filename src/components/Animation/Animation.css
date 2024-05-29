@@ -1,0 +1,15 @@
+#animation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: black;
+}
+
+#animation__root {
+    opacity: 0.8;
+}
+
+#animation__children {
+    position: absolute;
+    text-align: center;
+}
