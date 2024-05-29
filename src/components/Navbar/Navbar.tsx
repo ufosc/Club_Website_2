@@ -67,8 +67,8 @@ const NavBar = (props: { children: any }) => {
 export default function () {
   return (
     <NavBar>
-      <NavBarLink href="/">ABOUT</NavBarLink>
-      <NavBarLink href="https://docs.ufosc.org">DOCS</NavBarLink>
+      <NavBarLink href="/about">ABOUT</NavBarLink>
+      <NavBarLink href="https://docs.ufosc.org">RESOURCES</NavBarLink>
       <NavBarLink href="/#projects">PROJECTS</NavBarLink>
       <NavBarLink href="/blog">BLOG</NavBarLink>
       <NavBarLink href="/#contact">CONTACT</NavBarLink>
