@@ -1,3 +1,5 @@
+import '../global.css'
+
 import * as React from "react"
 import Layout from '../components/Layout'
 import Animation from '../components/Animation/Animation'
@@ -24,16 +26,16 @@ const IndexPage: React.FC<PageProps> = () => {
         Blog section
       </section>
       <section>
-        <h2 class="section-heading">Our projects</h2>
+        <h2 className="section-heading">Our projects</h2>
       </section>
       <section>
-        <h2 class="section-heading">Join a thriving community</h2>
+        <h2 className="section-heading">Join a thriving community</h2>
       </section>
       <section>
-        <h2 class="section-heading">Become a member</h2>
+        <h2 className="section-heading">Become a member</h2>
       </section>
       <section>
-        <h2 class="section-heading">Get in touch</h2>
+        <h2 className="section-heading">Get in touch</h2>
       </section>
     </Layout>
   )
