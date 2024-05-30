@@ -69,8 +69,8 @@ export default function () {
     <NavBar>
       <NavBarLink href="/about">ABOUT</NavBarLink>
       <NavBarLink href="https://docs.ufosc.org">RESOURCES</NavBarLink>
-      <NavBarLink href="/#projects">PROJECTS</NavBarLink>
-      <NavBarLink href="/blog">BLOG</NavBarLink>
+      <NavBarLink href="/projects">PROJECTS</NavBarLink>
+      <NavBarLink href="/blog">NEWS</NavBarLink>
       <NavBarLink href="/#contact">CONTACT</NavBarLink>
       <Ribbon href="/#join">BECOME<br /> A MEMBER</Ribbon>
     </NavBar>
