@@ -1,0 +1,39 @@
+.card-container {
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    max-width: 300px;
+    padding: 5px;
+}
+
+.card-container:hover {
+    background-color: #2AB6BC;
+}
+
+.card-container:hover h2 {
+    color: black;
+}
+
+.card-container:hover h3 {
+    color: black;
+}
+
+.card-container:active {
+    transform: translateY(3px);
+}
+
+.card-container h2 {
+    font-size: 1.5rem;
+    margin: 5px 0;
+}
+
+.card-container h3 {
+    font-size: 1rem;
+    margin: 5px 0;
+}
+
+.card-container img {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+}
