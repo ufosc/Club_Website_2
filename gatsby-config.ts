@@ -1,9 +1,9 @@
-import type { GatsbyConfig } from "gatsby";
+import type { GatsbyConfig } from "gatsby"
 
 const config: GatsbyConfig = {
   siteMetadata: {
-    title: `Club_Website_2`,
-    siteUrl: `https://www.ufosc.org`
+    title: `UF Open Source Club`,
+    siteUrl: `https://www.ufosc.org`,
   },
   graphqlTypegen: true,
   plugins: [
@@ -12,21 +12,33 @@ const config: GatsbyConfig = {
     "gatsby-plugin-mdx",
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
+    "gatsby-transformer-remark",
     {
       resolve: 'gatsby-source-filesystem',
       options: {
-      "name": "images",
+        "name": "images",
         "path": "./src/images/"
       },
-    __key: "images"
-    }, {
-    resolve: 'gatsby-source-filesystem',
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
       options: {
-        "name": "pages",
-        "path": "./src/pages/"
+        "name": "content",
+        "path": "./src/content/"
       },
-      __key: "pages"
-  }]
-};
+    },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `UF Open Source Club`,
+        short_name: `UFOSC`,
+        start_url: `/`,
+        background_color: `#ffffff`,
+        display: `minimal-ui`,
+        icon: `src/images/favicon.png`,
+      },
+    },
+  ]
+}
 
-export default config;
+export default config
