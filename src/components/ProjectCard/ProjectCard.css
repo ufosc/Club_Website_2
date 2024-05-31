@@ -1,0 +1,55 @@
+.project-card {
+    max-width: 400px;
+    padding: 10px;
+    border: 1px solid;
+    border-radius: 23px;
+    background: #1B1622;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.project-card-title {
+    border: none;
+    border-left: 5px solid;
+    padding-left: 15px;
+    margin-bottom: 10px;
+}
+
+.project-card h2 {
+    font-size: 1.6rem;
+    margin: 10px 0;
+}
+
+.project-card h3 {
+    font-size: 1.2rem;
+    margin: 10px 0;
+}
+
+.project-card a {
+    border-radius: 25px;
+    background-image: linear-gradient(90deg, #1EF198 0%, #73CBF8 45%, #69B0F5 100%);
+    font-family: "Diatype";
+    font-size: 0.8rem;
+    padding: 8px;
+    margin: 0;
+    margin-right: 5px;
+    font-weight: 300;
+}
+
+.project-card button {
+    margin-left: 0;
+    min-height: 0;
+    padding: 0;
+    height: 40px;
+}
+
+@media only screen and (max-width: 850) {
+    .project-card h2 {
+        font-size: 1.2rem;
+    }
+
+    .project-card h3 {
+        font-size: 1.2rem;
+    }
+}
