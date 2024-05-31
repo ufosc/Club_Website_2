@@ -28,6 +28,13 @@ const config: GatsbyConfig = {
       },
     },
     {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        "name": "projects",
+        "path": "./src/projects/"
+      },
+    },
+    {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `UF Open Source Club`,
