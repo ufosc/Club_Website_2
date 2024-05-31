@@ -120,12 +120,45 @@ button:active {
     transition: 0.1s ease-in-out;
 }
 
+.tertiary {
+    background: none;
+    border: 1px solid white;
+    padding: 5px;
+    height: 30px;
+    min-height: 0;
+    min-width: 160px;
+    margin: 0px;
+    font-size: 1rem;
+}
+
+.tertiary:hover {
+    background: white;
+    color: black;
+    transition: 0.1s ease-in-out;
+}
+
 section {
     display: flex;
+    flex-direction: column;
     background: black;
 }
 
 .section-heading {
     text-align: left;
     font-size: 1.8rem;
+}
+
+.Typewriter__wrapper {
+    font-family: 'Diatype';
+    color: black;
+    font-size: 4rem;
+    font-weight: bold;
+    background: #B8DE58;
+}
+
+.Typewriter__cursor {
+    font-family: 'Diatype';
+    color: black;
+    font-size: 4rem;
+    font-weight: bold;
 }
