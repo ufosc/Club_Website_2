@@ -7,9 +7,12 @@ import Animation from '../components/Animation/Animation'
 import ProjectCard from '../components/ProjectCard/ProjectCard'
 import { Slideshow, Slide } from '../components/Slideshow/Slideshow'
 import CursorText from '../components/CursorText'
+import { Accordion, AccordionItem } from '../components/Accordion/Accordion'
+
 import type { HeadFC, PageProps } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import { graphql } from "gatsby"
+import GroupPhoto from '../images/group_photo.jpg'
 
 const NewsSection = (props: { nodes: any }) => {
   let nodes = props.nodes
@@ -73,8 +76,8 @@ const ProjectSection = (props: { nodes: any }) => {
 }
 
 const MSG_BATCH = [
-  "open source", "class scheduler", "3D graphics library",
-  "matrix accelerator", "nextjs website", "linux distro",
+  "open source", "a class scheduler", "a 3D graphics library",
+  "a matrix accelerator", "a nextjs website", "a linux distro",
   "a visual novel", "microservices"
 ]
 
@@ -101,18 +104,68 @@ const IndexPage: React.FC<PageProps> = (props: { data: any }) => {
         </section>
         <section>
           <h2 className="section-heading">Become a member</h2>
+          <div className="section-root about-container">
+            <div>
+              <h3>
+                Becoming a member of the Open Source Club is as simple
+                as showing up. Everyone is invited to attend our
+                twice-weekly "casual coding" meetings, where members meet
+                to work on open source projects, do homework, or just hang
+                out. You may also contribute remotely by joining us on Discord.
+                <br /><br />
+                If interested, join our Discord channel and keep an eye out for
+                any upcoming meetings on our announcements page.
+              </h3>
+              <button onClick={ () =>
+                window.location.replace("https://discord.gg/Gsxej6u") }>
+                JOIN DISCORD
+              </button>
+              <button className='secondary'
+                onClick={ () => window.location.replace("/about") }>
+                LEARN MORE
+              </button>
+            </div>
+            <img id="club-group-photo" src={GroupPhoto} alt="Club Group Photo" />
+          </div>
+        </section>
+        <section>
+          <h2 className="section-heading">Frequently Asked Questions</h2>
+          <Accordion>
+            <AccordionItem prompt="Why should I join?">
+              Joining the Open Source Club is a great way to gain experience
+              for your CV and develop a strong project portfolio. Working on
+              open source projects or leading a group as a tech-lead positively
+              distinguishes you from other job applicants. We also host
+              professional development meetings, resume reviews, and
+              presentations from tech employers (IBM, Amazon, Microsoft, etc.).
+              <br /><br />
+              The club is also a fun way to meet up and network with people
+              with common interests. We frequently host social events or
+              hackathons for members to participate in.
+            </AccordionItem>
+            <AccordionItem prompt="Do I need to know programming?">
+              No, but most projects require that you be willing to learn.
+              All skill levels are welcome, our tech leads will often
+              host workshops, share resources & advice, and provide all
+              the help that you need to get started.
+            </AccordionItem>
+            <AccordionItem prompt="Do I need to be a UF student?">
+              No, everyone is welcome to attend, irrespective of your degree
+              or UF enrollment status.
+            </AccordionItem>
+            <AccordionItem prompt="How do I get a leadership position?">
+              Leadership positions at the Open Source Club include tech
+              leads and board members. The application process happens
+              at the beginning of every Fall and Spring semester; it is
+              announced via Discord.
+            </AccordionItem>
+          </Accordion>
         </section>
         <section>
           <h2 className="section-heading">Join a thriving community</h2>
         </section>
         <section>
-          <div style={{
-            width: "100%",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "space-between",
-            marginBottom: 20,
-          }}>
+          <div className="section-root">
             <h2 className="section-heading" style={{ float: "left" }}>
               Latest projects
             </h2>
