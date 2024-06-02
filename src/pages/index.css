@@ -41,7 +41,6 @@
 }
 
 #section-root {
-    width: 100vw;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -52,7 +51,7 @@
 #section-root section {
     width: 100%;
     max-width: 1100px;
-    padding: 30px 10px;
+    padding: 10px 0;
 }
 
 .project-container {
@@ -62,7 +61,6 @@
 }
 
 .section-root {
-    width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
