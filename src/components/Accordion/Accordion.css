@@ -1,0 +1,46 @@
+@keyframes flip-open {
+    100% {
+        -webkit-transform: rotate(180deg);
+        transform: rotate(180deg);
+    }
+}
+
+@keyframes flip-close {
+    100% {
+        -webkit-transform: rotate(-180deg);
+        transform: rotate(-180deg);
+    }
+}
+
+.accordion {
+    margin: 15px 0;
+}
+
+.accordion-item {
+    background: rgb(42 38 49);
+    margin-bottom: 10px;
+}
+
+.accordion-item--trigger {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.accordion-item--trigger h3 {
+    font-size: 1.2rem;
+    font-weight: 300;
+}
+
+.accordion-item--trigger:hover h3 {
+    text-decoration: underline;
+}
+
+.accordion-item--body {
+    padding: 15px;
+    color: white;
+    font-family: 'Diatype';
+    font-weight: 200;
+    font-size: 1.2rem;
+}
