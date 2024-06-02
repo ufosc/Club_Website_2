@@ -1,6 +1,5 @@
 #blog-layout {
     background: black;
-    width: 100vw;
     min-height: calc(100vh - 70px - 80px); /* 100vh minus navbar minus footer. */
     display: flex;
     flex-direction: column;

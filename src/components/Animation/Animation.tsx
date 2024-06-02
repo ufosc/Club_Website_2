@@ -161,7 +161,7 @@ export default function (props: {children?: any, speed: number, scale: number}) 
   const dimensions = () => {
     // height of the animation is capped to at most 650px.
     const height = (window.innerHeight <= 650) ? window.innerHeight : 650
-    return [ window.innerWidth, height ]
+    return [ window.innerWidth - 15, height ]
   }
 
   const onWindowResize = () => {
