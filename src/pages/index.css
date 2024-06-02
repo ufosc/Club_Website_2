@@ -52,13 +52,32 @@
 #section-root section {
     width: 100%;
     max-width: 1100px;
-    padding: 30px 0;
+    padding: 30px 10px;
 }
 
 .project-container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 20px;
+}
+
+.section-root {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.section-root button {
+    margin-left: 0;
+    margin-top: 20px;
+}
+
+#club-group-photo {
+    margin: 10px;
+    border-radius: 23px;
+    width: 400px;
 }
 
 @media only screen and (max-width: 850px) {
@@ -77,6 +96,10 @@
     .project-container {
         grid-template-columns: 1fr 1fr;
     }
+
+    .about-container h3 {
+        font-size: 1.2rem;
+    }
 }
 
 @media only screen and (max-width: 700px) {
@@ -85,6 +108,12 @@
         grid-template-rows: 1fr 1fr;
         min-height: 600px;
         max-height: 600px;
+    }
+
+    .about-container {
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: flex-start;
     }
 }
 
