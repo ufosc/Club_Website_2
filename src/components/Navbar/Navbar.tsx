@@ -1,12 +1,14 @@
 import "./Navbar.css"
 import "../../global.css"
+
 import React, { useEffect, useLayoutEffect, useState } from "react"
 import HBMenu from "../../images/hb-menu.png"
+import { Link } from 'gatsby'
 
 const Ribbon = (props: { href: string, children: any }) => {
   return (
     <li id="navbar-member-item">
-      <a href={props.href}>{props.children}</a>
+      <Link to={props.href}>{props.children}</Link>
     </li>
   )
 }
@@ -14,7 +16,7 @@ const Ribbon = (props: { href: string, children: any }) => {
 const NavBarLink = (props: { href: string, children: any }) => {
   return (
     <li className="navbar-item">
-      <a href={props.href}>{props.children}</a>
+      <Link to={props.href}>{props.children}</Link>
     </li>
   )
 }
@@ -41,7 +43,7 @@ const NavBar = (props: { children: any }) => {
     <div id="navigation-bar-parent">
       <ul id="navigation-bar">
         <li className="navbar-item" id="navbar-title">
-          <a href="/">UF OSC</a>
+          <Link to="/">UF OSC</Link>
         </li>
         {
           (showMenu || forceShowMenu) ? (
@@ -71,8 +73,8 @@ export default function () {
       <NavBarLink href="https://docs.ufosc.org">RESOURCES</NavBarLink>
       <NavBarLink href="/projects">PROJECTS</NavBarLink>
       <NavBarLink href="/blog">NEWS</NavBarLink>
-      <NavBarLink href="/#contact">CONTACT</NavBarLink>
-      <Ribbon href="/#join">BECOME<br /> A MEMBER</Ribbon>
+      <NavBarLink href="/#get-in-touch">CONTACT</NavBarLink>
+      <Ribbon href="/#become-a-member">BECOME<br /> A MEMBER</Ribbon>
     </NavBar>
   )
 }

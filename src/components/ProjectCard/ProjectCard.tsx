@@ -1,5 +1,6 @@
 import './ProjectCard.css'
 import * as React from "react"
+import { navigate } from "gatsby"
 
 const COLORS = [
   "#10ac84", "#0abde3", "#ee5253", "#ff9f43", "#f368e0",
@@ -8,15 +9,12 @@ const COLORS = [
 
 export default function ProjectCard(props: { data: any, index: number }) {
   const color = COLORS[props.index % COLORS.length]
-  console.log(COLORS[1])
-  console.log(props.index)
-
   const onClickLearnMore = () => {
-    window.location.replace(`/projects${props.data.slug}`)
+    navigate(`/projects${props.data.slug}`)
   }
 
   const onClickGitHub = () => {
-    window.location.replace(props.data.repo)
+    navigate(props.data.repo)
   }
 
   // Truncate if too many tags.

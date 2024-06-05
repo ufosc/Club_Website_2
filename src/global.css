@@ -103,6 +103,7 @@ button {
 button:hover {
     background: #7CD6DF;
     transition: 0.1s ease-in-out;
+    color: black;
 }
 
 button:active {
