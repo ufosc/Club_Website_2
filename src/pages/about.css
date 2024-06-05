@@ -1,0 +1,74 @@
+.about {
+    background: black;
+    min-height: calc(100vh - 70px - 80px); /* 100vh minus navbar minus footer. */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.about h2 {
+    font-size: 3rem;
+}
+
+.about section {
+    width: 100%;
+    max-width: 1200px;
+    padding: 15px 0;
+}
+
+.about a {
+    text-decoration-color: #B8DE58;
+    color: #B8DE58;
+}
+
+.about a:link {
+    text-decoration-color: #B8DE58;
+    color: #B8DE58;
+}
+
+.about a:visited {
+    text-decoration-color: #B8DE58;
+    color: #B8DE58;
+}
+
+#casual-coding {
+    width: 100%;
+    padding: 10px 0;
+    display: flex;
+    flex-direction: row;
+    justify-items: stretch;
+}
+
+#casual-coding img {
+    max-width: 600px;
+    height: 420px;
+    object-fit: cover;
+    border-radius: 23px;
+    padding-left: 30px;
+}
+
+#casual-coding button {
+    margin-right: 0px;
+}
+
+.slide-img {
+    width: 100%;
+    object-fit: cover;
+    height: 550px;
+}
+
+#slideshow a {
+    color: rgb(129 129 129);
+}
+
+#slideshow {
+    width: 100%;
+}
+
+.slide-container {
+    width: 100%;
+}
+
+.slideshow-body {
+    width: 100%;
+}

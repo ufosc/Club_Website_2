@@ -3,11 +3,12 @@ import './ArticleCard.css'
 
 import * as React from "react"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
+import { navigate } from "gatsby"
 
 export default function ArticleCard(props: { data: any }) {
   const img = getImage(props.data.featuredImage)
   const onClick = () => {
-    window.location.replace(`/blog${props.data.slug}`)
+    navigate(`/blog${props.data.slug}`)
   }
   return (
     <div className='card-container' onClick={onClick}>
