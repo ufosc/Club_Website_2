@@ -72,3 +72,23 @@
 .slideshow-body {
     width: 100%;
 }
+
+.slide-img__meta {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: baseline;
+    padding: 20px;
+}
+
+.slide-img__meta h2 {
+    font-size: 2rem;
+    text-align: left;
+}
+
+.slide-img__meta h3 {
+    font-size: 1.5rem;
+    text-align: left;
+}

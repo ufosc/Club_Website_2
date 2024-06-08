@@ -22,14 +22,55 @@ const AboutPage: ReactFC<PageProps> = () => {
         <section id='slideshow'>
           <Slideshow>
             <Slide>
-              <Image className="slide-img" src={GameNightImage} alt="yes">
-                <h3> hello </h3>
+              <Image className="slide-img" src={GameNightImage}
+                alt="OSC Game Night">
+                <div className="slide-img__meta">
+                  <h2> Game Night Social </h2>
+                  <h3> Spring 2024 - Game Night Social at UF Little Hall. </h3>
+                </div>
               </Image>
             </Slide>
-            <Slide><img className="slide-img" src={SoccerImage} /></Slide>
-            <Slide><img className="slide-img" src={CareerImage} /></Slide>
-            <Slide><img className="slide-img" src={CasualCodingImage} /></Slide>
-            <Slide><img className="slide-img" src={CasualCodingImage2} /></Slide>
+            <Slide>
+              <Image className="slide-img" src={SoccerImage}
+                alt="OSC Intramural Soccer Team">
+                <div className="slide-img__meta">
+                  <h2> Intramural Soccer Team </h2>
+                  <h3>
+                    Fall 2023 - Post-game photo of the OSC Intramural soccer team.
+                  </h3>
+                </div>
+              </Image>
+            </Slide>
+            <Slide>
+              <Image className="slide-img" src={CareerImage}
+                alt="OSC at the UF Career Fair">
+                <div className="slide-img__meta">
+                  <h2> Career Fair </h2>
+                  <h3> Fall 2023 - OSC at the O'Connell Center Career Fair. </h3>
+                </div>
+              </Image>
+            </Slide>
+            <Slide>
+              <Image className="slide-img" src={CasualCodingImage}
+                alt="OSC at Casual Coding">
+                <div className="slide-img__meta">
+                  <h2> OSC Mini-Hackathon </h2>
+                  <h3> Spring 2024 - Members participating in the first OSC Mini-Hackathon. </h3>
+                </div>
+              </Image>
+            </Slide>
+            <Slide>
+              <Image className="slide-img" src={CasualCodingImage2}
+                alt="OSC at Casual Coding">
+                <div className="slide-img__meta">
+                  <h2> Casual Coding </h2>
+                  <h3>
+                    Fall 2023 - A new member has their first ever pull request accepted by
+                    an OSC maintainer.
+                  </h3>
+                </div>
+              </Image>
+            </Slide>
           </Slideshow>
         </section>
         <section>
@@ -89,7 +130,7 @@ const AboutPage: ReactFC<PageProps> = () => {
                 NEWS 🔗
               </button>
             </div>
-            <img src={CasualCodingImage} />
+            <Image src={CasualCodingImage} alt="OSC Mini-Hackathon" />
           </div>
         </section>
         <section id='frequently-asked-questions'>
