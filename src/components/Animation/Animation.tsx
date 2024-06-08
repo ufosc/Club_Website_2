@@ -105,28 +105,21 @@ function generateIndexedWithOffsetPointcloud
 }
 
 export default function (props: {children?: any, speed: number, scale: number}) {
-  let camera = new THREE.PerspectiveCamera(45, 0, 1, 10000)
-  let renderer = new THREE.WebGLRenderer({ antialias: true })
-  let scene = new THREE.Scene()
-  let clock = new THREE.Clock()
+  let camera: any, renderer: any, scene: any,
+clock: any, raycaster: any, pointer: any, rotateY : any
+
   let pointclouds : any = []
-  let raycaster = new THREE.Raycaster()
 
   let intersection = null
   let spheresIndex = 0
   let toggle = 0
-
-  const pointer = new THREE.Vector2()
   const spheres : any = []
-
   const threshold = 0.1
   const pointSize = 0.05
 
   // Height and length of 3D wave, not the component.
   const width = 80
   const length = 160
-
-  const rotateY = new THREE.Matrix4().makeRotationY(props.speed)
 
   const render = () => {
     camera.applyMatrix4(rotateY)
@@ -177,6 +170,17 @@ export default function (props: {children?: any, speed: number, scale: number}) 
   }
 
   useEffect(() => {
+
+    // Initialize client-side constants.
+    camera = new THREE.PerspectiveCamera(45, 0, 1, 10000)
+    renderer = new THREE.WebGLRenderer({ antialias: true })
+    scene = new THREE.Scene()
+    clock = new THREE.Clock()
+    raycaster = new THREE.Raycaster()
+    pointer = new THREE.Vector2()
+    rotateY = new THREE.Matrix4().makeRotationY(props.speed)
+
+
     // ThreeJS inserts a new scene into the animation__root element
     // whenever state updates. Disposing the renderer prevents
     // multiple animations accumulating.
