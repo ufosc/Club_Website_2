@@ -10,19 +10,19 @@ import Image from '../components/Image/Image'
 import CursorText from '../components/CursorText'
 import Marquee from '../components/Marquee/Marquee'
 import { Accordion, AccordionItem } from '../components/Accordion/Accordion'
+import Badge from '../components/Badge'
 
 import type { HeadFC, PageProps } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import { graphql, Link, navigate } from "gatsby"
+import axios from "axios"
 
 import GroupPhoto from '../images/group_photo.jpg'
 import SoccerImage from '../images/blog/2024-04-11-intramural-soccer.jpeg'
 import CareerImage from '../images/blog/2024-04-11-navigating-career-fair.jpeg'
 import GBMImage from '../images/GBM.jpeg'
 import ReitzGameImage from '../images/reitz_game_day.jpeg'
-
-// we have to pretend women come to OSC.
-import RebeccaImage from '../images/rebecca_lol.jpeg'
+import RebeccaImage from '../images/rebecca_lol.jpeg' // for female representation.
 
 const NewsSection = (props: { nodes: any }) => {
   let nodes = props.nodes
@@ -36,33 +36,35 @@ const NewsSection = (props: { nodes: any }) => {
   }
 
   return (
-    <Slideshow>
-      {
-        nodes.map((node: any) => {
-          const { frontmatter } = node
-          const img = getImage(frontmatter.featuredImage)
-          const onClick = () => {
-            navigate(`/blog${frontmatter.slug}`)
-          }
-          return (
-            <Slide>
-              <div className='slide-content'>
-                <GatsbyImage image={img} style={{ borderRadius: 30 }}/>
-                <div className='slide-meta'>
-                  <a>ANNOUNCEMENT</a>
-                  <h2>{frontmatter.title}</h2>
-                  <h3>{frontmatter.subtitle}</h3>
-                  <h3>{frontmatter.date}</h3>
-                  <button className='secondary' onClick={onClick}>
-                    LEARN MORE
-                  </button>
+    <section>
+      <Slideshow>
+        {
+          nodes.map((node: any) => {
+            const { frontmatter } = node
+            const img = getImage(frontmatter.featuredImage)
+            const onClick = () => {
+              navigate(`/blog${frontmatter.slug}`)
+            }
+            return (
+              <Slide>
+                <div className='slide-content'>
+                  <GatsbyImage image={img} style={{ borderRadius: 30 }}/>
+                  <div className='slide-meta'>
+                    <Badge> ANNOUNCEMENT </Badge>
+                    <h2 style={{ marginTop: 10 }}>{frontmatter.title}</h2>
+                    <h3>{frontmatter.subtitle}</h3>
+                    <h3>{frontmatter.date}</h3>
+                    <button className='secondary' onClick={onClick}>
+                      LEARN MORE
+                    </button>
+                  </div>
                 </div>
-              </div>
-            </Slide>
-          )
-        })
-      }
-    </Slideshow>
+              </Slide>
+            )
+          })
+        }
+      </Slideshow>
+    </section>
   )
 }
 
@@ -86,7 +88,7 @@ const ProjectSection = (props: { nodes: any }) => {
 }
 
 const CommunitySection = () => (
-  <Marquee>
+  <Marquee style={{ padding: "20px 0" }}>
     <div className="infinite-scroll">
       <Image src={CareerImage} alt="Navigating UF Career Fair"
         style={{ gridRowStart: 1, gridRowEnd: 3 }}>
@@ -102,18 +104,16 @@ const CommunitySection = () => (
           Mozilla Open Source Student Network shortly after.
         </h3>
       </div>
-      <Image src={SoccerImage} alt="OSC Gainesville Intramural Soccer"
+      <Image src={GBMImage} alt="Last CC of the spring semester"
         style={{ gridRow: "1 / 3", gridColumn: "3 / 5" }}>
         <div className="infinite-scroll__image__meta">
-          <h2> Intramural Soccer Team </h2>
-          <h3>
-            Fall 2023 - Post-game photo of the OSC Intramural soccer team.
-          </h3>
+          <h2> Last Spring Meeting </h2>
+          <h3> Spring 2024 - Members meet at Casual coding for the last day of the semester </h3>
         </div>
       </Image>
       <div className="card"
         style={{ gridRow: "2/3", gridColumn: "5" }}>
-        <h2 style={{ color: "rgb(20 241 149)" }}>500+</h2>
+        <h2 style={{ color: "rgb(20 241 149)" }}>300+</h2>
         <h3>Active members</h3>
       </div>
       <Image src={GroupPhoto} alt="Winners of the OSC Gainesville Hackathon">
@@ -131,7 +131,7 @@ const CommunitySection = () => (
         </div>
       </Image>
       <div className="card">
-        <h2 style={{ color: "rgb(20 241 149)" }}>250k+</h2>
+        <h2 style={{ color: "rgb(235 84 187)" }}>250k+</h2>
         <h3>Lines of code contributed to Open Source Software</h3>
       </div>
       <Image src={RebeccaImage} alt="New OSC Board"
@@ -141,16 +141,94 @@ const CommunitySection = () => (
           <h3> Spring 2024 - OSC presents the new executive board </h3>
         </div>
       </Image>
-      <Image src={GBMImage} alt="Last CC of the spring semester">
+      <Image src={SoccerImage} alt="OSC Gainesville Intramural Soccer">
         <div className="infinite-scroll__image__meta">
-          <h2> Last Spring Meeting </h2>
-          <h3> Spring 2024 - Members meet at Casual coding for the last day of the semester </h3>
+          <h2> Intramural Soccer Team </h2>
+          <h3>
+            Fall 2023 - Post-game photo of the OSC Intramural soccer team.
+          </h3>
         </div>
       </Image>
     </div>
   </Marquee>
 )
 
+const FAQSection = () => (
+  <Accordion>
+    <AccordionItem prompt="Why should I join?">
+      Joining the Open Source Club is a great way to gain experience
+      for your CV and develop a strong project portfolio. Working on
+      open source projects or leading a group as a tech-lead positively
+      distinguishes you from other job applicants. We also host
+      professional development meetings, resume reviews, and
+      presentations from tech employers (IBM, Amazon, Microsoft, etc.).
+      <br /><br />
+      The club is also a fun way to meet up and network with people
+      with common interests. We frequently host social events or
+      hackathons for members to participate in.
+    </AccordionItem>
+    <AccordionItem prompt="Do I need to know programming?">
+      No, but most projects require that you be willing to learn.
+      All skill levels are welcome, our tech leads will often
+      host workshops, share resources & advice, and provide all
+      the help that you need to get started.
+    </AccordionItem>
+    <AccordionItem prompt="Do I need to be a UF student?">
+      No, everyone is welcome to attend, irrespective of your degree
+      or UF enrollment status.
+    </AccordionItem>
+    <AccordionItem prompt="How do I get a leadership position?">
+      Leadership positions at the Open Source Club include tech
+      leads and board members. The application process happens
+      at the beginning of every Fall and Spring semester; it is
+      announced via Discord.
+    </AccordionItem>
+    <AccordionItem prompt="Where/when is casual coding?">
+      Casual coding takes place over the Fall and Spring semesters.
+      The location varies subject to room availability. Locations
+      and meeting times are announced at the beginning of every
+      semester. Check the <Link to="/blog">announcements</Link> page
+      or the <Link to="https://discord.gg/Gsxej6u">discord</Link> for
+      more details.
+    </AccordionItem>
+  </Accordion>
+)
+
+const ContactSection = () => {
+  return (
+    <form>
+      <label for="email">Email Address</label>
+      <input
+        required type="text" id="contact-form__email"
+        name="email" placeholder="gator@example.com"
+        title="Provide a valid email address"
+        pattern=".+@.+\..+"
+      />
+      <label for="subject">Subject</label>
+      <input
+        required type="text" id="contact-form__subject"
+        name="subject" placeholder="Subject"
+        title="Provide a message subject"
+        pattern="[A-Za-z\s]+"
+      />
+      <label for="message">Message</label>
+      <textarea required id="contact-form__message"
+        name="message" placeholder="Enter your message here..."
+        rows="4" cols="50" />
+      <div style={{ display: "flex", flexDirection: "row"}}>
+        <input type="checkbox" id="contact-form__subs" name="subscribe" />
+        <label for="subscribe" style={{ margin: "5px 20px" }}>
+          Subscribe to our newsletter
+        </label>
+      </div>
+      <input type="submit" value="Submit" />
+    </form>
+  )
+}
+
+// Do not use long strings. If you cause the line to wrap to the next
+// page (e.g. mobile screen widths), then you're negatively impacting
+// the lighthouse performance metric.
 const MSG_BATCH = [
   "open source", "a scheduler", "3D graphics", "an LLM",
   "a nextjs site", "a linux distro", "a visual novel",
@@ -162,7 +240,7 @@ const IndexPage: React.FC<PageProps> = (props: { data: any }) => {
     <Layout >
       <Animation speed={0.001} scale={30}>
         <h2>let's build <CursorText batch={MSG_BATCH} /></h2>
-        <h3 style={{margin: "auto", marginTop: 50, maxWidth: "min(800px, 70%)"}}>
+        <h3 style={{margin: "auto", marginTop: 50, maxWidth: "min(800px, 70%)", fontSize: "1.5rem"}}>
           Embrace the power of collaborative creation at the University of
           Florida's Open Source Club. Meet new friends, propose ideas, learn
           programming, and work on open source projects.
@@ -177,21 +255,21 @@ const IndexPage: React.FC<PageProps> = (props: { data: any }) => {
         </button>
       </Animation>
       <div id='section-root'>
-        <section>
-          <NewsSection nodes={props.data.news.nodes} />
-        </section>
+        <NewsSection nodes={props.data.news.nodes} />
         <section>
           <h2 className="section-heading">UF Open Source Club</h2>
           <div className="section-root about-container">
             <div>
-              <h3 style={{ fontWeight: 300 }}>
+              <h3 style={{ fontWeight: 300, paddingTop: 15 }}>
                 The Open Source Club (OSC) at the University of Florida is a
                 community of makers who want to solve problems and improve
                 our world through open source projects. The club was founded
                 in the Spring of 2016 as an official student organization at
-                UF. In 2017, OSC were founding members of the Mozilla Open
-                Source Student Network. Join us at casual codings, where
-                we work on open source projects, do homework, or just hang
+                UF. In 2017, OSC were founding members of
+                the <Link to="https://community.mozilla.org/en/">
+                  Mozilla Open Source Student Network.
+                </Link> Join us at casual codings, where we work on open source
+                projects, do homework, or just hang
                 out.
               </h3>
               <div style={{ marginTop: 20 }}>
@@ -207,7 +285,7 @@ const IndexPage: React.FC<PageProps> = (props: { data: any }) => {
             <Image className="club-group-photo" src={GroupPhoto} alt="Club Group Photo" />
           </div>
         </section>
-        <section style={{ maxWidth: "100vw", width: "100vw", overflow: "hidden" }}
+        <section style={{ maxWidth: "99vw", width: "99vw", overflow: "hidden" }}
           id='become-a-member'>
           <div id="infinite-scroll-heading">
             <h2 className="section-heading">Join a thriving community</h2>
@@ -217,14 +295,14 @@ const IndexPage: React.FC<PageProps> = (props: { data: any }) => {
             <h3>
               Becoming a member of the Open Source Club is as simple
               as showing up. Everyone is invited to attend our
-              twice-weekly "casual coding" meetings, where members meet
+              twice-weekly casual coding meetings, where members meet
               to work on open source projects, do homework, or just hang
               out. You may also contribute remotely by joining us on Discord.
               <br /><br />
               If interested, join our Discord channel and keep an eye out for
               any upcoming meetings on our announcements page.
             </h3>
-            <div style={{ marginTop: 20 }}>
+            <div style={{ marginTop: 50 }}>
               <button onClick={ () => navigate("https://discord.gg/Gsxej6u") }
                 style={{ marginLeft: 0 }}>
                 JOIN DISCORD
@@ -246,6 +324,21 @@ const IndexPage: React.FC<PageProps> = (props: { data: any }) => {
           </div>
           <ProjectSection nodes={props.data.projects.nodes} />
         </section>
+        <section id='get-in-touch'>
+          <h2 className="section-heading" style={{ marginBottom: 20 }}>
+            Get in touch
+          </h2>
+          <div className="contact-form">
+            <ContactSection />
+            <h3 id="contact-form__meta">
+              We're here to help! If you have any questions, suggestions, or
+              comments about the Open Source Club, please feel free to reach out
+              to us using the contact form to the left. Our team is dedicated to
+              provided the best experience for our members, and we value your
+              feedback.
+            </h3>
+          </div>
+        </section>
         <section id='faq-section'>
           <div className="section-root">
             <h2 className="section-heading">
@@ -257,47 +350,7 @@ const IndexPage: React.FC<PageProps> = (props: { data: any }) => {
               SEE MORE 🔗
             </button>
           </div>
-          <Accordion>
-            <AccordionItem prompt="Why should I join?">
-              Joining the Open Source Club is a great way to gain experience
-              for your CV and develop a strong project portfolio. Working on
-              open source projects or leading a group as a tech-lead positively
-              distinguishes you from other job applicants. We also host
-              professional development meetings, resume reviews, and
-              presentations from tech employers (IBM, Amazon, Microsoft, etc.).
-              <br /><br />
-              The club is also a fun way to meet up and network with people
-              with common interests. We frequently host social events or
-              hackathons for members to participate in.
-            </AccordionItem>
-            <AccordionItem prompt="Do I need to know programming?">
-              No, but most projects require that you be willing to learn.
-              All skill levels are welcome, our tech leads will often
-              host workshops, share resources & advice, and provide all
-              the help that you need to get started.
-            </AccordionItem>
-            <AccordionItem prompt="Do I need to be a UF student?">
-              No, everyone is welcome to attend, irrespective of your degree
-              or UF enrollment status.
-            </AccordionItem>
-            <AccordionItem prompt="How do I get a leadership position?">
-              Leadership positions at the Open Source Club include tech
-              leads and board members. The application process happens
-              at the beginning of every Fall and Spring semester; it is
-              announced via Discord.
-            </AccordionItem>
-            <AccordionItem prompt="Where/when is casual coding?">
-              Casual coding takes place over the Fall and Spring semesters.
-              The location varies subject to room availability. Locations
-              and meeting times are announced at the beginning of every
-              semester. Check the <Link to="/blog">announcements</Link> page
-              or the <Link to="https://discord.gg/Gsxej6u">discord</Link> for
-              more details.
-            </AccordionItem>
-          </Accordion>
-        </section>
-        <section id='get-in-touch'>
-          <h2 className="section-heading">Get in touch</h2>
+          <FAQSection />
         </section>
       </div>
     </Layout>

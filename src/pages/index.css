@@ -24,22 +24,6 @@
     padding: 20px;
 }
 
-.slide-content a {
-    border-radius: 23px;
-    background-image: linear-gradient(90deg, #1EF198 0%, #73CBF8 45%, #69B0F5 100%);
-    font-family: 'Diatype';
-    font-size: 1rem;
-    color: black;
-    width: 160px;
-    height: 30px;
-    text-align: center;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 10px;
-}
-
 #section-root {
     display: flex;
     flex-direction: column;
@@ -51,13 +35,13 @@
 #section-root section {
     width: 100%;
     max-width: 1100px;
-    padding: 20px 0;
+    padding: 30px 15px;
 }
 
 .project-container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    gap: 20px;
+    gap: 30px;
 }
 
 .section-root {
@@ -83,19 +67,19 @@
     width: 400px;
 }
 
-#faq-section a {
-    text-decoration-color: #B8DE58;
-    color: #B8DE58;
+#faq-section,section a {
+    text-decoration-color: #e056fd;
+    color: #e056fd;
 }
 
-#faq-section a:link {
-    text-decoration-color: #B8DE58;
-    color: #B8DE58;
+#faq-section,section a:link {
+    text-decoration-color: #e056fd;
+    color: #e056fd;
 }
 
-#faq-section a:visited {
-    text-decoration-color: #B8DE58;
-    color: #B8DE58;
+#faq-section,section a:visited {
+    text-decoration-color: #e056fd;
+    color: #e056fd;
 }
 
 #infinite-scroll-heading {
@@ -105,11 +89,12 @@
     max-width: 1100px;
     width: 100%;
     margin-bottom: 20px;
+    padding: 0px 15px;
 }
 
 .infinite-scroll {
     padding: 20px;
-    height: 600px;
+    height: 650px;
     display: grid;
     grid-template-columns: repeat(8, 300px);
     grid-template-rows: 1fr 1fr;
@@ -171,6 +156,17 @@
     max-width: 1100px;
     width: 100%;
     margin-bottom: 20px;
+    padding: 0px 15px;
+}
+
+.contact-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+#contact-form__meta {
+    font-weight: 300;
 }
 
 @media only screen and (max-width: 850px) {
@@ -207,6 +203,16 @@
         display: flex;
         flex-direction: column-reverse;
         align-items: flex-start;
+    }
+
+    .contact-form {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto 1fr;
+    }
+
+    #contact-form__meta {
+        grid-row: 1;
+        padding-bottom: 0;
     }
 }
 

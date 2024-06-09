@@ -82,7 +82,8 @@ const AboutPage: ReactFC<PageProps> = () => {
             in the Spring of 2016 as an official student organization at
             UF. In 2017, OSC were founding members of the Mozilla Open
             Source Student Network. The purpose of the Open Source Club is
-            to promote, support, and create open source software.
+            to promote, support, and create open source software in
+            Gainesville and beyond.
             <br/><br/>
             The club organizes casual coding, a twice-weekly meeting
             dedicated to working on open source code, planning or proposing
@@ -103,7 +104,7 @@ const AboutPage: ReactFC<PageProps> = () => {
             <br /><br />
             The club is also a fun way to meet up and network with people
             with common interests. We frequently host social events or
-            hackathons for members to participate in.
+            hackathons in Gainesville for members to participate in.
           </h3>
         </section>
         <section>

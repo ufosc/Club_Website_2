@@ -1,6 +1,7 @@
 import './ProjectCard.css'
 import * as React from "react"
 import { navigate } from "gatsby"
+import Badge from '../Badge'
 
 const COLORS = [
   "#10ac84", "#0abde3", "#ee5253", "#ff9f43", "#f368e0",
@@ -28,8 +29,12 @@ export default function ProjectCard(props: { data: any, index: number }) {
         <h2>{props.data.title}</h2>
       </div>
       <h3>{props.data.description}</h3>
-      <div style={{ marginTop: 20, marginBottom: 20 }}>
-        { props.data.tags.map((tag: string) => (<a>{tag}</a>)) }
+      <div style={{ margin: "20px 0", display: "flex" }}>
+        {
+          props.data.tags.map((tag: string) => (
+            <Badge>{tag}</Badge>
+          ))
+        }
       </div>
       <div>
         <button className='secondary' onClick={onClickLearnMore}>

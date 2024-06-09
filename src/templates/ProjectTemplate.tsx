@@ -11,7 +11,7 @@ export default function ProjectTemplate(props: { data: any, children: any }) {
   return (
     <Layout
       title={props.data.mdx.frontmatter.title}
-      desc={props.data.mdx.frontmatter.subtitle}
+      desc={props.data.mdx.frontmatter.description}
     >
       <MDXProvider>
         { props.children }

@@ -64,7 +64,7 @@ h2 {
 
 h3 {
     font-family: 'Diatype';
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     font-weight: 400;
     color: #e8e8e8;
 }
@@ -86,7 +86,7 @@ mark {
     background-color: #B8DE58;
 }
 
-button {
+button, input[type=button], input[type=submit] {
     background: #BE2FDD;
     border-radius: 36px;
     border: none;
@@ -100,7 +100,7 @@ button {
     margin: 10px;
 }
 
-button:hover {
+button:hover, input[type=button]:hover, input[type=submit]:hover {
     background: #7CD6DF;
     transition: 0.1s ease-in-out;
     color: black;
@@ -147,6 +147,7 @@ section {
 .section-heading {
     text-align: left;
     font-size: 1.8rem;
+    padding-bottom: 30px;
 }
 
 .Typewriter__wrapper {
@@ -162,4 +163,39 @@ section {
     color: black;
     font-size: 4rem;
     font-weight: bold;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form input[type=submit] {
+    width: fit-content;
+    margin-left: 0;
+}
+
+input[type=text], textarea {
+    margin-bottom: 20px;
+    min-height: 30px;
+    padding: 10px;
+    font-family: 'Diatype';
+    font-size: 1rem;
+    font-weight:300;
+    border-radius: 9px;
+    resize: none;
+}
+
+input[type=checkbox] {
+    margin: 0;
+    min-height: 15px;
+    min-width: 15px;
+}
+
+label {
+    font-family: 'Diatype';
+    font-size: 1rem;
+    font-weight:300;
+    color: white;
+    margin-bottom: 5px;
 }

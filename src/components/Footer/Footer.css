@@ -67,3 +67,11 @@ footer {
     font-size: 15px;
     padding-top: 7.5px;
 }
+
+.footer-lower p {
+    font-family: 'Diatype';
+    font-size: 13px;
+    font-weight:300;
+    color: black;
+    margin: 0;
+}
