@@ -12,7 +12,7 @@ export const Slide = (props: { children?: any }) => {
 
 export const Slideshow = (props: { children: any, period?: number }) => {
   const [select, setSelect] = useState<number>(0)
-  const period = props.period || 4000
+  const period = props.period || 5000
   const advance = (i: number) => {
     setSelect((select + i) % props.children.length)
   }
@@ -71,7 +71,20 @@ export const Slideshow = (props: { children: any, period?: number }) => {
         <PrevButton />
       </div>
       <div className='slideshow-body'>
-        { props.children[select] }
+        {
+          // Rendering the child directly (e.g. props.children[select])
+          // means we re-download images every time they are rendered.
+          props.children.map((child: any, i: number) => {
+            if (i == select) {
+              return (<div style={{ width: "100%" }}>{ child }</div>)
+            }
+            return (
+              <div style={{ display: "none" }}>
+                { child }
+              </div>
+            )
+          })
+        }
         <SlideIndices />
       </div>
       <div className='slideshow-button-root'>

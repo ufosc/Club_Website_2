@@ -42,10 +42,10 @@ export default function () {
         </div>
         <div className="footer-content-container" style={{background: "white"}}>
           <div className="footer-lower">
-            <p style={{float: "left"}}>
+            <p>
               Copyright (C) { new Date().getFullYear() } Open Source Club
             </p>
-            <div style={{float: "right"}}>
+            <div>
               <Link to="https://github.com/ufosc/Club_Website_2/blob/main/LICENSE.md"
                 target="_blank"
                 style={{

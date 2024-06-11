@@ -38,6 +38,9 @@
     padding-bottom: 5px;
     width: 100%;
     max-width: 1200px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 .footer-lower a {
@@ -74,4 +77,11 @@ footer {
     font-weight:300;
     color: black;
     margin: 0;
+}
+
+@media only screen and (max-width: 450px) {
+    .footer-lower {
+        flex-direction: column;
+        align-items: center;
+    }
 }
