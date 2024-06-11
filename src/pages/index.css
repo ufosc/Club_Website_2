@@ -169,6 +169,12 @@
     font-weight: 300;
 }
 
+.about-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
 @media only screen and (max-width: 850px) {
     .slide-content h2 {
         font-size: 1.2rem;
@@ -188,6 +194,17 @@
 
     .about-container h3 {
         font-size: 1.2rem;
+    }
+
+    .about-container {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
+
+    .about-container img {
+        max-height: 400px;
+        width: 100%;
+        object-fit: cover;
     }
 }
 
