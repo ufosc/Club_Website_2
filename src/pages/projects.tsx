@@ -3,6 +3,7 @@ import './projects.css'
 
 import * as React from "react"
 import Layout from '../components/Layout'
+import SEO from '../components/SEO'
 import ProjectCard from '../components/ProjectCard/ProjectCard'
 import { graphql } from "gatsby"
 import type { HeadFC, PageProps } from "gatsby"
@@ -13,9 +14,8 @@ const ProjectsPage: React.FC<PageProps> = (props: { data: any }) => {
   for (let i = 0; i < nodes.length; ++i) {
     cards.push((<ProjectCard index={i} data={nodes[i].frontmatter} />))
   }
-
   return (
-    <Layout desc={"Projects maintained by the Open Source Club"}>
+    <Layout>
       <div className='projects'>
         <div className='projects__projects'>
           { cards }
@@ -38,7 +38,13 @@ const ProjectsPage: React.FC<PageProps> = (props: { data: any }) => {
 }
 
 export default ProjectsPage
-export const Head: HeadFC = () => <title>Projects | UF Open Source Club</title>
+export const Head: HeadFC = () => (
+  <SEO
+    title={"Projects | UF Open Source Club"}
+    desc={"Projects maintained by the Open Source Club"}
+  />
+)
+
 export const pageQuery = graphql`
   {
     allMdx(sort: { frontmatter: { date: DESC } }) {

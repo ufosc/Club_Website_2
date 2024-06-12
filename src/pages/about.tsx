@@ -3,6 +3,7 @@ import './about.css'
 
 import * as React from "react"
 import Layout from '../components/Layout'
+import SEO from '../components/SEO'
 import { Accordion, AccordionItem } from '../components/Accordion/Accordion'
 import type { HeadFC, PageProps } from "gatsby"
 import { Slideshow, Slide } from '../components/Slideshow/Slideshow'
@@ -256,4 +257,4 @@ const AboutPage: ReactFC<PageProps> = () => {
 }
 
 export default AboutPage
-export const Head: HeadFC = () => <title>About | UF Open Source Club</title>
+export const Head: HeadFC = () => <SEO title={"About | UF Open Source Club"} />

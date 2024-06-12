@@ -3,6 +3,7 @@ import './index.css'
 
 import React from "react"
 import Layout from '../components/Layout'
+import SEO from '../components/SEO'
 import type { HeadFC, PageProps } from "gatsby"
 import { graphql, Link, navigate } from "gatsby"
 
@@ -33,7 +34,7 @@ const IndexPage: React.FC<PageProps> = (props: { data: any }) => {
 }
 
 export default IndexPage
-export const Head: HeadFC = () => <title>UF Open Source Club</title>
+export const Head: HeadFC = () => <SEO />
 export const pageQuery = graphql`
   {
     news: allMarkdownRemark(sort: { frontmatter: { date: DESC } }) {

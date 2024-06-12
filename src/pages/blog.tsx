@@ -1,8 +1,9 @@
 import '../global.css'
 import './blog.css'
 
-import * as React from "react"
+import React from "react"
 import Layout from '../components/Layout'
+import SEO from '../components/SEO'
 import type { HeadFC, PageProps } from "gatsby"
 import { graphql } from "gatsby"
 import ArticleCard from '../components/ArticleCard/ArticleCard'
@@ -25,9 +26,9 @@ const Articles = (props: { nodes: any }) => {
   )
 }
 
-const BlogPage: ReactFC<PageProps> = (props: { data: any }) => {
+const BlogPage: React.FC<PageProps> = (props: { data: any }) => {
   return (
-    <Layout desc={"Recent UF Open Source Club News"}>
+    <Layout>
       <div id='blog-layout'>
         <div id='blog-content'>
           <h2 className='section-heading'>News</h2>
@@ -39,7 +40,13 @@ const BlogPage: ReactFC<PageProps> = (props: { data: any }) => {
 }
 
 export default BlogPage
-export const Head: HeadFC = () => <title>Blog | UF Open Source Club</title>
+export const Head: HeadFC = () => (
+  <SEO
+    title={"Blog | UF Open Source Club"}
+    desc={"Recent UF Open Source Club News"}
+  />
+)
+
 export const pageQuery = graphql`
   {
     allMarkdownRemark(sort: { frontmatter: { date: DESC } }) {
