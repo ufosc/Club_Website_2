@@ -20,14 +20,16 @@ const AnimationSection = () => (
       Florida's Open Source Club. Meet new friends, propose ideas, learn
       programming, and work on open source projects.
     </h3>
-    <button onClick={ () => navigate('/#become-a-member') }
-      style={{ marginTop: 50 }}>
-      JOIN NOW
-    </button>
-    <button onClick={ () => navigate('/about') }
-      className="secondary">
-      LEARN MORE
-    </button>
+    <div>
+      <button onClick={ () => navigate('/#become-a-member') }
+        style={{ marginTop: 50 }}>
+        JOIN NOW
+      </button>
+      <button onClick={ () => navigate('/about') }
+        className="secondary">
+        LEARN MORE
+      </button>
+    </div>
   </Animation>
 )
 

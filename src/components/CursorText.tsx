@@ -3,7 +3,7 @@ import Typewriter from "typewriter-effect"
 
 export default function CursorText(props: { batch: Array<string> }) {
   return (
-    <div className="App">
+    <div style={{ width: 400, height: 80 }}>
       <Typewriter
         options={{
           strings: props.batch,

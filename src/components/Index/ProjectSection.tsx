@@ -1,4 +1,5 @@
 import React from "react"
+import { navigate } from "gatsby"
 import ProjectCard from "../ProjectCard/ProjectCard"
 
 export default function ProjectSection(props: { nodes: any }) {

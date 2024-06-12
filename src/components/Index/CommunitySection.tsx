@@ -1,4 +1,5 @@
 import React from "react"
+import { navigate } from "gatsby"
 import Marquee from "../Marquee/Marquee"
 import Image from "../Image/Image"
 
@@ -15,7 +16,7 @@ const CommunitySection = () => (
     <div id="infinite-scroll-heading">
       <h2 className="section-heading">Join a thriving community</h2>
     </div>
-    <Marquee style={{ padding: "20px 0" }}>
+    <Marquee style={{ padding: "20px 0", minHeight: "100%" }}>
       <div className="infinite-scroll">
         <Image src={CareerImage} alt="Navigating UF Career Fair"
           style={{ gridRowStart: 1, gridRowEnd: 3 }}>
