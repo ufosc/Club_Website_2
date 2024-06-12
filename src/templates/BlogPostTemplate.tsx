@@ -5,55 +5,62 @@ import * as React from "react"
 import { graphql } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import Layout from '../components/Layout'
-import type { HeadFC, PageProps } from "gatsby"
+import SEO from '../components/SEO'
 import ArticleCard from '../components/ArticleCard/ArticleCard'
 
 const ArticleBody = (props: { data: any, children?: any }) => {
   const { frontmatter } = props.data.markdownRemark
   let img = getImage(frontmatter.featuredImage?.childImageSharp?.gatsbyImageData)
   return (
-    <div id="article-layout">
-      <div id="article-layout_matter">
-        <h2 style={{ marginBottom: 20 }}>{frontmatter.title}</h2>
-        <h3>{frontmatter.author} - {frontmatter.date}</h3>
-        <h3 style={{ fontWeight: "bold", marginTop: 10, marginBottom: 20 }}>
-          {frontmatter.subtitle}
-        </h3>
-        <GatsbyImage image={img} style={{ maxHeight: 500, marginTop: 10 }} />
+    <div className="article-layout">
+      <div className="article-layout__matter">
+        <div className="article-layout__matter__meta">
+          <h3 className="date">{frontmatter.date}</h3>
+          <h2>{frontmatter.title}</h2>
+          <h3 className="subtitle">{frontmatter.subtitle}</h3>
+          <h3 className="author">
+            {
+              frontmatter.author.map((author: string, i: number) => {
+                if (i == frontmatter.author.length - 1) {
+                  return author
+                }
+                return author + ", "
+              })
+            }
+          </h3>
+        </div>
+        <GatsbyImage image={img} />
         <div id="inner-html" dangerouslySetInnerHTML={{
           __html: props.data.markdownRemark.html
         }} />
       </div>
       { props.children }
+      <div className="article-layout__recc">
+        {
+          (props.data.previous !== null || props.data.next !== null) ?
+            (<h3> Read More </h3>) : null
+        }
+        <div className="article-layout__recc__articles">
+          {
+            (props.data.previous !== null) ? (
+              <ArticleCard data={props.data.previous.frontmatter} />
+            ) : null
+          }
+          {
+            (props.data.next !== null) ? (
+              <ArticleCard data={props.data.next.frontmatter} />
+            ) : null
+          }
+        </div>
+      </div>
     </div>
   )
 }
 
 export default function BlogPostTemplate(props: { data: any }) {
   return (
-    <Layout
-      title={props.data.markdownRemark.frontmatter.title}
-      desc={props.data.markdownRemark.frontmatter.subtitle}
-    >
+    <Layout>
       <ArticleBody data={props.data}>
-        <div className='read-more--container'>
-          {
-            (props.data.previous !== null || props.data.next !== null) ?
-              (<h3 className='read-more--header'>Featured Articles</h3>) : null
-          }
-          <div className='read-more'>
-            {
-              (props.data.previous === null) ? null : (
-                <ArticleCard data={props.data.previous?.frontmatter} />
-              )
-            }
-            {
-              (props.data.next === null) ? null : (
-                <ArticleCard data={props.data.next?.frontmatter} />
-              )
-            }
-          </div>
-        </div>
       </ArticleBody>
     </Layout>
   )
@@ -81,7 +88,7 @@ export const pageQuery = graphql`
         subtitle
         featuredImage {
           childImageSharp {
-            gatsbyImageData(width: 800)
+            gatsbyImageData(width: 1200)
           }
         }
       }
@@ -92,6 +99,7 @@ export const pageQuery = graphql`
       frontmatter {
         title
         subtitle
+        author
         date(formatString: "MMMM DD, YYYY")
         slug
         featuredImage {
@@ -107,6 +115,7 @@ export const pageQuery = graphql`
       frontmatter {
         title
         subtitle
+        author
         date(formatString: "MMMM DD, YYYY")
         slug
         featuredImage {

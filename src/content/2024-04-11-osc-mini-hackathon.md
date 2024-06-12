@@ -2,7 +2,7 @@
 slug: "/2024-osc-mini-hackathon"
 date: "2024-04-11"
 title: "OSC MINI-HACKATHON"
-author: "OSC Admin"
+author: ["Admin"]
 featuredImage: ../images/blog/2024-04-11-osc-mini-hackathon.png
 subtitle: "Apply, Model, Optimize: Nurturing Gator Unity and Synergy"
 ---
@@ -39,19 +39,19 @@ LIT0109 from 7:30 a.m. on Sunday, March 24, until the event concludes.
 - Second place: $500
 - Third Place: $250
 - Dino Luzzi Energy Challenge: $250
-- *Best AI Hack presented by the G[AI]TOR club: $200
+- Best AI Hack presented by the G[AI]TOR club: $200
 
-* The best AI hack will be distinguished by its innovative approach, technical complexity, and of course, use of artificial intelligence to solve the challenge! Sponsored by the G[AI]TOR club. It should showcase originality and creativity in leveraging AI technologies, demonstrating a deep understanding of how to apply these tools to solve practical problems. Impact and design are key considerations that will be considered during judging.
+The best AI hack will be distinguished by its innovative approach, technical complexity, and of course, use of artificial intelligence to solve the challenge! Sponsored by the G[AI]TOR club. It should showcase originality and creativity in leveraging AI technologies, demonstrating a deep understanding of how to apply these tools to solve practical problems. Impact and design are key considerations that will be considered during judging.
 
 ## Judging Criteria & Winner Selection
 Finalists will be announced around 2 p.m. Sun. March 24 with the awards ceremony to follow. The event will end by 6 p.m.
 
-Teams will be judged on these criteria.
+Teams will be judged on these criteria:
 
-Idea Quality: How creative, original, or innovative is the idea? Did it answer the challenge?
-
-Implementation of Idea: How well was the idea implemented tech-wise? Did the technology involved make you go "Wow"?
-
-Potential Impact: Does the solution have a real-world impact, and does it provide some sort of value to users?
-
-Novelty: Is your idea/solution novel? Does it use newly released features? Does it have a quality that stands out creatively?
+>Idea Quality: How creative, original, or innovative is the idea? Did it answer the challenge?
+>
+>Implementation of Idea: How well was the idea implemented tech-wise? Did the technology involved make you go "Wow"?
+>
+>Potential Impact: Does the solution have a real-world impact, and does it provide some sort of value to users?
+>
+>Novelty: Is your idea/solution novel? Does it use newly released features? Does it have a quality that stands out creatively?

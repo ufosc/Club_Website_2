@@ -2,7 +2,7 @@
 slug: "/navigating-career-fair"
 date: "2024-04-11"
 title: "Navigating Career Fairs and Networking Event"
-author: "Daniel Wildsmith"
+author: ["Daniel Wildsmith"]
 featuredImage: ../images/blog/2024-04-11-navigating-career-fair.jpeg
 subtitle: Collaboration with the Career Connections Center
 ---

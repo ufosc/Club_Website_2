@@ -14,7 +14,16 @@ export default function ArticleCard(props: { data: any }) {
     <div className='card-container' onClick={onClick}>
       <GatsbyImage image={img} />
       <h2>{props.data.title}</h2>
-      <h3 style={{ fontWeight: "bold" }}>{props.data.author}</h3>
+      <h3 style={{ fontWeight: "bold" }}>
+        {
+          props.data.author.map((author: string, i: number) => {
+            if (i == props.data.author.length - 1) {
+              return author
+            }
+            return author + ", "
+          })
+        }
+      </h3>
       <h3>{props.data.subtitle}</h3>
       <h3>{props.data.date}</h3>
     </div>

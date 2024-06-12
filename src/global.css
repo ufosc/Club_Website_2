@@ -1,10 +1,12 @@
 @font-face {
     font-family: 'Outrun';
+    font-display: swap;
     src: url('./fonts/outrun.otf');
 }
 
 @font-face {
     font-family: Diatype;
+    font-display: swap;
     src: url('./fonts/ABCDiatype-Thin.woff2') format("woff2");
     font-weight: 200;
     font-style: normal;
@@ -14,6 +16,7 @@
 
 @font-face {
     font-family: Diatype;
+    font-display: swap;
     src: url('./fonts/ABCDiatype-Light.woff2') format("woff2");
     font-weight: 300;
     font-style: normal;
@@ -23,6 +26,7 @@
 
 @font-face {
     font-family: Diatype;
+    font-display: swap;
     src: url('./fonts/ABCDiatype-Regular.woff2') format("woff2");
     font-weight: 400;
     font-style: normal;
@@ -32,6 +36,7 @@
 
 @font-face {
     font-family: Diatype;
+    font-display: swap;
     src: url('./fonts/ABCDiatype-Bold.woff2') format("woff2");
     font-weight: 700;
     font-style: normal;

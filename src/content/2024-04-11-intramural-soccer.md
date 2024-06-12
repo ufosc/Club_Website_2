@@ -2,7 +2,7 @@
 slug: "/intramural-soccer"
 date: "2024-04-11"
 title: "Intramural Soccer Team"
-author: "Daniel Wildsmith"
+author: ["Daniel Wildsmith"]
 featuredImage: ../images/blog/2024-04-11-intramural-soccer.jpeg
 subtitle: Computer science students touch grass!
 ---

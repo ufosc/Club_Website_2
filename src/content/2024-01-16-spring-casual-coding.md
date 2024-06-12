@@ -2,7 +2,7 @@
 slug: "/2024-spring-casual-coding"
 date: "2024-01-16"
 title: "Spring 2024 Casual Coding"
-author: "OSC Admin"
+author: ["Admin"]
 featuredImage: ../images/blog/2024-01-16-spring-casual-coding.jpeg
 subtitle: Tuesday & Thursday, 5-7PM @ TUR L011
 ---

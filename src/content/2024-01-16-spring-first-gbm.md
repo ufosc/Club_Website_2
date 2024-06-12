@@ -2,7 +2,7 @@
 slug: "/2024-spring-first-gbm"
 date: "2024-01-16"
 title: "Spring 2024: First GBM"
-author: "OSC Admin"
+author: ["Admin"]
 featuredImage: ../images/blog/2024-01-16-spring-first-gbm.jpeg
 subtitle: January 16th, 5:00-6:00pm, Atlas Lab (Weimar Basement)
 ---

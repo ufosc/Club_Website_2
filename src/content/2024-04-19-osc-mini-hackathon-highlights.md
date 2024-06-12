@@ -2,7 +2,7 @@
 slug: "/2024-osc-mini-hackathon-highlights"
 date: "2024-04-19"
 title: "OSC MINI-HACKATHON HIGHLIGHTS"
-author: "Daniel Wildsmith, Rebecca Weinstein"
+author: ["Daniel Wildsmith", "Rebecca Weinstein"]
 featuredImage: ../images/blog/2024-04-19-osc-mini-hackathon-highlights.jpeg
 subtitle: See how our first hackathon went and view the project submissions!
 ---
@@ -19,20 +19,11 @@ To view the entire gallery of submissions, click <a href="https://osc-hack.devpo
 A big thanks to all of the student organizations that collaborated with us to make this competition a success! And to the volunteers who dedicated their time and energy into making the event what it was. We look forward to hopefully making the open-source mini-hack an annual competition for UF students.
 
 ## THE WINNERS!
-### 1st Place ($1,000 prize)
-<a href="https://devpost.com/software/uf-club-info-hub">UF Club Info Hub</a>
-
-### 2nd Place ($500 prize)
-<a href="https://devpost.com/software/dinodetect">Dino Detect</a>
-
-### 3rd Place ($250 prize)
-<a href="https://devpost.com/software/access-for-all-ymhp6n">Access for All</a>
-
-### Dino Luzzi Energy Challenge ($250 prize)
-<a href="https://devpost.com/software/dino-luzzi-website">Dino Luzzi Website</a>
-
-### Best AI Hack presented by the G[AI]TOR club ($200 prize)
-<a href="https://devpost.com/software/dinodetect">Dino Detect</a>
+ - 1st Place ($1,000 prize) -- [UF Club Info Hub](https://devpost.com/software/uf-club-info-hub)
+ - 2nd Place ($500 prize) -- [Dino Detect](https://devpost.com/software/dinodetect)
+ - 3rd Place ($250 prize) -- [Access for All](https://devpost.com/software/access-for-all-ymhp6n)
+ - Dino Luzzi Energy Challenge ($250 prize) -- [Dino Luzzi Website](https://devpost.com/software/dino-luzzi-website)
+ - Best AI Hack presented by the G[AI]TOR club ($200 prize) -- [Dino Detect](https://devpost.com/software/dinodetect)
 
 ## Highlights
 
