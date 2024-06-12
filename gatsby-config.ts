@@ -12,6 +12,7 @@ const config: GatsbyConfig = {
     "gatsby-plugin-mdx",
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
+    "gatsby-plugin-webpack-bundle-analyser-v2",
     "gatsby-transformer-remark",
     {
       resolve: 'gatsby-source-filesystem',

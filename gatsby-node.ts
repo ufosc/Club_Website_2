@@ -40,7 +40,6 @@ const createBlog = async (createPage: Function, reporter: any, graphql: Function
   posts.forEach((post, index) => {
     const previousPostId = index === 0 ? null : posts[index - 1].id
     const nextPostId = index === posts.length - 1 ? null : posts[index + 1].id
-
     createPage({
       path: `/blog${post.frontmatter.slug}`,
       component: blogPost,
