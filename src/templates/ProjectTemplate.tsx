@@ -3,22 +3,31 @@ import './BlogPostTemplate.css'
 
 import * as React from "react"
 import { graphql } from "gatsby"
+import SEO from '../components/SEO'
 import Layout from '../components/Layout'
 import { MDXProvider } from "@mdx-js/react"
-import type { HeadFC, PageProps } from "gatsby"
 
-export default function ProjectTemplate(props: { data: any, children: any }) {
-  return (
-    <Layout
-      title={props.data.mdx.frontmatter.title}
-      desc={props.data.mdx.frontmatter.description}
-    >
-      <MDXProvider>
-        { props.children }
-      </MDXProvider>
-    </Layout>
-  )
+interface ProjectTemplateProps {
+  data: any;
+  children: any;
 }
+
+const ProjectTemplate : React.FC<ProjectTemplateProps> = ({ data, children }) => (
+  <Layout>
+    <MDXProvider>
+      { children }
+    </MDXProvider>
+  </Layout>
+)
+
+export default ProjectTemplate
+export const Head = (props: { data: any }) => (
+  <SEO
+    title={props.data.mdx.frontmatter.title}
+    desc={props.data.mdx.frontmatter.description}
+  />
+)
+
 
 export const pageQuery = graphql`
   query ProjectBySlug(
@@ -26,11 +35,6 @@ export const pageQuery = graphql`
     $previousProjectId: String
     $nextProjectId: String
   ) {
-    site {
-      siteMetadata {
-        title
-      }
-    }
     mdx(id: { eq: $id }) {
       frontmatter {
         date(formatString: "MMMM DD, YYYY")

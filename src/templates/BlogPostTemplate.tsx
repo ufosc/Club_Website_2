@@ -8,8 +8,13 @@ import Layout from '../components/Layout'
 import SEO from '../components/SEO'
 import ArticleCard from '../components/ArticleCard/ArticleCard'
 
-const ArticleBody = (props: { data: any, children?: any }) => {
-  const { frontmatter } = props.data.markdownRemark
+interface ArticleBodyPrompts {
+  data: any;
+  children?: any;
+}
+
+const ArticleBody: React.FC<ArticleBodyPrompts> = ({ data, children }) => {
+  const { frontmatter } = data.markdownRemark
   let img = getImage(frontmatter.featuredImage?.childImageSharp?.gatsbyImageData)
   return (
     <div className="article-layout">
@@ -31,24 +36,24 @@ const ArticleBody = (props: { data: any, children?: any }) => {
         </div>
         <GatsbyImage image={img} />
         <div id="inner-html" dangerouslySetInnerHTML={{
-          __html: props.data.markdownRemark.html
+          __html: data.markdownRemark.html
         }} />
       </div>
-      { props.children }
+      { children }
       <div className="article-layout__recc">
         {
-          (props.data.previous !== null || props.data.next !== null) ?
+          (data.previous !== null || data.next !== null) ?
             (<h3> Read More </h3>) : null
         }
         <div className="article-layout__recc__articles">
           {
-            (props.data.previous !== null) ? (
-              <ArticleCard data={props.data.previous.frontmatter} />
+            (data.previous !== null) ? (
+              <ArticleCard data={data.previous.frontmatter} />
             ) : null
           }
           {
-            (props.data.next !== null) ? (
-              <ArticleCard data={props.data.next.frontmatter} />
+            (data.next !== null) ? (
+              <ArticleCard data={data.next.frontmatter} />
             ) : null
           }
         </div>
@@ -57,14 +62,17 @@ const ArticleBody = (props: { data: any, children?: any }) => {
   )
 }
 
-export default function BlogPostTemplate(props: { data: any }) {
-  return (
-    <Layout>
-      <ArticleBody data={props.data}>
-      </ArticleBody>
-    </Layout>
-  )
-}
+const BlogPostTemplate : React.FC<{ data: any}> = ({ data }) => (
+  <Layout><ArticleBody data={data} /></Layout>
+)
+
+export default BlogPostTemplate
+export const Head = (props: { data: any }) => (
+  <SEO
+    title={props.data.markdownRemark.frontmatter.title}
+    desc={props.data.markdownRemark.frontmatter.subtitle}
+  />
+)
 
 export const pageQuery = graphql`
   query BlogPostBySlug(
@@ -72,11 +80,6 @@ export const pageQuery = graphql`
     $previousPostId: String
     $nextPostId: String
   ) {
-    site {
-      siteMetadata {
-        title
-      }
-    }
     markdownRemark(id: { eq: $id }) {
       id
       html

@@ -17,36 +17,7 @@ const SEO : React.FC<SEOProps> = ({ title, desc, children }) => {
     <>
       <html lang="en" />
       <title>{meta.title}</title>
-      <meta name="description" content={desc} />
-      <link
-        rel="preload"
-        href="/static/ABCDiatype-Thin-0014e853f5cc65fcba085b6bf3d5173a.woff2"
-        type="font/woff2"
-        as="font"
-      />
-      <link
-        rel="preload"
-        href="/static/outrun-fb555d4ee3de8868db9007c6c5d8bb4a.otf"
-        as="font"
-      />
-      <link
-        rel="preload"
-        href="/static/ABCDiatype-Bold-f3ad6f560dfe6e2ea8a23827a0b64d34.woff2"
-        type="font/woff2"
-        as="font"
-      />
-      <link
-        rel="preload"
-        href="/static/ABCDiatype-Regular-ad4231d2ee05dc2551ce86a6580ccdbf.woff2"
-        type="font/woff2"
-        as="font"
-      />
-      <link
-        rel="preload"
-        href="/static/ABCDiatype-Thin-0014e853f5cc65fcba085b6bf3d5173a.woff2"
-        type="font/woff2"
-        as="font"
-      />
+      <meta name="description" content={meta.desc} />
       { children }
     </>
   )
