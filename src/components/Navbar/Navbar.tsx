@@ -2,8 +2,10 @@ import "./Navbar.css"
 import "../../global.css"
 
 import React, { useEffect, useLayoutEffect, useState } from "react"
-import HBMenu from "../../images/hb-menu.png"
+import { StaticImage } from "gatsby-plugin-image"
 import { Link } from 'gatsby'
+
+const HBMenu = "../../images/hb-menu.png"
 
 const Ribbon = (props: { href: string, children: any }) => {
   return (
@@ -41,10 +43,10 @@ const NavBar = (props: { children: any }) => {
 
   return (
     <div id="navigation-bar-parent">
-      <ul id="navigation-bar">
-        <li className="navbar-item" id="navbar-title">
+      <div id="navigation-bar">
+        <div className="navbar-item" id="navbar-title">
           <Link to="/">UF OSC</Link>
-        </li>
+        </div>
         {
           (showMenu || forceShowMenu) ? (
             <div className="menu">
@@ -57,11 +59,11 @@ const NavBar = (props: { children: any }) => {
         {
           (!showMenu) ? (
             <button className="menu-btn" onClick={() => setForceShowMenu(!forceShowMenu)}>
-              <img src={HBMenu} alt="menu" />
+              <StaticImage src={HBMenu} alt="menu" width={22} />
             </button>
           ): null
         }
-      </ul>
+      </div>
     </div>
   )
 }

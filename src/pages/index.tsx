@@ -17,21 +17,19 @@ import ProjectSection from '../components/Index/ProjectSection'
 import ContactSection from '../components/Index/ContactSection'
 import FAQSection from '../components/Index/FAQSection'
 
-const IndexPage: React.FC<PageProps> = (props: { data: any }) => {
-  return (
-    <Layout >
-      <AnimationSection />
-      <div id='section-root'>
-        <NewsSection nodes={props.data.news.nodes} />
-        <AboutSection />
-        <CommunitySection />
-        <ProjectSection nodes={props.data.projects.nodes} />
-        <ContactSection />
-        <FAQSection />
-      </div>
-    </Layout>
-  )
-}
+const IndexPage: React.FC<PageProps> = (props: { data: any }) => (
+  <Layout >
+    <AnimationSection />
+    <div id='section-root'>
+      <NewsSection nodes={props.data.news.nodes} />
+      <AboutSection />
+      <CommunitySection />
+      <ProjectSection nodes={props.data.projects.nodes} />
+      <ContactSection />
+      <FAQSection />
+    </div>
+  </Layout>
+)
 
 export default IndexPage
 export const Head: HeadFC = () => <SEO />

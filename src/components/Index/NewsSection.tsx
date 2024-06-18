@@ -28,7 +28,7 @@ export default function NewsSection(props: { nodes: any }) {
             return (
               <Slide>
                 <div className='slide-content'>
-                  <GatsbyImage image={img} style={{ borderRadius: 30 }}/>
+                  <GatsbyImage image={img} style={{ borderRadius: 30 }} width={470} />
                   <div className='slide-meta'>
                     <Badge> ANNOUNCEMENT </Badge>
                     <h2 style={{ marginTop: 10 }}>{frontmatter.title}</h2>

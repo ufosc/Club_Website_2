@@ -1,8 +1,6 @@
 import React from "react"
 import { Link, navigate } from "gatsby"
-import Image from "../Image/Image"
-
-import GroupPhoto from "../../images/group_photo.jpg"
+import { StaticImage } from "gatsby-plugin-image"
 
 const AboutSection = () => (
   <section>
@@ -31,7 +29,13 @@ const AboutSection = () => (
           </button>
         </div>
       </div>
-      <Image className="club-group-photo" src={GroupPhoto} alt="Club Group Photo" />
+      <StaticImage
+        src="../../images/group_photo.jpg"
+        width={600}
+        alt="Club Group Photo"
+        className="club-group-photo"
+        loading="lazy"
+      />
     </div>
   </section>
 )

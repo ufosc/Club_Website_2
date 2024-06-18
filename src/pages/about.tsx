@@ -8,61 +8,62 @@ import { Accordion, AccordionItem } from '../components/Accordion/Accordion'
 import type { HeadFC, PageProps } from "gatsby"
 import { Slideshow, Slide } from '../components/Slideshow/Slideshow'
 import { Link, navigate } from "gatsby"
-import Image from '../components/Image/Image'
+import { StaticImage } from "gatsby-plugin-image"
+import Overlay from '../components/Overlay/Overlay'
 
-import GameNightImage from '../images/game_night.png'
-import CasualCodingImage from '../images/casual_coding2.jpeg'
-import CasualCodingImage2 from '../images/casual_coding3.png'
-import SoccerImage from '../images/blog/2024-04-11-intramural-soccer.jpeg'
-import CareerImage from '../images/blog/2024-04-11-navigating-career-fair.jpeg'
+const GameNightImage = '../images/game_night.png'
+const CasualCodingImage = '../images/casual_coding2.jpeg'
+const CasualCodingImage2 = '../images/casual_coding3.png'
+const SoccerImage = '../images/blog/2024-04-11-intramural-soccer.jpeg'
+const CareerImage = '../images/blog/2024-04-11-navigating-career-fair.jpeg'
 
-const AboutPage: ReactFC<PageProps> = () => {
+const AboutPage: React.FC<PageProps> = () => {
   return (
     <Layout>
       <div className='about'>
         <section id='slideshow'>
           <Slideshow>
             <Slide>
-              <Image className="slide-img" src={GameNightImage}
-                alt="OSC Game Night">
+              <Overlay className="slide-img">
+                <StaticImage src={GameNightImage} alt="OSC Game Night" width={1200} />
                 <div className="slide-img__meta">
                   <h2> Game Night Social </h2>
                   <h3> Spring 2024 - Game Night Social at UF Little Hall. </h3>
                 </div>
-              </Image>
+              </Overlay>
             </Slide>
             <Slide>
-              <Image className="slide-img" src={SoccerImage}
-                alt="OSC Intramural Soccer Team">
+              <Overlay className="slide-img">
+                <StaticImage src={SoccerImage} alt="OSC Intramural Soccer Team" width={1200} />
                 <div className="slide-img__meta">
                   <h2> Intramural Soccer Team </h2>
                   <h3>
                     Fall 2023 - Post-game photo of the OSC Intramural soccer team.
                   </h3>
                 </div>
-              </Image>
+              </Overlay>
             </Slide>
             <Slide>
-              <Image className="slide-img" src={CareerImage}
-                alt="OSC at the UF Career Fair">
+              <Overlay className="slide-img">
+                <StaticImage src={CareerImage} alt="OSC at the UF Career Fair" width={1200} />
                 <div className="slide-img__meta">
                   <h2> Career Fair </h2>
                   <h3> Fall 2023 - OSC at the O'Connell Center Career Fair. </h3>
                 </div>
-              </Image>
+              </Overlay>
             </Slide>
             <Slide>
-              <Image className="slide-img" src={CasualCodingImage}
-                alt="OSC at Casual Coding">
+              <Overlay className="slide-img">
+                <StaticImage src={CasualCodingImage} alt="OSC at Casual Coding" width={1200} />
                 <div className="slide-img__meta">
                   <h2> OSC Mini-Hackathon </h2>
                   <h3> Spring 2024 - Members participating in the first OSC Mini-Hackathon. </h3>
                 </div>
-              </Image>
+              </Overlay>
             </Slide>
             <Slide>
-              <Image className="slide-img" src={CasualCodingImage2}
-                alt="OSC at Casual Coding">
+              <Overlay className="slide-img">
+                <StaticImage src={CasualCodingImage2} alt="OSC at Casual Coding" width={1200} />
                 <div className="slide-img__meta">
                   <h2> Casual Coding </h2>
                   <h3>
@@ -70,7 +71,7 @@ const AboutPage: ReactFC<PageProps> = () => {
                     an OSC maintainer.
                   </h3>
                 </div>
-              </Image>
+              </Overlay>
             </Slide>
           </Slideshow>
         </section>
@@ -132,7 +133,7 @@ const AboutPage: ReactFC<PageProps> = () => {
                 NEWS 🔗
               </button>
             </div>
-            <Image src={CasualCodingImage} alt="OSC Mini-Hackathon" />
+            <StaticImage src={CasualCodingImage} alt="OSC Mini-Hackathon" width={600} />
           </div>
         </section>
         <section id='frequently-asked-questions'>

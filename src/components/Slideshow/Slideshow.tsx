@@ -22,7 +22,7 @@ export const Slideshow = (props: { children: any, period?: number }) => {
       return null
     }
     return (
-      <a className="slideshow-button" onClick={() => advance(-1)}>&#8249;</a>
+      <div className="slideshow-button" onClick={() => advance(-1)}>&#8249;</div>
     )
   }
 
@@ -32,7 +32,7 @@ export const Slideshow = (props: { children: any, period?: number }) => {
     }
     return (
       <div className='slideshow-button-root'>
-        <a className="slideshow-button" onClick={() => advance(1)}>&#8250;</a>
+        <div className="slideshow-button" onClick={() => advance(1)}>&#8250;</div>
       </div>
     )
   }
@@ -42,12 +42,12 @@ export const Slideshow = (props: { children: any, period?: number }) => {
     for (let i = 0; i < props.children.length; i++) {
       if (i !== select) {
         rows.push((
-          <a key={i} className='slide-index' onClick={() => setSelect(i)}/>
+          <div key={i} className='slide-index' onClick={() => setSelect(i)}/>
         ))
         continue
       }
       rows.push((
-        <a key={i} className='slide-index--selected' onClick={() => setSelect(i)} />
+        <div key={i} className='slide-index--selected' onClick={() => setSelect(i)} />
       ))
     }
 

@@ -75,7 +75,7 @@ export default function ContactSection() {
           <textarea required id="contact-form__message"
             name="message" placeholder="Enter your message here..."
             onChange={ (event: TextEvent) => onTextChange("Message", event) }
-            rows="4" cols="50" value={form.Message} />
+            rows="4" cols="40" value={form.Message} />
           <div style={{ display: "flex", flexDirection: "row"}}>
             <input
               checked={form.Subscribe}
