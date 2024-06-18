@@ -64,7 +64,7 @@
 .club-group-photo {
     margin: 10px;
     border-radius: 23px;
-    width: 400px;
+    width: 100%;
 }
 
 #faq-section,section a {
@@ -94,6 +94,7 @@
 
 .infinite-scroll {
     padding: 20px;
+    min-height: 650px;
     height: 650px;
     display: grid;
     grid-template-columns: repeat(8, 300px);
@@ -159,6 +160,10 @@
     padding: 0px 15px;
 }
 
+#become-a-member {
+    min-height: 650px;
+}
+
 .contact-form {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -197,8 +202,8 @@
     }
 
     .about-container {
-        grid-template-columns: 1fr;
-        grid-template-rows: 1fr 1fr;
+        display: flex;
+        flex-direction: column-reverse;
     }
 
     .about-container img {

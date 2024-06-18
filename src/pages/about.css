@@ -38,9 +38,8 @@
 #casual-coding {
     width: 100%;
     padding: 10px 0;
-    display: flex;
-    flex-direction: row;
-    justify-items: stretch;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
 }
 
 #casual-coding img {
@@ -99,6 +98,7 @@
 
 @media only screen and (max-width: 800px) {
     #casual-coding {
+        display: flex;
         flex-direction: column-reverse;
     }
 

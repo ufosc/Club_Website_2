@@ -4,11 +4,12 @@ import "../../global.css"
 import React from "react"
 import { Link } from "gatsby"
 import { version } from "../../../package.json"
+import { StaticImage } from "gatsby-plugin-image"
 
-import Discord from "../../images/Discord.png"
-import Facebook from "../../images/Facebook.png"
-import Github from "../../images/Github.png"
-import Instagram from "../../images/Instagram.png"
+const Discord = "../../images/Discord.png"
+const Facebook = "../../images/Facebook.png"
+const Github = "../../images/Github.png"
+const Instagram = "../../images/Instagram.png"
 
 export default function () {
   return (
@@ -26,16 +27,16 @@ export default function () {
             </div>
             <div className="social-buttons">
               <Link to="https://discord.gg/Gsxej6u" target="_blank">
-                <img src={Discord} alt="discord" width="35" />
+                <StaticImage src={Discord} alt="discord" height={35} />
               </Link>
               <Link to="https://github.com/ufosc" target="_blank">
-                <img src={Github} alt="github" width="35" />
+                <StaticImage src={Github} alt="github" height={35} />
               </Link>
               <Link to="https://instagram.com/uf_osc?igshid=YmMyMTA2M2Y=" target="_blank">
-                <img src={Instagram} alt="instagram" width="35" loading="lazy" />
+                <StaticImage src={Instagram} alt="instagram" height={35} />
               </Link>
               <Link to="https://www.facebook.com/groups/ufosc/" target="_blank">
-                <img src={Facebook} alt="facebook" width="35" loading="lazy" />
+                <StaticImage src={Facebook} alt="facebook" height={35} />
               </Link>
             </div>
           </div>

@@ -30,6 +30,10 @@
     gap: 10px;
 }
 
+.social-buttons a {
+    height: 35px;
+}
+
 .footer-lower {
     background-color: white;
     padding-right: 30px;
@@ -69,6 +73,7 @@ footer {
     font-weight: normal;
     font-size: 15px;
     padding-top: 7.5px;
+    margin: 0;
 }
 
 .footer-lower p {
