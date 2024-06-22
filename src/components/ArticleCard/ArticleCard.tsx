@@ -12,7 +12,9 @@ export default function ArticleCard(props: { data: any }) {
   }
   return (
     <div className='card-container' onClick={onClick}>
-      <GatsbyImage image={img} />
+      <div style={{ maxWidth: 300 }}>
+        <GatsbyImage image={img!} alt={props.data.subtitle} />
+      </div>
       <h2>{props.data.title}</h2>
       <h3 style={{ fontWeight: "bold" }}>
         {
