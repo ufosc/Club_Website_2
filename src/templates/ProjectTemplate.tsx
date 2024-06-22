@@ -23,7 +23,7 @@ const ProjectTemplate : React.FC<ProjectTemplateProps> = ({ data, children }) =>
 export default ProjectTemplate
 export const Head = (props: { data: any }) => (
   <SEO
-    title={props.data.mdx.frontmatter.title}
+    title={props.data.mdx.frontmatter.title + " | UF Open Source Club" }
     desc={props.data.mdx.frontmatter.description}
   />
 )
