@@ -5,7 +5,6 @@ const config: GatsbyConfig = {
     title: `UF Open Source Club`,
     siteUrl: `https://www.ufosc.org`,
   },
-  graphqlTypegen: true,
   plugins: [
     "gatsby-plugin-image",
     "gatsby-plugin-sitemap",
@@ -13,7 +12,21 @@ const config: GatsbyConfig = {
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
     "gatsby-plugin-webpack-bundle-analyser-v2",
-    "gatsby-transformer-remark",
+    {
+      resolve: "gatsby-transformer-remark",
+      options: {
+        plugins: [
+          {
+            resolve: "gatsby-remark-prismjs",
+            options: {
+              classPrefix: "language-",
+              inlineCodeMarker: null,
+              showLineNumbers: false,
+            },
+          }
+        ],
+      },
+    },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
