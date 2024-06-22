@@ -1,5 +1,4 @@
 import React, { useState } from "react"
-import axios from "axios"
 
 export type ContactFormInput = {
   Email:     string;
@@ -7,12 +6,6 @@ export type ContactFormInput = {
   Message:   string;
   Subscribe: boolean;
 }
-
-// Mailchimp does not have embeddable contact forms. Instead of
-// redirecting the user to another page, we implement our own
-// contact form and manually route the request.
-const MAILCHIMP_ENDPOINT = "https://us14.list-manage.com/contact-form/post?u=db783e723b7d1d98b155e95fb&form_id=80783a94938d6eda182e75cc327ece48"
-const CORS_PROXY = "https://api.allorigins.win/post?url="
 
 export default function ContactSection() {
   type TextEvent = { target: { value: string }}
@@ -32,20 +25,7 @@ export default function ContactSection() {
 
   const onSubmit = (event: { preventDefault: Function }) => {
     event.preventDefault()
-    axios.post(`${CORS_PROXY}${encodeURIComponent(MAILCHIMP_ENDPOINT)}`, {
-      fields: {
-        "1": form.Email,
-        "2": form.Subject,
-        "3": form.Message,
-      },
-      subscribe: form.Subscribe,
-      "mc-SMSPHONE-ack": false,
-    }).then((res) => {
-      console.log(res)
-      setForm({Email: "", Subject: "", Message: "", Subscribe: true})
-    }).catch((error) => {
-      console.log(error)
-    })
+    alert("Contact form is temporarily unavailable")
   }
 
   return (

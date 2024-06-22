@@ -84,11 +84,16 @@
 }
 
 .menu-btn {
+    min-width: 0px;
     margin-right: 30px;
     height: 1rem;
     background-color: transparent;
     border: none;
     outline: none;
+}
+
+.menu-btn:hover {
+    background: none;
 }
 
 .menu-btn img {
@@ -103,7 +108,7 @@
 }
 
 /* ---- for devices under 730 px (tablet view) -------*/
-@media only screen and (min-width: 600px) and (max-width: 730px) {
+@media only screen and (min-width: 600px) and (max-width: 800px) {
     #navbar-title {
         font-size: 1rem;
     }
@@ -151,7 +156,7 @@
 }
 
 /* ----- for devices under (mobile view)-------*/
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 650px) {
     #navigation-bar {
         justify-content: flex-start;
         gap: 0;

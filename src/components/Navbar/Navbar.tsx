@@ -27,12 +27,12 @@ const NavBar = (props: { children: any }) => {
   const [showMenu, setShowMenu] = useState<boolean>(false)
   const [forceShowMenu, setForceShowMenu] = useState<boolean>(false)
   useEffect(() => {
-    if (window.innerWidth >= 601) {
+    if (window.innerWidth >= 650) {
       setShowMenu(true)
     }
 
     window.addEventListener('resize', () => {
-      if (window.innerWidth >= 601) {
+      if (window.innerWidth >= 650) {
         setShowMenu(true)
         setForceShowMenu(false)
         return
@@ -58,8 +58,11 @@ const NavBar = (props: { children: any }) => {
         }
         {
           (!showMenu) ? (
-            <button className="menu-btn" onClick={() => setForceShowMenu(!forceShowMenu)}>
-              <StaticImage src={HBMenu} alt="menu" width={22} />
+            <button className="menu-btn"
+              onClick={() => setForceShowMenu(!forceShowMenu)}>
+              <div style={{ width: 22 }}>
+                <StaticImage src={HBMenu} alt="menu" width={22} />
+              </div>
             </button>
           ): null
         }
