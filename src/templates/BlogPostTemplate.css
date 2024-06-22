@@ -14,6 +14,7 @@
     flex-direction: column;
     align-items: center;
     max-width: 1200px;
+    width: 100%;
 }
 
 .article-layout__matter__meta {
@@ -67,6 +68,10 @@ p {
     margin: 40px 0;
 }
 
+#inner-html {
+    max-width: 800px;
+}
+
 #inner-html img {
     max-width: 800px;
 }
@@ -84,12 +89,29 @@ p {
     font-family: "Diatype";
     color: white;
     font-size: 2.6rem;
-    margin-top: 70px;
+    margin: 40px 0;
 }
 
 #inner-html h2 {
+    font-family: "Diatype";
+    color: white;
     font-size: 1.8rem;
-    margin-top: 70px;
+    margin: 40px 0;
+}
+
+#inner-html h3 {
+    font-family: "Diatype";
+    color: white;
+    font-size: 1.6rem;
+    margin: 40px 0;
+}
+
+#inner-html h4, h5, h6, h7 {
+    font-family: "Diatype";
+    color: white;
+    font-size: 1.3rem;
+    margin: 40px 0;
+    font-weight: 400;
 }
 
 #inner-html ul {
@@ -108,7 +130,7 @@ p {
 }
 
 #inner-html blockquote {
-    border-left: 2px solid rgb(255, 255, 255);
+    border-left: 2px solid #afbcbf;
     padding-left: 20px;
     max-width: calc(100% - 20px);
 }
@@ -116,6 +138,88 @@ p {
 #inner-html blockquote p {
     font-style: italic;
     font-size: 1.5rem;
+    color: #afbcbf;
+}
+
+.gatsby-highlight {
+    margin: 40px 0;
+    background: #131c2b;
+    padding: 20px 0;
+    padding-left: 20px;
+    overflow: hidden;
+}
+
+#inner-html code {
+    width: 100%;
+    height: 100%;
+    color: #afbcbf;
+    line-height: 150%;
+    font-family: "Arial";
+    font-weight: 500;
+    font-size: 1.2rem;
+}
+
+#inner-html code .keyword {
+    color: #6a88ff;
+}
+
+#inner-html code .operator, .punctuation, .function {
+    color: #afbcbf;
+}
+
+#inner-html code .string, .attr-value {
+    color: #029fff;
+}
+
+#inner-html code .class-name, .builtin, .constant, .attr-name {
+    color: #af8aff;
+}
+
+#inner-html code .tag {
+    color: #3dc0b0;
+}
+
+#inner-html code .comment {
+    color: #cf9f7f;
+}
+
+table {
+    width: 100%;
+    margin-bottom: 2rem;
+    border-collapse: collapse;
+    border-spacing: 0.25rem;
+}
+
+table thead tr th {
+    color: white;
+    border-bottom: 1px solid #d1dce5;
+    font-family: "Diatype";
+    font-size: 1.125rem;
+}
+
+table tbody tr td {
+    padding: 10px 0;
+    color: white;
+    border-bottom: 1px solid #d1dce5;
+    font-family: "Diatype";
+    font-size: 1.125rem;
+}
+
+#inner-html blockquote ol {
+    padding: 0 40px;
+}
+
+#inner-html hr {
+    margin: 40px 0;
+    background: white;
+}
+
+#inner-html p strong {
+    font-weight: 600;
+}
+
+#inner-html p em {
+    font-style: italic;
 }
 
 .article-layout__recc {

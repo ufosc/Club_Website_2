@@ -34,7 +34,7 @@ const ArticleBody: React.FC<ArticleBodyPrompts> = ({ data, children }) => {
             }
           </h3>
         </div>
-        <GatsbyImage image={img} />
+        <GatsbyImage image={img!} alt={ frontmatter.subtitle } />
         <div id="inner-html" dangerouslySetInnerHTML={{
           __html: data.markdownRemark.html
         }} />
@@ -69,7 +69,7 @@ const BlogPostTemplate : React.FC<{ data: any}> = ({ data }) => (
 export default BlogPostTemplate
 export const Head = (props: { data: any }) => (
   <SEO
-    title={props.data.markdownRemark.frontmatter.title}
+    title={props.data.markdownRemark.frontmatter.title + " | UF Open Source Club" }
     desc={props.data.markdownRemark.frontmatter.subtitle}
   />
 )
