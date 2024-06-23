@@ -1,133 +1,63 @@
-# UF OSC Website
-[![standard-readme compliant](https://img.shields.io/badge/readme%20style-standard-brightgreen.svg?style=flat-square)](https://github.com/RichardLitt/standard-readme) ![GitHub issues](https://img.shields.io/github/issues-raw/ufosc/Club_Website_2) ![GitHub](https://img.shields.io/github/license/ufosc/Club_Website_2) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com) ![GitHub Workflow Status (with branch)](https://img.shields.io/github/actions/workflow/status/ufosc/Club_Website_2/node.js.yml) ![GitHub package.json version](https://img.shields.io/github/package-json/v/ufosc/Club_Website_2)
-<br/>
-Website for the UF Open Source Club. Started in the Fall semester 2022, this website is built and maintained by club members to serve as a hub of information for the club.
+<div align="center">
+<h1>UF OSC WEBSITE</h1>
 
-## Table of Contents
-- [Install](#install)
-- [Usage](#usage)
-- [Configuring](#configuring)
-- [Maintainers](#maintainers)
-- [Contributing](#contributing)
-- [License](#license)
+<img src="https://i.imgur.com/5k2EIUA.png" width="90%" height="90%" />
+
+<h3>
+  
+[Homepage](https://ufosc.org) | [Documentation](https://docs.ufosc.org/docs/osc-docs) | [Discord](https://discord.com/invite/Gsxej6u)
+
+</h3>
+
+![GitHub issues](https://img.shields.io/github/issues-raw/ufosc/Club_Website_2) 
+![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/ufosc/Club_Website_2/gatsby.yml?label=ghpages) 
+![GitHub package.json version](https://img.shields.io/github/package-json/v/ufosc/Club_Website_2) 
+![GitHub](https://img.shields.io/github/license/ufosc/Club_Website_2) 
+
+Website for the UF Open Source Club. Started in the Fall semester 2022, this website is built and maintained by club members to serve as a hub of information for the club.
+</div>
 
 ## Install
-This project requires [NodeJS](https://nodejs.org/en/) and [Git](https://git-scm.com). Also, make sure you have `build-essential` (Linux) or `xcode-select` (MacOS).
-```
-sudo apt install build-essential
-// or...
-xcode-select --install
-```
-
-Next, begin by cloning the repository:
+Clone the repository (requires [git](https://git-scm.com/)):
 ```
 git clone https://github.com/ufosc/Club_Website_2.git
 ```
 
-Navigate to the project directory and install the project dependencies:
+Navigate to the project directory and install the project dependencies (requires [Node.js](https://nodejs.org/en)):
 ```
 cd Club_Website_2
 npm install
 ```
 ## Usage
-<b>Starting the webserver:</b>
+<b>Starting the development server:</b>
 ```
-npm start
+npm run develop
 ```
-You can access the website by visiting http://localhost:3000 on your browser.
+You may access the website at http://localhost:8000
 
-<b>Linting & fixing:</b>
-<br/>
-This project adheres to the Javascript Standard syntax style, use linting to show you a list of syntax errors that you'll need to correct.
+<b>Building for production:</b>
 ```
-npm run lint
+npm run build
 ```
-To automatically fix these, you can run:
+The gatsby webpack analyzer will briefly spawn a page at 127.0.0.1:3001 with the JavaScript bundling information before exiting. Once the build is finished, the website can be served with gatsby:
 ```
-npm run fix
+npm run serve
 ```
-Keep in mind that some syntax issues cannot be automatically resolved, in which case you'll need to run `npm run lint` again and resolve them manually.
+The website may be accessed at http://localhost:9000
 
-
-<b>Running tests:</b>
-```
-npm run test
-```
-## Configuring
-All configurations are available in [config.js](config.js) and can be modified by creating a `.env` file in the root directory.
-
-<b> NODE_ENV: </b><br>
-Sets the working environment. Three options are available:
-1. Development - for writing & testing new features.
-2. Staging - for testing features before deployment.
-3. Production - for finished features available to the public.
-
-The working environment is set to 'development' by default. It can be changed by adding the following line to the `.env`:
-```
-NODE_ENV = "development"
-```
-
-<b> MONGO_URI: </b><br>
-Sets the connection URI for the MongoDB database. It can be changed by adding the following line to the `.env`:
-```
-MONGO_URI = "..."
-```
-
-<b>PORT:</b><br>
-The port to run the server on. Set to 3000 by default. It can be changed by adding the following line to the `.env`:
-```
-SERVER_PORT = 3000
-```
-
-<b>ADMIN_ROUTE:</b><br>
-Because generic admin routes are subject to directory scans by vulnerability analyzers, we've added the option to configure it manually. It is set to 'admin' by default, but can be changed via the following option:
-```
-ADMIN_ROUTE = "admin"
-```
-
-<b>LIMITER:</b><br>
-The limiter sets up a rate limiter that controls how many requests can be made by a user before they are timed-out. There are two available options:
-1. RATE_LIMIT_TIMEOUT - the time interval (in minutes) where the user will be locked out of the site if they violate the rate limit.
-2. RATE_LIMIT_MAX - the maximum number of requests in one RATE_LIMIT_TIMEOUT interval.
-
-They can be modified as follows:
-```
-RATE_LIMIT_TIMEOUT = 5
-RATE_LIMIT_MAX = 1500
-```
-
-<b>CACHE_INTERVAL</b><br>
-How long to cache static pages (blog, index, etc.) for. Instead of repeatedly querying the database for data, non-priority pages are cached. The cache interval (in minutes) can be modified like so:
-```
-CACHE_INTERVAL = 30
-```
-
-<b>SECRET:</b><br>
-The secret is a key for encrypting JWTs. It can be modified like so:
-'''
-SECRET = "any string"
-'''
-
-<b>SMTP_HOST:</b><br>
-For SMTP, the website integrates with [OpenWebServices](https://github.com/ufosc/OpenWebServices) websmtp. The variable is configured as follows:
-```
-SMTP_HOST = "http://localhost:8080/mail/send"
-```
-
-<b>ADMIN_EMAIL</b><br>
-The email address to send contact form confirmation emails from. Can be set to anything so long as its a valid email address. Modified as follows:
-```
-ADMIN_EMAIL = "no-reply@ufosc.com"
-```
 ## Maintainers
 Maintained by the UF Open Source Club, can be contacted via [Discord](https://discord.gg/j9g5dqSVD8)
 
 Current Maintainers:
-- Michail Zeipekki @zeim839
-- Daniel Wildsmith @danielwildsmith
+- Michail Zeipekki [zeim839](https://github.com/zeim839)
+- Daniel Wildsmith [danielwildsmith](https://github.com/danielwildsmith)
+
+## Documentation
+Documentation is available online at [docs.ufosc.org](https://docs.ufosc.org/docs/osc-docs). Please see the [osc-docs](https://github.com/ufosc/osc-docs) project if you're interested in helping with documentation.
 
 ## Contributing
-All contributions are welcome and appreciated, so long as they adhere to the [license](#license). Contributors are urged to familiarize themselves with the [contribution guidelines](CONTRIBUTING.md).
+All contributions are welcome and appreciated, we're always looking for new ideas or improvements. If you're interested in helping, please see the GitHub issues page for tasks that need help. Alternatively, you may propose new ideas by opening new issues. Contributors should read the [contribution guidelines](CONTRIBUTING.md).
+
 ## License
 [AGPL-3.0-or-later](LICENSE.md) <br/>
-Copyright (C) 2023 Open Source Club
+Copyright (C) 2024 Open Source Club
