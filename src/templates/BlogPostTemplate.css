@@ -60,7 +60,6 @@
 p {
     font-family: "Diatype";
     color: rgb(255, 255, 255);
-    text-align: justify;
     font-size: 1.35rem;
     line-height: 170%;
     font-weight: 400;
@@ -185,6 +184,7 @@ p {
 
 table {
     width: 100%;
+    overflow: auto;
     margin-bottom: 2rem;
     border-collapse: collapse;
     border-spacing: 0.25rem;
@@ -238,15 +238,45 @@ table tbody tr td {
     display: flex;
 }
 
+.gatsby-highlight {
+    max-width: 100vw;
+    overflow: auto;
+}
+
 @media only screen and (max-width: 650px) {
     .article-layout__recc__articles {
         flex-direction: column;
-        align-items: center;
+    }
+
+    .article-layout__recc__articles .card-container {
+        margin-left: 0px;
+    }
+
+    #inner-html blockquote p {
+        font-size: 1.225rem;
+    }
+
+    p {
+        font-size: 1.225rem;
     }
 }
 
 @media only screen and (max-width: 500px) {
-    #inner-html blockquote p {
-        font-size: 1.225rem;
+    .article-layout__matter__meta h2 {
+        font-size: 3rem;
+    }
+
+    .subtitle {
+        font-size: 1.3rem;
+    }
+}
+
+@media only screen and (max-width: 350px) {
+    .article-layout__matter__meta h2 {
+        font-size: 2.7rem;
+    }
+
+    p {
+        font-size: 1.1rem;
     }
 }

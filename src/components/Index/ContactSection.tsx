@@ -65,7 +65,7 @@ export default function ContactSection() {
               onChange={onSubscribeChange}
             />
             <label for="subscribe" style={{ margin: "5px 20px" }}>
-              Subscribe to our newsletter (max 1-2 emails/month)
+              Subscribe to our newsletter (1-2 emails/month)
             </label>
           </div>
           <input type="submit" value="Submit" />

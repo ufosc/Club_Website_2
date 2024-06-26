@@ -15,7 +15,7 @@ const MSG_BATCH = [
 const AnimationSection = () => (
   <Animation speed={0.001} scale={30}>
     <h2>let's build <CursorText batch={MSG_BATCH} /></h2>
-    <h3 style={{margin: "auto", marginTop: 50, maxWidth: "min(800px, 70%)", fontSize: "1.5rem"}}>
+    <h3 style={{margin: "auto", marginTop: 50, maxWidth: "min(800px, 70%)"}}>
       Embrace the power of collaborative creation at the University of
       Florida's Open Source Club. Meet new friends, propose ideas, learn
       programming, and work on open source projects.

@@ -29,13 +29,15 @@ const AboutSection = () => (
           </button>
         </div>
       </div>
-      <StaticImage
-        src="../../images/group_photo.jpg"
-        width={600}
-        alt="Club Group Photo"
-        className="club-group-photo"
-        loading="lazy"
-      />
+      <div>
+        <StaticImage
+          src="../../images/group_photo.jpg"
+          width={600}
+          alt="Club Group Photo"
+          className="club-group-photo"
+          loading="lazy"
+        />
+      </div>
     </div>
   </section>
 )

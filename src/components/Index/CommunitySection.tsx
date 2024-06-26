@@ -104,7 +104,7 @@ const CommunitySection = () => (
         If interested, join our Discord channel and keep an eye out for
         any upcoming meetings on our announcements page.
       </h3>
-      <div style={{ marginTop: 50 }}>
+      <div id="become-a-member--actions">
         <button onClick={ () => navigate("https://discord.gg/Gsxej6u") }
           style={{ marginLeft: 0 }}>
           JOIN DISCORD

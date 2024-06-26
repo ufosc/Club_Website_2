@@ -36,12 +36,20 @@
     width: fit-content;
 }
 
-@media only screen and (max-width: 850) {
+@media only screen and (max-width: 850px) {
     .project-card h2 {
         font-size: 1.2rem;
     }
 
     .project-card h3 {
         font-size: 1.2rem;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .project-card button {
+        padding: 8px;
+        height: fit-content;
+        width: fit-content;
     }
 }

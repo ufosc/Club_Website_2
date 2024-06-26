@@ -22,6 +22,11 @@
     background: black;
 }
 
+.footer-upper__text h1 {
+    padding-left: 20px;
+    font-size: 18px;
+}
+
 .social-buttons {
     margin-right: 40px;
     display: flex;
@@ -88,5 +93,15 @@ footer {
     .footer-lower {
         flex-direction: column;
         align-items: center;
+    }
+}
+
+@media only screen and (max-width: 380px) {
+    .footer-upper__text h1 {
+        font-size: 1rem;
+    }
+
+    .version-txt {
+        display: none;
     }
 }

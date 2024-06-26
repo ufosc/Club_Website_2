@@ -164,6 +164,10 @@
     min-height: 650px;
 }
 
+#become-a-member--actions {
+    margin-top: 50px;
+}
+
 .contact-form {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -241,5 +245,33 @@
 @media only screen and (max-width: 550px) {
     .project-container {
         grid-template-columns: 1fr;
+    }
+
+    #become-a-member--actions {
+        display: flex;
+        flex-direction: row;
+    }
+}
+
+@media only screen and (max-width: 380px) {
+    #become-a-member--actions {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #become-a-member--actions .secondary {
+        margin-left: 0;
+    }
+
+    #become-a-member--actions button {
+        width: 150px;
+    }
+
+    #contact-form__meta {
+        max-width: 85vw;
+    }
+
+    form {
+        max-width: 85vw;
     }
 }
