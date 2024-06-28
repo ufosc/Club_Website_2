@@ -27,12 +27,12 @@ const NavBar = (props: { children: any }) => {
   const [showMenu, setShowMenu] = useState<boolean>(false)
   const [forceShowMenu, setForceShowMenu] = useState<boolean>(false)
   useEffect(() => {
-    if (window.innerWidth >= 650) {
+    if (window.innerWidth > 650) {
       setShowMenu(true)
     }
 
     window.addEventListener('resize', () => {
-      if (window.innerWidth >= 650) {
+      if (window.innerWidth > 650) {
         setShowMenu(true)
         setForceShowMenu(false)
         return

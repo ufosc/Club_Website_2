@@ -1,5 +1,5 @@
 .projects {
-    background: black;
+    background: var(--theme-bg);
     min-height: calc(100vh - 70px - 80px); /* 100vh minus navbar minus footer. */
     display: flex;
     flex-direction: column;
@@ -10,7 +10,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 20px;
-    max-width: 1200px;
+    max-width: var(--width-l);
     padding: 30px;
 }
 
@@ -35,8 +35,8 @@
 }
 
 @media only screen and (max-width: 650px) {
-    .projects__projects__meta h3 {
-        font-size: 1.2rem;
+    .projects__projects__meta h2 {
+        font-size: var(--fontSize-2);
     }
 }
 

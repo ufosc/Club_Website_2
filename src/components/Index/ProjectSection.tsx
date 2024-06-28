@@ -21,9 +21,9 @@ export default function ProjectSection(props: { nodes: any }) {
   return (
     <section>
       <div className="section-root">
-        <h2 className="section-heading">
+        <h1 className="section-heading">
           Latest projects
-        </h2>
+        </h1>
         <button
           className='tertiary'
           style={{ marginBottom: 30 }}

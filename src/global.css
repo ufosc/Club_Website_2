@@ -1,3 +1,61 @@
+:root {
+    /* Font families */
+    --fontFamily-Diatype: "Diatype", system-ui, -apple-system,
+                          BlinkMacSystemFont, "Segoe UI", Roboto,
+                          "Helvetica Neue", Arial, "Noto Sans",
+                          sans-serif, "Apple Color Emoji",
+                          "Segoe UI Emoji", "Segoe UI Symbol",
+                          "Noto Color Emoji";
+    --fontFamily-Outrun: "Outrun", system-ui, -apple-system,
+                          BlinkMacSystemFont, "Segoe UI", Roboto,
+                          "Helvetica Neue", Arial, "Noto Sans",
+                          sans-serif, "Apple Color Emoji",
+                          "Segoe UI Emoji", "Segoe UI Symbol",
+                          "Noto Color Emoji";
+
+    /* Font sizes */
+    --fontSize-0: 13px;
+    --fontSize-1: 1rem;
+    --fontSize-2: 1.3rem;
+    --fontSize-3: 1.5rem;
+    --fontSize-4: 1.75rem;
+    --fontSize-5: 2.8rem;
+    --fontSize-6: 3.2rem;
+    --fontSize-7: 4rem;
+
+    /* Font weights */
+    --fontWeight-thin: 200;
+    --fontWeight-light: 300;
+    --fontWeight-regular: 400;
+    --fontWeight-bold: 700;
+
+    /* Width */
+    --width-max: 100%;
+    --width-screen: 100vw;
+    --width-m: 800px;
+    --width-l: 1200px;
+
+    /* Theme colors */
+    --theme-fg: white;
+    --theme-bg: black;
+    --theme-code: #afbcbf;
+    --theme-keyword: #6a88ff;
+    --theme-attrib: #029fff;
+    --theme-cls-name: #af8aff;
+    --theme-tag: #3dc0b0;
+    --theme-comment: #cf9f7f;
+    --theme-dim: #e8e8e8;
+    --theme-dimmer: #1B1622;
+    --theme-grey: rgb(42 38 49);
+    --theme-light-grey: #DBDBDB;
+    --theme-dark-blue: #374BFE;
+    --theme-highlight: #00FF7B;
+    --theme-primary: #BE2FDD;
+    --theme-secondary: #7CD6DF;
+    --theme-highlight-alt: #B8DE58;
+    --theme-gradient: linear-gradient(90deg, #1EF198 0%, #73CBF8 45%, #69B0F5 100%);
+}
+
 @font-face {
     font-family: 'Outrun';
     font-display: swap;
@@ -54,61 +112,56 @@
     vertical-align: baseline;
 }
 
+.title-txt {
+    font-family: var(--fontFamily-Outrun);
+    font-size: var(--fontSize-4);
+    color: var(--theme-fg);
+    font-weight: var(--fontWeight-bold);
+}
+
 h1 {
-    font-family: 'Outrun';
-    font-size: 1.75rem;
-    font-weight: bold;
+    font-family: var(--fontFamily-Diatype);
+    color: var(--theme-fg);
+    font-size: var(--fontSize-7);
+    font-weight: var(--fontWeight-bold);
 }
 
 h2 {
-    font-family: 'Diatype';
-    color: white;
-    font-size: 4rem;
-    font-weight: bold;
+    font-family: var(--fontFamily-Diatype);
+    font-size: var(--fontSize-3);
+    font-weight: var(--fontWeight-regular);
+    color: var(--theme-dim);
 }
 
 h3 {
-    font-family: 'Diatype';
-    font-size: 1.5rem;
-    font-weight: 400;
-    color: #e8e8e8;
-}
-
-h4 {
-    font-family: 'Diatype';
-    font-size: 13px;
-    font-weight:300;
-    color: black;
-}
-
-h5 {
-    color: #A4A1B6;
-    font-size: 13px;
-    font-family: 'Diatype';
+    font-family: var(--fontFamily-Diatype);
+    font-size: var(--fontSize-0);
+    font-weight: var(--fontWeight-light);
+    color: var(--theme-black);
 }
 
 mark {
-    background-color: #B8DE58;
+    background-color: var(--theme-highlight);
 }
 
 button, input[type=button], input[type=submit] {
-    background: #BE2FDD;
+    background: var(--theme-primary);
     border-radius: 36px;
     border: none;
     box-shadow: none;
     padding: 15px;
-    font-family: 'Diatype';
-    color: white;
-    font-weight: 200;
+    font-family: var(--fontFamily-Diatype);
+    color: var(--theme-fg);
+    font-weight: var(--fontWeight-thin);
     min-height: 50px;
     min-width: 150px;
     margin: 10px;
 }
 
 button:hover, input[type=button]:hover, input[type=submit]:hover {
-    background: #7CD6DF;
+    background: var(--theme-secondary);
     transition: 0.1s ease-in-out;
-    color: black;
+    color: var(--theme-black);
 }
 
 button:active {
@@ -117,57 +170,57 @@ button:active {
 
 .secondary {
     background: none;
-    border: 1px solid white;
+    border: 1px solid var(--theme-fg);
 }
 
 .secondary:hover {
-    background: white;
-    color: black;
+    background: var(--theme-fg);
+    color: var(--theme-bg);
     transition: 0.1s ease-in-out;
 }
 
 .tertiary {
     background: none;
-    border: 1px solid white;
+    border: 1px solid var(--theme-fg);
     padding: 5px;
     height: 30px;
     min-height: 0;
     min-width: 160px;
     margin: 0px;
-    font-size: 1rem;
+    font-size: var(--fontSize-1);
 }
 
 .tertiary:hover {
-    background: white;
-    color: black;
+    background: var(--theme-fg);
+    color: var(--theme-bg);
     transition: 0.1s ease-in-out;
 }
 
 section {
     display: flex;
     flex-direction: column;
-    background: black;
+    background: var(--theme-bg);
 }
 
 .section-heading {
     text-align: left;
-    font-size: 1.8rem;
-    padding-bottom: 30px;
+    font-size: var(--fontSize-4);
+    padding-bottom: 20px;
 }
 
 .Typewriter__wrapper {
-    font-family: 'Diatype';
-    color: black;
-    font-size: 4rem;
-    font-weight: bold;
-    background: #B8DE58;
+    font-family: var(--fontFamily-Diatype);
+    color: var(--theme-bg);
+    font-size: var(--fontSize-7);
+    font-weight: var(--fontWeight-bold);
+    background: var(--theme-highlight-alt);
 }
 
 .Typewriter__cursor {
-    font-family: 'Diatype';
-    color: black;
-    font-size: 4rem;
-    font-weight: bold;
+    font-family: var(--fontFamily-Diatype);
+    color: var(--theme-bg);
+    font-size: var(--fontSize-7);
+    font-weight: var(--fontWeight-bold);
 }
 
 form {
@@ -184,9 +237,9 @@ input[type=text], textarea {
     margin-bottom: 20px;
     min-height: 30px;
     padding: 10px;
-    font-family: 'Diatype';
-    font-size: 1rem;
-    font-weight:300;
+    font-family: var(--fontFamily-Diatype);
+    font-size: var(--fontSize-1);
+    font-weight: var(--fontWeight-light);
     border-radius: 9px;
     resize: none;
 }
@@ -198,11 +251,16 @@ input[type=checkbox] {
 }
 
 label {
-    font-family: 'Diatype';
-    font-size: 1rem;
-    font-weight:300;
-    color: white;
+    font-family: var(--fontFamily-Diatype);
+    font-size: var(--fontSize-1);
+    font-weight: var(--fontWeight-light);
+    color: var(--theme-fg);
     margin-bottom: 5px;
+}
+
+a, a:link, a:visited {
+    text-decoration-color: var(--theme-highlight);
+    color: var(--theme-highlight);
 }
 
 .gatsby-image-wrapper, .gatsby-image-wrapper-constrained {
@@ -211,12 +269,12 @@ label {
 }
 
 @media only screen and (max-width: 500px) {
-    .Typewriter__cursor, .Typewriter__wrapper, h2 {
-        font-size: 3.5rem;
+    .Typewriter__cursor, .Typewriter__wrapper, h1 {
+        font-size: var(--fontSize-6);
     }
 
-    h3 {
-        font-size: 1.3rem;
+    h2 {
+        font-size: var(--fontSize-2);
     }
 
     .tertiary {
@@ -225,18 +283,14 @@ label {
 }
 
 @media only screen and (max-width: 380px) {
-    .Typewriter__cursor, .Typewriter__wrapper, h2 {
-        font-size: 3.2rem;
-    }
-
-    h3 {
-        font-size: 1.2rem;
+    .Typewriter__cursor, .Typewriter__wrapper, h1 {
+        font-size: var(--fontSize-6);
     }
 }
 
 @media only screen and (max-width: 350px) {
-    .Typewriter__cursor, .Typewriter__wrapper, h2 {
-        font-size: 2.8rem;
+    .Typewriter__cursor, .Typewriter__wrapper, h1 {
+        font-size: var(--fontSize-5);
     }
 
     button {
@@ -245,6 +299,6 @@ label {
     }
 
     .section-heading {
-        font-size: 1.5rem;
+        font-size: var(--fontSize-3);
     }
 }

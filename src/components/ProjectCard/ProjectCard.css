@@ -3,7 +3,7 @@
     padding: 10px;
     border: 1px solid;
     border-radius: 23px;
-    background: #1B1622;
+    background: var(--theme-dimmer);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -16,15 +16,15 @@
     margin-bottom: 10px;
 }
 
-.project-card h2 {
-    font-size: 1.6rem;
+.project-card h1 {
+    font-size: var(--fontSize-3);
     margin: 10px 0;
 }
 
-.project-card h3 {
-    font-size: 1.2rem;
+.project-card h2 {
+    font-weight: var(--fontWeight-light);
+    font-size: var(--fontSize-2);
     margin: 10px 0;
-    font-weight: 300;
 }
 
 .project-card button {
@@ -37,12 +37,12 @@
 }
 
 @media only screen and (max-width: 850px) {
-    .project-card h2 {
-        font-size: 1.2rem;
+    .project-card h1 {
+        font-size: var(--fontSize-2);
     }
 
-    .project-card h3 {
-        font-size: 1.2rem;
+    .project-card h2 {
+        font-size: var(--fontSize-2);
     }
 }
 

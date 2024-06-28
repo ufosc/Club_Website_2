@@ -19,7 +19,7 @@
 }
 
 .accordion-item {
-    background: rgb(42 38 49);
+    background: var(--theme-grey);
     margin-bottom: 10px;
 }
 
@@ -30,19 +30,20 @@
     padding: 10px;
 }
 
-.accordion-item--trigger h3 {
-    font-size: 1.2rem;
-    font-weight: 300;
+.accordion-item--trigger h2 {
+    font-size: var(--fontSize-2);
+    font-weight: var(--fontWeight-light);
+    margin: 0px;
 }
 
-.accordion-item--trigger:hover h3 {
+.accordion-item--trigger:hover h2 {
     text-decoration: underline;
 }
 
 .accordion-item--body {
+    font-family: var(--fontFamily-Diatype);
+    font-size: var(--fontSize-2);
+    color: var(--theme-fg);
+    font-weight: var(--fontWeight-thin);
     padding: 15px;
-    color: white;
-    font-family: 'Diatype';
-    font-weight: 200;
-    font-size: 1.2rem;
 }

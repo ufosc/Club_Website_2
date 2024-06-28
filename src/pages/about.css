@@ -1,42 +1,27 @@
 .about {
-    background: black;
+    background: var(--theme-bg);
     min-height: calc(100vh - 70px - 80px); /* 100vh minus navbar minus footer. */
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.about h2 {
-    font-size: 3rem;
+.about h1 {
+    font-size: var(--fontSize-5);
 }
 
-.about h3 {
-    font-weight: 300;
+.about h2 {
+    font-weight: var(--fontWeight-light);
 }
 
 .about section {
-    width: 100%;
+    width: var(--width-max);
     max-width: 1200px;
     padding: 15px 15px;
 }
 
-.about a {
-    text-decoration-color: #B8DE58;
-    color: #B8DE58;
-}
-
-.about a:link {
-    text-decoration-color: #B8DE58;
-    color: #B8DE58;
-}
-
-.about a:visited {
-    text-decoration-color: #B8DE58;
-    color: #B8DE58;
-}
-
 #casual-coding {
-    width: 100%;
+    width: var(--width-max);
     padding: 10px 0;
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -55,29 +40,21 @@
 }
 
 .slide-img {
-    width: 100%;
+    width: var(--width-max);
     object-fit: cover;
     height: 550px;
 }
 
 #slideshow a {
-    color: rgb(129 129 129);
+    color: var(--theme-dim);
 }
 
-#slideshow {
-    width: 100%;
-}
-
-.slide-container {
-    width: 100%;
-}
-
-.slideshow-body {
-    width: 100%;
+#slideshow, .slide-container, .slideshow-body {
+    width: var(--width-max);
 }
 
 .slide-img__meta {
-    width: 100%;
+    width: var(--width-max);
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -86,13 +63,13 @@
     padding: 20px;
 }
 
-.slide-img__meta h2 {
-    font-size: 2rem;
+.slide-img__meta h1 {
+    font-size: var(--fontSize-3);
     text-align: left;
 }
 
-.slide-img__meta h3 {
-    font-size: 1.5rem;
+.slide-img__meta h2 {
+    font-size: var(--fontSize-1);
     text-align: left;
 }
 
@@ -103,33 +80,23 @@
     }
 
     #casual-coding img {
-        max-width: 100vw;
+        max-width: var(--width-screen);
         width: 100%;
         margin: 40px auto;
     }
 }
 
 @media only screen and (max-width: 550px) {
-    .slide-img {
-        height: 400px;
-    }
+    .slide-img { height: 400px; }
+
+    .about h1 { font-size: var(--fontSize-4); }
 
     .about h2 {
-        font-size: 2rem;
-    }
-
-    .about h3 {
-        font-weight: 300;
-        font-size: 1.2rem;
+        font-size: var(--fontSize-2);
+        font-weight: var(--fontWeight-light);
     }
 }
 
-@media only screen and (max-width: 380px) {
-    .about h2 {
-        font-size: 2rem;
-    }
-
-    #slideshow {
-        display: none;
-    }
+@media only screen and (max-width: 400px) {
+    #slideshow { display: none; }
 }

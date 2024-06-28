@@ -1,17 +1,16 @@
 .footer-upper {
-    width: 100vw;
+    width: var(--width-screen);
     height: 65px;
     vertical-align: baseline;
     text-align: left;
-    background-color: black;
-    color: white;
-    font-size: 30px;
-    font-family: 'Outrun';
+    background-color: var(--theme-bg);
+    color: var(--theme-fg);
+    font-family: var(--fontFamily-Diatype);
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    max-width: 1200px;
+    max-width: var(--width-l);
 }
 
 .footer-upper__text {
@@ -19,12 +18,12 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    background: black;
+    background: var(--theme-bg);
 }
 
 .footer-upper__text h1 {
     padding-left: 20px;
-    font-size: 18px;
+    font-size: var(--fontSize-2);
 }
 
 .social-buttons {
@@ -40,13 +39,13 @@
 }
 
 .footer-lower {
-    background-color: white;
+    background-color: var(--theme-fg);
     padding-right: 30px;
     padding-left: 20px;
     padding-top: 6px;
     padding-bottom: 5px;
-    width: 100%;
-    max-width: 1200px;
+    width: var(--width-max);
+    max-width: var(--width-l);
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -54,13 +53,13 @@
 
 .footer-lower a {
     font-family: 'Diatype';
-    font-size: 13px;
-    font-weight:300;
-    color: black;
+    font-size: var(--fontSize-0);
+    font-weight: var(--fontWeight-light);
+    color: var(--theme-bg);
 }
 
 .footer-content-container {
-    background-color: black;
+    background-color: var(--theme-bg);
     display: flex;
     justify-content: center;
     flex-direction: row;
@@ -72,20 +71,20 @@ footer {
 }
 
 .version-txt {
-    color: aliceblue;
+    color: var(--theme-fg);
     font-family: Arial;
     padding-left: 30px;
     font-weight: normal;
-    font-size: 15px;
+    font-size: var(--fontSize-0);
     padding-top: 7.5px;
     margin: 0;
 }
 
 .footer-lower p {
-    font-family: 'Diatype';
-    font-size: 13px;
-    font-weight:300;
-    color: black;
+    font-family: var(--fontFamily-Diatype);
+    font-size: var(--fontSize-0);
+    font-weight: var(--fontWeight-light);
+    color: var(--theme-bg);
     margin: 0;
 }
 
@@ -96,9 +95,9 @@ footer {
     }
 }
 
-@media only screen and (max-width: 380px) {
+@media only screen and (max-width: 390px) {
     .footer-upper__text h1 {
-        font-size: 1rem;
+        font-size: var(--fontSize-1);
     }
 
     .version-txt {

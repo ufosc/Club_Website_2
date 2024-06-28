@@ -30,9 +30,9 @@ export default function ProjectCard(props: { data: any, index: number }) {
   return (
     <div className='project-card'>
       <div className='project-card-title' style={{ borderLeftColor: color }}>
-        <h2>{props.data.title}</h2>
+        <h1>{props.data.title}</h1>
       </div>
-      <h3>{props.data.description}</h3>
+      <h2>{props.data.description}</h2>
       <div style={{ margin: "20px 0", display: "flex" }}>
         {
           props.data.tags.map((tag: string) => (

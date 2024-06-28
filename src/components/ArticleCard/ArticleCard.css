@@ -11,25 +11,25 @@
     background-color: #2AB6BC;
 }
 
-.card-container:hover h2 {
-    color: black;
+.card-container:hover h1 {
+    color: var(--theme-bg);
 }
 
-.card-container:hover h3 {
-    color: black;
+.card-container:hover h2 {
+    color: var(--theme-bg);
 }
 
 .card-container:active {
     transform: translateY(3px);
 }
 
-.card-container h2 {
-    font-size: 1.5rem;
+.card-container h1 {
+    font-size: var(--fontSize-3);
     margin: 5px 0;
 }
 
-.card-container h3 {
-    font-size: 1rem;
+.card-container h2 {
+    font-size: var(--fontSize-1);
     margin: 5px 0;
 }
 

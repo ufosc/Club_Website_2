@@ -4,10 +4,10 @@ import { StaticImage } from "gatsby-plugin-image"
 
 const AboutSection = () => (
   <section>
-    <h2 className="section-heading">UF Open Source Club</h2>
+    <h1 className="section-heading">UF Open Source Club</h1>
     <div className="section-root about-container">
       <div>
-        <h3 style={{ fontWeight: 300, paddingTop: 15 }}>
+        <h2 style={{ fontWeight: 300, paddingTop: 15 }}>
           The Open Source Club (OSC) at the University of Florida is a
           community of makers who want to solve problems and improve
           our world through open source projects. The club was founded
@@ -18,7 +18,7 @@ const AboutSection = () => (
               </Link> Join us at casual codings, where we work on open source
           projects, do homework, or just hang
           out.
-        </h3>
+        </h2>
         <div style={{ marginTop: 20 }}>
           <button onClick={ () => navigate("https://discord.gg/Gsxej6u") }
             style={{ marginLeft: 0 }}>
@@ -33,6 +33,7 @@ const AboutSection = () => (
         <StaticImage
           src="../../images/group_photo.jpg"
           width={600}
+          height={400}
           alt="Club Group Photo"
           className="club-group-photo"
           loading="lazy"

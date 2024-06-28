@@ -30,9 +30,9 @@ export default function ContactSection() {
 
   return (
     <section id='get-in-touch'>
-      <h2 className="section-heading" style={{ marginBottom: 20 }}>
+      <h1 className="section-heading" style={{ marginBottom: 20 }}>
         Get in touch
-      </h2>
+      </h1>
       <div className="contact-form">
         <form onSubmit={onSubmit}>
           <label for="email">Email Address</label>
@@ -70,13 +70,13 @@ export default function ContactSection() {
           </div>
           <input type="submit" value="Submit" />
         </form>
-        <h3 id="contact-form__meta">
+        <h2 id="contact-form__meta">
           We're here to help! If you have any questions, suggestions, or
           comments about the Open Source Club, please feel free to reach out
           to us using the contact form to the left. Our team is dedicated to
           provided the best experience for our members, and we value your
           feedback.
-        </h3>
+        </h2>
       </div>
     </section>
   )

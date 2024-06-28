@@ -15,8 +15,8 @@ export default function ArticleCard(props: { data: any }) {
       <div style={{ maxWidth: 300, height: 200 }}>
         <GatsbyImage image={img!} alt={props.data.subtitle} />
       </div>
-      <h2>{props.data.title}</h2>
-      <h3 style={{ fontWeight: "bold" }}>
+      <h1>{props.data.title}</h1>
+      <h2 style={{ fontWeight: "bold" }}>
         {
           props.data.author.map((author: string, i: number) => {
             if (i == props.data.author.length - 1) {
@@ -25,9 +25,9 @@ export default function ArticleCard(props: { data: any }) {
             return author + ", "
           })
         }
-      </h3>
-      <h3>{props.data.subtitle}</h3>
-      <h3>{props.data.date}</h3>
+      </h2>
+      <h2>{props.data.subtitle}</h2>
+      <h2>{props.data.date}</h2>
     </div>
   )
 }

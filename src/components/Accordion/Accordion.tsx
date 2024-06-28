@@ -23,7 +23,7 @@ export const AccordionItem = (props: { children?: any, prompt?: string }) => {
   return (
     <div className='accordion-item'>
       <div className='accordion-item--trigger' onClick={() => setIsOpen(!isOpen)}>
-        <h3>{props.prompt}</h3>
+        <h2>{props.prompt}</h2>
         <ChevronDown style={chevronStyle()} />
       </div>
       {

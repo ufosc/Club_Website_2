@@ -20,8 +20,8 @@ const ProjectsPage: React.FC<PageProps> = (props: { data: any }) => {
         <div className='projects__projects'>
           { cards }
           <div className='projects__projects__meta'>
-            <h2> Projects </h2>
-            <h3 style={{ marginTop: 10 }}>
+            <h1> Projects </h1>
+            <h2 style={{ marginTop: 10 }}>
               At the beginning of every semester, members present their work
               or propose new project ideas. If enough people are interested
               in a project, it is adopted by the club and tech-leads are
@@ -29,7 +29,7 @@ const ProjectsPage: React.FC<PageProps> = (props: { data: any }) => {
               <br /><br />
               All projects are hosted on GitHub under permissive, open source
               licenses.
-            </h3>
+            </h2>
           </div>
         </div>
       </div>

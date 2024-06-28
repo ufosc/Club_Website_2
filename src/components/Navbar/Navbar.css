@@ -1,13 +1,5 @@
-:root {
-    --light-gray: #DBDBDB;
-    --light-black: #161B22;
-    --gray: #979797;
-    --blue-accent: #374BFE;
-    --turquoise-accent: #2AB6BC;
-}
-
 #navigation-bar-parent {
-    background: black;
+    background: var(--theme-bg);
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -17,8 +9,8 @@
 #navigation-bar {
     margin: 0;
     padding: 0;
-    width: 100vw;
-    max-width: 1200px;
+    width: var(--width-screen);
+    max-width: var(--width-l);
     height: 70px;
     list-style: none;
     display: flex;
@@ -26,11 +18,11 @@
     justify-content: flex-end;
     flex-direction: row;
     gap: 30px;
-    background-color: black;
-    font-family: "Diatype";
-    font-weight: 500;
-    font-size: 0.85rem;
-    color: white;
+    background-color: var(--theme-bg);
+    font-family: var(--fontFamily-Diatype);
+    font-weight: var(--fontWeight-regular);
+    font-size: var(--fontSize-0);
+    color: var(--theme-fg);
 }
 
 #navigation-bar > li > a {
@@ -40,9 +32,9 @@
 #navbar-title {
     margin-right: auto;
     margin-left: 30px;
-    font-family: "Outrun";
-    font-size: 1.75rem;
-    font-weight: bold;
+    font-family: var(--fontFamily-Outrun);
+    font-size: var(--fontSize-4);
+    font-weight: var(--fontWeight-bold);
 }
 
 #navbar-member-item {
@@ -51,9 +43,9 @@
     align-items: center;
     height: 100%;
     margin-right: 30px;
-    background-color: #76f936;
-    font-weight: 400;
-    font-size: 0.85rem;
+    background-color: var(--theme-primary);
+    font-weight: var(--fontWeight-regular);
+    font-size: var(--fontSize-0);
 }
 
 .menu > .navbar-item {
@@ -63,11 +55,11 @@
 #navbar-member-item > a, #navbar-member-item > a:visited, #navbar-member-item > a:link {
     text-align: center;
     padding: 0 20px 0 20px;
-    color: black;
+    color: var(--theme-bg);
 }
 
 .navbar-item > a, .navbar-item > a:visited, .navbar-item > a:link {
-    color: white;
+    color: var(--theme-fg);
 }
 
 .menu {
@@ -80,7 +72,7 @@
 
 .menu hr {
     display: none;
-    color: white;
+    color: var(--theme-fg);
 }
 
 .menu-btn {
@@ -110,11 +102,11 @@
 /* ---- for devices under 730 px (tablet view) -------*/
 @media only screen and (min-width: 600px) and (max-width: 800px) {
     #navbar-title {
-        font-size: 1rem;
+        font-size: var(--fontSize-1);
     }
 
     .navbar-item {
-	font-size: 0.7rem;
+	font-size: var(--fontSize-0);
 	margin-left: 15px;
     }
 
@@ -124,7 +116,7 @@
 }
 
 /* only enables highlighting and animation on larger screens */
-@media only screen and (min-width: 601px) {
+@media only screen and (min-width: 650px) {
     .menu > .navbar-item:hover::after {
         position: absolute;
         border-bottom: 2px solid var(--turquoise-accent);
@@ -137,7 +129,7 @@
 
     #navbar-member-item {
         background-size: 200% 200%;
-        background-image: linear-gradient(to top, var(--blue-accent) 50%, var(--turquoise-accent) 0);
+        background-image: linear-gradient(to top, var(--theme-dark-blue) 50%, var(--theme-secondary) 0);
         background-position: top;
         transition: background-position 0.5s ease;
     }
@@ -166,26 +158,29 @@
         position: absolute;
         flex-direction: column;
         top: 70px;
-        background-color: black;
+        background-color: var(--theme-bg);
         height: auto;
-        width: 100%;
+        width: var(--width-max);
         padding: 10px;
         transition: 0.3s ease-in-out;
     }
 
     .menu hr {
         margin-top: -10px;
-        width: 100%;
+        width: var(--width-max);
     }
 
     #navbar-member-item {
-        background-color: transparent;
+        background: none;
+        text-align: center;
+        margin-left: 15px;
         margin-right: 0;
-        width: 100%;
+        width: var(--width-max);
     }
 
-    #navbar-member-item > a, #navbar-member-item > a:visited, #navbar-member-item > a:link {
+    #navbar-member-item > a, #navbar-member-item > a:visited,
+    #navbar-member-item > a:link {
         color: white;
-        font-weight: 600;
+        font-weight: 500;
     }
 }

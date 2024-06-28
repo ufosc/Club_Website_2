@@ -1,5 +1,5 @@
 #blog-layout {
-    background: black;
+    background: var(--theme-bg);
     min-height: calc(100vh - 70px - 80px); /* 100vh minus navbar minus footer. */
     display: flex;
     flex-direction: column;
@@ -9,8 +9,8 @@
 #blog-content {
     display: flex;
     flex-direction: column;
-    width: 100%;
-    max-width: 1200px;
+    width: var(--width-max);
+    max-width: var(--width-l);
     padding: 30px;
 }
 
@@ -48,7 +48,7 @@
     }
 
     #blog-posts .card-container img {
-        width: 100%;
+        width: var(--width-max);
         height: 200px;
         object-fit: cover;
     }

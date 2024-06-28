@@ -11,7 +11,7 @@ import ArticleCard from '../components/ArticleCard/ArticleCard'
 const Articles = (props: { nodes: any }) => {
   if (props.nodes.length === 0) {
     return (
-      <h3 id='no-posts-yet'>No posts yet! Please check back later.</h3>
+      <h2 id='no-posts-yet'>No posts yet! Please check back later.</h2>
     )
   }
 
@@ -31,7 +31,7 @@ const BlogPage: React.FC<PageProps> = (props: { data: any }) => {
     <Layout>
       <div id='blog-layout'>
         <div id='blog-content'>
-          <h2 className='section-heading'>News</h2>
+          <h1 className='section-heading'>News</h1>
           <Articles nodes={props.data.allMarkdownRemark.nodes} />
         </div>
       </div>

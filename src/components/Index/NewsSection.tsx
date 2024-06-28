@@ -31,9 +31,9 @@ export default function NewsSection(props: { nodes: any }) {
                   <GatsbyImage image={img} style={{ borderRadius: 30 }} width={470} />
                   <div className='slide-meta'>
                     <Badge> ANNOUNCEMENT </Badge>
-                    <h2 style={{ marginTop: 10 }}>{frontmatter.title}</h2>
-                    <h3>{frontmatter.subtitle}</h3>
-                    <h3>{frontmatter.date}</h3>
+                    <h1 style={{ marginTop: 10 }}>{frontmatter.title}</h1>
+                    <h2>{frontmatter.subtitle}</h2>
+                    <h2>{frontmatter.date}</h2>
                     <button className='secondary' onClick={onClick}>
                       LEARN MORE
                     </button>

@@ -5,9 +5,9 @@ import { Accordion, AccordionItem } from '../Accordion/Accordion'
 const FAQSection = () => (
   <section id='faq-section'>
     <div className="section-root">
-      <h2 className="section-heading">
+      <h1 className="section-heading">
         Frequently Asked Questions
-      </h2>
+      </h1>
       <button
         className='tertiary'
         style={{ marginBottom: 30 }}

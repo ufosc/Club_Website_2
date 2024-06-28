@@ -18,7 +18,7 @@ export default function () {
         <div className="footer-content-container">
           <div className='footer-upper'>
             <div className='footer-upper__text'>
-              <h1> UF OSC </h1>
+              <h1 className="title-txt">UF OSC</h1>
               <p className="version-txt">
                 { version }
               </p>

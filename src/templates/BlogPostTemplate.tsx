@@ -20,10 +20,10 @@ const ArticleBody: React.FC<ArticleBodyPrompts> = ({ data, children }) => {
     <div className="article-layout">
       <div className="article-layout__matter">
         <div className="article-layout__matter__meta">
-          <h3 className="date">{frontmatter.date}</h3>
-          <h2>{frontmatter.title}</h2>
-          <h3 className="subtitle">{frontmatter.subtitle}</h3>
-          <h3 className="author">
+          <h2 className="date">{frontmatter.date}</h2>
+          <h1>{frontmatter.title}</h1>
+          <h2 className="subtitle">{frontmatter.subtitle}</h2>
+          <h2 className="author">
             {
               frontmatter.author.map((author: string, i: number) => {
                 if (i == frontmatter.author.length - 1) {
@@ -32,7 +32,7 @@ const ArticleBody: React.FC<ArticleBodyPrompts> = ({ data, children }) => {
                 return author + ", "
               })
             }
-          </h3>
+          </h2>
         </div>
         <GatsbyImage image={img!} alt={ frontmatter.subtitle } />
         <div id="inner-html" dangerouslySetInnerHTML={{
@@ -43,7 +43,7 @@ const ArticleBody: React.FC<ArticleBodyPrompts> = ({ data, children }) => {
       <div className="article-layout__recc">
         {
           (data.previous !== null || data.next !== null) ?
-            (<h3> Read More </h3>) : null
+            (<h2> Read More </h2>) : null
         }
         <div className="article-layout__recc__articles">
           {

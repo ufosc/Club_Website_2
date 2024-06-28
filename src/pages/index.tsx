@@ -18,7 +18,7 @@ import ContactSection from '../components/Index/ContactSection'
 import FAQSection from '../components/Index/FAQSection'
 
 const IndexPage: React.FC<PageProps> = (props: { data: any }) => (
-  <Layout >
+  <Layout>
     <AnimationSection />
     <div id='section-root'>
       <NewsSection nodes={props.data.news.nodes} />

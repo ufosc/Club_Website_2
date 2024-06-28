@@ -27,8 +27,8 @@ const AboutPage: React.FC<PageProps> = () => {
               <Overlay className="slide-img">
                 <StaticImage src={GameNightImage} alt="OSC Game Night" width={1200} />
                 <div className="slide-img__meta">
-                  <h2> Game Night Social </h2>
-                  <h3> Spring 2024 - Game Night Social at UF Little Hall. </h3>
+                  <h1> Game Night Social </h1>
+                  <h2> Spring 2024 - Game Night Social at UF Little Hall. </h2>
                 </div>
               </Overlay>
             </Slide>
@@ -36,10 +36,10 @@ const AboutPage: React.FC<PageProps> = () => {
               <Overlay className="slide-img">
                 <StaticImage src={SoccerImage} alt="OSC Intramural Soccer Team" width={1200} />
                 <div className="slide-img__meta">
-                  <h2> Intramural Soccer Team </h2>
-                  <h3>
+                  <h1> Intramural Soccer Team </h1>
+                  <h2>
                     Fall 2023 - Post-game photo of the OSC Intramural soccer team.
-                  </h3>
+                  </h2>
                 </div>
               </Overlay>
             </Slide>
@@ -47,8 +47,8 @@ const AboutPage: React.FC<PageProps> = () => {
               <Overlay className="slide-img">
                 <StaticImage src={CareerImage} alt="OSC at the UF Career Fair" width={1200} />
                 <div className="slide-img__meta">
-                  <h2> Career Fair </h2>
-                  <h3> Fall 2023 - OSC at the O'Connell Center Career Fair. </h3>
+                  <h1> Career Fair </h1>
+                  <h2> Fall 2023 - OSC at the O'Connell Center Career Fair. </h2>
                 </div>
               </Overlay>
             </Slide>
@@ -56,8 +56,8 @@ const AboutPage: React.FC<PageProps> = () => {
               <Overlay className="slide-img">
                 <StaticImage src={CasualCodingImage} alt="OSC at Casual Coding" width={1200} />
                 <div className="slide-img__meta">
-                  <h2> OSC Mini-Hackathon </h2>
-                  <h3> Spring 2024 - Members participating in the first OSC Mini-Hackathon. </h3>
+                  <h1> OSC Mini-Hackathon </h1>
+                  <h2> Spring 2024 - Members participating in the first OSC Mini-Hackathon. </h2>
                 </div>
               </Overlay>
             </Slide>
@@ -65,19 +65,19 @@ const AboutPage: React.FC<PageProps> = () => {
               <Overlay className="slide-img">
                 <StaticImage src={CasualCodingImage2} alt="OSC at Casual Coding" width={1200} />
                 <div className="slide-img__meta">
-                  <h2> Casual Coding </h2>
-                  <h3>
+                  <h1> Casual Coding </h1>
+                  <h2>
                     Fall 2023 - A new member has their first ever pull request accepted by
                     an OSC maintainer.
-                  </h3>
+                  </h2>
                 </div>
               </Overlay>
             </Slide>
           </Slideshow>
         </section>
         <section>
-          <h2>The Open Source Club</h2>
-          <h3 style={{ marginTop: 20 }}>
+          <h1>The Open Source Club</h1>
+          <h2 style={{ marginTop: 20 }}>
             The Open Source Club (OSC) at the University of Florida is a
             community of makers who want to solve problems and improve
             our world through open source projects. The club was founded
@@ -92,11 +92,11 @@ const AboutPage: React.FC<PageProps> = () => {
             projects, or just hanging out. Ocassionaly, it also hosts
             resume reviews, guest speakers from tech companies, and
             competitive hackathons.
-          </h3>
+          </h2>
         </section>
         <section>
-          <h2>Why join OSC?</h2>
-          <h3 style={{ marginTop: 20 }}>
+          <h1>Why join OSC?</h1>
+          <h2 style={{ marginTop: 20 }}>
             Joining the Open Source Club is a great way to gain experience
             for your CV and develop a strong project portfolio. Working on
             open source projects or leading a group as a tech-lead positively
@@ -107,13 +107,13 @@ const AboutPage: React.FC<PageProps> = () => {
             The club is also a fun way to meet up and network with people
             with common interests. We frequently host social events or
             hackathons in Gainesville for members to participate in.
-          </h3>
+          </h2>
         </section>
         <section>
-          <h2>Casual Coding</h2>
+          <h1>Casual Coding</h1>
           <div id='casual-coding'>
             <div>
-              <h3>
+              <h2>
                 Casual coding is when the Open Source Club meets in person
                 to work on open source code, plan or propose projects, or
                 to just hang out. It takes place twice a week throughout the
@@ -121,7 +121,7 @@ const AboutPage: React.FC<PageProps> = () => {
                 semester, they are announced at the beginning of every semester
                 and are posted on Discord before each meeting. Keep an eye
                 out on the Discord or news page for more details.
-              </h3>
+              </h2>
               <button
                 style={{ marginTop: 40 }}
                 onClick={ () => navigate("https://discord.gg/Gsxej6u") }>
@@ -137,7 +137,7 @@ const AboutPage: React.FC<PageProps> = () => {
           </div>
         </section>
         <section id='frequently-asked-questions'>
-          <h2>Frequently Asked Questions</h2>
+          <h1>Frequently Asked Questions</h1>
           <Accordion>
             <AccordionItem prompt="Do I need to know programming?">
               No, but most projects require that you be willing to learn.
@@ -244,13 +244,13 @@ const AboutPage: React.FC<PageProps> = () => {
           </Accordion>
         </section>
         <section>
-          <h2>Resources</h2>
-          <h3>
+          <h1>Resources</h1>
+          <h2>
             The club maintains extensive project documentation, planning
             information, education resources, and meeting archives
             (recordings, transcripts, etc.). It is available at &nbsp;
             <Link to="https://docs.ufosc.org">docs.ufosc.org</Link>.
-          </h3>
+          </h2>
         </section>
       </div>
     </Layout>

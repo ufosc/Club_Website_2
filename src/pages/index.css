@@ -1,17 +1,17 @@
 .slide-content {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    max-width: 1100px;
+    max-width: var(--width-l);
     height: 400px;
 }
 
-.slide-content h2 {
-    font-size: 1.5rem;
+.slide-content h1 {
+    font-size: var(--fontSize-3);
     text-align: center;
     margin: 5px 0;
 }
 
-.slide-content h3 {
+.slide-content h2 {
     text-align: center;
     margin: 5px 0;
 }
@@ -29,12 +29,12 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: black;
+    background: var(--theme-bg);
 }
 
 #section-root section {
-    width: 100%;
-    max-width: 1100px;
+    width: var(--width-max);
+    max-width: var(--width-l);
     padding: 30px 15px;
 }
 
@@ -64,30 +64,15 @@
 .club-group-photo {
     margin: 10px;
     border-radius: 23px;
-    width: 100%;
-}
-
-#faq-section,section a {
-    text-decoration-color: #e056fd;
-    color: #e056fd;
-}
-
-#faq-section,section a:link {
-    text-decoration-color: #e056fd;
-    color: #e056fd;
-}
-
-#faq-section,section a:visited {
-    text-decoration-color: #e056fd;
-    color: #e056fd;
+    width: var(--width-max);
 }
 
 #infinite-scroll-heading {
     display: flex;
     justify-content: flex-start;
     margin: 0 auto;
-    max-width: 1100px;
-    width: 100%;
+    max-width: var(--width-l);
+    width: var(--width-max);
     margin-bottom: 20px;
     padding: 0px 15px;
 }
@@ -104,14 +89,14 @@
 
 .infinite-scroll img {
     border-radius: 23px;
-    max-width: 100%;
+    max-width: var(--width-max);
 }
 
 .infinite-scroll .card {
-    width: 100%;
+    width: var(--width-max);
     height: 100%;
     border-radius: 23px;
-    background: #1B1622;
+    background: var(--theme-dimmer);
     padding: 20px;
     display: flex;
     flex-direction: column;
@@ -119,18 +104,18 @@
     align-items: center;
 }
 
-.infinite-scroll .card h2 {
-    font-size: 2rem;
+.infinite-scroll .card h1 {
+    font-size: var(--fontSize-4);
     text-align: center;
 }
 
-.infinite-scroll .card h3 {
-    font-size: 1rem;
+.infinite-scroll .card h2 {
+    font-size: var(--fontSize-1);
     text-align: center;
 }
 
 .infinite-scroll__image__meta {
-    width: 100%;
+    width: var(--width-max);
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -139,13 +124,13 @@
     padding: 20px;
 }
 
-.infinite-scroll__image__meta h2 {
-    font-size: 1.5rem;
+.infinite-scroll__image__meta h1 {
+    font-size: var(--fontSize-3);
     text-align: left;
 }
 
-.infinite-scroll__image__meta h3 {
-    font-size: 1rem;
+.infinite-scroll__image__meta h2 {
+    font-size: var(--fontSize-1);
     text-align: left;
 }
 
@@ -154,8 +139,8 @@
     flex-direction: column;
     justify-content: flex-start;
     margin: 20px auto;
-    max-width: 1100px;
-    width: 100%;
+    max-width: var(--width-l);
+    width: var(--width-max);
     margin-bottom: 20px;
     padding: 0px 15px;
 }
@@ -175,7 +160,7 @@
 }
 
 #contact-form__meta {
-    font-weight: 300;
+    font-weight: var(--fontWeight-light);
 }
 
 .about-container {
@@ -185,14 +170,14 @@
 }
 
 @media only screen and (max-width: 850px) {
-    .slide-content h2 {
-        font-size: 1.2rem;
+    .slide-content h1 {
+        font-size: var(--fontSize-2);
         text-align: center;
         margin: 5px 0;
     }
 
-    .slide-content h3 {
-        font-size: 1.2rem;
+    .slide-content h2 {
+        font-size: var(--fontSize-2);
         text-align: center;
         margin: 5px 0;
     }
@@ -202,7 +187,7 @@
     }
 
     .about-container h3 {
-        font-size: 1.2rem;
+        font-size: var(--fontSize-2);
     }
 
     .about-container {
@@ -212,7 +197,7 @@
 
     .about-container img {
         max-height: 400px;
-        width: 100%;
+        width: var(--width-max);
         object-fit: cover;
     }
 }
@@ -267,11 +252,7 @@
         width: 150px;
     }
 
-    #contact-form__meta {
-        max-width: 85vw;
-    }
-
-    form {
+    #contact-form__meta, form {
         max-width: 85vw;
     }
 }
