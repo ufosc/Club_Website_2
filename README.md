@@ -4,15 +4,15 @@
 <img src="https://i.imgur.com/5k2EIUA.png" width="90%" height="90%" />
 
 <h3>
-  
-[Homepage](https://ufosc.org) | [Documentation](https://docs.ufosc.org/docs/osc-docs) | [Discord](https://discord.com/invite/Gsxej6u)
+
+[Homepage](https://ufosc.org) | [Documentation](https://docs.ufosc.org/docs/website) | [Discord](https://discord.com/invite/Gsxej6u)
 
 </h3>
 
-![GitHub issues](https://img.shields.io/github/issues-raw/ufosc/Club_Website_2) 
-![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/ufosc/Club_Website_2/gatsby.yml?label=ghpages) 
-![GitHub package.json version](https://img.shields.io/github/package-json/v/ufosc/Club_Website_2) 
-![GitHub](https://img.shields.io/github/license/ufosc/Club_Website_2) 
+![GitHub issues](https://img.shields.io/github/issues-raw/ufosc/Club_Website_2)
+![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/ufosc/Club_Website_2/gatsby.yml?label=ghpages)
+![GitHub package.json version](https://img.shields.io/github/package-json/v/ufosc/Club_Website_2)
+![GitHub](https://img.shields.io/github/license/ufosc/Club_Website_2)
 
 Website for the UF Open Source Club. Started in the Fall semester 2022, this website is built and maintained by club members to serve as a hub of information for the club.
 </div>
@@ -53,11 +53,11 @@ Current Maintainers:
 - Daniel Wildsmith [danielwildsmith](https://github.com/danielwildsmith)
 
 ## Documentation
-Documentation is available online at [docs.ufosc.org](https://docs.ufosc.org/docs/osc-docs). Please see the [osc-docs](https://github.com/ufosc/osc-docs) project if you're interested in helping with documentation.
+Documentation is available online at [docs.ufosc.org](https://docs.ufosc.org/docs/website). Please see the [osc-docs](https://github.com/ufosc/osc-docs) project if you're interested in helping with documentation.
 
 ## Contributing
 All contributions are welcome and appreciated, we're always looking for new ideas or improvements. If you're interested in helping, please see the GitHub issues page for tasks that need help. Alternatively, you may propose new ideas by opening new issues. Contributors should read the [contribution guidelines](CONTRIBUTING.md).
 
 ## License
-[AGPL-3.0-or-later](LICENSE.md) <br/>
+[AGPL-3.0-or-later](LICENSE) <br/>
 Copyright (C) 2024 Open Source Club
