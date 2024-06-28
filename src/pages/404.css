@@ -1,0 +1,14 @@
+.not-found-page {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    align-items: center;
+    justify-content: center;
+    min-height: 80vh;
+}
+
+.not-found-page--text {
+    color: var(--theme-bg);
+    text-align: center;
+    margin: 15px 0;
+}

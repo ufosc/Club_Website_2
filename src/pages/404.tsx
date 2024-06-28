@@ -1,49 +1,30 @@
-import * as React from "react"
-import { Link, HeadFC, PageProps } from "gatsby"
+import '../global.css'
+import "./404.css"
 
-const pageStyles = {
-  color: "#232129",
-  padding: "96px",
-  fontFamily: "-apple-system, Roboto, sans-serif, serif",
-}
-const headingStyles = {
-  marginTop: 0,
-  marginBottom: 64,
-  maxWidth: 320,
-}
+import React from "react"
+import { HeadFC, PageProps } from "gatsby"
+import SEO from '../components/SEO'
+import Layout from '../components/Layout'
+import { Link } from "gatsby"
+import { StaticImage } from "gatsby-plugin-image"
 
-const paragraphStyles = {
-  marginBottom: 48,
-}
-const codeStyles = {
-  color: "#8A6534",
-  padding: 4,
-  backgroundColor: "#FFF4DB",
-  fontSize: "1.25rem",
-  borderRadius: 4,
-}
+const Image404 = "../images/404.jpg"
 
-const NotFoundPage: React.FC<PageProps> = () => {
-  return (
-    <main style={pageStyles}>
-      <h1 style={headingStyles}>Page not found</h1>
-      <p style={paragraphStyles}>
-        Sorry 😔, we couldn’t find what you were looking for.
-        <br />
-        {process.env.NODE_ENV === "development" ? (
-          <>
-            <br />
-            Try creating a page in <code style={codeStyles}>src/pages/</code>.
-            <br />
-          </>
-        ) : null}
-        <br />
-        <Link to="/">Go home</Link>.
+const NotFoundPage: React.FC<PageProps> = () => (
+  <Layout>
+    <div className="not-found-page">
+      <div style={{ width: 200, maxWidth: "100%" }}>
+        <StaticImage src={Image404} width={200} alt="Page not found" />
+      </div>
+      <h2 className="not-found-page--text">Error 404: Not Found</h2>
+      <p className="not-found-page--text">
+        The requested resource does not exist or has permanently moved. If
+        you believe this is an error, please <Link to="/#get-in-touch">contact us</Link> or file an issue on
+        <Link to="https://github.com/ufosc/Club_Website_2"> GitHub </Link>
       </p>
-    </main>
-  )
-}
+    </div>
+  </Layout>
+)
 
 export default NotFoundPage
-
-export const Head: HeadFC = () => <title>Not found</title>
+export const Head: HeadFC = () => <SEO title={"404 Not Found | UF Open Source Club"} />
