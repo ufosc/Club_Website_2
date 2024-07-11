@@ -75,6 +75,8 @@ jobs:
             ${{ runner.os }}-gatsby-build-
       - name: Install dependencies
         run: npm ci --force
+      - name: Lint Typescript Files
+        run: npm run lint
       - name: Build with Gatsby
         env:
           PREFIX_PATHS: 'true'

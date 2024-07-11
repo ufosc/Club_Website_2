@@ -1,6 +1,6 @@
 {
   "name": "Club_Website_2",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "private": true,
   "description": "Club_Website_2",
   "author": "zeim839",
@@ -14,8 +14,8 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "typecheck": "tsc --noEmit",
-    "lint": "npx tslint ./*.ts",
-    "fix": "npx tslint --fix ./*.ts"
+    "lint": "npx tslint -c tslint.json \"src/**/*.ts?(x)\"",
+    "fix": "npx tslint -c tslint.json --fix \"src/**/*.ts?(x)\""
   },
   "dependencies": {
     "@mdx-js/react": "^3.0.1",
