@@ -1,7 +1,9 @@
 import path from 'path'
 import { createFilePath } from 'gatsby-source-filesystem'
 
-const createBlog = async (createPage: Function, reporter: any, graphql: Function) => {
+const createBlog = async (
+  createPage: Function, reporter: any, graphql: Function
+) => {
 
   // Define the template for blog post.
   const blogPost = path.resolve('./src/templates/BlogPostTemplate.tsx')
@@ -30,9 +32,11 @@ const createBlog = async (createPage: Function, reporter: any, graphql: Function
 
   const posts = result.data.allMarkdownRemark.nodes
 
-  // Create blog posts pages
-  // But only if there's at least one markdown file found at "content/blog" (defined in gatsby-config.js)
-  // `context` is available in the template as a prop and as a variable in GraphQL
+  // Create blog posts pages.
+  // But only if there's at least one markdown file found at
+  // "content/blog" (defined in gatsby-config.js).
+  // `context` is available in the template as a prop and as
+  // a variable in GraphQL.
   if (posts.length <= 0) {
     return
   }
@@ -52,7 +56,9 @@ const createBlog = async (createPage: Function, reporter: any, graphql: Function
   })
 }
 
-const createProjects = async (createPage: Function, reporter: any, graphql: Function) => {
+const createProjects = async (
+  createPage: Function, reporter: any, graphql: Function
+) => {
 
   // Define the template for blog post.
   const projectTemplate = path.resolve('./src/templates/ProjectTemplate.tsx')

@@ -13,7 +13,7 @@ export default function ProjectSection(props: { nodes: any }) {
     nodes = nodes.slice(0, 6)
   }
 
-  let cards : Array<any> = []
+  const cards : any[] = []
   for (let i = 0; i < nodes.length; ++i) {
     cards.push((<ProjectCard index={i} data={nodes[i].frontmatter} />))
   }

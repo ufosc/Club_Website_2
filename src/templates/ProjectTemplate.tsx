@@ -12,7 +12,8 @@ interface ProjectTemplateProps {
   children: any;
 }
 
-const ProjectTemplate : React.FC<ProjectTemplateProps> = ({ data, children }) => (
+const ProjectTemplate :
+React.FC<ProjectTemplateProps> = ({ data, children }) => (
   <Layout>
     <MDXProvider>
       { children }

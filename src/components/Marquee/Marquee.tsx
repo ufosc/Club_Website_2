@@ -122,19 +122,23 @@ type MarqueeProps = {
    */
   gradientWidth?: number | string;
   /**
-   * @description A callback for when the marquee finishes scrolling and stops. Only calls if loop is non-zero.
+   * @description A callback for when the marquee finishes scrolling
+   * and stops. Only calls if loop is non-zero.
    * @type {() => void}
    * @default null
    */
   onFinish?: () => void;
   /**
-   * @description A callback for when the marquee finishes a loop. Does not call if maximum loops are reached (use onFinish instead).
+   * @description A callback for when the marquee finishes a loop. Does
+   * not call if maximum loops are reached (use onFinish instead).
    * @type {() => void}
    * @default null
    */
   onCycleComplete?: () => void;
   /**
-   * @description: A callback function that is invoked once the marquee has finished mounting. It can be utilized to recalculate the page size, if necessary.
+   * @description: A callback function that is invoked once the marquee
+   * has finished mounting. It can be utilized to recalculate the page
+   * size, if necessary.
    * @type {() => void}
    * @default null
    */

@@ -38,7 +38,7 @@ export const Slideshow = (props: { children: any, period?: number }) => {
   }
 
   const SlideIndices = () => {
-    let rows : any = []
+    const rows : any = []
     for (let i = 0; i < props.children.length; i++) {
       if (i !== select) {
         rows.push((
@@ -75,7 +75,7 @@ export const Slideshow = (props: { children: any, period?: number }) => {
           // Rendering the child directly (e.g. props.children[select])
           // means we re-download images every time they are rendered.
           props.children.map((child: any, i: number) => {
-            if (i == select) {
+            if (i === select) {
               return (<div style={{ width: "100%" }}>{ child }</div>)
             }
             return (

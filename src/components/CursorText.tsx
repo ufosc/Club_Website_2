@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react"
 import Typewriter from "typewriter-effect"
 
-export default function CursorText(props: { batch: Array<string> }) {
+export default function CursorText(props: { batch: string[] }) {
   return (
     <div style={{ width: "var(--width-max)", height: 80 }}>
       <Typewriter

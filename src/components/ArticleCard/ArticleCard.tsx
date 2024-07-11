@@ -19,7 +19,7 @@ export default function ArticleCard(props: { data: any }) {
       <h2 style={{ fontWeight: "bold" }}>
         {
           props.data.author.map((author: string, i: number) => {
-            if (i == props.data.author.length - 1) {
+            if (i === props.data.author.length - 1) {
               return author
             }
             return author + ", "

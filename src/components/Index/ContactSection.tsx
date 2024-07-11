@@ -23,7 +23,7 @@ export default function ContactSection() {
     setForm({ ...form, [field]: event.target.value})
   }
 
-  const onSubmit = (event: { preventDefault: Function }) => {
+  const onSubmit = (event: { preventDefault: () => any }) => {
     event.preventDefault()
     alert("Contact form is temporarily unavailable")
   }

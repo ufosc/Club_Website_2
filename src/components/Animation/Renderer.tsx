@@ -102,8 +102,13 @@ function generateIndexedWithOffsetPointcloud
 }
 
 export default function(props: { speed: number, scale: number }) {
-    let camera: any, renderer: any, scene: any,
-clock: any, raycaster: any, pointer: any, rotateY : any
+  let camera: any
+  let renderer: any
+  let scene: any
+  let clock: any
+  let raycaster: any
+  let pointer: any
+  let rotateY : any
 
   let pointclouds : any = []
 
@@ -184,7 +189,7 @@ clock: any, raycaster: any, pointer: any, rotateY : any
 
     const dims = dimensions()
     const container = document.getElementById('animation__root')
-    if (container == null || typeof container == 'undefined') {
+    if (container === null || typeof container === 'undefined') {
       return
     }
 

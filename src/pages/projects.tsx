@@ -9,8 +9,8 @@ import { graphql } from "gatsby"
 import type { HeadFC, PageProps } from "gatsby"
 
 const ProjectsPage: React.FC<PageProps> = (props: { data: any }) => {
-  let nodes = props.data.allMdx.nodes
-  let cards : Array<any> = []
+  const nodes = props.data.allMdx.nodes
+  const cards : any[] = []
   for (let i = 0; i < nodes.length; ++i) {
     cards.push((<ProjectCard index={i} data={nodes[i].frontmatter} />))
   }

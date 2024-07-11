@@ -2,7 +2,7 @@ import React from "react"
 import "./Overlay.css"
 
 interface OverlayProps {
-  children: Array<any>;
+  children: any[];
   className?: string;
   style?: any;
 }

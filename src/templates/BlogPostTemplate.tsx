@@ -15,7 +15,9 @@ interface ArticleBodyPrompts {
 
 const ArticleBody: React.FC<ArticleBodyPrompts> = ({ data, children }) => {
   const { frontmatter } = data.markdownRemark
-  let img = getImage(frontmatter.featuredImage?.childImageSharp?.gatsbyImageData)
+  const img = getImage(
+    frontmatter.featuredImage?.childImageSharp?.gatsbyImageData
+  )
   return (
     <div className="article-layout">
       <div className="article-layout__matter">
@@ -26,7 +28,7 @@ const ArticleBody: React.FC<ArticleBodyPrompts> = ({ data, children }) => {
           <h2 className="author">
             {
               frontmatter.author.map((author: string, i: number) => {
-                if (i == frontmatter.author.length - 1) {
+                if (i === frontmatter.author.length - 1) {
                   return author
                 }
                 return author + ", "
