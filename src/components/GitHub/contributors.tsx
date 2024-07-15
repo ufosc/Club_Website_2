@@ -1,5 +1,6 @@
 import React, { useEffect, useState, ReactNode } from "react";
 import axios from "axios";
+import "./contributors.css";
 
 interface TopContributorsProps {
   children: ReactNode;
@@ -59,22 +60,32 @@ const TopContributors: React.FC<TopContributorsProps> = ({ children }) => {
   }
 
   return (
-    <div>
+    <div className="top-contributors">
       <ul>
-        {contributors.map((contributor) => (
-          <li key={contributor.login}>
+        <li className="header">
+          <span className="header-rank">#</span>
+          <span className="header-user">User</span>
+          <span className="header-contributions">Commits</span>
+        </li>
+        {contributors.map((contributor, index) => (
+          <li key={contributor.login} className="contributor-item">
+            <span className="contributor-rank">{index + 1}</span>
             <a
               href={contributor.html_url}
               target="_blank"
               rel="noopener noreferrer"
+              className="contributor-link"
             >
               <img
                 src={contributor.avatar_url}
                 alt={contributor.login}
-                width="30"
+                className="contributor-avatar"
               />
-              {contributor.login} - {contributor.contributions} contributions
+              <span className="contributor-name">{contributor.login}</span>
             </a>
+            <span className="contributor-contributions">
+              {contributor.contributions.toLocaleString()}
+            </span>
           </li>
         ))}
       </ul>

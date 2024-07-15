@@ -1,5 +1,6 @@
 import React, { useEffect, useState, ReactNode } from "react";
 import axios from "axios";
+import "./issues.css";
 
 interface Issue {
   id: number;
@@ -41,6 +42,7 @@ const RecentIssues: React.FC<RecentIssuesProps> = ({ children }) => {
               state: "open",
               sort: "created",
               direction: "desc",
+              per_page: 5, // Limit to 5 issues
             },
             headers: {
               Accept: "application/vnd.github.v3+json",
@@ -62,12 +64,16 @@ const RecentIssues: React.FC<RecentIssuesProps> = ({ children }) => {
   }
 
   return (
-    <div>
+    <div className="recent-issues">
+      <h2>Recent Issues</h2>
       <ul>
         {issues.map((issue) => (
-          <li key={issue.id}>
+          <li key={issue.id} className="issue-item">
             <a href={issue.html_url} target="_blank" rel="noopener noreferrer">
-              {issue.title} - {new Date(issue.created_at).toLocaleDateString()}
+              <div className="issue-title">{issue.title}</div>
+              <div className="issue-date">
+                {new Date(issue.created_at).toLocaleDateString()}
+              </div>
             </a>
           </li>
         ))}
