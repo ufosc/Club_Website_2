@@ -1,11 +1,12 @@
 import '../global.css'
-import './BlogPostTemplate.css'
+import "./ProjectTemplate.css"
 
 import * as React from "react"
 import { graphql } from "gatsby"
 import SEO from '../components/SEO'
 import Layout from '../components/Layout'
 import { MDXProvider } from "@mdx-js/react"
+import Badge from '../components/Badge'
 
 interface ProjectTemplateProps {
   data: any;
@@ -15,9 +16,22 @@ interface ProjectTemplateProps {
 const ProjectTemplate :
 React.FC<ProjectTemplateProps> = ({ data, children }) => (
   <Layout>
-    <MDXProvider>
-      { children }
-    </MDXProvider>
+    <div className="project">
+      <h1>{data.mdx.frontmatter.title}</h1>
+      <div className="project__badges">
+        {
+          data.mdx.frontmatter.tags.map((tag: string) => {
+            return <Badge>{tag}</Badge>
+          })
+        }
+      </div>
+      <h2 id="project__desc">{data.mdx.frontmatter.description}</h2>
+      <div className="project__content">
+        <MDXProvider>
+          { children }
+        </MDXProvider>
+      </div>
+    </div>
   </Layout>
 )
 
