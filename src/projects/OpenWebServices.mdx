@@ -10,6 +10,41 @@ tags: ['kubernetes', 'golang', 'nextjs']
 
 import TopContributors from '../components/GitHub/contributors.tsx'
 
-# Hello, world!
+![OpenWebServices](https://camo.githubusercontent.com/e53874c4b9cc4cede079ee1929408379d58399916525f0d6b388f117e5378116/68747470733a2f2f692e696d6775722e636f6d2f5370615a356a322e706e67)
+
+OpenWebServices is the UF Open Source Club's Microservices project. It currently implements a custom OAuth2 server, SMTP relay, and account management dashboard. It hopes to establish a common set of developer and project infrastructure services for use across the Open Source Club's projects. All microservices integrate with Kubernetes.
+
+## Install
+This project uses the [Go compiler](https://go.dev/) and [NodeJS](https://nodejs.org/en).
+
+```bash
+git clone https://github.com/ufosc/OpenWebServices.git
+cd OpenWebservices/dashboard
+npm i
+```
+
+## Quick Start
+
+The project consists of three components: the authentication (Oauth2) server, the dashboard frontend, and the websmtp relay server. To get started, begin by launching the auth server:
+
+```bash
+cd oauth2
+go run ./...
+```
+
+In a separate terminal, launch the NextJS dashboard:
+
+```bash
+cd dashboard
+npm run dev
+```
+
+This will get you a minimal working example - with no database or SMTP integration.
+
+## License
+[AGPL-3.0](https://github.com/ufosc/OpenWebServices/blob/main/LICENSE)
+
+Copyright (C) 2024 Open Source Club
+
 
 <TopContributors>https://github.com/ufosc/OpenWebServices/</TopContributors>
