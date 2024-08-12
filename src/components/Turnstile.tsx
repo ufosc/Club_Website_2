@@ -14,7 +14,7 @@ const Turnstile: React.FC<{setToken: (_: string) => void }> =
     // Turnstile callback.
     window.onloadTurnstileCallback =  () => {
       turnstile.render('#captcha-container', {
-        sitekey: '1x00000000000000000000AA',
+        sitekey: '0x4AAAAAAAiLPy-i8F4Af_s0',
         callback: setToken,
       })
     }
