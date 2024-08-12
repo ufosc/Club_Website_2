@@ -41,7 +41,7 @@ export default function ContactSection() {
     if (isDisabled()) {
       return
     }
-    axios.post("https://api.ufosc.org/mailbox/submit", {
+    axios.post("https://mailbox-sifpwxrsgq-uc.a.run.app/mailbox/submit", {
       from: form.Email,
       subject: form.Subject,
       message: form.Message,
