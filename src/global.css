@@ -158,6 +158,10 @@ button, input[type=button], input[type=submit] {
     margin: 10px;
 }
 
+input[type=submit]:disabled {
+    opacity: 0.7;
+}
+
 button:hover, input[type=button]:hover, input[type=submit]:hover {
     background: var(--theme-secondary);
     transition: 0.1s ease-in-out;
@@ -266,6 +270,10 @@ a, a:link, a:visited {
 .gatsby-image-wrapper, .gatsby-image-wrapper-constrained {
     height: 100%;
     width: 100%;
+}
+
+#captcha-container {
+    margin: 20px 0px;
 }
 
 @media only screen and (max-width: 500px) {
