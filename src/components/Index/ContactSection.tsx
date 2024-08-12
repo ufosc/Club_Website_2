@@ -1,4 +1,6 @@
 import React, { useState } from "react"
+import Turnstile from '../Turnstile'
+import axios from "axios"
 
 export type ContactFormInput = {
   Email:     string;
@@ -11,6 +13,8 @@ export default function ContactSection() {
   type TextEvent = { target: { value: string }}
   type CheckboxEvent = { target: { checked: boolean }}
 
+  const [showCaptcha, setShowCaptcha] = useState<boolean>(false)
+  const [captchaToken, setCaptchaToken] = useState<string>("")
   const [form, setForm] = useState<ContactFormInput>({
     Email: "", Subject: "", Message: "", Subscribe: true,
   })
@@ -20,13 +24,53 @@ export default function ContactSection() {
   }
 
   const onTextChange = (field: string, event: TextEvent) => {
+    if (!showCaptcha) {
+      console.log("Showing captcha!")
+      setShowCaptcha(true)
+    }
     setForm({ ...form, [field]: event.target.value})
+  }
+
+  // whether submission is disabled.
+  const isDisabled = () => {
+    return (captchaToken === "")
   }
 
   const onSubmit = (event: { preventDefault: () => any }) => {
     event.preventDefault()
-    alert("Contact form is temporarily unavailable")
+    if (isDisabled()) {
+      return
+    }
+    axios.post("https://api.ufosc.org/mailbox/submit", {
+      from: form.Email,
+      subject: form.Subject,
+      message: form.Message,
+      captcha: captchaToken,
+    }).then((res) => {
+      if (res.status && res.status === 200) {
+        alert("Message successfully submitted")
+        window.location.reload()
+        return
+      }
+      alert("Failed to submit message. Please try again later.")
+      window.location.reload()
+    }).catch((err) => {
+      if (err.response && err.response.data && err.response.data.error) {
+        alert(`Error: ${err.response.data.error}. Please try again later.`)
+        window.location.reload()
+        return
+      }
+      alert("Failed to submit message. Please try again later.")
+      window.location.reload()
+    })
   }
+
+  const Captcha = (
+    <>
+      <Turnstile setToken={(t: string) => setCaptchaToken(t) } />
+      <div id="captcha-container" />
+    </>
+  )
 
   return (
     <section id='get-in-touch'>
@@ -35,7 +79,7 @@ export default function ContactSection() {
       </h1>
       <div className="contact-form">
         <form onSubmit={onSubmit}>
-          <label for="email">Email Address</label>
+          <label htmlFor="email">Email Address</label>
           <input
             required type="text" id="contact-form__email"
             name="email" placeholder="gator@example.com"
@@ -43,7 +87,7 @@ export default function ContactSection() {
             pattern=".+@.+\..+" value={form.Email}
             onChange={ (event: TextEvent) => onTextChange("Email", event) }
           />
-          <label for="subject">Subject</label>
+          <label htmlFor="subject">Subject</label>
           <input
             required type="text" id="contact-form__subject"
             name="subject" placeholder="Subject"
@@ -51,11 +95,11 @@ export default function ContactSection() {
             pattern="[A-Za-z\s]+" value={form.Subject}
             onChange={ (event: TextEvent) => onTextChange("Subject", event) }
           />
-          <label for="message">Message</label>
+          <label htmlFor="message">Message</label>
           <textarea required id="contact-form__message"
             name="message" placeholder="Enter your message here..."
             onChange={ (event: TextEvent) => onTextChange("Message", event) }
-            rows="4" cols="40" value={form.Message} />
+            rows={4} cols={40} value={form.Message} />
           <div style={{ display: "flex", flexDirection: "row"}}>
             <input
               checked={form.Subscribe}
@@ -64,11 +108,12 @@ export default function ContactSection() {
               name="subscribe"
               onChange={onSubscribeChange}
             />
-            <label for="subscribe" style={{ margin: "5px 20px" }}>
+            <label htmlFor="subscribe" style={{ margin: "5px 20px" }}>
               Subscribe to our newsletter (1-2 emails/month)
             </label>
           </div>
-          <input type="submit" value="Submit" />
+          { (showCaptcha) ? Captcha : null }
+          <input type="submit" value="Submit" disabled={isDisabled()} />
         </form>
         <h2 id="contact-form__meta">
           We're here to help! If you have any questions, suggestions, or
