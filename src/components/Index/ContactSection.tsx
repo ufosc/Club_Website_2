@@ -91,7 +91,7 @@ export default function ContactSection() {
           <input
             required type="text" id="contact-form__subject"
             name="subject" placeholder="Subject"
-            title="Provide a message subject"
+            title="Message Subject (A-Z, a-z, no punctuation)"
             pattern="[A-Za-z\s]+" value={form.Subject}
             onChange={ (event: TextEvent) => onTextChange("Subject", event) }
           />
