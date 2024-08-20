@@ -8,10 +8,6 @@ const COLORS = [
   "#01a3a4", "#54a0ff", "#341f97", "#3dc1d3"
 ]
 
-// Temporarily disable the button linking to custom project pages.
-// TODO: This is until we finish custom project pages.
-const DISABLE_PROJECT_PAGE : boolean = true
-
 export default function ProjectCard(props: { data: any, index: number }) {
   const color = COLORS[props.index % COLORS.length]
   const onClickLearnMore = () => {
@@ -41,13 +37,9 @@ export default function ProjectCard(props: { data: any, index: number }) {
         }
       </div>
       <div>
-        {
-          (DISABLE_PROJECT_PAGE) ? null : (
-            <button className='secondary' onClick={onClickLearnMore}>
-              LEARN MORE
-            </button>
-          )
-        }
+        <button className='secondary' onClick={onClickLearnMore}>
+          LEARN MORE
+        </button>
         <button className='secondary' onClick={onClickGitHub}>
           GitHub 🔗
         </button>
