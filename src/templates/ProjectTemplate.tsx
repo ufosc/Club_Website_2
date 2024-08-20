@@ -3,21 +3,50 @@ import './BlogPostTemplate.css'
 
 import * as React from "react"
 import { graphql } from "gatsby"
-import SEO from '../components/SEO'
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import Layout from '../components/Layout'
-import { MDXProvider } from "@mdx-js/react"
+import SEO from '../components/SEO'
+import ArticleCard from '../components/ArticleCard/ArticleCard'
+import { MDXProvider } from '@mdx-js/react'
 
-interface ProjectTemplateProps {
+interface ProjectBodyPrompts {
   data: any;
-  children: any;
+  children?: any;
 }
 
-const ProjectTemplate :
-React.FC<ProjectTemplateProps> = ({ data, children }) => (
+const ProjectBody: React.FC<ProjectBodyPrompts> = ({ data, children }) => {
+  const { frontmatter } = data.mdx
+  return (
+    <div className="article-layout">
+      <div className="article-layout__matter">
+        <div className="article-layout__matter__meta">
+          <h2 className="date">{frontmatter.date}</h2>
+          <h1>{frontmatter.title}</h1>
+          <h2 className="subtitle">{frontmatter.description}</h2>
+          <h2 className="author">
+            {
+              frontmatter.maintainers.map((author: string, i: number) => {
+                if (i === frontmatter.maintainers.length - 1) {
+                  return author
+                }
+                return author + ", "
+              })
+            }
+          </h2>
+        </div>
+        <MDXProvider>
+          <div id="inner-html">
+            { children }
+          </div>
+        </MDXProvider>
+      </div>
+    </div>
+  )
+}
+
+const ProjectTemplate : React.FC<ProjectBodyPrompts> = ({ data, children }) => (
   <Layout>
-    <MDXProvider>
-      { children }
-    </MDXProvider>
+    <ProjectBody data={data} children={children} />
   </Layout>
 )
 
@@ -29,40 +58,13 @@ export const Head = (props: { data: any }) => (
   />
 )
 
-
 export const pageQuery = graphql`
-  query ProjectBySlug(
-    $id: String!
-    $previousProjectId: String
-    $nextProjectId: String
-  ) {
-    mdx(id: { eq: $id }) {
+  query ProjectBySlug($id: String!) {
+    mdx(id: {eq: $id}) {
       frontmatter {
-        date(formatString: "MMMM DD, YYYY")
-        slug
         title
-        repo
-        description
-        maintainers
-        tags
-      }
-    }
-    previous: mdx(id: { eq: $previousProjectId }) {
-      frontmatter {
-        date(formatString: "MMMM DD, YYYY")
         slug
-        title
-        repo
-        description
-        maintainers
-        tags
-      }
-    }
-    next: mdx(id: { eq: $nextProjectId }) {
-      frontmatter {
         date(formatString: "MMMM DD, YYYY")
-        slug
-        title
         repo
         description
         maintainers

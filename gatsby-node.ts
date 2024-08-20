@@ -94,17 +94,10 @@ const createProjects = async (
   }
 
   projects.forEach((project, index) => {
-    const previousProjectId = index === 0 ? null : projects[index - 1].id
-    const nextProjectId = index === projects.length - 1 ? null : projects[index + 1].id
-
     createPage({
       path: `/projects${project.frontmatter.slug}`,
       component: `${projectTemplate}?__contentFilePath=${project.internal.contentFilePath}`,
-      context: {
-        id: project.id,
-        previousProjectId,
-        nextProjectId,
-      },
+      context: { id: project.id },
     })
   })
 }
