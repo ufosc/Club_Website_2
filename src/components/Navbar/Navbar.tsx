@@ -75,7 +75,7 @@ export default function () {
   return (
     <NavBar>
       <NavBarLink href="/about">ABOUT</NavBarLink>
-      <NavBarLink href="https://docs.ufosc.org">RESOURCES</NavBarLink>
+      <NavBarLink href="https://docs.ufosc.org">DOCS</NavBarLink>
       <NavBarLink href="/projects">PROJECTS</NavBarLink>
       <NavBarLink href="/blog">NEWS</NavBarLink>
       <NavBarLink href="/#get-in-touch">CONTACT</NavBarLink>
