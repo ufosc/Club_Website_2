@@ -41,7 +41,7 @@ export default ProjectsPage
 export const Head: HeadFC = () => (
   <SEO
     title={"Projects | UF Open Source Club"}
-    desc={"Projects maintained by the Open Source Club"}
+    desc={"Open Source Projects from the Open Source Club"}
   />
 )
 
@@ -50,6 +50,7 @@ export const pageQuery = graphql`
     allMdx(sort: { frontmatter: { date: DESC } }) {
       nodes {
         frontmatter {
+          date(formatString: "MMMM DD, YYYY")
           title
           slug
           description
