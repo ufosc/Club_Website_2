@@ -61,6 +61,8 @@ At the open source club, we publish tasks to be completed as GitHub issues. GitH
     * [Fix download links](https://github.com/ufosc/BytesOfLoveWebsite/issues/15)
     * [Redesign home page carousel](https://github.com/ufosc/BytesOfLoveWebsite/issues/35)
 
+If none of these issues interest you, we recommend joining our [Discord](https://discord.gg/Gsxej6u) and getting in touch with the tech leads within the project channels. They may be looking for help with tasks that have not yet been posted as issues.
+
 <h1 id="beginners-guide"> Beginners Guide to Git & GitHub </h1>
 
 > This guide is an adaptation of a previous blog post. To read the original, click [here](https://docs.ufosc.org/docs/club/resources/git).
