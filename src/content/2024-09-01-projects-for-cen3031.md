@@ -26,6 +26,7 @@ Every semester, Open Source club members propose and vote on new projects. The m
  2. [Jukebox](https://github.com/ufosc/Jukebox-Server): A NodeJS (TypeScript) full-stack that integrates with the Spotify API, allowing users to add and play songs through a collaborative queue.
  3. [Bytes of Love](https://github.com/ufosc/VisualNovel): A visual novel video game in RenPy Python. Players learn about different programming languages through an interactive dating simulator.
  4. [Bytes of Love website](https://github.com/ufosc/BytesOfLoveWebsite): website for the Bytes of Love game.
+ 5. [Alarm Clock](https://github.com/ufosc/Alarm-Clock): Alarm clock with configurable punishments for not waking up. Built with NodeJS (TypeScript) and Expo Go.
 
 <h2 id="open-issues"> GitHub Issues: Opportunities for Contribution </h2>
 
@@ -37,6 +38,10 @@ At the open source club, we publish tasks to be completed as GitHub issues. GitH
     * [Implement OAuth for Google Sign in with Firebase (frontend)](https://github.com/ufosc/OSC-Proximity-Chat-App/issues/234)
     * [Create Email Verification page (frontend)](https://github.com/ufosc/OSC-Proximity-Chat-App/issues/233)
     * [Migrate message data structure to hashmap (frontend)](https://github.com/ufosc/OSC-Proximity-Chat-App/issues/232)
+    * [Rework contexts for clarity](https://github.com/ufosc/OSC-Proximity-Chat-App/issues/235)
+    * [Create a Theme Folder](https://github.com/ufosc/OSC-Proximity-Chat-App/issues/236)
+    * [Create basic splash screen](https://github.com/ufosc/OSC-Proximity-Chat-App/issues/237)
+    * [Move sign-out button to settings screen](https://github.com/ufosc/OSC-Proximity-Chat-App/issues/238)
 
  2. Jukebox:
     * [Create CRUD endpoints for club model (backend)](https://github.com/ufosc/Jukebox-Server/issues/14)
@@ -60,6 +65,13 @@ At the open source club, we publish tasks to be completed as GitHub issues. GitH
     * [Fix typos on home page](https://github.com/ufosc/BytesOfLoveWebsite/issues/36)
     * [Fix download links](https://github.com/ufosc/BytesOfLoveWebsite/issues/15)
     * [Redesign home page carousel](https://github.com/ufosc/BytesOfLoveWebsite/issues/35)
+
+ 5. Alarm Clock:
+    * [Update README](https://github.com/ufosc/Alarm-Clock/issues/60)
+    * [Add Unit Tests](https://github.com/ufosc/Alarm-Clock/issues/61)
+    * [Add delete confirmation modal](https://github.com/ufosc/Alarm-Clock/issues/62)
+    * [World Clock UI Update](https://github.com/ufosc/Alarm-Clock/issues/63)
+    * [Alarms UI Update](https://github.com/ufosc/Alarm-Clock/issues/64)
 
 If none of these issues interest you, we recommend joining our [Discord](https://discord.gg/Gsxej6u) and getting in touch with the tech leads within the project channels. They may be looking for help with tasks that have not yet been posted as issues.
 
