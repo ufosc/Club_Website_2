@@ -62,10 +62,10 @@ p {
     font-family: var(--fontFamily-Diatype);
     color: var(--theme-fg);
     font-size: var(--fontSize-2);
-    line-height: 170%;
-    font-weight: 400;
+    line-height: 190%;
+    font-weight: 300;
     max-width: var(--width-m);
-    margin: 40px 0;
+    margin: 60px 0;
 }
 
 #inner-html {
@@ -160,6 +160,10 @@ p {
     color: var(--theme-keyword);
 }
 
+#inner-html code .function {
+    color: var(--theme-cls-name);
+}
+
 #inner-html code .operator, .punctuation, .function {
     color: var(--theme-code);
 }
@@ -172,7 +176,7 @@ p {
     color: var(--theme-cls-name);
 }
 
-#inner-html code .tag {
+#inner-html code .tag, .variable {
     color: var(--theme-tag);
 }
 
