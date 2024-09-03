@@ -1,13 +1,15 @@
 ---
 slug: "/cen3031-open-source-projects"
-date: "2024-09-01"
-title: "CEN3031: Contributing to Open Source Projects"
+date: "2024-09-02"
+title: "How to Contribute to Open Source as a CEN3031 Student"
 author: ["Michail Zeipekki", "Daniel Wildsmith"]
 featuredImage: ../images/blog/2024-09-01-projects-for-cen3031.png
 subtitle: Contribution guide and a list of open issues for CEN3031 University of Florida students
 ---
 
-CEN3031 is the "Introduction to Software Engineering" class at the University of Florida. Some professors require students to contribute to open source projects as part of the coursework. This guide explains how to contribute to open source projects hosted by the Open Source Club. Please consult your course material to ensure that our projects meet your class' expectations.
+CEN3031 is the "Introduction to Software Engineering" class at the University of Florida. Some professors require students to contribute to open source projects as part of their coursework, (oftentimes) including projects maintained by the UF Open Source Club (OSC). This guide is a high-level overview of the open source contribution workflow, including how to contribute to OSC as a CEN3031 student. Please note, expectations may vary across semesters, so please consult your course material to determine whether contributions to the club are allowed.
+
+If you're interested in software development or open-source work, consider joining the Open Source Club. Collaborating on projects can enhance your portfolio and improve your chances when applying for internships. Leadership roles, such as tech lead or executive board member, are also available for those wishing to strengthen their resume. Effectively, the club serves as a "third-place" for fostering a tight-knit community centered around technology. Members are invited to hang out, find friend groups with similar interests, and work on open-source projects together. We host weekly "casual coding" sessions for collaboration, along with workshops and hackathons featuring industry professionals and former interns. For updates on meetings and coding sessions, please join our [Discord](https://discord.gg/Gsxej6u) channel.
 
 If you have any questions or need additional assistance, don't hesitate to reach out via [Discord](https://discord.gg/Gsxej6u) or our [contact form](http://localhost:8000/#get-in-touch).
 
