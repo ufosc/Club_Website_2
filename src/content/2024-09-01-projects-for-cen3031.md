@@ -128,11 +128,6 @@ cd [Name of your project]
 ls
 ```
 
-### Contributing via VSCode (steps 4-8)
-<iframe width="500" height="300" src="https://www.youtube.com/embed/TUYt4oXLxQs" title="Source Control Tip 4: Source Control View in VS Code" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-
-For more detailed instructions, see [here](https://docs.ufosc.org/docs/club/resources/git#contributing-with-vscode-steps-4-8).
-
 ### Contributing with the command line (steps 4-8)
 The following steps walk you through the contribution workflow via the command line (terminal).
 
