@@ -14,3 +14,5 @@ OSC is committed to fostering a community where students can collaborate on open
 The first GBM will provide an overview of our current projects, discuss the project proposal process, and explain how casual coding sessions will take place. We'll also be covering the contribution process for those enrolled in **Intro to Software Engineering (CEN3031)**.
 
 See you there!
+
+<a href="https://docs.ufosc.org/docs/club/2024-2025/fall-gbm-09-03-2024">GBM Slides and Recording</a>
