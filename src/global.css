@@ -276,6 +276,14 @@ a, a:link, a:visited {
     margin: 20px 0px;
 }
 
+#trk-pixel {
+    position: fixed;
+    width: 1px;
+    height: 1px;
+    top: 0px;
+    left: 0px;
+}
+
 @media only screen and (max-width: 500px) {
     .Typewriter__cursor, .Typewriter__wrapper, h1 {
         font-size: var(--fontSize-6);
