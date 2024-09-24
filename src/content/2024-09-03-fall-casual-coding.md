@@ -4,9 +4,9 @@ date: "2024-09-03"
 title: "Fall 2024 Casual Coding"
 author: ["Daniel Wildsmith"]
 featuredImage: ../images/blog/2024-09-04-fall-casual-coding.webp
-subtitle: 5-7PM Tuesdays @ CSE E121 & Thursdays @ LIT0101
+subtitle: 5-7PM Tuesdays @ CSE A101 & Thursdays @ LIT0101
 ---
-Open Source Club will meet for casual coding twice a week at 5-7PM, every Tuesday and Thursday. Tuesday meetings will be held in CSE E121, and Thursday meetings will be held in LIT0101.
+Open Source Club will meet for casual coding twice a week at 5-7PM, every Tuesday and Thursday. Tuesday meetings will be held in CSE A101, and Thursday meetings will be held in LIT0101.
 
 Casual coding (CC) is when the club meets to collaborate on open source projects. During CC, members typically work with tech leads on club-led projects, do homework, or just hang out with others. Participation is non-committal, doesn't require applications/invitations or strict time requirements, and is open to everyone.
 
