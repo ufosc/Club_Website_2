@@ -32,7 +32,13 @@ const IndexPage: React.FC<PageProps> = (props: { data: any }) => (
 )
 
 export default IndexPage
-export const Head: HeadFC = () => <SEO />
+export const Head: HeadFC = () => (
+  <SEO
+    title={"UF Open Source Club"}
+    desc={"Home of the University of Florida's Open Source Community in Gainesville. Participate in Open Source and learn practical software development outside of the classroom with UF's Open Source Club (UF OSC)."}
+  />
+)
+
 export const pageQuery = graphql`
   {
     news: allMarkdownRemark(sort: { frontmatter: { date: DESC } }) {

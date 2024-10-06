@@ -3,7 +3,7 @@ import type { GatsbyConfig } from "gatsby"
 const config: GatsbyConfig = {
   siteMetadata: {
     title: `UF Open Source Club`,
-    siteUrl: `https://www.ufosc.org`,
+    siteUrl: `https://ufosc.org`,
   },
   plugins: [
     "gatsby-plugin-image",
