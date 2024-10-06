@@ -13,4 +13,4 @@ We are looking for creative designs that evoke the spirit of open source culture
 
 The winning design will be determined through voting, with more details to be announced on Discord after the submission deadline.
 
-Upload your submission via Google Forms: https://forms.gle/aLU16PcH5kHKtnfF7
+Upload your submission by DMing OSC on [Instagram](https://www.instagram.com/uf_osc/), or via the [Discord channel](https://discord.gg/Gsxej6u).
