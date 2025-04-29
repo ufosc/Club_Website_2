@@ -48,9 +48,8 @@ The website may be accessed at http://localhost:9000
 ## Maintainers
 Maintained by the UF Open Source Club, can be contacted via [Discord](https://discord.gg/j9g5dqSVD8)
 
-Current Maintainers:
-- Michail Zeipekki [zeim839](https://github.com/zeim839)
-- Daniel Wildsmith [danielwildsmith](https://github.com/danielwildsmith)
+Current Maintainer:
+- Nicolas Valiente [nickv779](https://github.com/nickv779)
 
 ## Documentation
 Documentation is available online at [docs.ufosc.org](https://docs.ufosc.org/docs/website). Please see the [osc-docs](https://github.com/ufosc/osc-docs) project if you're interested in helping with documentation.
