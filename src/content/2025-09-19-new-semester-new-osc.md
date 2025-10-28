@@ -9,7 +9,7 @@ subtitle: Fall 2025 has kicked off a brand new chapter for the "best coding club
 
 Since the Dawn of Time, man has always fought the good fight. Not alone, but always with another. That was why the Roman Empire once stood, a testament of mankind's greatness when together. Alas, it ended like over 4 years ago. But from the ashes of greatness, even greater things to come. But, you may ask, at what point do we become our greatest? How will we know when we're at that point? How many story points will it take?
 
-Suffice to say, we've already at our greatest.
+Suffice to say, we're already at our greatest.
 
 Open Source Club, the "best coding club on campus", is back better than ever this Fall! With most of our projects not continuing from the Spring, this is the moment OSC reaches brand new heights, building upon the successes of our forefathers. To not disappoint those who came before, distinguished individuals from all over the world came to Pitch Day to pitch the next Facebook, or the next MySpace, or the next NVIDIA, or the next YouTube, or the next Netflix, or the next Whatsapp, or the next Uber, or the next iPhone, or even the next Roman Empire.
 
