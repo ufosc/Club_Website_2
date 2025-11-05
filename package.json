@@ -21,7 +21,7 @@
     "@mdx-js/react": "^3.0.1",
     "axios": "^1.7.4",
     "caniuse-lite": "^1.0.30001629",
-    "gatsby": "^5.14.0",
+    "gatsby": "^5.15.0",
     "gatsby-plugin-image": "^3.13.1",
     "gatsby-plugin-manifest": "^5.13.1",
     "gatsby-plugin-mdx": "^5.13.1",
