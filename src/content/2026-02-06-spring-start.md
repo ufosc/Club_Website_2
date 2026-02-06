@@ -19,7 +19,4 @@ Gamebytes aims to recreate the classic gameboy console with modern technology. S
 
 Remember the DS-era of art and animation? Maybe you've said to yourself, "Let's go gambling!" Sketchpad aims to bring that to new life through the Godot Engine, which is open-source! Making an open-source project with an open-source tool? That's a whole lot of open-source in my open-source club.
 
-Thank you to everyone who attended, and everyone who will attend this semester. OSC, since the dawn of its birth, has always involved incredible people. It is great to see the level of passion that comes with every pitch at Pitch Day, and it is because of those who pitched their ideas that truly brings value to OSC. 
-
 Thank you to everyone who attended, and everyone who will attend this semester. OSC, since the dawn of its birth, has always been blessed with incredible people. Every pitch made at Pitch Day oozed with passion and enthusiasm. Here's to another great semester, and let's get that money (LGTM).
-
