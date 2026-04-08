@@ -21,6 +21,8 @@
 .accordion-item {
     background: var(--theme-grey);
     margin-bottom: 10px;
+    border-radius: 12px;
+    overflow: hidden;
 }
 
 .accordion-item--trigger {
