@@ -19,7 +19,7 @@
   },
   "dependencies": {
     "@mdx-js/react": "^3.0.1",
-    "axios": "^1.15.2",
+    "axios": "^1.16.0",
     "caniuse-lite": "^1.0.30001629",
     "gatsby": "^5.16.1",
     "gatsby-plugin-image": "^3.13.1",
